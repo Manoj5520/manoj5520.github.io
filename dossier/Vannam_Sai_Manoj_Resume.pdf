@@ -1,99 +1,156 @@
 %PDF-1.4
-% ASCII-only PDF document
+% ASCII professional resume
 1 0 obj
-<<
-/F1 2 0 R /F2 3 0 R /F3 4 0 R
->>
+<< /Type /Catalog /Pages 2 0 R >>
 endobj
 2 0 obj
-<<
-/BaseFont /Helvetica /Encoding /WinAnsiEncoding /Name /F1 /Subtype /Type1 /Type /Font
->>
+<< /Type /Pages /Kids [3 0 R 5 0 R] /Count 2 >>
 endobj
 3 0 obj
-<<
-/BaseFont /Helvetica-Bold /Encoding /WinAnsiEncoding /Name /F2 /Subtype /Type1 /Type /Font
->>
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595.28 841.89] /Resources << /Font << /F1 6 0 R /F2 7 0 R /F3 8 0 R >> >> /Contents 4 0 R >>
 endobj
 4 0 obj
-<<
-/BaseFont /Helvetica-Oblique /Encoding /WinAnsiEncoding /Name /F3 /Subtype /Type1 /Type /Font
->>
+<< /Length 5874 >>
+stream
+0.130 0.140 0.150 rg BT /F2 17 Tf 1 0 0 1 50.00 807.00 Tm (VANNAM SAI MANOJ) Tj ET
+0.380 0.400 0.430 rg BT /F1 7.8 Tf 1 0 0 1 50.00 790.00 Tm (Hyderabad, Telangana, India | +91 8897732299 | mjv8887@gmail.com) Tj ET
+0.380 0.400 0.430 rg BT /F1 7.8 Tf 1 0 0 1 50.00 777.00 Tm (linkedin.com/in/vsaimomentum2028) Tj ET
+0.420 0.140 0.220 rg BT /F2 8.2 Tf 1 0 0 1 50.00 756.00 Tm (BUSINESS OPERATIONS | STRATEGY & OPERATIONS | PROCESS EXCELLENCE | GROWTH OPERATIONS) Tj ET
+0.380 0.400 0.430 rg BT /F1 7.5 Tf 1 0 0 1 50.00 743.00 Tm (Hyderabad | Bengaluru | Chennai | Mumbai | Pune | Delhi NCR | Pan-India | Remote | Immediate Joiner) Tj ET
+0.840 0.850 0.860 RG 0.8 w 50 730 m 545 730 l S
+0.420 0.140 0.220 rg BT /F2 9.5 Tf 1 0 0 1 50.00 710.00 Tm (PROFESSIONAL SUMMARY) Tj ET
+0.840 0.850 0.860 RG 0.45 w 50 705 m 545 705 l S
+0.130 0.140 0.150 rg BT /F1 8 Tf 1 0 0 1 50.00 692.00 Tm (MBA-qualified Business Operations and Growth professional with hands-on experience managing end-to-end client) Tj ET
+0.130 0.140 0.150 rg BT /F1 8 Tf 1 0 0 1 50.00 681.90 Tm (portfolios, competitive market intelligence, and cross-functional operations. Managed a 100+ client residential real) Tj ET
+0.130 0.140 0.150 rg BT /F1 8 Tf 1 0 0 1 50.00 671.80 Tm (estate portfolio at Nexa Homes, converting field and customer data into decision-ready MIS dashboards using Advanced) Tj ET
+0.130 0.140 0.150 rg BT /F1 8 Tf 1 0 0 1 50.00 661.70 Tm (Excel and Power BI. Gained cross-functional exposure through a Management Trainee rotation at Mercedes-Benz Silver) Tj ET
+0.130 0.140 0.150 rg BT /F1 8 Tf 1 0 0 1 50.00 651.60 Tm (Star across Business Operations, Sales, Marketing, and related functions. Applies structured business research, IBM) Tj ET
+0.130 0.140 0.150 rg BT /F1 8 Tf 1 0 0 1 50.00 641.50 Tm (Design Thinking, and BCG strategy consulting frameworks to reduce process friction and support growth-oriented) Tj ET
+0.130 0.140 0.150 rg BT /F1 8 Tf 1 0 0 1 50.00 631.40 Tm (execution.) Tj ET
+0.420 0.140 0.220 rg BT /F2 9.5 Tf 1 0 0 1 50.00 618.80 Tm (CORE SKILLS) Tj ET
+0.840 0.850 0.860 RG 0.45 w 50 613.7999999999998 m 545 613.7999999999998 l S
+0.130 0.140 0.150 rg BT /F1 8 Tf 1 0 0 1 50.00 600.80 Tm (Business Operations & Execution: Business Operations, Strategy & Operations, Process Improvement, Process) Tj ET
+0.130 0.140 0.150 rg BT /F1 8 Tf 1 0 0 1 50.00 590.70 Tm (Excellence, Cross-Functional Coordination, Stakeholder Management, Vendor Coordination, Customer Operations,) Tj ET
+0.130 0.140 0.150 rg BT /F1 8 Tf 1 0 0 1 50.00 580.60 Tm (End-to-End Execution, MIS Reporting, Operational Reporting) Tj ET
+0.130 0.140 0.150 rg BT /F1 8 Tf 1 0 0 1 50.00 568.00 Tm (Market & Strategy Intelligence: Market Research, Competitive Intelligence, Competitor Benchmarking, Opportunity) Tj ET
+0.130 0.140 0.150 rg BT /F1 8 Tf 1 0 0 1 50.00 557.90 Tm (Identification, Customer Requirement Gathering, Business Research, Decision Support) Tj ET
+0.130 0.140 0.150 rg BT /F1 8 Tf 1 0 0 1 50.00 545.30 Tm (Tools: Advanced Excel \\\(Pivot Tables, VLOOKUP, Conditional Formatting\\\), Power BI, SQL \\\(Basic\\\), SPSS, Microsoft) Tj ET
+0.130 0.140 0.150 rg BT /F1 8 Tf 1 0 0 1 50.00 535.20 Tm (Office, Canva, AI-Assisted Research \\\(ChatGPT, Microsoft Copilot\\\)) Tj ET
+0.130 0.140 0.150 rg BT /F1 8 Tf 1 0 0 1 50.00 522.60 Tm (Frameworks: Design Thinking \\\(IBM\\\), Agile \\\(IBM\\\), Strategy Consulting Simulation \\\(BCG/Forage\\\), Claude AI -) Tj ET
+0.130 0.140 0.150 rg BT /F1 8 Tf 1 0 0 1 50.00 512.50 Tm (Productivity \\\(10X\\\)) Tj ET
+0.420 0.140 0.220 rg BT /F2 9.5 Tf 1 0 0 1 50.00 499.90 Tm (PROFESSIONAL EXPERIENCE) Tj ET
+0.840 0.850 0.860 RG 0.45 w 50 494.89999999999964 m 545 494.89999999999964 l S
+0.130 0.140 0.150 rg BT /F2 8.3 Tf 1 0 0 1 50.00 481.90 Tm (Nexa Homes Pvt. Ltd. - Growth Manager and Operations Associate) Tj ET
+0.380 0.400 0.430 rg BT /F3 7.5 Tf 1 0 0 1 50.00 470.20 Tm (May 2025 - August 2026 | Hyderabad, Telangana, India) Tj ET
+0.130 0.140 0.150 rg BT /F1 8 Tf 1 0 0 1 50.00 458.20 Tm (-) Tj ET
+0.130 0.140 0.150 rg BT /F1 8 Tf 1 0 0 1 61.00 458.20 Tm (Managed end-to-end client operations across a 100+ residential real estate portfolio, translating client) Tj ET
+0.130 0.140 0.150 rg BT /F1 8 Tf 1 0 0 1 61.00 448.10 Tm (requirements and value-based pricing into customization-led offers from first visit through post-sale) Tj ET
+0.130 0.140 0.150 rg BT /F1 8 Tf 1 0 0 1 61.00 438.00 Tm (delivery.) Tj ET
+0.130 0.140 0.150 rg BT /F1 8 Tf 1 0 0 1 50.00 425.40 Tm (-) Tj ET
+0.130 0.140 0.150 rg BT /F1 8 Tf 1 0 0 1 61.00 425.40 Tm (Led competitive intelligence and market research across Hyderabad's residential real estate landscape,) Tj ET
+0.130 0.140 0.150 rg BT /F1 8 Tf 1 0 0 1 61.00 415.30 Tm (benchmarking players including My Home Group and ASBL to identify service gaps, market opportunities, and) Tj ET
+0.130 0.140 0.150 rg BT /F1 8 Tf 1 0 0 1 61.00 405.20 Tm (differentiation priorities.) Tj ET
+0.130 0.140 0.150 rg BT /F1 8 Tf 1 0 0 1 50.00 392.60 Tm (-) Tj ET
+0.130 0.140 0.150 rg BT /F1 8 Tf 1 0 0 1 61.00 392.60 Tm (Owned post-sale execution across 100+ client engagements, coordinating upgrade requests, vendor handoffs,) Tj ET
+0.130 0.140 0.150 rg BT /F1 8 Tf 1 0 0 1 61.00 382.50 Tm (and sales-delivery alignment to maintain continuity through fulfillment.) Tj ET
+0.130 0.140 0.150 rg BT /F1 8 Tf 1 0 0 1 50.00 369.90 Tm (-) Tj ET
+0.130 0.140 0.150 rg BT /F1 8 Tf 1 0 0 1 61.00 369.90 Tm (Built and maintained MIS reports and operational dashboards in Advanced Excel and Power BI, consolidating) Tj ET
+0.130 0.140 0.150 rg BT /F1 8 Tf 1 0 0 1 61.00 359.80 Tm (field and customer data into decision-ready views for leadership.) Tj ET
+0.840 0.850 0.860 RG 0.45 w 50 35 m 545 35 l S
+0.380 0.400 0.430 rg BT /F1 6.8 Tf 1 0 0 1 50.00 22.00 Tm (VANNAM SAI MANOJ | RESUME) Tj ET
+0.380 0.400 0.430 rg BT /F1 6.8 Tf 1 0 0 1 533.00 22.00 Tm (1) Tj ET
+endstream
 endobj
 5 0 obj
-<<
-/Contents 10 0 R /MediaBox [ 0 0 595.2756 841.8898 ] /Parent 9 0 R /Resources <<
-/Font 1 0 R /ProcSet [ /PDF /Text /ImageB /ImageC /ImageI ]
->> /Rotate 0 /Trans <<
-
->> 
-  /Type /Page
->>
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595.28 841.89] /Resources << /Font << /F1 6 0 R /F2 7 0 R /F3 8 0 R >> >> /Contents 9 0 R >>
 endobj
 6 0 obj
-<<
-/Contents 11 0 R /MediaBox [ 0 0 595.2756 841.8898 ] /Parent 9 0 R /Resources <<
-/Font 1 0 R /ProcSet [ /PDF /Text /ImageB /ImageC /ImageI ]
->> /Rotate 0 /Trans <<
-
->> 
-  /Type /Page
->>
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica /Encoding /WinAnsiEncoding >>
 endobj
 7 0 obj
-<<
-/PageMode /UseNone /Pages 9 0 R /Type /Catalog
->>
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold /Encoding /WinAnsiEncoding >>
 endobj
 8 0 obj
-<<
-/Author (Vannam Sai Manoj) /CreationDate (D:20261014152003+00'00') /Creator (\(unspecified\)) /Keywords () /ModDate (D:20261014152003+00'00') /Producer (ReportLab PDF Library - \(opensource\)) 
-  /Subject (Business Operations | Strategy & Operations | Process Excellence) /Title (Vannam Sai Manoj - Resume) /Trapped /False
->>
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Oblique /Encoding /WinAnsiEncoding >>
 endobj
 9 0 obj
-<<
-/Count 2 /Kids [ 5 0 R 6 0 R ] /Type /Pages
->>
+<< /Length 6074 >>
+stream
+0.130 0.140 0.150 rg BT /F2 17 Tf 1 0 0 1 50.00 807.00 Tm (VANNAM SAI MANOJ) Tj ET
+0.380 0.400 0.430 rg BT /F1 7.8 Tf 1 0 0 1 50.00 790.00 Tm (Hyderabad, Telangana, India | +91 8897732299 | mjv8887@gmail.com) Tj ET
+0.380 0.400 0.430 rg BT /F1 7.8 Tf 1 0 0 1 50.00 777.00 Tm (linkedin.com/in/vsaimomentum2028) Tj ET
+0.840 0.850 0.860 RG 0.8 w 50 730 m 545 730 l S
+0.420 0.140 0.220 rg BT /F2 9.5 Tf 1 0 0 1 50.00 710.00 Tm (PROFESSIONAL EXPERIENCE | CONTINUED) Tj ET
+0.840 0.850 0.860 RG 0.45 w 50 705 m 545 705 l S
+0.130 0.140 0.150 rg BT /F1 8 Tf 1 0 0 1 50.00 692.00 Tm (-) Tj ET
+0.130 0.140 0.150 rg BT /F1 8 Tf 1 0 0 1 61.00 692.00 Tm (Identified and proposed process improvements to streamline manual coordination across the) Tj ET
+0.130 0.140 0.150 rg BT /F1 8 Tf 1 0 0 1 61.00 681.90 Tm (sales-to-delivery handoff.) Tj ET
+0.130 0.140 0.150 rg BT /F1 8 Tf 1 0 0 1 50.00 669.30 Tm (-) Tj ET
+0.130 0.140 0.150 rg BT /F1 8 Tf 1 0 0 1 61.00 669.30 Tm (Coordinated multi-channel lead-generation activity across Instagram, WhatsApp, and Google to support the) Tj ET
+0.130 0.140 0.150 rg BT /F1 8 Tf 1 0 0 1 61.00 659.20 Tm (inbound pipeline feeding the client portfolio.) Tj ET
+0.130 0.140 0.150 rg BT /F2 8.3 Tf 1 0 0 1 50.00 646.60 Tm (Mercedes-Benz Silver Star - Management Trainee) Tj ET
+0.380 0.400 0.430 rg BT /F3 7.5 Tf 1 0 0 1 50.00 634.90 Tm (July 2022 - September 2022 | Hyderabad, Telangana, India) Tj ET
+0.130 0.140 0.150 rg BT /F1 8 Tf 1 0 0 1 50.00 622.90 Tm (-) Tj ET
+0.130 0.140 0.150 rg BT /F1 8 Tf 1 0 0 1 61.00 622.90 Tm (Completed a structured cross-functional Management Trainee rotation across Business Operations, HR,) Tj ET
+0.130 0.140 0.150 rg BT /F1 8 Tf 1 0 0 1 61.00 612.80 Tm (Sales, and Marketing at a globally recognised automotive brand.) Tj ET
+0.130 0.140 0.150 rg BT /F1 8 Tf 1 0 0 1 50.00 600.20 Tm (-) Tj ET
+0.130 0.140 0.150 rg BT /F1 8 Tf 1 0 0 1 61.00 600.20 Tm (Coordinated recruitment operations including candidate documentation, candidature selection, interview) Tj ET
+0.130 0.140 0.150 rg BT /F1 8 Tf 1 0 0 1 61.00 590.10 Tm (scheduling, and employee-record management, and supported process documentation and workflow coordination) Tj ET
+0.130 0.140 0.150 rg BT /F1 8 Tf 1 0 0 1 61.00 580.00 Tm (across teams.) Tj ET
+0.130 0.140 0.150 rg BT /F1 8 Tf 1 0 0 1 50.00 567.40 Tm (Additional Exposure: Tata Motors - Organizational Structure Training Program \\\(Apr-May 2021\\\). My Choices) Tj ET
+0.130 0.140 0.150 rg BT /F1 8 Tf 1 0 0 1 50.00 557.30 Tm (Foundation, NGO \\\(Jan 2022\\\) - Impact Intern supporting communication design and Excel-based coordination.) Tj ET
+0.420 0.140 0.220 rg BT /F2 9.5 Tf 1 0 0 1 50.00 544.70 Tm (PROJECTS AND RESEARCH) Tj ET
+0.840 0.850 0.860 RG 0.45 w 50 539.6999999999997 m 545 539.6999999999997 l S
+0.130 0.140 0.150 rg BT /F2 8.3 Tf 1 0 0 1 50.00 526.70 Tm (Master's Thesis - Forecasting Employee Turnover in the Bangalore IT Industry) Tj ET
+0.130 0.140 0.150 rg BT /F1 8 Tf 1 0 0 1 50.00 515.00 Tm (-) Tj ET
+0.130 0.140 0.150 rg BT /F1 8 Tf 1 0 0 1 61.00 515.00 Tm (Analysed workforce survey data in SPSS and Advanced Excel to identify attrition drivers and retention) Tj ET
+0.130 0.140 0.150 rg BT /F1 8 Tf 1 0 0 1 61.00 504.90 Tm (insights; received Academic Excellence Award for Outstanding Research, CHRIST \\\(Deemed to be) Tj ET
+0.130 0.140 0.150 rg BT /F1 8 Tf 1 0 0 1 61.00 494.80 Tm (University\\\).) Tj ET
+0.130 0.140 0.150 rg BT /F2 8.3 Tf 1 0 0 1 50.00 482.20 Tm (Independent Venture Research - Premium Co-Living Concept, Hyderabad) Tj ET
+0.130 0.140 0.150 rg BT /F1 8 Tf 1 0 0 1 50.00 470.50 Tm (-) Tj ET
+0.130 0.140 0.150 rg BT /F1 8 Tf 1 0 0 1 61.00 470.50 Tm (Developed a business masterplan covering market and location targeting across Hyderabad's IT corridor,) Tj ET
+0.130 0.140 0.150 rg BT /F1 8 Tf 1 0 0 1 61.00 460.40 Tm (brand positioning, financial planning, operating-model design, and competitive analysis.) Tj ET
+0.420 0.140 0.220 rg BT /F2 9.5 Tf 1 0 0 1 50.00 447.80 Tm (EDUCATION) Tj ET
+0.840 0.850 0.860 RG 0.45 w 50 442.79999999999956 m 545 442.79999999999956 l S
+0.130 0.140 0.150 rg BT /F2 8.3 Tf 1 0 0 1 50.00 429.80 Tm (Master of Business Administration \\\(MBA\\\), Human Resource Management) Tj ET
+0.130 0.140 0.150 rg BT /F1 8 Tf 1 0 0 1 50.00 418.10 Tm (CHRIST \\\(Deemed to be University\\\), Lavasa, Pune \\\(NAAC A+ Accredited\\\) | 2021-2025) Tj ET
+0.130 0.140 0.150 rg BT /F2 8.3 Tf 1 0 0 1 50.00 405.50 Tm (Bachelor of Commerce \\\(Computer Applications\\\)) Tj ET
+0.130 0.140 0.150 rg BT /F1 8 Tf 1 0 0 1 50.00 393.80 Tm (St. Joseph's Degree and PG College, Kurnool | 2016-2019) Tj ET
+0.420 0.140 0.220 rg BT /F2 9.5 Tf 1 0 0 1 50.00 381.20 Tm (CERTIFICATIONS AND ACHIEVEMENTS) Tj ET
+0.840 0.850 0.860 RG 0.45 w 50 376.19999999999953 m 545 376.19999999999953 l S
+0.130 0.140 0.150 rg BT /F1 8 Tf 1 0 0 1 50.00 363.20 Tm (-) Tj ET
+0.130 0.140 0.150 rg BT /F1 8 Tf 1 0 0 1 61.00 363.20 Tm (Enterprise Design Thinking Practitioner and Agile Explorer - IBM SkillsBuild) Tj ET
+0.130 0.140 0.150 rg BT /F1 8 Tf 1 0 0 1 50.00 350.60 Tm (-) Tj ET
+0.130 0.140 0.150 rg BT /F1 8 Tf 1 0 0 1 61.00 350.60 Tm (Strategy Consulting Job Simulation - BCG via Forage \\\(Market Research, Financial Modelling, Consumer) Tj ET
+0.130 0.140 0.150 rg BT /F1 8 Tf 1 0 0 1 61.00 340.50 Tm (Survey Design, Data Analysis\\\)) Tj ET
+0.130 0.140 0.150 rg BT /F1 8 Tf 1 0 0 1 50.00 327.90 Tm (-) Tj ET
+0.130 0.140 0.150 rg BT /F1 8 Tf 1 0 0 1 61.00 327.90 Tm (Academic Excellence Award for Outstanding Research and Department of Fiesta - CHRIST \\\(Deemed to be) Tj ET
+0.130 0.140 0.150 rg BT /F1 8 Tf 1 0 0 1 61.00 317.80 Tm (University\\\)) Tj ET
+0.130 0.140 0.150 rg BT /F1 8 Tf 1 0 0 1 50.00 305.20 Tm (-) Tj ET
+0.130 0.140 0.150 rg BT /F1 8 Tf 1 0 0 1 61.00 305.20 Tm (Appraised by the Chief of UNICEF for Social Impact Directives - My Choices Foundation) Tj ET
+0.840 0.850 0.860 RG 0.45 w 50 35 m 545 35 l S
+0.380 0.400 0.430 rg BT /F1 6.8 Tf 1 0 0 1 50.00 22.00 Tm (VANNAM SAI MANOJ | RESUME) Tj ET
+0.380 0.400 0.430 rg BT /F1 6.8 Tf 1 0 0 1 533.00 22.00 Tm (2) Tj ET
+endstream
 endobj
 10 0 obj
-<<
-/Filter [ /ASCII85Decode /FlateDecode ] /Length 2394
->>
-stream
-Gau0D?$G#B(4Gq\3)@*1XcXnQOQb-sMB,kS'M*,Q<aNeo!7OIWU(85fh&h.@OcY[(m?4V/?84bbS_7YJ1OJiJ+qm1An_9+\"tR:!Z,j4b[3j'O**Q'M[(?$Q@<dfJG'[\D*N*Q(q!@"498hO4_s,Oc78+`F0^X&8VRC&<Sn1be*QKo$cLFY#bDX7XY#.mP);T$?U[:'Yb9=bXgH?KSi*4rQ;mPA+X96su(97[6*./LKjbNik?%5Jirg9S]]@kLus!(^+QLC`H\$Z"&<r_;"RUI2bYT;&:)THM#rY8SfUYWh`Y3QrjkC>-2`Nm;aiM5Rd1W+5abO(l$2Q=s+YAXEoj-4D='=JmVDBYfIX5M;1<'XV_`tc+U8(MgOaNien,hqf\E#'p#<kUn6=b^R5%cH2,"u6eb,.OA4$q7f@Z+-NJ*%1iZJ*>j&YNNK6g[=`R,PliWH(Oo*9dE\Opc:G_dgZ+G/l(k^k2LOmLJ(o"'<:i6$rkHdY#Tk_:PF[J,i^G:Ct&*<@%Y++)HsaBqtpH$s"U&XbV!D6!SD.VLE`(h\R@Uqc$:.dea&YF)Q`>[SIT(InNGRPjl$)XHoG4]Bf7%bqQ'/QDM\uW=1B=-r^LgthOcH56QSAd3#kX>UV#Ij2fBM=s/t39#1aJN`UsQAQMV[1f!14+B=[GEpAsPEUA;Yga`0K!auC.D=49:C0.uC4/Fi7o%(D,^L't^Ai`=U/$Q82f#E5D`/Kf$2ZW=>)l@bd)rE@)#lS\/)bU+Pf(@[QN=t=pS)='VH-Zk3Vh4SX6:4GT,[:t-\gCp]8*ea2Fe-^,<43+q>43,3C:'^aKQX#2YX^j\L49^"E9!]NFPURWN,iX>l'E+#0Bp\$T&R0aks=:R(/NDFN_+]=)bS,aU^1/0;=TBO*4.KW_?]l[Sn5:X8[d3DdcjbslQm>6:1btSH[[jJ/2L1D-GrYs38@L7^e]'@[ao`jBBAKk#&)AJ-Nn`]Q>-=pc'?@L"h7AGSOi[ABu^*K@j$o]SbssP,k%BDknX"ThTI2)$p[E%PQ:82_rHCOOU25j.?M8Q/m=&P4OS>a`5?\DY=0)"`(Y'I+7'/o5i[:cAQV?hlN`(\N"*?5+?MOqELJ+3eS1UGb-m/P2d7P0VTR=VX+XiHPj#1kK%$.1"I$s7KiRdN/QITpBUO^16kTC.!Zrqt'HuX(/W'Q#-1qT<LC>&"^d*-o[faZ"V-/uY)%[!o?NgZ$;C)5W]?+H<FdoC*9WK`j\rJ`ehX[_'\p7hpdlc^UC)lP-7.NVkT2Pg9Ln:BBd!Iss?RNuLdm^&hhf1Yj;tO]qEsFI$q,R8OO#$]\8Tf@9pKZ=ffj[@m?cJ;Onr1,k:s9aLO`i_eABCf/&(g"[S&\1F*dbp`$ht1"mm+pS"f0SJ'qm7Pm0L)CTfR+`gn#U&0TJthIF3eiRmi*f`KI>R3@nA1k1J*LXV:'N76mG6I$RtW@Q.tBp(`"+AE`)bn??)I9gkaS@dnA2nqrcC%:LEj6]0a$?NcJep)-;6pKlS?/XpJPefp@e%,BDjNuN]F9T9N8/F'&hChVu+M-*eS5T_huhm/stP37Mi=Cml&d)EE`959OLW[M2p0=a\IS[fKg(=LJ_l<ZIpq<9#RZn.R')0B%&_u?6LY-\\fB377ChG9JZ[F`c"EF6fBLWOB+bPO:u"uC74M]83T,3-E4o_,;NC38aE'*K/.<;HH"3F=DdAr9#WY;;WL5piokik7>BfcR^"fIg*gUl$p\)/_ld4'siI%/!AL3rARC%/rrd7EmMIhbN''XgZPpGbX'q%om6HqAU0lj4Cl+LUEX^qhamJgmULanFdd]@Ys^G@4:\3&roF5edi$K>+%JDe"pW)4GO*\CU3GXh:Up9I.N`-oGKX"SL0Bg$s<[eGCWQ%0t&<+fFXM?1P7#W@"=u(r@0*K.<`F[^8&ZScdqh!ZlQ'$p2!fKQZ1\mN8hWgRAG0CO+[U9#8$e.#3*JV\o?]5*&#V<Bn*J0[J2Bpjh\"i\5nHl>R.CrgsN.(ih*?PDE-M$.in!;?i%ho6M&5H[lV+7G+Z0o()FJR]7R?/R7F^R71(_1=;lXrE0[9I<.>Ta=s4sQoi`\YHuoKYRXjK_,WDc0+\Z@r9&\Ua842_Lal=8Aa+9-#rt*9cJ8VspVO]B/pL*SCX&os?GKmnN(Kh:E^u:1l`:gpM^X4YJO'q4:Aek2O*q4^EA$N7_/`jSG7=R=bYe_mR=[,e6P<EHH2I_I?i;cd-qki@YK3o$$=/5gtW#P",kK2&r+MR5(=D.XBn[""<gSsUrg'1Ue2pY!AmOerMETX7%(9#B"Rm]N5\VEI4*q)`h`httAj+.E+,&L=CGKN%.Paf0:&>2#";'j,0G5IXNB;r)gGFaM)'o"jCPWl\R5P'iQMu~>endstream
-endobj
-11 0 obj
-<<
-/Filter [ /ASCII85Decode /FlateDecode ] /Length 2446
->>
-stream
-Gau0DhcnjX&UiiGR(#CtlWUUlX*p.j!7TRs,gnmG,"l]u)bI*BP0EUto#LLk8i#=d+OZ@!!A%9`1M:=F3?+0.phT/u@6ugDl*h%a9T/g+RC6Ofs+t"\jS'<tCl`mp#oVcS4m?,E5/a'*h-HThp4+2[;Atolcfu#mlC3Mg2GHeW@,$DnG^:!dG>b%f1@u`"A(Vc1oZ).4[)oP!rJ?4Qn>SY;PME*\bW=7k.HUafWQkBp:-Uh`V6_;jRFB#UhHU_B-+\02qh9AdrdW&iX#f582KmENm.'l42V,4Rs$G:leYDufd:d>=3ZD`]:eV71&ACkT?tPe7Bo[p<!V`OrpAXF\+cfXGQDkKTD5;&Yb9$K,[g=mBFC23"EP3FHd!d%(D,,i!0gb/dXMKDqX872`RUqGHi5S5n=1sJ$0TW>m=\![_GB;_hhY_!MTN(s%FmnJ\EomGag!.s;0CR`gVgr-eqLa;'_aD5C0<cdXoffHOe[nOJ-;lUA9"h6e];%EX/knt[(DNYW,lpdLr*p<jjrR*[$!H?c=!D-0.(Dg#R%b_\Y!aD-S9RY$ZjY:nYIK(8/Co_t`?UR'STcIrBeEj9iRN$;CX1p1Y6`=a&.+O0;GAuM(gtfZ:rG\lj1MO*6+!O1B9,'TKqoQXREW-&1L>1elaQtIn[ieIN;hS9bp/Mi*%=l*AQ!%_BDRCFja\\o:HOkM<DH(509Aa<"'siTQG>3h6:O)fYYl$)J[^LgUHF?8hCV,S@PQap\Yh#S&F6`D"P<D>*fc$ES^#aa12F`rZ:PoM]Gi'/'X_#=l#'U,[gI.*pl60f-FnDj(VrQF8Vd;Y%>rr_ZAo.X;M\&k1eM>VRSMnYe!2<rZohh*\)V('1DZsu;JX1;")(U$Y0h3_7;iT)^%_-MTf!NUN1NT"FMT5W!-Od:oM>%&N5C]Y"Hp@'#h!+U4+VdYk)6X'DD6>W>q8'7iE90*I>H%U.\I:?\r?Aop$c^_4I-^5=Wp!-i%&+#0i>b:LcXV'3(Pua[tAEa4D5=?htf$ARY`;JR;0)obtf2mV8NVp:#0r[L,C3($SY.L]GR_aRH$;V\7q<]n'KTjLHIG2<?!Olq1WO[$:'EfmC%kj.Yn,#A>.YO>Rc$VK#Rr)SC'r<M`,G()k_L!5FRC+QFtS;*8"IMFr6QlCdQ(@R$ges_G[Mb90.i8!,K_[beiX"BUMH2_j#p\(6o`YNQ1?&.#+IQ4_%b$PZ4s:<2Y>YT(-Guq'#gPk#'2QlW?9`:6HaJ]EQf;Z"4=S:qmh]i&OYZ2B]#N*iVYFqJJmge;5AU\"*=#kT1$.?&):f3;r\&q+AR@U(B*#[,"93'E>BN:TnKmW`)n@DP^1*8.VUn-G,1$&$#GEB$b!_Z`W0$Lb9AVecf5`hI,krO>[Z?W^2(n_eJ]f"7'E>;6.&i>$"oR8X].R!YRo?2\jbE[_&S*[I\IDgYb/@Nc09:FeI)Q9qdm8-oe8CGNO85/C0SiFe-.t<Jr9`$K"E?.YpA(6s[:!'2B?0%e0I\PJ78nWe;/iSW'HR8%3ARnk5AX7Ioq58qEjs2e/qb\Z`LV%S,qk6uSJ87L'DADQi?*Vb'.Hck1<=p/Lo?nnpTdGJTE"K+dduha"i46Lq-lUp;51+dAY]<'TInH>-UEs%nrtYQDFjn7W+=O-r:P*]"d(c6Ean2KUlh!F(Y#::apq$Y6d7d-U%8meLPfEsCoc<(&6+pSj/QSc[s"!o2YnB-dJgXb!d`N26k!qM[(BN15pV-as^[QO.?8q[(7Iq9/t^c+nZ2M1%I!Hi.l8HHp[bL)MI+>r@M,k_@D+r#c!TWrc)('^A<2U*^>:R8#8o'b;CL_Q]]t62$I36?Xh1KGhsUh^G&j`k-e5dZB(me[]utUJg?RRg<-RR\VFX!.AE<>:XQ`gR>TK!.4JBbQ!p&h"1E2j5]FVioL+&fj+OYmAXcU`;7Tu3)K_\!RFa<GrT)'SVK!X>7&DON@@IWo2"f<=KAfP]KKsLq@r:J*1lZ.`:`6NFQkb@ErLeR&)kPgU`ACc<QeDZ?Nr+?1&J^dR\p0[$0YFk"P]:l4,ujsK.IaT\80$jqW/6#Y6*Yt#$p7!QYk-rkA2@\X0/dqfFbKu@3,3B@XSjSABc9\2(*;igRn+fV,#=k4+D]6Y<&pd94rE*G<`\IGNjH+iYd`)Jmhj=MHsdU1'r"1"LZ;>[ljUefc5,V<!>NI[,u0a/q#EO8i>-^Bg,gapP$Y-Y5V5VfN8%pT0_q`1t5IQ`AW'3jghti,*QfI_@7$"heMSj1n@q#NX*]T@+*OI<qQ25B,:fe>:=Bi]X-HM;>8"$Q-X6_4,5j=';e]l?JW4XY&E4sM;*N\qDQJkXef9hqOD,JXR@?KJAJGu\@kU"m<cVg4eJudRWFe2W[f1!g2!`JgN'`'M;0cI1\X56mKm1Tg4,`9WNJrWVX3?D0)kO^ki@4&A.'@~>endstream
+<< /Title (Vannam Sai Manoj - Resume) /Author (Vannam Sai Manoj) /Subject (Business Operations | Strategy and Operations | Process Excellence) >>
 endobj
 xref
-0 12
+0 11
 0000000000 65535 f 
-0000000061 00000 n 
-0000000112 00000 n 
-0000000219 00000 n 
-0000000331 00000 n 
-0000000446 00000 n 
-0000000650 00000 n 
-0000000854 00000 n 
-0000000922 00000 n 
-0000001266 00000 n 
-0000001331 00000 n 
-0000003817 00000 n 
+0000000037 00000 n 
+0000000086 00000 n 
+0000000149 00000 n 
+0000000301 00000 n 
+0000006226 00000 n 
+0000006378 00000 n 
+0000006475 00000 n 
+0000006577 00000 n 
+0000006682 00000 n 
+0000012807 00000 n 
 trailer
-<<
-/ID 
-[<1e06e385d79a8eab1fa9abbea5d27222><1e06e385d79a8eab1fa9abbea5d27222>]
-% ReportLab generated PDF document -- digest (opensource)
-
-/Info 8 0 R
-/Root 7 0 R
-/Size 12
->>
+<< /Size 11 /Root 1 0 R /Info 10 0 R >>
 startxref
-6355
+12969
 %%EOF
