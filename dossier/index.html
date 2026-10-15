@@ -320,6 +320,74 @@
       .brand-role { min-height:30px !important; font-size:10px !important; }
     }
 
+  
+    /* Final dossier portrait and Mercedes-Benz lockup fit */
+    .profile-identity {
+      grid-template-columns:98px minmax(0,1fr) !important;
+      align-items:center !important;
+      gap:16px !important;
+    }
+    .profile-photo {
+      display:block !important;
+      width:98px !important;
+      height:172px !important;
+      aspect-ratio:9 / 16 !important;
+      object-fit:cover !important;
+      object-position:50% 14% !important;
+      border:3px solid #fff !important;
+      outline:1px solid #CDD3D9 !important;
+      box-shadow:0 12px 28px -18px rgba(20,26,32,.35) !important;
+    }
+    .brand-logo-area.mercedes-logo-area {
+      display:flex !important;
+      width:100% !important;
+      height:88px !important;
+      min-height:88px !important;
+      align-items:center !important;
+      justify-content:center !important;
+      padding:0 !important;
+      overflow:hidden !important;
+      background:transparent !important;
+    }
+    .brand-logo-area img.mercedes-lockup {
+      display:block !important;
+      width:min(154px,100%) !important;
+      height:auto !important;
+      max-width:100% !important;
+      max-height:52px !important;
+      aspect-ratio:900 / 293 !important;
+      object-fit:contain !important;
+      object-position:center !important;
+      border:0 !important;
+      border-radius:0 !important;
+      box-shadow:none !important;
+      background:transparent !important;
+    }
+    @media (max-width:600px) {
+      .profile-identity {
+        grid-template-columns:82px minmax(0,1fr) !important;
+        align-items:start !important;
+        gap:13px !important;
+      }
+      .profile-photo {
+        width:82px !important;
+        height:146px !important;
+        aspect-ratio:9 / 16 !important;
+      }
+      .brand-logo-area.mercedes-logo-area {
+        height:80px !important;
+        min-height:80px !important;
+      }
+      .brand-logo-area img.mercedes-lockup {
+        width:min(146px,100%) !important;
+        max-height:48px !important;
+      }
+    }
+    @media (max-width:360px) {
+      .profile-identity { grid-template-columns:1fr !important; }
+      .profile-photo { width:92px !important; height:164px !important; }
+    }
+
   </style>
 </head>
 <body>
@@ -342,8 +410,8 @@
         <span class="brand-role">Growth Manager &amp; Operations Associate</span>
       </a>
       <a class="brand-item" href="https://www.mercedes-benz.co.in/" target="_blank" rel="noopener noreferrer" aria-label="Visit Mercedes-Benz India">
-        <span class="brand-logo-area"><img class="mercedes-logo" src="/assets/img/mercedes-benz-emblem.png" width="80" height="80" alt="Mercedes-Benz three-point star" loading="lazy"></span>
-        <span class="brand-role">Management Trainee · Silver Star</span>
+        <span class="brand-logo-area mercedes-logo-area"><img class="mercedes-lockup" src="/assets/img/mercedes-benz-lockup-silver.svg?v=20261015-lockup" width="900" height="293" alt="Mercedes-Benz" loading="lazy"></span>
+        <span class="brand-role">Mercedes-Benz · Management Trainee</span>
       </a>
       <a class="brand-item" href="https://christuniversity.in/" target="_blank" rel="noopener noreferrer" aria-label="Visit CHRIST Deemed to be University">
         <span class="brand-logo-area christ-logo-area"><img class="christ-logo" src="/assets/img/christ-university-logo.webp?v=20261015-logo-fixed" width="305" height="100" alt="CHRIST (Deemed to be University) logo" loading="lazy"></span>
