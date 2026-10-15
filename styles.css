@@ -982,3 +982,32 @@ ul, ol { padding: 0; list-style: none; }
   .brand-christ-img { width:min(158px,100%) !important; max-height:62px !important; }
   .brand-nexa-img { width:112px !important; height:101px !important; }
 }
+
+/* Final mobile-safe title: one continuous professional name line. */
+.hero-name {
+  display:block !important;
+  white-space:nowrap !important;
+  width:max-content;
+  max-width:100%;
+  font-size:clamp(32px,5.2vw,76px) !important;
+  letter-spacing:-.045em !important;
+  line-height:1.08 !important;
+  color:#641329 !important;
+  -webkit-text-fill-color:#641329 !important;
+  background:none !important;
+}
+@media (max-width:960px) {
+  .hero-name { font-size:clamp(30px,8.5vw,39px) !important; }
+}
+@media (max-width:370px) {
+  .hero-name { font-size:clamp(27px,7.9vw,30px) !important; letter-spacing:-.055em !important; }
+}
+.brand-card-top { min-width:0; }
+.brand-nexa-img { display:block !important; width:128px !important; height:auto !important; max-width:100% !important; object-fit:contain !important; background:#1D3142 !important; }
+.brand-christ-img { display:block !important; width:min(180px,100%) !important; height:auto !important; max-height:72px !important; object-fit:contain !important; object-position:left center !important; background:#fff !important; }
+.brand-mcf-img { display:block !important; width:min(180px,100%) !important; height:auto !important; max-height:76px !important; object-fit:contain !important; object-position:left center !important; background:#fff !important; }
+@media (max-width:760px) {
+  .brand-nexa-img { width:112px !important; }
+  .brand-christ-img { width:min(158px,100%) !important; max-height:62px !important; }
+  .brand-mcf-img { width:min(168px,100%) !important; max-height:66px !important; }
+}
