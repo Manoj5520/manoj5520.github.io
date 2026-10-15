@@ -155,6 +155,24 @@
       .brand-item { transition:none; }
     }
 
+
+    /* Final logo sizing: show the supplied NexaHomes asset and full institutional wordmark. */
+    .brand-logo-area.brand-nexa-area { height:auto; min-height:103px; padding:4px; }
+    .brand-nexa-area img { display:block; width:min(100%,132px); height:auto; max-height:none; object-fit:contain; }
+    .brand-logo-area.christ-logo-area { height:auto; min-height:70px; padding:4px 2px; }
+    .christ-logo { display:block; width:100%; max-width:154px; height:auto; max-height:60px; object-fit:contain; }
+    .brand-logo-area img.mychoices-logo { width:min(100%,150px); height:auto; max-height:64px; object-fit:contain; }
+    .brand-item { min-height:150px; }
+    .brand-role { font-size:10.5px; }
+    @media (max-width:600px) {
+      .brand-logo-area.brand-nexa-area { min-height:95px; }
+      .brand-nexa-area img { width:min(100%,120px); }
+      .brand-logo-area.christ-logo-area { min-height:63px; }
+      .christ-logo { max-width:142px; max-height:54px; }
+      .brand-logo-area img.mychoices-logo { max-width:145px; max-height:58px; }
+      .brand-item { min-height:135px; }
+    }
+
   </style>
 </head>
 <body>
@@ -169,11 +187,11 @@
           <p class="intro">Connecting market insight, process discipline and cross-functional execution to turn complex priorities into clear action.</p>
         </div>
       </div>
-      <p class="profile-signature">Business context. Market insight. Operational follow-through.</p>
+      <p class="profile-signature">Business Operations. Process Excellence. Enterprise Execution.</p>
     </header>
     <nav class="brand-strip" aria-label="Selected professional and academic affiliations">
       <a class="brand-item" href="https://nexa-homes.com/" target="_blank" rel="noopener noreferrer" aria-label="Visit Nexa Homes">
-        <span class="brand-logo-area brand-nexa-area"><img src="/assets/img/nexahomes-logo.webp" width="420" height="376" alt="Nexa Homes logo" loading="lazy"></span>
+        <span class="brand-logo-area brand-nexa-area"><img src="/assets/img/nexahomes-logo.webp?v=20261015-real-logo" width="420" height="376" alt="Nexa Homes logo" loading="lazy"></span>
         <span class="brand-role">Growth Manager &amp; Operations Associate</span>
       </a>
       <a class="brand-item" href="https://www.mercedes-benz.co.in/" target="_blank" rel="noopener noreferrer" aria-label="Visit Mercedes-Benz India">
@@ -181,7 +199,7 @@
         <span class="brand-role">Management Trainee · Silver Star</span>
       </a>
       <a class="brand-item" href="https://christuniversity.in/" target="_blank" rel="noopener noreferrer" aria-label="Visit CHRIST Deemed to be University">
-        <span class="brand-logo-area"><span class="christ-wordmark">CHRIST<span>DEEMED TO BE UNIVERSITY</span></span></span>
+        <span class="brand-logo-area christ-logo-area"><img class="christ-logo" src="/assets/img/christ-university-logo.webp?v=20261015-logo" width="305" height="100" alt="CHRIST (Deemed to be University) logo" loading="lazy"></span>
         <span class="brand-role">MBA · Human Resource Management</span>
       </a>
       <a class="brand-item" href="https://mychoicesfoundation.org/" target="_blank" rel="noopener noreferrer" aria-label="Visit My Choices Foundation">
@@ -263,9 +281,9 @@
       <section class="whatsapp-panel" aria-label="WhatsApp QR contact">
         <div class="whatsapp-panel-copy">
           <p class="section-label">Direct connection</p>
-          <h2>Clarity in decisions. Discipline in execution.</h2>
-          <p>Scan to start a WhatsApp conversation or open the direct chat.</p>
-          <a class="whatsapp-button" href="https://wa.me/918897732299" target="_blank" rel="noopener noreferrer">Message on WhatsApp <span aria-hidden="true">↗</span></a>
+          <h2>Open to roles where clear execution matters.</h2>
+          <p>Business Operations, Process Excellence, PMO coordination and Business Transformation.</p>
+          <a class="whatsapp-button" href="https://wa.me/918897732299" target="_blank" rel="noopener noreferrer">Connect on WhatsApp <span aria-hidden="true">↗</span></a>
         </div>
         <a class="whatsapp-qr" href="https://wa.me/918897732299" target="_blank" rel="noopener noreferrer" aria-label="Open WhatsApp chat from QR code">
           <img src="/assets/img/whatsapp-contact-qr.png?v=20261015" width="231" height="231" alt="QR code that opens a WhatsApp chat with V. Sai Manoj" loading="lazy">
