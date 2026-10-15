@@ -785,8 +785,7 @@ ul, ol { padding: 0; list-style: none; }
 .brand-stat { display:flex; align-items:baseline; gap:9px; margin-bottom:11px; }
 .brand-stat strong { font-family:var(--serif); font-weight:400; font-size:36px; line-height:1; color:var(--ink); }
 .brand-stat span { color:var(--muted); font-size:10px; font-weight:700; letter-spacing:.10em; text-transform:uppercase; }
-.brand-mcf { position:relative; border:0; background:transparent; width:42px; height:42px; }
-.brand-mcf span { position:relative; display:block; width:31px; height:31px; background:#D83B3A; border-radius:50%; box-shadow:0 0 0 5px rgba(216,59,58,.09); }
+.brand-mcf-img { display:block; width:min(150px,100%); height:66px; object-fit:contain; object-position:left center; background:#fff; }
 .about-ambition { margin-top:20px; padding:20px 22px; background:linear-gradient(125deg,#fff,rgba(225,230,235,.74)); border:1px solid var(--rule); box-shadow:0 15px 36px -32px rgba(20,22,26,.35); font-size:15px; color:var(--charcoal); line-height:1.75; }
 .about-ambition span { display:block; margin-bottom:7px; color:var(--muted); font-size:10.5px; font-weight:700; letter-spacing:.16em; text-transform:uppercase; }
 @media (hover:hover) and (pointer:fine) {
@@ -935,7 +934,7 @@ ul, ol { padding: 0; list-style: none; }
 
           <article class="brand-card reveal" data-tilt>
             <div class="brand-card-top">
-              <span class="brand-symbol brand-mcf" aria-hidden="true"><span></span></span>
+              <img class="brand-mcf-img" src="/assets/img/my-choices-wordmark.webp" alt="My Choices Foundation logo" width="150" height="66" loading="lazy">
               <span class="brand-date">Jan 2022</span>
             </div>
             <p class="brand-overline">Social Concern Project · Impact Internship</p>
