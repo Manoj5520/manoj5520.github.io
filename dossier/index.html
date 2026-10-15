@@ -12,7 +12,7 @@
     :root {
       color-scheme: light;
       --navy: #17191D;
-      --blue: #74283F;
+      --blue: #17191D;
       --silver: #E8EAED;
       --line: #D9DDE2;
       --muted: #656C75;
@@ -30,7 +30,7 @@
       line-height: 1.5;
     }
     a { color: inherit; text-decoration: none; }
-    a:focus-visible { outline: 3px solid #74283F; outline-offset: 3px; }
+    a:focus-visible { outline: 3px solid #17191D; outline-offset: 3px; }
     .page { width: min(720px, calc(100% - 32px)); margin: 0 auto; padding: 36px 0 24px; }
     .eyebrow { margin: 0 0 16px; color: var(--blue); font-size: 11px; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; }
     header { padding: 0 0 24px; border-bottom: 1px solid var(--line); }
@@ -40,7 +40,7 @@
     section { margin-top: 26px; }
     .section-label { margin: 0 0 10px; color: var(--muted); font-size: 10px; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; }
     .card { display: flex; align-items: center; gap: 13px; min-width: 0; padding: 15px; background: var(--white); border: 1px solid var(--line); }
-    .portfolio-card { border-left: 4px solid var(--blue); }
+    .portfolio-card { border-left: 3px solid #74283F; }
     .icon { display: flex; align-items: center; justify-content: center; flex: 0 0 40px; width: 40px; height: 40px; color: var(--blue); background: #E8EAED; border: 1px solid var(--line); border-radius: 3px; font-size: 20px; font-weight: 700; }
     .card-copy { flex: 1 1 auto; min-width: 0; }
     .card-title { margin: 0; color: var(--navy); font-size: 14px; font-weight: 700; overflow-wrap: anywhere; }
@@ -49,13 +49,13 @@
     .resume-panel { padding: 16px; background: var(--white); border: 1px solid var(--line); }
     .resume-actions { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; margin-top: 14px; }
     .button { display: flex; align-items: center; justify-content: center; min-width: 0; min-height: 46px; padding: 11px 10px; border: 1px solid var(--blue); text-align: center; font-size: 12px; font-weight: 700; line-height: 1.35; overflow-wrap: anywhere; }
-    .button-primary { color: var(--white); background: var(--blue); }
+    .button-primary { color: var(--white); background: #74283F; border-color: #74283F; }
     .button-secondary { color: var(--blue); background: var(--white); }
     .contact-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
     .contact-grid .card { min-height: 78px; }
     .tagline { margin-top: 26px; padding: 22px 14px; background: var(--white); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); text-align: center; }
     .tagline p { margin: 0; font-family: Georgia, 'Times New Roman', serif; font-size: clamp(18px, 4vw, 23px); line-height: 1.45; color: var(--navy); }
-    .tagline strong { color: var(--blue); font-weight: 400; }
+    .tagline strong { color: #74283F; font-weight: 400; }
     footer { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px 16px; margin-top: 16px; color: var(--muted); font-size: 11px; }
     @media (max-width: 520px) {
       .page { width: calc(100% - 28px); padding-top: 27px; }
