@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="293" viewBox="0 0 900 293" role="img" aria-labelledby="title desc">
+  <title id="title">Mercedes-Benz</title>
+  <desc id="desc">Silver Mercedes-Benz three-point star with the Mercedes-Benz name on an elegant light-silver background.</desc>
+  <defs>
+    <linearGradient id="silver-bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#FAFBFC"/>
+      <stop offset=".48" stop-color="#E6E9EC"/>
+      <stop offset="1" stop-color="#D9DEE3"/>
+    </linearGradient>
+    <linearGradient id="chrome" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#FFFFFF"/>
+      <stop offset=".19" stop-color="#8C949B"/>
+      <stop offset=".36" stop-color="#F8FAFB"/>
+      <stop offset=".56" stop-color="#737C84"/>
+      <stop offset=".73" stop-color="#FFFFFF"/>
+      <stop offset="1" stop-color="#5B646C"/>
+    </linearGradient>
+    <linearGradient id="arm" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#FFFFFF"/>
+      <stop offset=".42" stop-color="#BCC3C9"/>
+      <stop offset=".67" stop-color="#F5F7F8"/>
+      <stop offset="1" stop-color="#616970"/>
+    </linearGradient>
+    <filter id="soft" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="2.5"/>
+    </filter>
+  </defs>
+  <rect x="1.5" y="1.5" width="897" height="290" rx="18" fill="url(#silver-bg)" stroke="#BCC4CB" stroke-width="2"/>
+  <circle cx="145" cy="146.5" r="105" fill="#9AA2A9" opacity=".2" filter="url(#soft)"/>
+  <circle cx="145" cy="146.5" r="101" fill="url(#silver-bg)" stroke="url(#chrome)" stroke-width="7"/>
+  <circle cx="145" cy="146.5" r="93.5" fill="none" stroke="#707981" stroke-width="2.3"/>
+  <circle cx="145" cy="146.5" r="96.5" fill="none" stroke="#FFFFFF" stroke-width="1.8" opacity=".86"/>
+  <g stroke="#737C84" stroke-width="1.6" stroke-linejoin="round">
+    <path d="M145 46 L156 123 L145 147 L134 123 Z" fill="url(#arm)"/>
+    <path d="M145 147 L127 137 L61 177 L121 159 Z" fill="url(#arm)"/>
+    <path d="M145 147 L163 137 L229 177 L169 159 Z" fill="url(#arm)"/>
+  </g>
+  <g fill="none" stroke="#FFFFFF" stroke-width="2" opacity=".9">
+    <path d="M145 51 L151 123"/>
+    <path d="M137 142 L70 176"/>
+    <path d="M153 142 L220 176"/>
+  </g>
+  <circle cx="145" cy="146.5" r="5" fill="#F9FAFB" stroke="#7D858C" stroke-width="1.5"/>
+  <path d="M287 53 V240" stroke="#A8B0B7" stroke-width="1.5"/>
+  <path d="M291 53 V240" stroke="#FFFFFF" stroke-width="1" opacity=".8"/>
+  <text x="319" y="170" font-family="Arial, Helvetica, sans-serif" font-size="43" font-weight="700" letter-spacing=".25" fill="#353C43">Mercedes-Benz</text>
+</svg>
