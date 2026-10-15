@@ -220,7 +220,107 @@
       font-family:Georgia,'Times New Roman',serif;
       font-size:13px;
     }
-    </style>
+    
+    /* 2026-10-15: consistent organisation-logo stage and role alignment */
+    .brand-strip {
+      align-items:stretch !important;
+      grid-auto-rows:1fr;
+    }
+    .brand-item {
+      display:grid !important;
+      grid-template-rows:88px minmax(30px,auto) !important;
+      align-content:start !important;
+      justify-items:center !important;
+      align-items:start !important;
+      gap:8px !important;
+      min-height:142px !important;
+      height:100% !important;
+      padding:12px 8px 14px !important;
+    }
+    .brand-logo-area,
+    .brand-logo-area.brand-nexa-area,
+    .brand-logo-area.christ-logo-area,
+    .brand-logo-area.mychoices-area {
+      display:flex !important;
+      align-items:center !important;
+      justify-content:center !important;
+      width:100% !important;
+      height:88px !important;
+      min-height:88px !important;
+      flex:0 0 88px !important;
+      padding:0 !important;
+      background:transparent !important;
+      overflow:hidden !important;
+    }
+    .brand-logo-area img,
+    .brand-logo-area img.mercedes-logo,
+    .brand-logo-area img.christ-logo,
+    .brand-logo-area img.mychoices-logo,
+    .brand-logo-area.brand-nexa-area img {
+      display:block !important;
+      width:min(154px,100%) !important;
+      height:78px !important;
+      max-width:100% !important;
+      max-height:78px !important;
+      object-fit:contain !important;
+      object-position:center center !important;
+      margin:0 auto !important;
+      border-radius:0 !important;
+      box-shadow:none !important;
+    }
+    .brand-logo-area img.mercedes-logo {
+      width:78px !important;
+      height:78px !important;
+    }
+    .brand-logo-area.brand-nexa-area img {
+      width:min(154px,100%) !important;
+      height:78px !important;
+      object-position:center center !important;
+    }
+    .brand-role {
+      display:flex !important;
+      align-items:flex-start !important;
+      justify-content:center !important;
+      width:100% !important;
+      min-height:30px !important;
+      margin:0 !important;
+      text-align:center !important;
+      font-size:10.5px !important;
+      line-height:1.4 !important;
+      overflow-wrap:break-word !important;
+      hyphens:auto;
+    }
+    .profile-copy h1 {
+      color:#641329 !important;
+      -webkit-text-fill-color:#641329 !important;
+      letter-spacing:-.035em !important;
+    }
+    .profile-signature {
+      color:#641329 !important;
+      font-family:Georgia,'Times New Roman',serif !important;
+      font-size:clamp(18px,3.5vw,22px) !important;
+      line-height:1.4 !important;
+    }
+    @media (max-width:600px) {
+      .brand-strip { grid-template-columns:repeat(2,minmax(0,1fr)) !important; gap:8px !important; }
+      .brand-item { grid-template-rows:80px minmax(30px,auto) !important; min-height:128px !important; padding:10px 7px 12px !important; }
+      .brand-logo-area,
+      .brand-logo-area.brand-nexa-area,
+      .brand-logo-area.christ-logo-area,
+      .brand-logo-area.mychoices-area {
+        height:80px !important; min-height:80px !important; flex-basis:80px !important;
+      }
+      .brand-logo-area img,
+      .brand-logo-area img.christ-logo,
+      .brand-logo-area img.mychoices-logo,
+      .brand-logo-area.brand-nexa-area img {
+        width:min(146px,100%) !important; height:70px !important; max-height:70px !important;
+      }
+      .brand-logo-area img.mercedes-logo { width:70px !important; height:70px !important; }
+      .brand-role { min-height:30px !important; font-size:10px !important; }
+    }
+
+  </style>
 </head>
 <body>
   <div class="page">
@@ -234,7 +334,7 @@
           <p class="intro">Connecting market insight, process discipline and cross-functional execution to turn complex priorities into clear action.</p>
         </div>
       </div>
-      <p class="profile-signature">Business Operations. Process Excellence. Enterprise Execution.</p>
+      <p class="profile-signature">Market insight. Process improvement. Dependable execution.</p>
     </header>
     <nav class="brand-strip" aria-label="Selected professional and academic affiliations">
       <a class="brand-item" href="https://nexa-homes.com/" target="_blank" rel="noopener noreferrer" aria-label="Visit Nexa Homes">
