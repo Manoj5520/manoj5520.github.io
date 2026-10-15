@@ -1061,3 +1061,106 @@ ul, ol { padding: 0; list-style: none; }
   }
   .brand-date { max-width:100% !important; }
 }
+
+
+/* Final photo and Mercedes-Benz corrections — stable proportion, no tilt/crop distortion. */
+.hero-portrait {
+  width:100% !important;
+  max-width:380px !important;
+  margin:0 auto !important;
+  padding-left:0 !important;
+  transform:none !important;
+  perspective:none !important;
+}
+.hero-portrait .portrait-frame {
+  width:100% !important;
+  aspect-ratio:5 / 8 !important;
+  max-height:none !important;
+  overflow:hidden !important;
+  background:#ECEFF2 !important;
+  border:1px solid #CDD3D9 !important;
+  box-shadow:0 18px 45px -32px rgba(20,26,32,.34) !important;
+}
+.hero-portrait .portrait-frame img {
+  display:block !important;
+  width:100% !important;
+  height:100% !important;
+  object-fit:cover !important;
+  object-position:50% 14% !important;
+  transform:none !important;
+  will-change:auto !important;
+}
+.hero-portrait .portrait-rule { top:-9px !important; right:-9px !important; }
+.hero-portrait-inline {
+  width:110px !important;
+  max-width:110px !important;
+  margin:18px 0 14px !important;
+  padding:0 !important;
+  aspect-ratio:9 / 16 !important;
+  transform:none !important;
+}
+.hero-portrait-inline img {
+  display:block !important;
+  width:100% !important;
+  height:auto !important;
+  aspect-ratio:9 / 16 !important;
+  object-fit:cover !important;
+  object-position:50% 14% !important;
+  transform:none !important;
+  border:3px solid #fff !important;
+  outline:1px solid #D5D9DE !important;
+  box-shadow:0 12px 28px -18px rgba(20,26,32,.35) !important;
+}
+.brand-card-top-mercedes {
+  display:flex !important;
+  flex-direction:column !important;
+  align-items:center !important;
+  justify-content:center !important;
+  gap:7px !important;
+  min-height:106px !important;
+  margin-bottom:16px !important;
+}
+.brand-card-top-mercedes > img.brand-mercedes-img {
+  display:block !important;
+  width:min(175px,100%) !important;
+  height:auto !important;
+  aspect-ratio:900 / 293 !important;
+  max-width:100% !important;
+  max-height:58px !important;
+  object-fit:contain !important;
+  object-position:center !important;
+  flex:0 1 auto !important;
+  margin:0 auto !important;
+  border-radius:0 !important;
+  border:0 !important;
+  background:transparent !important;
+  box-shadow:none !important;
+}
+.brand-card-top-mercedes .brand-date {
+  align-self:center !important;
+  max-width:none !important;
+  margin:0 !important;
+  text-align:center !important;
+  font-size:9px !important;
+  line-height:1.25 !important;
+}
+@media (max-width:960px) {
+  .hero-portrait { display:none !important; }
+  .hero-portrait-inline {
+    display:block !important;
+    width:108px !important;
+    max-width:108px !important;
+  }
+  .hero-portrait-inline img {
+    width:100% !important;
+    aspect-ratio:9 / 16 !important;
+    height:auto !important;
+  }
+}
+@media (max-width:640px) {
+  .brand-card-top-mercedes { min-height:96px !important; margin-bottom:14px !important; }
+  .brand-card-top-mercedes > img.brand-mercedes-img {
+    width:min(160px,100%) !important;
+    max-height:52px !important;
+  }
+}
