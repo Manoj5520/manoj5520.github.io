@@ -26,8 +26,8 @@
   --muted: #626B76;
   --rule: #CDD3DA;
   --rule-strong: #B5BEC8;
-  --burgundy: #6D263B;
-  --burgundy-soft: #85616B;
+  --burgundy: #751B36;
+  --burgundy-soft: #A84B66;
 
   --serif: "Newsreader", "Iowan Old Style", "Palatino Linotype", Georgia, serif;
   --sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
@@ -625,7 +625,7 @@ ul, ol { padding: 0; list-style: none; }
 }
 @supports (background-clip: text) or (-webkit-background-clip: text) {
   .hero-name {
-    background: linear-gradient(105deg, #14161A 0%, #4C5661 27%, #AEB8C2 43%, #2C323A 57%, #14161A 78%);
+    background: linear-gradient(105deg, #4B0D20 0%, #751B36 24%, #A84B66 40%, #D5A4B2 48%, #7A1C38 58%, #4B0D20 78%);
     background-size: 220% 100%;
     background-position: 100% 50%;
     -webkit-background-clip: text;
