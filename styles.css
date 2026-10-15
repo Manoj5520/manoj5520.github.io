@@ -1011,3 +1011,53 @@ ul, ol { padding: 0; list-style: none; }
   .brand-christ-img { width:min(158px,100%) !important; max-height:62px !important; }
   .brand-mcf-img { width:min(168px,100%) !important; max-height:66px !important; }
 }
+
+
+/* 2026-10-15: harmonised logo frames across the experience cards */
+.brand-card-top {
+  min-height:106px !important;
+  margin-bottom:16px !important;
+  gap:10px !important;
+}
+.brand-card-top > img {
+  display:block !important;
+  width:min(155px,100%) !important;
+  height:82px !important;
+  max-width:100% !important;
+  max-height:82px !important;
+  object-fit:contain !important;
+  object-position:center center !important;
+  flex:0 1 auto !important;
+  margin:0 !important;
+  border-radius:0 !important;
+}
+.brand-card-top > img.brand-mercedes-img {
+  width:82px !important;
+  height:82px !important;
+  flex:0 0 82px !important;
+  border-radius:0 !important;
+}
+.brand-date {
+  flex:0 0 auto !important;
+  max-width:92px !important;
+  font-size:9px !important;
+  line-height:1.35 !important;
+}
+@media (max-width:640px) {
+  .brand-card-top {
+    min-height:104px !important;
+    margin-bottom:14px !important;
+    gap:8px !important;
+  }
+  .brand-card-top > img {
+    width:min(150px,100%) !important;
+    height:78px !important;
+    max-height:78px !important;
+  }
+  .brand-card-top > img.brand-mercedes-img {
+    width:78px !important;
+    height:78px !important;
+    flex-basis:78px !important;
+  }
+  .brand-date { max-width:100% !important; }
+}
