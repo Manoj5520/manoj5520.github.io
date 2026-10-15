@@ -956,3 +956,29 @@ ul, ol { padding: 0; list-style: none; }
   .hero-name { font-size:clamp(30px,8.4vw,36px) !important; }
 }
 @media (prefers-reduced-motion:reduce) { .hero-name { animation:none !important; } }
+
+/* Final proof-rail sizing: keep all organisation marks legible on mobile. */
+.brand-mcf-img {
+  width:min(180px,100%) !important;
+  max-height:78px !important;
+  height:auto !important;
+  object-fit:contain !important;
+  object-position:left center !important;
+}
+.brand-christ-img {
+  width:min(180px,100%) !important;
+  max-height:72px !important;
+  height:auto !important;
+  object-fit:contain !important;
+}
+.brand-nexa-img {
+  width:128px !important;
+  height:115px !important;
+  object-fit:contain !important;
+  background:#1D3142 !important;
+}
+@media (max-width:640px) {
+  .brand-mcf-img { width:min(170px,100%) !important; max-height:70px !important; }
+  .brand-christ-img { width:min(158px,100%) !important; max-height:62px !important; }
+  .brand-nexa-img { width:112px !important; height:101px !important; }
+}
