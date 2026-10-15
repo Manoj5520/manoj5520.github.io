@@ -909,3 +909,10 @@ ul, ol { padding: 0; list-style: none; }
 }
 @media (prefers-reduced-motion:reduce) { .hero-name { animation:none !important; } }
 
+
+/* Use the supplied Nexa Homes brand asset in the proof rail. */
+.brand-nexa-img {
+  display:block; width:88px; height:70px; object-fit:contain; flex:0 0 auto;
+  background:#1D3142; border:1px solid #30495B; box-shadow:0 5px 14px -12px rgba(20,22,26,.35);
+}
+@media (max-width:640px) { .brand-nexa-img { width:82px; height:66px; } }
