@@ -138,7 +138,14 @@ ul, ol { padding: 0; list-style: none; }
   font-family: var(--serif); font-weight: 400;
   font-size: clamp(48px, 7.4vw, 104px); line-height: .92; letter-spacing: -.025em;
   text-transform: uppercase;
+  background: linear-gradient(108deg, #4B0D20 0%, #751B36 28%, #9B3D58 43%, #C58A9B 50%, #8A2945 58%, #4B0D20 82%);
+  background-size: 220% 100%; background-position: 100% 50%;
+  -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+  -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility;
+  animation: portfolio-name-metal 12s ease-in-out infinite;
 }
+@keyframes portfolio-name-metal { 0%,100% { background-position: 100% 50%; } 50% { background-position: 0% 50%; } }
+@media (prefers-reduced-motion: reduce) { .hero-name { animation: none !important; background-position: 50% 50%; } }
 .hero-name .line { display: block; }
 .hero-name .line + .line { padding-left: .02em; }
 
