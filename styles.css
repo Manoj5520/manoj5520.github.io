@@ -1164,3 +1164,44 @@ ul, ol { padding: 0; list-style: none; }
     max-height:52px !important;
   }
 }
+
+/* Official Mercedes-Benz star: light-silver medallion, not a black square or a recreated mark. */
+.brand-card-top-mercedes {
+  min-height:106px !important;
+  display:flex !important;
+  flex-direction:column !important;
+  align-items:center !important;
+  justify-content:flex-start !important;
+  gap:7px !important;
+}
+.brand-card-top-mercedes > img.brand-mercedes-img {
+  display:block !important;
+  width:72px !important;
+  height:72px !important;
+  max-width:72px !important;
+  max-height:72px !important;
+  aspect-ratio:1 / 1 !important;
+  object-fit:contain !important;
+  object-position:center !important;
+  flex:0 0 72px !important;
+  margin:0 auto !important;
+  padding:5px !important;
+  background:linear-gradient(145deg,#FAFBFC 0%,#E5E9ED 52%,#D7DDE2 100%) !important;
+  border:1px solid #C5CCD2 !important;
+  border-radius:50% !important;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.95),0 2px 6px rgba(30,40,50,.08) !important;
+}
+.brand-card-top-mercedes .brand-date {
+  margin:0 !important;
+  max-width:none !important;
+  font-size:9px !important;
+  text-align:center !important;
+  line-height:1.25 !important;
+}
+@media (max-width:640px) {
+  .brand-card-top-mercedes { min-height:96px !important; gap:6px !important; }
+  .brand-card-top-mercedes > img.brand-mercedes-img {
+    width:66px !important;height:66px !important;max-width:66px !important;max-height:66px !important;
+    flex-basis:66px !important;
+  }
+}
