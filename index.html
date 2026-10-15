@@ -774,8 +774,7 @@ ul, ol { padding: 0; list-style: none; }
 .brand-card-top { display:flex; align-items:center; justify-content:space-between; gap:10px; min-height:46px; margin-bottom:20px; }
 .brand-symbol { display:grid; place-items:center; width:42px; height:42px; flex:0 0 42px; border:1px solid var(--rule); color:var(--ink); background:linear-gradient(145deg,#fff,#E1E6EB); }
 .brand-nexa { font-family:var(--serif); font-size:13px; letter-spacing:.04em; font-weight:600; }
-.brand-mercedes { width:45px; height:45px; border-radius:50%; background:linear-gradient(145deg,#fff,#DDE2E7); box-shadow:inset 0 1px 2px rgba(255,255,255,.9),0 5px 12px -10px rgba(20,22,26,.5); }
-.brand-mercedes svg { width:39px; height:39px; color:#646D77; }
+.brand-mercedes-img { display:block; flex:0 0 48px; width:48px; height:48px; object-fit:cover; border-radius:50%; background:#14161A; border:1px solid var(--rule-strong); box-shadow:0 7px 15px -11px rgba(20,22,26,.42); }
 .brand-wordmark { font-family:Georgia,serif; font-weight:800; font-size:17px; line-height:1; letter-spacing:.10em; color:#303B79; border-bottom:2px solid #CBA759; padding:0 0 5px; }
 .brand-date { color:var(--muted); font-size:10px; font-weight:600; letter-spacing:.07em; text-align:right; text-transform:uppercase; }
 .brand-overline { font-size:10px; font-weight:700; letter-spacing:.12em; color:var(--muted); text-transform:uppercase; margin-bottom:7px; line-height:1.4; }
@@ -907,13 +906,7 @@ ul, ol { padding: 0; list-style: none; }
 
           <article class="brand-card reveal" data-tilt>
             <div class="brand-card-top">
-              <span class="brand-symbol brand-mercedes" aria-label="Mercedes-Benz three-point star emblem">
-                <svg viewBox="0 0 64 64" role="img" aria-hidden="true">
-                  <circle cx="32" cy="32" r="29" fill="none" stroke="currentColor" stroke-width="2.5"/>
-                  <path d="M32 4 L32 32 L8 46 M32 32 L56 46 M32 32 L32 60" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/>
-                  <circle cx="32" cy="32" r="2.7" fill="currentColor"/>
-                </svg>
-              </span>
+              <img class="brand-mercedes-img" src="/assets/img/mercedes-benz-emblem.png" alt="Mercedes-Benz silver star emblem" width="80" height="80" loading="lazy">
               <span class="brand-date">Jul – Sep 2022</span>
             </div>
             <p class="brand-overline">Management Trainee</p>
