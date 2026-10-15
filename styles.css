@@ -1,6 +1,6 @@
 /* ==========================================================
    Vannam Sai Manoj — Executive profile
-   Black + white first. Burgundy only as a precision accent.
+   Warm white + ink first. Burgundy is a precision accent.
    ========================================================== */
 
 @font-face {
@@ -19,15 +19,15 @@
 }
 
 :root {
-  --white: #ffffff;
-  --paper: #f7f6f3;
-  --ink: #0d0d0d;
-  --charcoal: #34343a;
-  --muted: #6c6c72;
-  --rule: #e2e0dc;
-  --rule-strong: #c9c6c0;
-  --burgundy: #6e1a2c;
-  --burgundy-soft: #8a2a3e;
+  --white: #FAF9F6;
+  --paper: #ECE8E3;
+  --ink: #26272B;
+  --charcoal: #414148;
+  --muted: #69686B;
+  --rule: #E4DFD9;
+  --rule-strong: #CFC7C0;
+  --burgundy: #64263A;
+  --burgundy-soft: #824052;
 
   --serif: "Newsreader", "Iowan Old Style", "Palatino Linotype", Georgia, serif;
   --sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
@@ -66,7 +66,7 @@ ul, ol { padding: 0; list-style: none; }
 /* ---------- Header ---------- */
 .site-header {
   position: sticky; top: 0; z-index: 50;
-  background: rgba(255, 255, 255, .92);
+  background: rgba(250, 249, 246, .94);
   backdrop-filter: saturate(1.4) blur(12px);
   -webkit-backdrop-filter: saturate(1.4) blur(12px);
   border-bottom: 1px solid var(--rule);
@@ -208,7 +208,7 @@ ul, ol { padding: 0; list-style: none; }
 /* ---------- Sections ---------- */
 .section { padding: clamp(72px, 10vw, 140px) 0; }
 .section-tint { background: var(--paper); }
-.section-dark { background: var(--ink); color: #f2f1ee; }
+.section-dark { background: var(--ink); color: #FAF9F6; }
 
 .section-head {
   display: grid; grid-template-columns: 120px minmax(0, 1fr); gap: 24px;
@@ -216,15 +216,15 @@ ul, ol { padding: 0; list-style: none; }
   margin-bottom: clamp(48px, 6vw, 80px);
 }
 .section-num { font-family: var(--serif); font-size: 22px; color: var(--burgundy); line-height: 1.2; }
-.section-dark .section-num { color: #c9a3ab; }
+.section-dark .section-num { color: #E6CDD4; }
 .section-kicker { font-size: 11.5px; font-weight: 600; letter-spacing: .2em; text-transform: uppercase; color: var(--muted); margin-bottom: 14px; }
-.section-dark .section-kicker { color: #a5a3a0; }
+.section-dark .section-kicker { color: #D6CEC8; }
 .section-title {
   font-family: var(--serif); font-weight: 400;
   font-size: clamp(38px, 5.4vw, 72px); line-height: 1.02; letter-spacing: -.02em; max-width: 16ch;
 }
 .section-lede { margin-top: 22px; max-width: 620px; font-size: 17px; color: var(--charcoal); }
-.section-dark .section-lede { color: #bdbbb7; }
+.section-dark .section-lede { color: #E0DAD4; }
 
 /* ---------- 01 Value ---------- */
 .value-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); border-top: 1px solid var(--rule); }
@@ -256,9 +256,9 @@ ul, ol { padding: 0; list-style: none; }
   background: var(--burgundy-soft); transform: scaleX(0); transform-origin: left; transition: transform .6s var(--ease);
 }
 .step:hover::after { transform: scaleX(1); }
-.step-num { display: block; font-family: var(--serif); font-size: 15px; color: #c9a3ab; margin-bottom: 40px; }
+.step-num { display: block; font-family: var(--serif); font-size: 15px; color: #E6CDD4; margin-bottom: 40px; }
 .step h3 { font-size: 13px; font-weight: 600; letter-spacing: .2em; text-transform: uppercase; color: #fff; margin-bottom: 12px; }
-.step p { font-size: 15px; color: #bdbbb7; line-height: 1.55; max-width: 240px; }
+.step p { font-size: 15px; color: #E0DAD4; line-height: 1.55; max-width: 240px; }
 
 /* ---------- 03 Experience ---------- */
 .role { display: grid; grid-template-columns: minmax(0, 4fr) minmax(0, 8fr); gap: clamp(28px, 5vw, 80px); }
@@ -348,10 +348,10 @@ ul, ol { padding: 0; list-style: none; }
   transform: translateY(-50%); color: var(--burgundy); font-weight: 400; letter-spacing: 0;
 }
 .chain li span { font-family: var(--serif); font-weight: 400; font-size: 13px; letter-spacing: 0; color: var(--burgundy); }
-.chain li:last-child span { color: #c9a3ab; }
+.chain li:last-child span { color: #E6CDD4; }
 .chain li small { font-size: 13px; font-weight: 400; letter-spacing: 0; text-transform: none; color: var(--charcoal); line-height: 1.45; }
-.chain li:last-child small { color: #cfcdc9; }
-.chain li:hover:not(:last-child) { background: #efede8; }
+.chain li:last-child small { color: #D5D0CA; }
+.chain li:hover:not(:last-child) { background: #F6F2ED; }
 
 /* ---------- 05 Problems ---------- */
 .problems { border-top: 1px solid var(--ink); }
@@ -447,7 +447,7 @@ ul, ol { padding: 0; list-style: none; }
 .contact-actions { grid-column: 2; display: flex; flex-wrap: wrap; gap: 12px; margin-top: 16px; }
 
 /* ---------- Footer ---------- */
-.site-footer { background: var(--ink); color: #a5a3a0; font-size: 12.5px; letter-spacing: .06em; }
+.site-footer { background: var(--ink); color: #D6CEC8; font-size: 12.5px; letter-spacing: .06em; }
 .footer-inner { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 10px 24px; padding-top: 26px; padding-bottom: 26px; border-top: 2px solid var(--burgundy); }
 .site-footer a:hover { color: #fff; }
 
