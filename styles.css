@@ -625,12 +625,14 @@ ul, ol { padding: 0; list-style: none; }
 }
 @supports (background-clip: text) or (-webkit-background-clip: text) {
   .hero-name {
-    background: linear-gradient(105deg, #4B0D20 0%, #751B36 24%, #A84B66 40%, #D5A4B2 48%, #7A1C38 58%, #4B0D20 78%);
+    background: linear-gradient(105deg, #4B0D20 0%, #751B36 30%, #8F2947 44%, #B56C82 50%, #751B36 60%, #4B0D20 82%);
     background-size: 220% 100%;
     background-position: 100% 50%;
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
     animation: headline-metal-sweep 12s ease-in-out infinite;
   }
 }
