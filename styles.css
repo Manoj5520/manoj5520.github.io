@@ -1205,3 +1205,53 @@ ul, ol { padding: 0; list-style: none; }
     flex-basis:66px !important;
   }
 }
+
+
+/* Mercedes-Benz experience card: display the full silver lockup without cropping. */
+.brand-card-top.brand-card-top-mercedes {
+  display:flex !important;
+  flex-direction:column !important;
+  align-items:center !important;
+  justify-content:center !important;
+  gap:8px !important;
+  min-height:112px !important;
+  margin:0 0 16px !important;
+}
+.brand-card-top.brand-card-top-mercedes > img.brand-mercedes-img {
+  display:block !important;
+  width:min(178px,100%) !important;
+  height:auto !important;
+  min-width:0 !important;
+  min-height:0 !important;
+  max-width:100% !important;
+  max-height:none !important;
+  aspect-ratio:900 / 293 !important;
+  object-fit:contain !important;
+  object-position:center !important;
+  flex:0 1 auto !important;
+  margin:0 auto !important;
+  padding:0 !important;
+  border:0 !important;
+  border-radius:5px !important;
+  background:transparent !important;
+  box-shadow:0 5px 15px -12px rgba(20,26,32,.35) !important;
+}
+.brand-card-top.brand-card-top-mercedes .brand-date {
+  align-self:center !important;
+  margin:0 !important;
+  max-width:100% !important;
+  text-align:center !important;
+  font-size:9px !important;
+  line-height:1.3 !important;
+  letter-spacing:.09em !important;
+}
+@media (max-width:640px) {
+  .brand-card-top.brand-card-top-mercedes {
+    min-height:104px !important;
+    gap:7px !important;
+    margin-bottom:14px !important;
+  }
+  .brand-card-top.brand-card-top-mercedes > img.brand-mercedes-img {
+    width:min(164px,100%) !important;
+  }
+}
