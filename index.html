@@ -801,6 +801,75 @@ ul, ol { padding: 0; list-style: none; }
 @media (max-width:440px) { .brand-rail { grid-template-columns:1fr; } .brand-card { padding:20px; } }
 @media (prefers-reduced-motion: reduce) { .brand-card { transition:none !important; } }
 
+
+/* Mercedes-Benz experience: precise functional workstreams + restrained ROTF 3D study tile */
+.role-mercedes-detail .role-title { max-width: 300px; }
+.mb-certificate-link { display: inline-block; margin-top: 18px; font-size: 12px; }
+.mb-intro { max-width: 780px; margin-bottom: 22px; }
+.mb-workstreams { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); border-top:1px solid var(--rule-strong); border-left:1px solid var(--rule); }
+.mb-workstream { min-width:0; padding:23px 22px 24px; border-right:1px solid var(--rule); border-bottom:1px solid var(--rule); background:rgba(255,255,255,.48); }
+.mb-workstream:nth-child(odd) { border-top:0; }
+.mb-workstream-index { margin:0 0 9px; color:var(--burgundy); font-size:10px; font-weight:700; letter-spacing:.16em; line-height:1.5; }
+.mb-workstream h4 { margin:0 0 9px; font-family:var(--serif); font-size:23px; font-weight:400; letter-spacing:-.015em; line-height:1.15; }
+.mb-workstream > p:not(.mb-workstream-index) { margin:0 0 14px; color:var(--charcoal); font-size:14px; line-height:1.65; }
+.mb-workstream .tags { gap:5px; }
+.mb-workstream .tags li { padding:5px 8px; font-size:11px; }
+.mb-indicators { margin-top:28px; border:1px solid var(--rule-strong); background:linear-gradient(135deg,#fff 0%,#EEF1F4 100%); }
+.mb-indicators-heading { display:flex; flex-wrap:wrap; align-items:baseline; gap:0 16px; padding:18px 20px 13px; border-bottom:1px solid var(--rule); }
+.mb-indicators-heading .mb-workstream-index { margin:0; }
+.mb-indicators-heading h4 { margin:0; font-family:var(--serif); font-size:22px; font-weight:400; }
+.mb-indicators-heading > p:last-child { width:100%; margin:5px 0 0; color:var(--muted); font-size:11.5px; }
+.mb-indicator-grid { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); }
+.mb-indicator-grid > div { display:flex; flex-direction:column; gap:6px; min-width:0; padding:16px 14px; border-right:1px solid var(--rule); }
+.mb-indicator-grid > div:last-child { border-right:0; }
+.mb-indicator-grid strong { font-size:12px; color:var(--ink); }
+.mb-indicator-grid span { color:var(--muted); font-size:11.5px; line-height:1.5; }
+.rotf-module { display:grid; grid-template-columns:minmax(0, .8fr) minmax(0,1.5fr); gap:clamp(20px,3vw,36px); align-items:start; margin-top:30px; padding:clamp(18px,3vw,28px); border:1px solid #BCC4CC; background:linear-gradient(145deg,#F9FAFB 0%,#E2E7EB 56%,#F7F8F9 100%); box-shadow:0 18px 35px -32px rgba(20,22,26,.5); }
+.rotf-visual { min-width:0; perspective:1000px; }
+.rotf-badge { position:relative; display:flex; flex-direction:column; align-items:flex-start; min-height:238px; padding:22px 20px 18px; overflow:hidden; color:#F7F8F9; background:linear-gradient(145deg,#2B3036 0%,#111418 46%,#343B43 100%); border:1px solid #58616A; box-shadow:8px 9px 0 #BCC3CA, 12px 14px 26px rgba(20,22,26,.22), inset 0 1px 0 rgba(255,255,255,.28); transform:rotateY(-7deg) rotateX(3deg); transform-style:preserve-3d; transition:transform .35s ease,box-shadow .35s ease; }
+.rotf-badge::before { content:""; position:absolute; inset:0; pointer-events:none; background:linear-gradient(120deg,rgba(255,255,255,.17),transparent 28%,transparent 68%,rgba(166,177,188,.12)); }
+.rotf-visual:hover .rotf-badge { transform:rotateY(-2deg) rotateX(1deg) translateY(-2px); box-shadow:5px 7px 0 #BCC3CA, 16px 18px 30px rgba(20,22,26,.24), inset 0 1px 0 rgba(255,255,255,.28); }
+.rotf-overline { position:relative; z-index:1; color:#C8CFD6; font-size:9px; font-weight:700; letter-spacing:.15em; }
+.rotf-wordmark { position:relative; z-index:1; margin-top:31px; font-family:var(--serif); font-size:clamp(48px,6vw,74px); line-height:.88; letter-spacing:.02em; color:#F6F7F8; text-shadow:0 1px 0 #FFF,0 3px 0 #7D858D,0 7px 12px rgba(0,0,0,.48); }
+.rotf-expansion { position:relative; z-index:1; margin-top:11px; color:#D6DCE1; font-size:9.5px; font-weight:700; letter-spacing:.16em; }
+.rotf-metal-rule { position:relative; z-index:1; display:block; width:100%; height:1px; margin-top:18px; background:linear-gradient(90deg,#8D263F,#E5E8EB 55%,#69737D); }
+.rotf-flow { position:relative; z-index:1; display:flex; flex-wrap:wrap; align-items:center; gap:5px; margin-top:14px; color:#CFD5DB; font-size:9px; letter-spacing:.02em; }
+.rotf-flow b { color:#B66A7E; font-weight:600; }
+.rotf-caption { margin:16px 0 0; color:var(--muted); font-size:10.5px; line-height:1.5; }
+.rotf-copy { min-width:0; }
+.rotf-copy .mb-workstream-index { margin-bottom:8px; }
+.rotf-copy h4 { margin:0 0 11px; font-family:var(--serif); font-size:clamp(24px,3vw,32px); font-weight:400; line-height:1.12; }
+.rotf-copy > p:not(.mb-workstream-index):not(.rotf-caveat) { margin:0 0 17px; color:var(--charcoal); font-size:14px; line-height:1.7; }
+.rotf-findings { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:16px; }
+.rotf-findings > div { min-width:0; padding-top:12px; border-top:1px solid var(--rule-strong); }
+.rotf-findings h5 { margin:0 0 9px; font-size:11px; line-height:1.45; letter-spacing:.04em; }
+.rotf-findings ul { margin:0; padding-left:16px; list-style:disc; }
+.rotf-findings li { margin-bottom:7px; padding-left:2px; color:var(--charcoal); font-size:12px; line-height:1.55; }
+.rotf-caveat { margin:17px 0 0; padding-top:12px; border-top:1px solid var(--rule); color:var(--muted); font-size:11px; line-height:1.55; }
+@media (max-width:900px) {
+  .mb-indicator-grid { grid-template-columns:repeat(2,minmax(0,1fr)); }
+  .mb-indicator-grid > div:nth-child(2) { border-right:0; }
+  .mb-indicator-grid > div:nth-child(-n+2) { border-bottom:1px solid var(--rule); }
+  .rotf-module { grid-template-columns:1fr; }
+  .rotf-visual { max-width:420px; width:100%; }
+}
+@media (max-width:640px) {
+  .mb-workstreams { grid-template-columns:1fr; }
+  .mb-workstream { padding:20px 16px; border-right:1px solid var(--rule); }
+  .mb-indicators-heading { display:block; }
+  .mb-indicators-heading h4 { margin-top:4px; }
+  .mb-indicator-grid { grid-template-columns:1fr 1fr; }
+  .mb-indicator-grid > div { padding:13px 11px; }
+  .rotf-module { padding:15px; gap:24px; }
+  .rotf-badge { min-height:220px; padding:20px 18px 17px; transform:none; }
+  .rotf-wordmark { font-size:60px; }
+  .rotf-findings { grid-template-columns:1fr; }
+  .rotf-copy h4 { font-size:26px; }
+}
+@media (prefers-reduced-motion:reduce) {
+  .rotf-badge { transition:none !important; transform:none !important; }
+}
+
 </style>
 </head>
 <body>
@@ -937,10 +1006,10 @@ ul, ol { padding: 0; list-style: none; }
               <img class="brand-mercedes-img" src="/assets/img/mercedes-benz-lockup-silver.svg?v=20261016-elegant-fit" alt="Mercedes-Benz silver star and wordmark" width="900" height="293" loading="lazy">
               <span class="brand-date">Jul – Sep 2022</span>
             </div>
-            <p class="brand-overline">Management Trainee</p>
+            <p class="brand-overline">Management Trainee Intern</p>
             <h3>Mercedes-Benz Silver Star</h3>
-            <p>Structured cross-functional exposure across Business Operations, HR, Sales and Marketing.</p>
-            <a class="brand-proof-link" href="/assets/certificates/Mercedes_Benz_Management_Internship.pdf" target="_blank" rel="noopener noreferrer">View certificate ↗</a>
+            <p>Cross-functional exposure across HR screening, luxury customer consultation, local-market marketing, finance documentation and a Retail of the Future (ROTF) business-model study.</p>
+            <a class="brand-proof-link" href="#experience">Explore experience details ↓</a>
           </article>
 
 <article class="brand-card reveal" data-tilt>
@@ -1078,21 +1147,96 @@ ul, ol { padding: 0; list-style: none; }
           </div>
         </article>
 
-        <!-- Mercedes-Benz — secondary -->
-        <article class="role role-secondary reveal" aria-labelledby="mb-title">
+        <!-- Mercedes-Benz Silver Star — cross-functional management trainee experience -->
+        <article class="role role-secondary role-mercedes-detail reveal" aria-labelledby="mb-title">
           <div class="role-meta">
-            <p class="role-period">July 2022 – September 2022</p>
+            <p class="role-period">06 July – 09 September 2022</p>
             <h3 id="mb-title" class="role-org">Mercedes-Benz Silver Star</h3>
-            <p class="role-title">Management Trainee</p>
-            <p class="role-place">Hyderabad</p>
+            <p class="role-title">Management Trainee Intern</p>
+            <p class="role-place">Hyderabad, Telangana</p>
+            <a class="brand-proof-link mb-certificate-link" href="/assets/certificates/Mercedes_Benz_Management_Internship.pdf" target="_blank" rel="noopener noreferrer">View internship certificate ↗</a>
           </div>
           <div class="role-body">
-            <p class="role-kicker">Structured cross-functional corporate rotation</p>
-            <ol class="rotation" aria-label="Rotation functions">
-              <li>Business Operations</li><li>HR</li><li>Sales</li><li>Marketing</li>
-            </ol>
-            <p class="role-text">Coordinated recruitment operations and supported documentation and workflow coordination across teams.</p>
-            <ul class="tags"><li>Candidate documentation</li><li>Interview scheduling</li><li>Employee records</li><li>Process documentation</li><li>Workflow coordination</li></ul>
+            <p class="role-kicker">Cross-functional exposure · Luxury retail operations</p>
+            <p class="role-text mb-intro">Supported work across HR, local-market marketing, customer-facing sales engagement and finance documentation. The experience combined front-of-house customer needs with the operational processes behind candidate screening, vehicle booking and retail delivery.</p>
+
+            <div class="mb-workstreams">
+              <section class="mb-workstream">
+                <p class="mb-workstream-index">01 / PEOPLE OPERATIONS</p>
+                <h4>HR &amp; candidate screening</h4>
+                <p>Assisted with initial profile screening and role-fit considerations, including relevant skills, communication, behavioural suitability and readiness for a high-touch luxury retail environment.</p>
+                <ul class="tags"><li>Candidate screening support</li><li>Role-fit considerations</li><li>Interview scheduling</li><li>Candidate documentation</li></ul>
+              </section>
+              <section class="mb-workstream">
+                <p class="mb-workstream-index">02 / MARKET &amp; BRAND</p>
+                <h4>Localised luxury marketing</h4>
+                <p>Supported promotional planning for premium customer segments in Hyderabad, considering local-market relevance across micro-markets such as Jubilee Hills, Banjara Hills, Gachibowli and HITEC City while keeping luxury-brand positioning in view.</p>
+                <ul class="tags"><li>Local-market fit</li><li>Premium audience context</li><li>Luxury positioning</li><li>Brand alignment</li></ul>
+              </section>
+              <section class="mb-workstream">
+                <p class="mb-workstream-index">03 / CUSTOMER ENGAGEMENT</p>
+                <h4>Consultative vehicle discussions</h4>
+                <p>Engaged with walk-in prospects to understand intended use and preferences, then discussed relevant sedan, SUV and MPV options across the C-Class, E-Class, S-Class, GLE, GLS, V-Class and AMG/Maybach portfolios. Where relevant to the enquiry, product conversations included differentiators such as MBUX, ADAS and air-suspension features.</p>
+                <ul class="tags"><li>Customer needs analysis</li><li>Vehicle-segment matching</li><li>Product portfolio knowledge</li><li>Customer experience</li></ul>
+              </section>
+              <section class="mb-workstream">
+                <p class="mb-workstream-index">04 / RETAIL DOCUMENTATION</p>
+                <h4>Finance &amp; booking support</h4>
+                <p>Assisted with billing entries, invoice preparation, customer booking-ledger documentation and transaction entries to support booking and vehicle-delivery paperwork.</p>
+                <ul class="tags"><li>Billing support</li><li>Invoice documentation</li><li>Booking ledgers</li><li>Transaction-entry support</li></ul>
+              </section>
+            </div>
+
+            <section class="mb-indicators" aria-labelledby="mb-indicators-title">
+              <div class="mb-indicators-heading">
+                <p class="mb-workstream-index">OPERATIONAL LENSES</p>
+                <h4 id="mb-indicators-title">What the work needed to get right</h4>
+                <p>Qualitative focus areas, not claimed numerical KPI results.</p>
+              </div>
+              <div class="mb-indicator-grid">
+                <div><strong>Role fit</strong><span>Skills, communication and customer-facing suitability</span></div>
+                <div><strong>Customer fit</strong><span>Needs matched to vehicle segment and relevant features</span></div>
+                <div><strong>Market fit</strong><span>Premium audience relevance and brand consistency</span></div>
+                <div><strong>Process accuracy</strong><span>Clear booking, billing and delivery documentation</span></div>
+              </div>
+            </section>
+
+            <section class="rotf-module" aria-labelledby="rotf-title">
+              <div class="rotf-visual">
+                <div class="rotf-badge">
+                  <span class="rotf-overline">BUSINESS MODEL STUDY · 2022</span>
+                  <span class="rotf-wordmark">ROTF</span>
+                  <span class="rotf-expansion">RETAIL OF THE FUTURE</span>
+                  <span class="rotf-metal-rule"></span>
+                  <span class="rotf-flow"><span>Inventory</span><b>↔</b><span>Pricing</span><b>↔</b><span>Experience</span></span>
+                </div>
+                <p class="rotf-caption">Custom 3D-style ROTF visual for this portfolio; not an official Mercedes-Benz logo.</p>
+              </div>
+              <div class="rotf-copy">
+                <p class="mb-workstream-index">BUSINESS-MODEL LENS</p>
+                <h4 id="rotf-title">Retail of the Future (ROTF)</h4>
+                <p>Studied the strategic implications of Mercedes-Benz India's direct-to-consumer retail model, looking at how national inventory access and pricing transparency can change the customer journey and the role of the retail partner.</p>
+                <div class="rotf-findings">
+                  <div>
+                    <h5>Potential advantages considered</h5>
+                    <ul>
+                      <li>Broader access to national inventory rather than only locally held stock.</li>
+                      <li>More consistent national pricing and greater price transparency.</li>
+                      <li>Potentially lower inventory-holding exposure for dealer partners.</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <h5>Commercial trade-offs considered</h5>
+                    <ul>
+                      <li>Potential pressure on dealer margins under a changed retail model.</li>
+                      <li>Less flexibility for local, on-the-spot discounting.</li>
+                      <li>Greater reliance on after-sales service and customer experience to support retention.</li>
+                    </ul>
+                  </div>
+                </div>
+                <p class="rotf-caveat">Scope note: this was a study of the model and its likely operating implications—not implementation of ROTF or a measured commercial-impact project.</p>
+              </div>
+            </section>
           </div>
         </article>
 
