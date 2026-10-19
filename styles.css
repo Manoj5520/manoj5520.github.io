@@ -1609,3 +1609,122 @@ ul, ol { padding: 0; list-style: none; }
   .bc-track { scroll-behavior:auto; }
   .bc-dot span,.bc-link { transition:none!important; }
 }
+
+
+/* ==========================================================
+   BUSINESS OVERVIEW — full-width cinematic carousel refinement
+   Match the supplied reference: one panoramic slide, overlay copy,
+   custom illustrated scene, centered pagination dots.
+   ========================================================== */
+.bc-shell { max-width:none; padding:0 8px; }
+.business-carousel { padding:0 0 12px; }
+.bc-panel {
+  display:block; position:relative; width:100%; min-height:clamp(380px,40vw,500px);
+  overflow:hidden; border:0; background:#eee; isolation:isolate;
+}
+.bc-art {
+  position:absolute; inset:0; width:100%; height:100%; min-height:0;
+  overflow:hidden;
+}
+.bc-copy {
+  position:absolute; z-index:6; inset:0 auto 0 0; width:43%; max-width:610px;
+  justify-content:center; padding:clamp(26px,4vw,54px) clamp(24px,4.1vw,62px);
+  background:linear-gradient(90deg,var(--bc-copy-bg,#f2f0eb) 0%,color-mix(in srgb,var(--bc-copy-bg,#f2f0eb) 94%,transparent) 72%,transparent 100%);
+}
+.bc-copy h3 { max-width:11.5ch; font-size:clamp(34px,4.15vw,58px); line-height:.98; }
+.bc-copy > p:not(.bc-kicker):not(.bc-micro-label) { max-width:37ch; font-size:clamp(12px,1.08vw,15px); line-height:1.66; }
+.bc-kicker { margin-bottom:clamp(17px,2vw,27px); font-size:8px; }
+.bc-link { margin-top:clamp(18px,2vw,27px); font-size:9px; }
+.bc-micro-label { margin-top:clamp(18px,2vw,28px); font-size:7px; max-width:34ch; }
+.bc-art-caption { left:40%; right:3%; top:21px; }
+.bc-art-foot { left:41%; }
+.bc-cityline { left:-1%; right:-1%; height:32%; }
+.bc-market-card { width:clamp(145px,15.7vw,218px); min-height:clamp(122px,12vw,160px); }
+.bc-market-card strong { font-size:clamp(19px,2.2vw,29px); }
+.bc-market-one { top:25%; left:41%; }
+.bc-market-two { top:42%; left:59%; }
+.bc-gap-node { right:3.3%; bottom:8%; width:clamp(170px,19.5vw,250px); }
+.bc-slide-market .bc-copy { --bc-copy-bg:#f1efea; }
+.bc-slide-market .bc-copy { background:linear-gradient(90deg,#f1efea 0%,rgba(241,239,234,.98) 68%,rgba(241,239,234,.82) 86%,rgba(241,239,234,0) 100%); }
+.bc-slide-requirements .bc-copy { --bc-copy-bg:#f3ece2; background:linear-gradient(90deg,#f3ece2 0%,rgba(243,236,226,.98) 68%,rgba(243,236,226,.82) 86%,rgba(243,236,226,0) 100%); }
+.bc-blueprint { left:39%; top:19%; width:29%; height:62%; }
+.bc-need-stack { top:26%; right:3.5%; width:27%; gap:9px; }
+.bc-need-stack > div { padding:clamp(10px,1.1vw,15px) 12px; }
+.bc-slide-meetings .bc-copy {
+  --bc-copy-bg:#20232b;
+  background:linear-gradient(90deg,#20232b 0%,rgba(32,35,43,.98) 68%,rgba(32,35,43,.82) 86%,rgba(32,35,43,0) 100%);
+}
+.bc-room-window { right:5%; width:55%; }
+.bc-call-window { top:26%; left:39%; width:39%; }
+.bc-followup-card { right:4%; bottom:11%; width:25%; }
+.bc-slide-meetings .bc-art-caption { top:auto; bottom:16px; left:40%; }
+.bc-slide-operations .bc-copy {
+  --bc-copy-bg:#eceeeb;
+  background:linear-gradient(90deg,#eceeeb 0%,rgba(236,238,235,.98) 67%,rgba(236,238,235,.8) 86%,rgba(236,238,235,0) 100%);
+}
+.bc-op-flow { left:39%; right:4%; top:31%; gap:8px; }
+.bc-op-step { padding:14px 12px; }
+.bc-portfolio-proof { right:4%; bottom:7%; width:27%; }
+.bc-op-foot { left:40%; }
+.bc-slide-discovery .bc-copy {
+  --bc-copy-bg:#22242b;
+  background:linear-gradient(90deg,#22242b 0%,rgba(34,36,43,.98) 67%,rgba(34,36,43,.82) 86%,rgba(34,36,43,0) 100%);
+}
+.bc-product-plinth { left:37%; top:27%; width:29%; }
+.bc-validation-card { right:4%; top:23%; width:29%; }
+.bc-discovery-foot { left:40%; right:5%; }
+.bc-pagination { min-height:36px; padding:11px 0 0; gap:7px; }
+.bc-dot { min-width:16px; min-height:18px; }
+.bc-dot span { width:5px; height:5px; }
+.bc-dot.is-active span { width:22px; height:5px; }
+@media (max-width:900px) and (min-width:651px) {
+  .bc-panel { min-height:395px; }
+  .bc-copy { width:43%; padding:26px 24px; }
+  .bc-copy h3 { font-size:clamp(31px,4.25vw,42px); }
+  .bc-copy > p:not(.bc-kicker):not(.bc-micro-label) { font-size:12px; max-width:35ch; }
+  .bc-market-card { width:clamp(135px,16vw,170px); min-height:122px; padding:12px; }
+  .bc-market-one { left:42%; }
+  .bc-market-two { left:60%; }
+  .bc-gap-node { width:20%; padding:12px; }
+  .bc-blueprint { left:40%; width:29%; }
+  .bc-need-stack { width:28%; right:3%; }
+  .bc-call-window { left:39%; width:39%; }
+  .bc-followup-card { width:26%; padding:10px; }
+  .bc-op-flow { left:39%; right:3%; gap:4px; }
+  .bc-op-step { padding:10px 7px; }
+  .bc-op-step b { font-size:17px; }
+  .bc-product-plinth { left:37%; width:28%; }
+  .bc-validation-card { width:30%; padding:11px; }
+}
+@media (max-width:650px) {
+  .bc-shell { padding:0 8px; }
+  .bc-panel { display:flex; flex-direction:column; min-height:0; }
+  .bc-copy {
+    position:relative; inset:auto; order:0; width:100%; max-width:none;
+    padding:24px 22px 20px; background:var(--bc-copy-bg,#f1efea)!important;
+  }
+  .bc-copy h3 { font-size:clamp(32px,8.5vw,42px); max-width:13ch; line-height:.98; }
+  .bc-copy > p:not(.bc-kicker):not(.bc-micro-label) { font-size:13px; max-width:46ch; }
+  .bc-art { position:relative; inset:auto; order:1; height:clamp(250px,70vw,310px); min-height:0; flex:0 0 auto; }
+  .bc-art-caption { top:13px; left:14px; right:14px; }
+  .bc-cityline { height:32%; }
+  .bc-market-card { width:42%; min-height:102px; padding:10px; gap:8px; }
+  .bc-market-one { left:3%; top:25%; }
+  .bc-market-two { left:26%; top:42%; }
+  .bc-gap-node { right:3%; bottom:8%; width:49%; padding:11px; }
+  .bc-art-foot { left:13px; }
+  .bc-blueprint { top:19%; left:5%; width:53%; height:62%; }
+  .bc-need-stack { top:27%; right:3%; width:51%; gap:5px; }
+  .bc-room-window { top:13%; right:6%; width:65%; height:48%; }
+  .bc-call-window { top:23%; left:4%; width:67%; }
+  .bc-followup-card { right:3%; bottom:8%; width:43%; }
+  .bc-slide-meetings .bc-art-caption { top:auto; bottom:13px; left:14px; }
+  .bc-op-flow { top:28%; left:3%; right:3%; gap:4px; }
+  .bc-op-step { min-height:95px; padding:9px 6px; }
+  .bc-portfolio-proof { right:4%; bottom:6%; width:43%; }
+  .bc-op-foot { left:4%; bottom:8%; }
+  .bc-product-plinth { left:4%; top:28%; width:48%; height:48%; }
+  .bc-validation-card { top:25%; right:3%; width:51%; padding:10px; }
+  .bc-discovery-foot { left:5%; right:5%; bottom:9%; }
+  .bc-pagination { min-height:32px; padding-top:8px; }
+}
