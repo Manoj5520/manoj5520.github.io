@@ -449,6 +449,9 @@ ul, ol { padding: 0; list-style: none; }
   align-items: stretch; padding: 0; min-width: 0; min-height: 280px;
   background: #f7f8f9; border-left: 1px solid #d5d9dd;
 }
+.cred-mercedes .cred-brand-panel { min-height: 100%; }
+.cred-mercedes .mercedes-luxury-lockup img { max-width: 210px; }
+.cred-mercedes .mercedes-grille-photo { min-width: 0; min-height: 100%; height: 100%; }
 .mercedes-luxury-lockup {
   position: relative; z-index: 2; display: flex; flex-direction: column;
   align-items: center; justify-content: center; gap: 13px; padding: 24px 18px;
@@ -487,11 +490,29 @@ ul, ol { padding: 0; list-style: none; }
 .cred-compact h3 { font-size: 21px; }
 .cred-compact .cred-body { padding: 22px 24px; }
 .cred-mark {
-  display: grid; place-items: center; background: var(--ink); color: #fff; min-height: 170px;
+  display: grid; place-items: center; background: #fff; color: var(--ink); min-height: 170px;
   font-family: var(--serif); font-size: 22px; letter-spacing: .04em; position: relative;
 }
-.cred-mark::after { content: ""; position: absolute; left: 50%; bottom: 34%; width: 28px; height: 1.5px; background: var(--rule-strong); transform: translateX(-50%); }
-.cred-mark span { transform: translateY(-6px); }
+.cred-mark::after { content: none; }
+.cred-mark span { transform: none; }
+.cred-mark-christ {
+  position: relative; isolation: isolate; overflow: hidden; min-height: 190px;
+  padding: 24px 18px; gap: 14px; align-content: center;
+  background: linear-gradient(135deg, #fffdf9 0%, #f4eee4 55%, #e8dcc9 100%);
+  border-right: 1px solid #ded4c5;
+}
+.cred-mark-christ::before {
+  content: ""; position: absolute; inset: 12px; border: 1px solid rgba(109,38,59,.22);
+  pointer-events: none;
+}
+.cred-mark-christ img {
+  width: min(88%, 220px); max-height: 86px; height: auto; object-fit: contain;
+  position: relative; z-index: 1; filter: none;
+}
+.cred-mark-christ span {
+  position: relative; z-index: 1; margin-top: 2px; color: #6d263b;
+  font: 600 9px/1.4 var(--sans); letter-spacing: .2em; text-transform: uppercase;
+}
 
 /* ---------- 08 About ---------- */
 .about-grid { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: clamp(32px, 6vw, 96px); }
@@ -1503,7 +1524,7 @@ ul, ol { padding: 0; list-style: none; }
               <img src="/assets/img/mercedes-benz-lockup-silver.svg?v=20261016-elegant-fit" alt="Mercedes-Benz silver three-pointed star and wordmark" width="900" height="293" loading="lazy">
               <span class="mercedes-tagline">THE BEST OR NOTHING</span>
             </div>
-            <img class="mercedes-grille-photo" src="https://images.unsplash.com/photo-1775848366216-edecff11db4b?auto=format&fit=crop&fm=jpg&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&ixlib=rb-4.1.0&q=60&w=1600" alt="Close-up of a Mercedes-Benz grille and three-pointed star" width="1600" height="1000" loading="lazy">
+            <img class="mercedes-grille-photo" src="https://images.unsplash.com/photo-1743014592342-8efc4e5c5e7d?auto=format&fit=crop&w=1600&q=85" alt="Close-up of a Mercedes-Benz grille and three-pointed star" width="1600" height="1000" loading="lazy">
           </div>
         </article>
 
