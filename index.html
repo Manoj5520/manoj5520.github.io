@@ -442,6 +442,34 @@ ul, ol { padding: 0; list-style: none; }
 .cred-wide .cred-thumb { border-bottom: 0; border-right: 1px solid var(--rule); aspect-ratio: auto; height: 100%; min-height: 280px; }
 .cred-wide .cred-body { padding: clamp(26px, 3vw, 40px); }
 
+.cred-brandmark {
+  display: flex; align-items: center; gap: 14px; margin: 0 0 24px;
+  padding: 16px 18px; min-height: 82px; background: #14161A;
+  border: 1px solid #454A52; color: #D8DCE1;
+}
+.cred-brandmark-mercedes img {
+  width: 48px; height: 48px; object-fit: contain;
+  filter: grayscale(1) brightness(1.7); flex: 0 0 auto;
+}
+.cred-brandmark span {
+  font-size: 11px; font-weight: 600; letter-spacing: .19em;
+  text-transform: uppercase; color: #D8DCE1;
+}
+.cred-mark-christ { gap: 8px; padding: 16px 12px; }
+.cred-mark-christ img {
+  display: block; width: 100%; max-width: 104px; max-height: 104px;
+  object-fit: contain; background: #fff; padding: 6px;
+}
+.cred-mark-christ span {
+  transform: none; font-family: var(--sans); font-size: 9px;
+  font-weight: 600; letter-spacing: .12em; text-transform: uppercase;
+  text-align: center;
+}
+@media (max-width: 700px) {
+  .cred-brandmark { min-height: 72px; margin-bottom: 18px; }
+  .cred-brandmark-mercedes img { width: 40px; height: 40px; }
+}
+
 .creds-secondary { margin-top: 24px; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; }
 .cred-compact { grid-template-columns: 180px minmax(0, 1fr); grid-template-rows: auto; }
 .cred-compact .cred-thumb { aspect-ratio: auto; height: 100%; min-height: 170px; border-bottom: 0; border-right: 1px solid var(--rule); }
@@ -1451,8 +1479,12 @@ ul, ol { padding: 0; list-style: none; }
           </article>
         </div>
 
-        <article class="cred cred-wide reveal" data-tilt>
+        <article class="cred cred-wide cred-mercedes reveal" data-tilt>
           <div class="cred-body">
+            <div class="cred-brandmark cred-brandmark-mercedes" aria-label="Mercedes-Benz logo">
+              <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Mercedes-Benz_free_logo.svg" alt="Mercedes-Benz three-pointed star" loading="lazy">
+              <span>Mercedes-Benz</span>
+            </div>
             <p class="cred-issuer">Silver Star Mercedes-Benz</p>
             <h3>Management Trainee Internship</h3>
             <p class="cred-date">Cross-functional exposure · 06 July–09 September 2022</p>
@@ -1480,7 +1512,10 @@ ul, ol { padding: 0; list-style: none; }
 
         <div class="creds-secondary">
           <article class="cred cred-compact reveal">
-            <div class="cred-mark" aria-hidden="true"><span>Award</span></div>
+            <div class="cred-mark cred-mark-christ">
+              <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Christ_University_Official_Logo.png" alt="CHRIST (Deemed to be University) official crest" loading="lazy">
+              <span>Academic Award</span>
+            </div>
             <div class="cred-body">
               <p class="cred-issuer">CHRIST (Deemed to be University)</p>
               <h3>Academic Excellence Award for Outstanding Research</h3>
@@ -1517,7 +1552,7 @@ ul, ol { padding: 0; list-style: none; }
 
         <div class="about-grid">
           <div class="about-bio reveal">
-            <p class="about-lead">I focus on how a business wins and delivers: what customers value, what competitors signal, where processes lose momentum, and what evidence can sharpen the next decision.</p>
+            <p class="about-lead">I look at the gap between what a business promises, what customers need, and what its operations actually deliver.</p>
             <p>At NexaHomes, I worked across growth and operations for a 100+ residential-client portfolio, combining client coordination, competitive benchmarking, post-sale follow-through and operational reporting. That experience made the link between market promise and delivery discipline tangible: growth depends not only on demand, but on how reliably an organisation follows through.</p>
             <p>My approach is evidence-led and practical: define the business question, compare customer and competitor signals, map the handoffs, identify gaps, and turn findings into a clear next action. My MBA at CHRIST, Management Trainee internship at Mercedes-Benz Silver Star and impact internship with My Choices Foundation complement this perspective with management exposure, inquiry and a grounding in customer and social context.</p>
             <p class="about-ambition"><span>What I want to contribute</span> Help organisations turn market and customer evidence into sharper priorities, clearer processes and more reliable execution across teams and markets.</p>
