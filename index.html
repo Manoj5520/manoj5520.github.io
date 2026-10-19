@@ -936,6 +936,21 @@ ul, ol { padding: 0; list-style: none; }
   .rotf-badge { transition:none !important; transform:none !important; }
 }
 
+
+/* Final credential visual overrides — deliberately supersede older styles. */
+.cred-mark-christ { background:linear-gradient(135deg,#fff 0%,#f2f4f6 48%,#dfe4e9 100%)!important; border-right:1px solid #bfc7d0!important; padding:22px 14px!important; gap:10px!important; box-shadow:inset 0 1px 0 #fff,inset 0 -2px 5px rgba(74,86,99,.08),0 2px 8px rgba(35,45,55,.05); }
+.cred-mark-christ::before { inset:9px!important; border:1px solid rgba(109,38,59,.2)!important; }
+.cred-mark-christ img { width:min(100%,270px)!important; max-height:105px!important; object-fit:contain!important; background:#fff!important; padding:8px 10px!important; border-radius:2px; filter:drop-shadow(0 3px 3px rgba(35,45,55,.12))!important; }
+.cred-mark-christ .christ-naac { color:#626d79!important; font:700 9px/1.3 var(--sans)!important; letter-spacing:.22em!important; text-transform:uppercase; }
+.cred-mark-christ span:last-child { color:#6d263b!important; font:600 9px/1.3 var(--sans)!important; letter-spacing:.18em!important; text-transform:uppercase; }
+.cred-compact .cred-mark-christ { min-height:216px!important; }
+.cred-compact .cred-mark-christ img { width:min(100%,270px)!important; max-height:105px!important; }
+.cred-compact .cred-thumb.cred-mark-mcf { display:grid!important; place-items:center!important; padding:18px!important; min-width:0; background:linear-gradient(145deg,#fff 0%,#f4f5f6 55%,#e2e6e9 100%)!important; border-right:1px solid #cbd1d8!important; }
+.cred-compact .cred-thumb.cred-mark-mcf img { display:block!important; width:100%!important; height:auto!important; max-height:180px!important; object-fit:contain!important; object-position:center!important; padding:0!important; background:transparent!important; transform:none!important; filter:drop-shadow(0 3px 4px rgba(25,30,35,.1)); }
+.cred-mercedes .cred-brand-panel { background:linear-gradient(135deg,#fff 0%,#eef1f4 50%,#d7dde2 100%)!important; }
+.cred-mercedes .mercedes-luxury-lockup { background:linear-gradient(145deg,#fff 0%,#f5f7f8 45%,#d9dfe4 100%)!important; }
+.cred-mercedes .mercedes-luxury-lockup img { max-width:255px!important; filter:drop-shadow(0 3px 4px rgba(25,30,35,.15))!important; }
+.cred-mercedes .mercedes-grille-photo { object-fit:cover!important; object-position:58% center!important; }
 </style>
 </head>
 <body>
@@ -1044,7 +1059,7 @@ ul, ol { padding: 0; list-style: none; }
        
 <article class="brand-card reveal" data-tilt>
             <div class="brand-card-top">
-              <img class="brand-christ-img" src="/assets/img/christ-university-logo.webp?v=20261015-logo-fixed" alt="CHRIST (Deemed to be University) logo" width="305" height="100" loading="lazy">
+              <img class="brand-christ-img" src="/assets/img/christ-university-logo.webp?v=20261019-silver-naac" alt="CHRIST (Deemed to be University) logo" width="305" height="100" loading="lazy">
               <span class="brand-date">2021 – 2025</span>
             </div>
             <p class="brand-overline">MBA · Human Resource Management</p>
@@ -1080,7 +1095,7 @@ ul, ol { padding: 0; list-style: none; }
 
 <article class="brand-card reveal" data-tilt>
             <div class="brand-card-top">
-              <img class="brand-mcf-img" src="/assets/img/my-choices-wordmark.webp?v=20261015-logo-fixed" alt="My Choices Foundation logo" width="150" height="66" loading="lazy">
+              <img class="brand-mcf-img" src="/assets/img/my-choices-wordmark.webp?v=20261019-hq-fit" alt="My Choices Foundation logo" width="150" height="66" loading="lazy">
               <span class="brand-date">Jan 2022</span>
             </div>
             <p class="brand-overline">Social Concern Project · Impact Internship</p>
@@ -1554,7 +1569,8 @@ ul, ol { padding: 0; list-style: none; }
         <div class="creds-secondary">
           <article class="cred cred-compact reveal">
             <div class="cred-mark cred-mark-christ">
-              <img src="/assets/img/christ-university-logo.webp?v=20261015-logo-fixed" alt="CHRIST (Deemed to be University) official logo" width="305" height="100" loading="lazy">
+              <img src="/assets/img/christ-university-logo.webp?v=20261019-silver-naac" alt="CHRIST (Deemed to be University) official logo" width="305" height="100" loading="lazy">
+              <span class="christ-naac">NAAC A+ ACCREDITED</span>
               <span>Academic Award</span>
             </div>
             <div class="cred-body">
@@ -1567,7 +1583,7 @@ ul, ol { padding: 0; list-style: none; }
 
           <article class="cred cred-compact reveal">
             <a class="cred-thumb cred-mark-mcf" href="assets/certificates/My-Choices-Foundation-Social-Concern-Project.jpg" target="_blank" rel="noopener" data-viewer="image" data-title="Social Concern Project — My Choices Foundation" aria-label="View My Choices Foundation project certificate">
-              <img src="/assets/img/my-choices-wordmark.webp?v=20261015-logo-fixed" width="150" height="66" loading="lazy" alt="My Choices Foundation official logo">
+              <img src="/assets/img/my-choices-wordmark.webp?v=20261019-hq-fit" width="150" height="66" loading="lazy" alt="My Choices Foundation official logo">
             </a>
             <div class="cred-body">
               <p class="cred-issuer">My Choices Foundation</p>
