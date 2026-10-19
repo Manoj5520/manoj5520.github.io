@@ -179,3 +179,86 @@
     });
   }
 })();
+
+
+/* Business Lens 01 — scroll-driven market intelligence scene. */
+(function () {
+  "use strict";
+  var track = document.querySelector("[data-mi-scroll-track]");
+  if (!track) return;
+  var frame = track.querySelector(".mi-sticky-frame");
+  var visual = track.querySelector("[data-mi-visual]");
+  var copies = Array.prototype.slice.call(track.querySelectorAll("[data-mi-copy]"));
+  var buttons = Array.prototype.slice.call(track.querySelectorAll("[data-mi-jump]"));
+  var stateLabel = track.querySelector(".mi-current-state");
+  var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var labels = ["01 / FRAME THE MARKET", "02 / COMPARE CONSISTENTLY", "03 / IDENTIFY THE GAP", "04 / DEFINE THE DIRECTION"];
+  var jumpStops = [0.045, 0.34, 0.64, 0.91];
+  var ticking = false;
+  var lastPhase = -1;
+
+  function clamp(value, min, max) { return Math.max(min, Math.min(max, value)); }
+
+  function update() {
+    var rect = track.getBoundingClientRect();
+    var travel = track.offsetHeight - frame.offsetHeight;
+    var progress = travel > 0 ? clamp(-rect.top / travel, 0, 1) : 0;
+    var phase = progress < 0.23 ? 0 : progress < 0.49 ? 1 : progress < 0.75 ? 2 : 3;
+    track.style.setProperty("--mi-progress", progress.toFixed(3));
+    track.setAttribute("data-mi-phase", String(phase));
+    if (visual) visual.setAttribute("data-mi-phase", String(phase));
+    if (phase !== lastPhase) {
+      copies.forEach(function (copy, i) {
+        var active = Number(copy.getAttribute("data-mi-copy")) === phase;
+        copy.classList.toggle("is-active", active);
+        copy.setAttribute("aria-hidden", active ? "false" : "true");
+      });
+      buttons.forEach(function (button, i) {
+        var active = Number(button.getAttribute("data-mi-jump")) === phase;
+        button.classList.toggle("is-active", active);
+        button.setAttribute("aria-pressed", active ? "true" : "false");
+      });
+      if (stateLabel) stateLabel.textContent = labels[phase];
+      lastPhase = phase;
+    }
+    ticking = false;
+  }
+
+  function requestUpdate() {
+    if (!ticking) {
+      ticking = true;
+      window.requestAnimationFrame(update);
+    }
+  }
+
+  buttons.forEach(function (button) {
+    button.addEventListener("click", function () {
+      if (window.matchMedia("(max-width: 760px)").matches) {
+        var copy = track.querySelector('[data-mi-copy="' + button.getAttribute("data-mi-jump") + '"]');
+        if (copy) {
+          copies.forEach(function (item) {
+            var active = item === copy;
+            item.classList.toggle("is-active", active);
+            item.setAttribute("aria-hidden", active ? "false" : "true");
+          });
+          buttons.forEach(function (item) {
+            var active = item === button;
+            item.classList.toggle("is-active", active);
+            item.setAttribute("aria-pressed", active ? "true" : "false");
+          });
+          if (stateLabel) stateLabel.textContent = labels[Number(button.getAttribute("data-mi-jump"))];
+          return;
+        }
+      }
+      var rect = track.getBoundingClientRect();
+      var travel = track.offsetHeight - frame.offsetHeight;
+      var targetProgress = jumpStops[Number(button.getAttribute("data-mi-jump"))] || 0;
+      var target = window.scrollY + rect.top + Math.max(0, travel) * targetProgress;
+      window.scrollTo({ top: target, behavior: reduceMotion ? "auto" : "smooth" });
+    });
+  });
+
+  window.addEventListener("scroll", requestUpdate, { passive: true });
+  window.addEventListener("resize", requestUpdate);
+  update();
+})();
