@@ -1608,3 +1608,22 @@ ul, ol { padding: 0; list-style: none; }
   .mi-phase-copy.is-active { animation:none; }
   .mi-competitor-plane,.mi-opportunity-plane,.mi-visual-space,.mi-step-button,.mi-evidence-button { transition:none !important; }
 }
+
+
+/* The Business Lens is the opening overview, not a numbered mid-page section. */
+.section-business-lens .section-head { grid-template-columns:96px minmax(0,1fr); }
+.section-business-lens .section-num-overview {
+  display:block;
+  padding-top:6px;
+  color:#d6b27c;
+  font-family:var(--sans);
+  font-size:9px;
+  font-weight:750;
+  line-height:1.45;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+}
+@media(max-width:760px) {
+  .section-business-lens .section-head { grid-template-columns:1fr; gap:9px; }
+  .section-business-lens .section-num-overview { padding-top:0; }
+}
