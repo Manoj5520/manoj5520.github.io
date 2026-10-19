@@ -450,7 +450,8 @@ ul, ol { padding: 0; list-style: none; }
 .cred-mark-christ span { transform: none; font-family: var(--sans); font-size: 9px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; text-align: center; }
 .cred-mark-mcf { background: #fff; padding: 24px 16px; }
 .cred-mark-mcf::after { display: none; }
-.cred-mark-mcf img { display: block; width: 100%; max-width: 150px; height: auto; object-fit: contain; }
+.cred-mark-mcf img { display: block; width: 100%; max-width: 150px; max-height: 100px; height: auto; object-fit: contain; transition: none; }
+.cred:hover .cred-mark-mcf img { transform: none; }
 @media (max-width: 700px) {
   .cred-wide { grid-template-columns: minmax(0, 1fr); }
   .cred-mercedes .cred-body { grid-column: 1; }
