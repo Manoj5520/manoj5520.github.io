@@ -1255,3 +1255,137 @@ ul, ol { padding: 0; list-style: none; }
     width:min(164px,100%) !important;
   }
 }
+
+
+/* Mercedes credential — rebuilt as a single cinematic luxury scene */
+.cred-wide.cred-mercedes {
+  grid-template-columns:minmax(0,1.25fr) minmax(300px,.75fr) !important;
+  align-items:stretch !important;
+  overflow:hidden !important;
+}
+.cred-wide.cred-mercedes .cred-body {
+  grid-column:1 !important;
+  position:relative !important;
+  z-index:1 !important;
+  display:flex !important;
+  flex-direction:column !important;
+  justify-content:center !important;
+  background:linear-gradient(115deg,#fff 0%,#fff 72%,#f0f2f4 100%) !important;
+}
+.cred-mercedes .cred-brand-panel {
+  grid-column:2 !important;
+  position:relative !important;
+  display:block !important;
+  min-width:0 !important;
+  min-height:320px !important;
+  height:100% !important;
+  overflow:hidden !important;
+  isolation:isolate !important;
+  border:0 !important;
+  background:#111820 !important;
+}
+.cred-mercedes .cred-brand-panel::before {
+  content:"" !important;
+  position:absolute !important;
+  z-index:1 !important;
+  inset:0 !important;
+  pointer-events:none !important;
+  background:linear-gradient(90deg,rgba(8,13,19,.76) 0%,rgba(8,13,19,.3) 30%,rgba(8,13,19,0) 68%),linear-gradient(0deg,rgba(6,10,15,.28),transparent 48%) !important;
+}
+.cred-mercedes .mercedes-grille-photo {
+  position:absolute !important;
+  z-index:0 !important;
+  inset:0 !important;
+  width:100% !important;
+  height:100% !important;
+  min-height:0 !important;
+  object-fit:cover !important;
+  object-position:62% center !important;
+  filter:saturate(.72) contrast(1.1) brightness(.84) !important;
+  transform:scale(1.035) !important;
+  transition:transform 900ms cubic-bezier(.2,.7,.2,1),filter 900ms ease !important;
+}
+.cred-mercedes:hover .mercedes-grille-photo {
+  transform:scale(1.075) !important;
+  filter:saturate(.82) contrast(1.08) brightness(.91) !important;
+}
+.cred-mercedes .mercedes-luxury-lockup {
+  position:absolute !important;
+  z-index:3 !important;
+  left:clamp(14px,5%,28px) !important;
+  top:50% !important;
+  transform:translateY(-50%) perspective(900px) rotateY(-5deg) !important;
+  width:clamp(130px,46%,190px) !important;
+  min-height:0 !important;
+  display:flex !important;
+  flex-direction:column !important;
+  align-items:center !important;
+  justify-content:center !important;
+  gap:10px !important;
+  padding:22px 13px 19px !important;
+  box-sizing:border-box !important;
+  border:1px solid rgba(255,255,255,.82) !important;
+  border-radius:2px !important;
+  background:linear-gradient(145deg,rgba(255,255,255,.97) 0%,rgba(235,239,242,.91) 58%,rgba(206,214,221,.89) 100%) !important;
+  box-shadow:0 24px 46px rgba(0,0,0,.32),inset 0 1px 0 rgba(255,255,255,.95),inset -3px 0 9px rgba(100,111,121,.12) !important;
+  backdrop-filter:blur(14px) !important;
+}
+.cred-mercedes .mercedes-star-medallion {
+  display:grid !important;
+  place-items:center !important;
+  width:clamp(48px,5vw,68px) !important;
+  height:clamp(48px,5vw,68px) !important;
+  padding:8px !important;
+  box-sizing:border-box !important;
+  border-radius:50% !important;
+  border:1px solid #c3cbd2 !important;
+  background:radial-gradient(circle at 32% 24%,#fff 0%,#f5f7f8 34%,#d2d9df 100%) !important;
+  box-shadow:0 8px 16px rgba(20,28,36,.2),inset 0 1px 2px #fff,inset 0 -2px 5px rgba(85,95,105,.12) !important;
+}
+.cred-mercedes .mercedes-star-medallion img {
+  display:block !important;
+  width:100% !important;
+  height:100% !important;
+  object-fit:contain !important;
+  filter:drop-shadow(0 2px 2px rgba(0,0,0,.15)) !important;
+}
+.cred-mercedes .mercedes-wordmark {
+  color:#20262d !important;
+  font-family:Arial,Helvetica,sans-serif !important;
+  font-size:clamp(13px,1.1vw,17px) !important;
+  font-weight:600 !important;
+  letter-spacing:-.045em !important;
+  line-height:1.1 !important;
+  text-align:center !important;
+  white-space:normal !important;
+}
+.cred-mercedes .mercedes-tagline {
+  color:#69737c !important;
+  font-size:6px !important;
+  font-weight:700 !important;
+  letter-spacing:.14em !important;
+  line-height:1.5 !important;
+  text-align:center !important;
+  white-space:normal !important;
+}
+@media (max-width:760px) {
+  .cred-wide.cred-mercedes { grid-template-columns:minmax(0,1fr) !important; }
+  .cred-wide.cred-mercedes .cred-body { grid-column:1 !important; }
+  .cred-mercedes .cred-brand-panel {
+    grid-column:1 !important;
+    min-height:250px !important;
+    height:250px !important;
+  }
+  .cred-mercedes .mercedes-luxury-lockup {
+    left:14px !important;
+    width:132px !important;
+    padding:15px 10px 13px !important;
+    gap:7px !important;
+  }
+  .cred-mercedes .mercedes-star-medallion { width:48px !important; height:48px !important; }
+  .cred-mercedes .mercedes-wordmark { font-size:13px !important; }
+  .cred-mercedes .mercedes-tagline { font-size:5.5px !important; letter-spacing:.09em !important; }
+}
+@media (prefers-reduced-motion:reduce) {
+  .cred-mercedes .mercedes-grille-photo { transition:none !important; }
+}
