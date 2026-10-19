@@ -438,36 +438,24 @@ ul, ol { padding: 0; list-style: none; }
 .cred-link[href^="#"]::after { content: " →"; }
 .cred-link:hover { color: var(--burgundy); }
 
-.cred-wide { margin-top: 24px; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); grid-template-rows: auto; }
+.cred-wide { margin-top: 24px; grid-template-columns: minmax(0, 1.25fr) minmax(250px, .75fr); grid-template-rows: auto; }
 .cred-wide .cred-thumb { border-bottom: 0; border-right: 1px solid var(--rule); aspect-ratio: auto; height: 100%; min-height: 280px; }
 .cred-wide .cred-body { padding: clamp(26px, 3vw, 40px); }
-
-.cred-brandmark {
-  display: flex; align-items: center; gap: 14px; margin: 0 0 24px;
-  padding: 16px 18px; min-height: 82px; background: #14161A;
-  border: 1px solid #454A52; color: #D8DCE1;
-}
-.cred-brandmark-mercedes img {
-  width: 48px; height: 48px; object-fit: contain;
-  filter: grayscale(1) brightness(1.7); flex: 0 0 auto;
-}
-.cred-brandmark span {
-  font-size: 11px; font-weight: 600; letter-spacing: .19em;
-  text-transform: uppercase; color: #D8DCE1;
-}
-.cred-mark-christ { gap: 8px; padding: 16px 12px; }
-.cred-mark-christ img {
-  display: block; width: 100%; max-width: 104px; max-height: 104px;
-  object-fit: contain; background: #fff; padding: 6px;
-}
-.cred-mark-christ span {
-  transform: none; font-family: var(--sans); font-size: 9px;
-  font-weight: 600; letter-spacing: .12em; text-transform: uppercase;
-  text-align: center;
-}
+.cred-mercedes { align-items: stretch; }
+.cred-mercedes .cred-body { grid-column: 1; }
+.cred-brand-panel { display: flex; align-items: center; justify-content: center; padding: clamp(22px, 4vw, 56px); min-width: 0; background: #fff; border-left: 1px solid var(--rule); }
+.cred-brand-panel-mercedes img { display: block; width: 100%; max-width: 330px; height: auto; object-fit: contain; }
+.cred-mark-christ { gap: 16px; padding: 20px 12px; }
+.cred-mark-christ img { display: block; width: 100%; max-width: 150px; max-height: 100px; height: auto; object-fit: contain; background: #fff; padding: 4px; }
+.cred-mark-christ span { transform: none; font-family: var(--sans); font-size: 9px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; text-align: center; }
+.cred-mark-mcf { background: #fff; padding: 24px 16px; }
+.cred-mark-mcf::after { display: none; }
+.cred-mark-mcf img { display: block; width: 100%; max-width: 150px; height: auto; object-fit: contain; }
 @media (max-width: 700px) {
-  .cred-brandmark { min-height: 72px; margin-bottom: 18px; }
-  .cred-brandmark-mercedes img { width: 40px; height: 40px; }
+  .cred-wide { grid-template-columns: minmax(0, 1fr); }
+  .cred-mercedes .cred-body { grid-column: 1; }
+  .cred-brand-panel { grid-row: 1; min-height: 140px; padding: 26px; border-left: 0; border-bottom: 1px solid var(--rule); }
+  .cred-brand-panel-mercedes img { max-width: 230px; }
 }
 
 .creds-secondary { margin-top: 24px; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; }
@@ -1481,15 +1469,14 @@ ul, ol { padding: 0; list-style: none; }
 
         <article class="cred cred-wide cred-mercedes reveal" data-tilt>
           <div class="cred-body">
-            <div class="cred-brandmark cred-brandmark-mercedes" aria-label="Mercedes-Benz logo">
-              <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Mercedes-Benz_free_logo.svg" alt="Mercedes-Benz three-pointed star" loading="lazy">
-              <span>Mercedes-Benz</span>
-            </div>
             <p class="cred-issuer">Silver Star Mercedes-Benz</p>
             <h3>Management Trainee Internship</h3>
             <p class="cred-date">Cross-functional exposure · 06 July–09 September 2022</p>
             <p class="cred-note">Additional experience included HR candidate-screening support, luxury customer consultations, local-market marketing support, finance and booking documentation, and a study of Mercedes-Benz India's Retail of the Future (ROTF) model.</p>
             <a class="cred-link" href="assets/certificates/Mercedes_Benz_Management_Internship.pdf" target="_blank" rel="noopener" data-viewer="pdf" data-title="Management Trainee Internship — Silver Star Mercedes-Benz">View certificate</a>
+          </div>
+          <div class="cred-brand-panel cred-brand-panel-mercedes">
+            <img src="/assets/img/mercedes-benz-lockup-silver.svg?v=20261016-elegant-fit" alt="Mercedes-Benz silver three-pointed star and wordmark" width="900" height="293" loading="lazy">
           </div>
         </article>
 
@@ -1513,7 +1500,7 @@ ul, ol { padding: 0; list-style: none; }
         <div class="creds-secondary">
           <article class="cred cred-compact reveal">
             <div class="cred-mark cred-mark-christ">
-              <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Christ_University_Official_Logo.png" alt="CHRIST (Deemed to be University) official crest" loading="lazy">
+              <img src="/assets/img/christ-university-logo.webp?v=20261015-logo-fixed" alt="CHRIST (Deemed to be University) official logo" width="305" height="100" loading="lazy">
               <span>Academic Award</span>
             </div>
             <div class="cred-body">
@@ -1525,8 +1512,8 @@ ul, ol { padding: 0; list-style: none; }
           </article>
 
           <article class="cred cred-compact reveal">
-            <a class="cred-thumb" href="assets/certificates/My-Choices-Foundation-Social-Concern-Project.jpg" target="_blank" rel="noopener" data-viewer="image" data-title="Social Concern Project — My Choices Foundation">
-              <img src="assets/certificates/thumbs/mychoices.jpg" width="720" height="560" loading="lazy" alt="My Choices Foundation Social Concern Project certificate">
+            <a class="cred-thumb cred-mark-mcf" href="assets/certificates/My-Choices-Foundation-Social-Concern-Project.jpg" target="_blank" rel="noopener" data-viewer="image" data-title="Social Concern Project — My Choices Foundation" aria-label="View My Choices Foundation project certificate">
+              <img src="/assets/img/my-choices-wordmark.webp?v=20261015-logo-fixed" width="150" height="66" loading="lazy" alt="My Choices Foundation official logo">
             </a>
             <div class="cred-body">
               <p class="cred-issuer">My Choices Foundation</p>
