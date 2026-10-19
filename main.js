@@ -181,97 +181,61 @@
 })();
 
 
-/* Business Lens 01 — scroll-driven market intelligence scene. */
+/* Business overview carousel — dots, keyboard support and native touch swiping. */
 (function () {
   "use strict";
-  var track = document.querySelector("[data-mi-scroll-track]");
+  var track = document.querySelector("[data-bc-track]");
   if (!track) return;
-  var frame = track.querySelector(".mi-sticky-frame");
-  var visual = track.querySelector("[data-mi-visual]");
-  var copies = Array.prototype.slice.call(track.querySelectorAll("[data-mi-copy]"));
-  var buttons = Array.prototype.slice.call(track.querySelectorAll("[data-mi-jump]"));
-  var stateLabel = track.querySelector(".mi-current-state");
-  var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  var labels = ["01 / FRAME THE MARKET", "02 / COMPARE CONSISTENTLY", "03 / IDENTIFY THE GAP", "04 / DEFINE THE DIRECTION"];
-  var jumpStops = [0.045, 0.34, 0.64, 0.91];
-  var ticking = false;
-  var lastPhase = -1;
-  var mobilePhase = null;
+  var slides = Array.prototype.slice.call(track.querySelectorAll("[data-bc-slide]"));
+  var dots = Array.prototype.slice.call(document.querySelectorAll("[data-bc-go]"));
+  var count = document.querySelector("[data-bc-count]");
+  if (!slides.length || !dots.length) return;
+  var active = 0;
+  var frame = 0;
+  var reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-  function clamp(value, min, max) { return Math.max(min, Math.min(max, value)); }
-
-  function update() {
-    var rect = track.getBoundingClientRect();
-    var travel = track.offsetHeight - frame.offsetHeight;
-    var isMobile = window.matchMedia("(max-width: 760px)").matches;
-    var progress = travel > 0 ? clamp(-rect.top / travel, 0, 1) : 0;
-    var phase;
-    if (isMobile) {
-      phase = mobilePhase !== null ? mobilePhase : Number(track.getAttribute("data-mi-phase") || 0);
-    } else {
-      mobilePhase = null;
-      phase = progress < 0.23 ? 0 : progress < 0.49 ? 1 : progress < 0.75 ? 2 : 3;
-    }
-    track.style.setProperty("--mi-progress", progress.toFixed(3));
-    track.setAttribute("data-mi-phase", String(phase));
-    if (visual) visual.setAttribute("data-mi-phase", String(phase));
-    if (phase !== lastPhase) {
-      copies.forEach(function (copy, i) {
-        var active = Number(copy.getAttribute("data-mi-copy")) === phase;
-        copy.classList.toggle("is-active", active);
-        copy.setAttribute("aria-hidden", active ? "false" : "true");
-      });
-      buttons.forEach(function (button, i) {
-        var active = Number(button.getAttribute("data-mi-jump")) === phase;
-        button.classList.toggle("is-active", active);
-        button.setAttribute("aria-pressed", active ? "true" : "false");
-      });
-      if (stateLabel) stateLabel.textContent = labels[phase];
-      lastPhase = phase;
-    }
-    ticking = false;
-  }
-
-  function requestUpdate() {
-    if (!ticking) {
-      ticking = true;
-      window.requestAnimationFrame(update);
-    }
-  }
-
-  buttons.forEach(function (button) {
-    button.addEventListener("click", function () {
-      if (window.matchMedia("(max-width: 760px)").matches) {
-        var mobileTargetPhase = Number(button.getAttribute("data-mi-jump"));
-        var copy = track.querySelector('[data-mi-copy="' + mobileTargetPhase + '"]');
-        if (copy) {
-          mobilePhase = mobileTargetPhase;
-          track.setAttribute("data-mi-phase", String(mobileTargetPhase));
-          if (visual) visual.setAttribute("data-mi-phase", String(mobileTargetPhase));
-          copies.forEach(function (item) {
-            var active = item === copy;
-            item.classList.toggle("is-active", active);
-            item.setAttribute("aria-hidden", active ? "false" : "true");
-          });
-          buttons.forEach(function (item) {
-            var active = item === button;
-            item.classList.toggle("is-active", active);
-            item.setAttribute("aria-pressed", active ? "true" : "false");
-          });
-          if (stateLabel) stateLabel.textContent = labels[mobileTargetPhase];
-          lastPhase = mobileTargetPhase;
-          return;
-        }
-      }
-      var rect = track.getBoundingClientRect();
-      var travel = track.offsetHeight - frame.offsetHeight;
-      var targetProgress = jumpStops[Number(button.getAttribute("data-mi-jump"))] || 0;
-      var target = window.scrollY + rect.top + Math.max(0, travel) * targetProgress;
-      window.scrollTo({ top: target, behavior: reduceMotion ? "auto" : "smooth" });
+  function clamp(n, min, max) { return Math.max(min, Math.min(max, n)); }
+  function setActive(index) {
+    active = clamp(index, 0, slides.length - 1);
+    slides.forEach(function (slide, i) {
+      var current = i === active;
+      slide.setAttribute("aria-hidden", current ? "false" : "true");
+      if ("inert" in slide) slide.inert = !current;
     });
+    dots.forEach(function (dot, i) {
+      var current = i === active;
+      dot.classList.toggle("is-active", current);
+      dot.setAttribute("aria-current", current ? "true" : "false");
+    });
+    if (count) count.innerHTML = String(active + 1).padStart(2, "0") + ' <i>/</i> ' + String(slides.length).padStart(2, "0");
+  }
+  function goTo(index) {
+    var target = clamp(index, 0, slides.length - 1);
+    var slide = slides[target];
+    track.scrollTo({ left: slide.offsetLeft - track.offsetLeft, behavior: reducedMotion ? "auto" : "smooth" });
+    setActive(target);
+  }
+  dots.forEach(function (dot) {
+    dot.addEventListener("click", function () { goTo(Number(dot.getAttribute("data-bc-go"))); });
   });
-
-  window.addEventListener("scroll", requestUpdate, { passive: true });
-  window.addEventListener("resize", requestUpdate);
-  update();
+  track.addEventListener("scroll", function () {
+    if (frame) return;
+    frame = window.requestAnimationFrame(function () {
+      frame = 0;
+      var nearest = 0;
+      var smallest = Infinity;
+      slides.forEach(function (slide, i) {
+        var distance = Math.abs(slide.offsetLeft - track.offsetLeft - track.scrollLeft);
+        if (distance < smallest) { smallest = distance; nearest = i; }
+      });
+      if (nearest !== active) setActive(nearest);
+    });
+  }, { passive: true });
+  track.addEventListener("keydown", function (event) {
+    if (event.key === "ArrowRight") { event.preventDefault(); goTo(active + 1); }
+    if (event.key === "ArrowLeft") { event.preventDefault(); goTo(active - 1); }
+    if (event.key === "Home") { event.preventDefault(); goTo(0); }
+    if (event.key === "End") { event.preventDefault(); goTo(slides.length - 1); }
+  });
+  setActive(0);
 })();
