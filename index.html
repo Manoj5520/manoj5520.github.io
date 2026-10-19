@@ -443,8 +443,33 @@ ul, ol { padding: 0; list-style: none; }
 .cred-wide .cred-body { padding: clamp(26px, 3vw, 40px); }
 .cred-mercedes { align-items: stretch; }
 .cred-mercedes .cred-body { grid-column: 1; }
-.cred-brand-panel { display: flex; align-items: center; justify-content: center; padding: clamp(22px, 4vw, 56px); min-width: 0; background: #fff; border-left: 1px solid var(--rule); }
-.cred-brand-panel-mercedes img { display: block; width: 100%; max-width: 330px; height: auto; object-fit: contain; }
+.cred-brand-panel {
+  position: relative; isolation: isolate; overflow: hidden;
+  display: flex; align-items: center; justify-content: center;
+  padding: clamp(28px, 4vw, 54px); min-width: 0; min-height: 280px;
+  background:
+    radial-gradient(ellipse at 78% 14%, rgba(255,255,255,.98) 0, rgba(255,255,255,.35) 23%, transparent 47%),
+    linear-gradient(112deg, #ffffff 0%, #f4f5f6 29%, #d9dde0 49%, #f9fafb 63%, #c8cdd1 100%);
+  border-left: 1px solid #d5d9dd;
+}
+.cred-brand-panel::before {
+  content: ""; position: absolute; z-index: -1; inset: 0;
+  background:
+    repeating-linear-gradient(164deg, transparent 0 13px, rgba(42,48,54,.035) 14px 15px, transparent 16px 24px),
+    radial-gradient(ellipse at 94% 52%, rgba(18,21,25,.24), transparent 41%);
+  opacity: .9;
+}
+.cred-brand-panel::after {
+  content: ""; position: absolute; z-index: -1;
+  width: clamp(180px, 22vw, 300px); aspect-ratio: 1; right: -18%; top: 50%;
+  transform: translateY(-50%); border-radius: 50%;
+  border: 1px solid rgba(70,77,83,.18);
+  box-shadow: 0 0 0 12px rgba(255,255,255,.12), 0 0 0 27px rgba(70,77,83,.07), 0 0 0 44px rgba(255,255,255,.16);
+}
+.cred-brand-panel-mercedes img {
+  display: block; position: relative; width: 100%; max-width: 330px; height: auto;
+  object-fit: contain; filter: drop-shadow(0 5px 8px rgba(30,35,40,.12));
+}
 .cred-mark-christ { gap: 16px; padding: 20px 12px; }
 .cred-mark-christ img { display: block; width: 100%; max-width: 150px; max-height: 100px; height: auto; object-fit: contain; background: #fff; padding: 4px; }
 .cred-mark-christ span { transform: none; font-family: var(--sans); font-size: 9px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; text-align: center; }
@@ -455,8 +480,9 @@ ul, ol { padding: 0; list-style: none; }
 @media (max-width: 700px) {
   .cred-wide { grid-template-columns: minmax(0, 1fr); }
   .cred-mercedes .cred-body { grid-column: 1; }
-  .cred-brand-panel { grid-row: 1; min-height: 140px; padding: 26px; border-left: 0; border-bottom: 1px solid var(--rule); }
-  .cred-brand-panel-mercedes img { max-width: 230px; }
+  .cred-brand-panel { grid-row: 1; min-height: 170px; padding: 30px 26px; border-left: 0; border-bottom: 1px solid var(--rule); }
+  .cred-brand-panel-mercedes img { max-width: 250px; }
+  .cred-brand-panel::after { right: -12%; width: 190px; }
 }
 
 .creds-secondary { margin-top: 24px; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; }
