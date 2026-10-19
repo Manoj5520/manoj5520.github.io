@@ -196,14 +196,22 @@
   var jumpStops = [0.045, 0.34, 0.64, 0.91];
   var ticking = false;
   var lastPhase = -1;
+  var mobilePhase = null;
 
   function clamp(value, min, max) { return Math.max(min, Math.min(max, value)); }
 
   function update() {
     var rect = track.getBoundingClientRect();
     var travel = track.offsetHeight - frame.offsetHeight;
+    var isMobile = window.matchMedia("(max-width: 760px)").matches;
     var progress = travel > 0 ? clamp(-rect.top / travel, 0, 1) : 0;
-    var phase = progress < 0.23 ? 0 : progress < 0.49 ? 1 : progress < 0.75 ? 2 : 3;
+    var phase;
+    if (isMobile) {
+      phase = mobilePhase !== null ? mobilePhase : Number(track.getAttribute("data-mi-phase") || 0);
+    } else {
+      mobilePhase = null;
+      phase = progress < 0.23 ? 0 : progress < 0.49 ? 1 : progress < 0.75 ? 2 : 3;
+    }
     track.style.setProperty("--mi-progress", progress.toFixed(3));
     track.setAttribute("data-mi-phase", String(phase));
     if (visual) visual.setAttribute("data-mi-phase", String(phase));
@@ -234,8 +242,12 @@
   buttons.forEach(function (button) {
     button.addEventListener("click", function () {
       if (window.matchMedia("(max-width: 760px)").matches) {
-        var copy = track.querySelector('[data-mi-copy="' + button.getAttribute("data-mi-jump") + '"]');
+        var mobileTargetPhase = Number(button.getAttribute("data-mi-jump"));
+        var copy = track.querySelector('[data-mi-copy="' + mobileTargetPhase + '"]');
         if (copy) {
+          mobilePhase = mobileTargetPhase;
+          track.setAttribute("data-mi-phase", String(mobileTargetPhase));
+          if (visual) visual.setAttribute("data-mi-phase", String(mobileTargetPhase));
           copies.forEach(function (item) {
             var active = item === copy;
             item.classList.toggle("is-active", active);
@@ -246,7 +258,8 @@
             item.classList.toggle("is-active", active);
             item.setAttribute("aria-pressed", active ? "true" : "false");
           });
-          if (stateLabel) stateLabel.textContent = labels[Number(button.getAttribute("data-mi-jump"))];
+          if (stateLabel) stateLabel.textContent = labels[mobileTargetPhase];
+          lastPhase = mobileTargetPhase;
           return;
         }
       }
