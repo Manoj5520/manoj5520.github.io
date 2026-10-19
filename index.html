@@ -1173,11 +1173,22 @@ ul, ol { padding: 0; list-style: none; }
 </style>
 
 <style>
-/* Brand marks in the experience timeline */
-.experience-brand-logo{display:flex;align-items:center;justify-content:flex-start;min-height:58px;margin:0 0 18px}
-.experience-brand-logo img{display:block;width:auto;max-width:190px;height:54px;object-fit:contain;object-position:left center}
-.experience-brand-logo-mercedes img{width:62px;height:62px;max-width:62px;object-position:center;filter:drop-shadow(0 2px 4px rgba(20,25,30,.12))}
-.cred-wide.cred-mercedes .mercedes-grille-photo{object-position:68% center!important}
+/* Experience brand marks: use the uploaded marks with consistent optical sizing. */
+.experience-brand-logo{display:flex;align-items:center;justify-content:flex-start;min-height:76px;margin:0 0 14px}
+.experience-brand-logo img{display:block;width:auto;max-width:160px;height:74px;object-fit:contain;object-position:left center}
+.experience-brand-logo-mercedes img{width:68px;height:68px;max-width:68px;object-position:center;filter:drop-shadow(0 2px 4px rgba(20,25,30,.12))}
+/* Give the credential artwork enough horizontal room for a clear, uncrowded car view. */
+.cred-wide.cred-mercedes{grid-template-columns:minmax(0,1fr) minmax(0,1fr)!important}
+.cred-wide.cred-mercedes .cred-brand-panel{grid-template-columns:minmax(0,.68fr) minmax(0,1.32fr);height:360px;min-height:360px;align-self:center}
+.cred-wide.cred-mercedes .mercedes-grille-photo{object-position:50% center!important;min-height:0}
+@media(max-width:760px){
+  .cred-wide.cred-mercedes{grid-template-columns:minmax(0,1fr)!important}
+  .cred-wide.cred-mercedes > .cred-body{grid-column:1!important;grid-row:2!important}
+  .cred-wide.cred-mercedes > .cred-brand-panel{grid-column:1!important;grid-row:1!important;height:250px!important;min-height:250px!important}
+  .cred-wide.cred-mercedes > .cred-brand-panel{grid-template-columns:minmax(0,.68fr) minmax(0,1.32fr)!important}
+  .cred-wide.cred-mercedes .mercedes-luxury-lockup{left:0!important;width:auto!important;max-width:none!important;padding:12px 8px!important;gap:8px}
+  .cred-wide.cred-mercedes .mercedes-grille-photo{min-height:0!important;height:100%!important;object-position:50% center!important}
+}
 </style>
 
 </head>
@@ -1460,7 +1471,7 @@ ul, ol { padding: 0; list-style: none; }
         <!-- Mercedes-Benz Silver Star — cross-functional management trainee experience -->
         <article class="role role-secondary role-mercedes-detail reveal" aria-labelledby="mb-title">
           <div class="role-meta">
-            <div class="experience-brand-logo experience-brand-logo-mercedes"><img src="/assets/img/mercedes-benz-emblem.png" alt="Mercedes-Benz three-pointed star emblem" loading="lazy"></div>
+            <div class="experience-brand-logo experience-brand-logo-mercedes"><img src="/assets/img/mercedes-benz-emblem.webp" alt="Mercedes-Benz three-pointed star emblem" loading="lazy"></div>
             <p class="role-period">06 July – 09 September 2022</p>
             <h3 id="mb-title" class="role-org">Mercedes-Benz Silver Star</h3>
             <p class="role-title">Management Trainee Intern</p>
@@ -1773,12 +1784,12 @@ ul, ol { padding: 0; list-style: none; }
           <div class="cred-brand-panel cred-brand-panel-mercedes">
             <div class="mercedes-luxury-lockup">
               <div class="mercedes-star-medallion">
-                <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Mercedes-Benz_Star_2022.svg" alt="Mercedes-Benz three-pointed star emblem" width="512" height="512" loading="lazy">
+                <img src="/assets/img/mercedes-benz-emblem.webp" alt="Mercedes-Benz three-pointed star emblem" width="512" height="512" loading="lazy">
               </div>
               <span class="mercedes-wordmark">Mercedes-Benz</span>
               <span class="mercedes-tagline">THE BEST OR NOTHING</span>
             </div>
-            <img class="mercedes-grille-photo" src="/assets/img/mercedes-showroom-3d.webp?v=20261019-final" alt="Silver Mercedes-Benz sedan in a premium modern showroom" width="1600" height="1000" loading="lazy">
+            <img class="mercedes-grille-photo" src="/assets/img/mercedes-showroom-3d.webp?v=20261019-3d-v2" alt="Silver Mercedes-Benz sedan, rendered in a premium 3D-style showroom" width="440" height="275" loading="lazy">
           </div>
         </article>
 
