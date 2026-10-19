@@ -1082,6 +1082,95 @@ ul, ol { padding: 0; list-style: none; }
 }
 
 </style>
+<style>
+
+/* Portfolio Mercedes card correction — full-width-safe, no overlapping plaque */
+.cred-wide.cred-mercedes {
+  display:grid !important;
+  grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr) !important;
+  width:100% !important;
+  max-width:100% !important;
+  min-width:0 !important;
+  box-sizing:border-box !important;
+  overflow:hidden !important;
+  align-items:stretch !important;
+}
+.cred-wide.cred-mercedes > .cred-body {
+  grid-column:1 !important;
+  min-width:0 !important;
+  width:auto !important;
+  box-sizing:border-box !important;
+  padding:clamp(24px,3vw,40px) !important;
+  overflow-wrap:anywhere !important;
+}
+.cred-wide.cred-mercedes > .cred-brand-panel {
+  grid-column:2 !important;
+  position:relative !important;
+  display:block !important;
+  width:100% !important;
+  min-width:0 !important;
+  min-height:320px !important;
+  height:100% !important;
+  box-sizing:border-box !important;
+  overflow:hidden !important;
+  border:0 !important;
+  background:#151a20 !important;
+}
+.cred-wide.cred-mercedes .mercedes-grille-photo {
+  position:absolute !important;
+  inset:0 !important;
+  display:block !important;
+  width:100% !important;
+  height:100% !important;
+  min-width:0 !important;
+  min-height:0 !important;
+  object-fit:cover !important;
+  object-position:68% center !important;
+  filter:saturate(.8) contrast(1.04) brightness(.92) !important;
+  transform:none !important;
+}
+.cred-wide.cred-mercedes .mercedes-luxury-lockup {
+  position:absolute !important;
+  z-index:2 !important;
+  left:18px !important;
+  top:50% !important;
+  transform:translateY(-50%) !important;
+  width:clamp(112px,34%,164px) !important;
+  min-width:0 !important;
+  box-sizing:border-box !important;
+  padding:16px 12px !important;
+  gap:9px !important;
+  background:rgba(248,249,250,.94) !important;
+  border:1px solid rgba(255,255,255,.85) !important;
+  box-shadow:0 12px 30px rgba(0,0,0,.22) !important;
+  backdrop-filter:blur(8px) !important;
+}
+.cred-wide.cred-mercedes .mercedes-star-medallion {
+  width:48px !important;
+  height:48px !important;
+  padding:6px !important;
+}
+.cred-wide.cred-mercedes .mercedes-wordmark {
+  font-size:clamp(12px,1vw,16px) !important;
+  line-height:1.15 !important;
+  letter-spacing:-.02em !important;
+  white-space:normal !important;
+  text-align:center !important;
+}
+.cred-wide.cred-mercedes .mercedes-tagline {
+  font-size:6px !important;
+  letter-spacing:.12em !important;
+  white-space:normal !important;
+  text-align:center !important;
+}
+@media (max-width:760px) {
+  .cred-wide.cred-mercedes { grid-template-columns:minmax(0,1fr) !important; }
+  .cred-wide.cred-mercedes > .cred-body { grid-column:1 !important; grid-row:2 !important; }
+  .cred-wide.cred-mercedes > .cred-brand-panel { grid-column:1 !important; grid-row:1 !important; min-height:220px !important; height:220px !important; }
+  .cred-wide.cred-mercedes .mercedes-luxury-lockup { left:14px !important; width:132px !important; }
+}
+
+</style>
 </head>
 <body>
   <a class="skip" href="index.html#main">Skip to content</a>
