@@ -1009,6 +1009,78 @@ ul, ol { padding: 0; list-style: none; }
   .cred-mercedes .mercedes-wordmark { font-size:14px !important; }
   .cred-compact .cred-thumb.cred-mark-mcf img { max-height:120px !important; }
 }
+
+/* Targeted visual correction: centre and enlarge the My Choices logo; use a horizontal Mercedes lockup. */
+.cred-compact .cred-thumb.cred-mark-mcf {
+  display:flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+  padding:12px !important;
+  min-height:0 !important;
+  height:100% !important;
+  box-sizing:border-box !important;
+}
+.cred-compact .cred-thumb.cred-mark-mcf img {
+  width:calc(100% + 24px) !important;
+  max-width:none !important;
+  height:auto !important;
+  max-height:170px !important;
+  margin:0 !important;
+  object-fit:contain !important;
+  object-position:center !important;
+  transform:none !important;
+  flex:0 0 auto !important;
+}
+.cred-mercedes .mercedes-luxury-lockup {
+  display:grid !important;
+  grid-template-columns:clamp(58px,5.4vw,82px) minmax(0,1fr) !important;
+  grid-template-rows:auto auto !important;
+  align-content:center !important;
+  align-items:center !important;
+  justify-items:start !important;
+  column-gap:14px !important;
+  row-gap:5px !important;
+  padding:24px 18px !important;
+}
+.cred-mercedes .mercedes-star-medallion {
+  grid-column:1 !important;
+  grid-row:1 / span 2 !important;
+  width:100% !important;
+  padding:8px !important;
+  box-sizing:border-box !important;
+}
+.cred-mercedes .mercedes-wordmark {
+  grid-column:2 !important;
+  grid-row:1 !important;
+  align-self:end !important;
+  text-align:left !important;
+  white-space:normal !important;
+  font-family:Arial,Helvetica,sans-serif !important;
+  font-size:clamp(13px,1.05vw,18px) !important;
+  font-weight:600 !important;
+  letter-spacing:-.035em !important;
+}
+.cred-mercedes .mercedes-tagline {
+  grid-column:2 !important;
+  grid-row:2 !important;
+  align-self:start !important;
+  text-align:left !important;
+  font-size:6.5px !important;
+  letter-spacing:.14em !important;
+  white-space:normal !important;
+}
+@media (max-width:760px) {
+  .cred-mercedes .mercedes-luxury-lockup {
+    grid-template-columns:46px minmax(0,1fr) !important;
+    column-gap:8px !important;
+    padding:14px 9px !important;
+  }
+  .cred-mercedes .mercedes-wordmark { font-size:12px !important; }
+  .cred-mercedes .mercedes-tagline { font-size:5px !important; letter-spacing:.08em !important; }
+  .cred-compact .cred-thumb.cred-mark-mcf { padding:8px !important; }
+  .cred-compact .cred-thumb.cred-mark-mcf img { width:calc(100% + 16px) !important; max-height:130px !important; }
+}
+
 </style>
 </head>
 <body>
