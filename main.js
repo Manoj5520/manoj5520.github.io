@@ -309,32 +309,32 @@
   var segments = [
     {
       label: "Welcome",
-      text: "Hello, and welcome. Before you explore, pause for a moment. This is V. Sai Manoj’s portfolio. My work starts with one question: where can a business create an advantage that customers value and operations can deliver?",
+      text: "Hello, and welcome. Before you explore, pause for a moment. This is V. Sai Manoj’s portfolio. My work asks one question: where can a business create an advantage customers value and operations can deliver?",
       pitch: 1.07, rate: 0.94
     },
     {
       label: "Capability Snapshot",
-      text: "Start with Capability Snapshot. My focus is competitive intelligence, market-gap analysis, commercial judgement, service-line strategy, and business operations. I examine customer needs, competitor offers, positioning, and delivery constraints to find where a business can stand apart—and why the opportunity makes commercial sense.",
+      text: "Start with Capability Snapshot. My focus: competitive intelligence, market-gap analysis, commercial judgement, service-line strategy, and business operations. I examine customer needs, competitor offers, positioning, and delivery constraints to find where a business can stand apart—and why it makes commercial sense.",
       pitch: 1.10, rate: 0.92
     },
     {
       label: "My Decision Logic",
-      text: "Next, open My Decision Logic. See how I frame a decision, examine evidence, compare alternatives, test fit with the business model, and identify practical next steps. I connect market signals to commercial priorities and operational feasibility, so the insight becomes a decision a team can act on.",
+      text: "Next, open My Decision Logic. See how I frame a decision, examine evidence, compare alternatives, test business-model fit, and identify next steps. I connect market signals to commercial priorities and operational feasibility, turning insight into decisions teams can act on.",
       pitch: 1.02, rate: 0.93
     },
     {
       label: "Experience and Projects",
-      text: "Then explore Experience and Projects. During my Mercedes-Benz internship, I reviewed the Retail of the Future model through inventory access, pricing transparency, dealer flexibility, and customer experience. At NexaHomes, I benchmarked competitors and assessed service-line opportunities aligned with the business’s positioning. My venture and MBA research further show how I question assumptions and connect evidence to action.",
+      text: "Then explore Experience and Projects. During my Mercedes-Benz internship, I reviewed the Retail of the Future model, considering inventory access, pricing transparency, dealer flexibility, and customer experience. At NexaHomes, I benchmarked competitors and assessed differentiated service lines aligned with the business positioning. My venture and MBA research show how I question assumptions and connect evidence to action.",
       pitch: 1.04, rate: 0.92
     },
     {
       label: "The difference I aim to make",
-      text: "What can I bring? A joined-up view of the market, offer, and operation. I help teams spot overlooked customer needs, find where competitors leave room, test fit with the brand and delivery model, and turn findings into priorities. My aim is to make the next decision clearer and stronger.",
+      text: "What can I bring? A joined-up view of market, offer, and operations. I help teams spot underserved needs, see where competitors leave room, test service fit with brand and delivery, and turn findings into priorities. My aim is to make the next decision clearer and stronger.",
       pitch: 1.08, rate: 0.92
     },
     {
       label: "An invitation",
-      text: "Give me a real business challenge with clear constraints and a meaningful outcome. Let me research it, map the options, and show where progress can begin. Judge me by my thinking, the evidence, and the practical value—not promises. I’m Sai Manoj. Let’s turn an overlooked gap into your next advantage.",
+      text: "Give me a real business challenge, clear constraints, and a meaningful outcome. Let me research it, map the options, and show where progress can begin. Judge me by my thinking, evidence, and practical value—not promises. I’m Sai Manoj. Let’s turn an overlooked gap into your next advantage.",
       pitch: 1.13, rate: 0.93
     }
   ];
