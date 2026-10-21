@@ -15,7 +15,7 @@
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%2314161A'/%3E%3Crect x='14' y='46' width='36' height='3' fill='%236D263B'/%3E%3Ctext x='32' y='38' font-family='Georgia,serif' font-size='24' fill='%23fff' text-anchor='middle'%3EVSM%3C/text%3E%3C/svg%3E">
   <link rel="preload" href="assets/fonts/newsreader-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261021-official-social-and-swapped-stages-01">
+  <link rel="stylesheet" href="/styles.css?v=20261021-guided-welcome-01">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -3227,6 +3227,26 @@ ul, ol { padding: 0; list-style: none; }
           <p class="hero-statement reveal">I benchmark competitors, examine business models and trace process gaps between customer expectations and delivery—then turn the evidence into practical recommendations.</p>
           <p class="hero-ambition reveal">My perspective draws on Mercedes-Benz Retail of the Future analysis, NexaHomes competitor benchmarking and operational coordination, and structured MBA research.</p>
 
+          <aside class="portfolio-guide reveal" id="portfolio-guide" aria-labelledby="portfolio-guide-title">
+            <div class="portfolio-guide-topline">
+              <span class="portfolio-guide-kicker">A guided introduction</span>
+              <span class="portfolio-guide-duration">About 2 minutes</span>
+            </div>
+            <h2 id="portfolio-guide-title">Before you explore, hear the thinking behind the work.</h2>
+            <p class="portfolio-guide-description">A structured welcome through my competitive edge, decision logic, selected work, and the kind of business progress I aim to create.</p>
+            <div class="portfolio-guide-controls">
+              <button class="portfolio-guide-play" id="portfolio-guide-toggle" type="button" aria-controls="portfolio-guide-status">
+                <span class="portfolio-guide-play-icon" aria-hidden="true">▶</span>
+                <span id="portfolio-guide-toggle-label">Listen to the guided introduction</span>
+              </button>
+              <button class="portfolio-guide-stop" id="portfolio-guide-stop" type="button" disabled>Stop</button>
+            </div>
+            <div class="portfolio-guide-progress" id="portfolio-guide-progress-track" role="progressbar" aria-label="Guided introduction progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+              <span data-guide-progress></span>
+            </div>
+            <p class="portfolio-guide-status" id="portfolio-guide-status" role="status" aria-live="polite">Starts only when you press play. No automatic audio.</p>
+          </aside>
+
           <div class="hero-actions reveal">
             <a class="btn btn-primary" href="assets/docs/Vannam-Sai-Manoj-Resume.pdf" download="Vannam-Sai-Manoj-Resume.pdf">Download Resume <span aria-hidden="true">↓</span></a>
             <a class="btn btn-ghost" href="/projects/">Explore Work Samples <span aria-hidden="true">↗</span></a>
@@ -4107,6 +4127,6 @@ ul, ol { padding: 0; list-style: none; }
     <div class="viewer-stage" id="viewer-stage"></div>
   </dialog>
 
-  <script src="/main.js?v=20261021-capability-sequence-final-01" defer></script>
+  <script src="/main.js?v=20261021-guided-welcome-01" defer></script>
 </body>
 </html>
