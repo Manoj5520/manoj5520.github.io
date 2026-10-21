@@ -115,12 +115,13 @@
 
   function chooseVoice(callback) {
     var finished = false;
+    var forceFallback = false;
     var handler = null;
     function finish() {
       if (finished) return;
       var voices = getEnglishVoices();
       var maleVoice = findMaleVoice(voices);
-      if (!maleVoice && voices.length === 0 && !callback.forceFallback) return;
+      if (!maleVoice && voices.length === 0 && !forceFallback) return;
       finished = true;
       if (handler && synth.removeEventListener) synth.removeEventListener("voiceschanged", handler);
       if (voiceReadyTimer) window.clearTimeout(voiceReadyTimer);
@@ -136,7 +137,7 @@
       if (findMaleVoice(voices)) finish();
     };
     if (synth.addEventListener) synth.addEventListener("voiceschanged", handler);
-    voiceReadyTimer = window.setTimeout(function () { finish.forceFallback = true; finish(); }, 1300);
+    voiceReadyTimer = window.setTimeout(function () { forceFallback = true; finish(); }, 1300);
     finish();
   }
 
