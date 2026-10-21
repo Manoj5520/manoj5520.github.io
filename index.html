@@ -2038,6 +2038,61 @@ ul, ol { padding: 0; list-style: none; }
     }
   </style>
 
+
+  <style id="portfolio-section-emblems">
+    /* Original section-specific emblems: crafted as one quiet burgundy/graphite identity system. */
+    .section-mark {
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      flex:0 0 auto;
+      width:25px;
+      height:25px;
+      color:#3B454F;
+      vertical-align:middle;
+    }
+    .section-mark svg { display:block;width:100%;height:100%;overflow:visible; }
+    .section-kicker-marked {
+      display:flex !important;
+      align-items:center;
+      gap:11px;
+      min-width:0;
+    }
+    .section-kicker-text { min-width:0; }
+    .section-mark--decision { width:27px;height:27px;color:#66717B; }
+    .section-mark--experience { width:24px;height:26px;color:#596571; }
+    .section-mark--capability { width:25px;height:25px;color:#56616D; }
+    .section-mark--profile { width:37px;height:25px;color:#3B454F; }
+    .section-mark--portfolio { width:24px;height:25px;color:#52606C; }
+    .section-mark--contact { width:25px;height:25px;color:#596571; margin-left:0; }
+    .snapshot-eyebrow-label { min-width:0; }
+    .snapshot-mark { width:25px;height:25px;flex:0 0 auto;color:#53606C; }
+    .snapshot-mark svg { display:block;width:100%;height:100%; }
+    .contact-panel-copy .contact-section-kicker {
+      display:flex !important;
+      align-items:center;
+      gap:12px;
+      flex-wrap:nowrap;
+    }
+    .contact-kicker-label { min-width:0; }
+    .contact-section-kicker .contact-kicker-rule { flex:0 0 44px; margin-left:0; }
+    @media (max-width:700px) {
+      .section-mark { width:21px;height:22px; }
+      .section-mark--profile { width:32px;height:22px; }
+      .section-mark--decision { width:23px;height:23px; }
+      .snapshot-mark { width:21px;height:21px; }
+      .snapshot-eyebrow { gap:10px !important; }
+      .contact-section-kicker { gap:8px !important; }
+      .contact-section-kicker .contact-kicker-rule { flex-basis:28px; }
+    }
+    @media (max-width:420px) {
+      .snapshot-eyebrow { gap:8px !important; }
+      .snapshot-number { width:38px !important;height:38px !important; }
+      .snapshot-mark { width:19px;height:19px; }
+      .snapshot-eyebrow-label { font-size:9px;letter-spacing:.14em; }
+    }
+  </style>
+
 </head>
 <body>
   <a class="skip" href="index.html#main">Skip to content</a>
@@ -2265,7 +2320,7 @@ ul, ol { padding: 0; list-style: none; }
       <div class="wrap">
         <div class="snapshot-hero">
           <header class="snapshot-copy reveal">
-            <div class="snapshot-eyebrow"><span class="snapshot-number">01</span><span>Capability snapshot · evidence-led</span></div>
+            <div class="snapshot-eyebrow"><span class="snapshot-number">01</span><span class="snapshot-eyebrow-label">Capability snapshot · evidence-led</span><span class="section-mark section-mark--market" aria-hidden="true"><svg viewBox="0 0 32 32" fill="none"><circle cx="11.5" cy="11.5" r="6.4" stroke="currentColor" stroke-width="1.45"/><path d="m16.2 16.2 5.1 5.1M4 23.5h8.5M14 23.5h8M4.7 19.9c1.5-1.5 3.2-2.5 5.1-2.9" stroke="currentColor" stroke-width="1.35" stroke-linecap="round"/><circle cx="11.5" cy="11.5" r="2" fill="#76263D"/><path d="M22 5.5h5.5M24.75 2.75v5.5" stroke="#76263D" stroke-width="1.25" stroke-linecap="round"/></svg></span></div>
             <h2 id="value-title" class="snapshot-title">Reading the market.<br><em>Rethinking the playbook.</em></h2>
             <p class="snapshot-lede">I assess how businesses compete, where customer demand is underserved, and which differentiated opportunities fit the commercial model and can be executed in practice.</p>
             <div class="snapshot-tags" aria-label="Core capabilities">
@@ -2318,7 +2373,7 @@ ul, ol { padding: 0; list-style: none; }
         <header class="section-head reveal">
           <span class="section-num">02</span>
           <div>
-            <p class="section-kicker">My decision logic</p>
+            <p class="section-kicker section-kicker-marked"><span class="section-kicker-text">My decision logic</span><span class="section-mark section-mark--decision" aria-hidden="true"><svg viewBox="0 0 32 32" fill="none"><path d="M3 7.5h8M21 7.5h8M3 24.5h8M21 24.5h8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M3 16h6.5M22.5 16H29" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="m12 12 4-4 4 4-4 4-4-4Z" stroke="#76263D" stroke-width="1.5" stroke-linejoin="round"/><path d="m12 20 4-4 4 4-4 4-4-4Z" stroke="#76263D" stroke-width="1.5" stroke-linejoin="round"/><circle cx="16" cy="16" r="1.25" fill="#76263D"/></svg></span></p>
             <h2 id="approach-title" class="section-title">I look for the gap between need, offer and delivery.</h2>
             <p class="section-lede">I compare what customers need, what the market already offers, and what the operating model can reliably deliver. The unresolved gap—not the first idea—is what I investigate.</p>
           </div>
@@ -2355,7 +2410,7 @@ ul, ol { padding: 0; list-style: none; }
         <header class="section-head reveal">
           <span class="section-num">03</span>
           <div>
-            <p class="section-kicker">Professional experience</p>
+            <p class="section-kicker section-kicker-marked"><span class="section-kicker-text">Professional experience</span><span class="section-mark section-mark--experience" aria-hidden="true"><svg viewBox="0 0 32 32" fill="none"><path d="M8 5v22M8 8h9M8 16h13M8 24h8" stroke="currentColor" stroke-width="1.45" stroke-linecap="round"/><circle cx="8" cy="5" r="2" fill="#76263D"/><circle cx="17" cy="8" r="2" stroke="#76263D" stroke-width="1.35"/><circle cx="21" cy="16" r="2" stroke="#76263D" stroke-width="1.35"/><circle cx="16" cy="24" r="2" stroke="#76263D" stroke-width="1.35"/><path d="M21 18v5h5" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/></svg></span></p>
             <h2 id="experience-title" class="section-title">Experience</h2>
           </div>
         </header>
@@ -2527,7 +2582,7 @@ ul, ol { padding: 0; list-style: none; }
         <header class="section-head reveal">
           <span class="section-num">04</span>
           <div>
-            <p class="section-kicker">Capability architecture</p>
+            <p class="section-kicker section-kicker-marked"><span class="section-kicker-text">Capability architecture</span><span class="section-mark section-mark--capability" aria-hidden="true"><svg viewBox="0 0 32 32" fill="none"><rect x="3.5" y="4" width="8" height="8" stroke="currentColor" stroke-width="1.35"/><rect x="20.5" y="4" width="8" height="8" stroke="currentColor" stroke-width="1.35"/><rect x="3.5" y="20" width="8" height="8" stroke="currentColor" stroke-width="1.35"/><rect x="20.5" y="20" width="8" height="8" stroke="#76263D" stroke-width="1.45"/><path d="M11.5 8h9M7.5 12v8M24.5 12v8M11.5 24h9" stroke="currentColor" stroke-width="1.1" stroke-linecap="round"/><path d="M14.5 14h3v3h-3z" fill="#76263D"/></svg></span></p>
             <h2 id="capabilities-title" class="section-title">Where I can contribute</h2>
             <p class="section-lede capability-evidence reveal">Grounded in NexaHomes operational coordination and competitor research, my Mercedes-Benz Retail of the Future analysis, and MBA research. I combine commercial context, market evidence and practical execution; analytical tools support the work, but are not the whole story.</p>
           </div>
@@ -2702,7 +2757,7 @@ ul, ol { padding: 0; list-style: none; }
         <header class="section-head reveal">
           <span class="section-num">06</span>
           <div>
-            <p class="section-kicker">Business perspective</p>
+            <p class="section-kicker section-kicker-marked"><span class="section-kicker-text">Business perspective</span><span class="section-mark section-mark--profile" aria-label="V. Sai Manoj monogram"><svg viewBox="0 0 42 28" fill="none"><path d="M1.5 2.5h39v23h-39z" stroke="currentColor" stroke-width="1.05"/><path d="M5 5.5h32" stroke="#76263D" stroke-width="1.1"/><text x="21" y="20" text-anchor="middle" font-family="Georgia,serif" font-size="13.5" letter-spacing="1.2" fill="currentColor">VSM</text></svg></span></p>
             <h2 id="about-title" class="section-title">About</h2>
           </div>
         </header>
@@ -2754,7 +2809,7 @@ ul, ol { padding: 0; list-style: none; }
         <header class="section-head reveal">
           <span class="section-num">07</span>
           <div>
-            <p class="section-kicker">Selected portfolio · evidence-led</p>
+            <p class="section-kicker section-kicker-marked"><span class="section-kicker-text">Selected portfolio · evidence-led</span><span class="section-mark section-mark--portfolio" aria-hidden="true"><svg viewBox="0 0 32 32" fill="none"><path d="M7 4.5h13l5 5v18H7z" stroke="currentColor" stroke-width="1.35" stroke-linejoin="round"/><path d="M20 4.5v5h5M11 14h10M11 18h10M11 22h6" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/><path d="M4 7.5v21h17" stroke="#76263D" stroke-width="1.35" stroke-linecap="round" stroke-linejoin="round"/></svg></span></p>
             <h2 id="research-title" class="section-title">Three contexts. One decision discipline.</h2>
             <p class="section-lede">I start with a decision that needs to be made, compare the evidence and available alternatives, then isolate what remains unresolved. I test whether the finding matters commercially and can be delivered operationally—and label assumptions where evidence is incomplete.</p>
           </div>
@@ -2829,7 +2884,7 @@ ul, ol { padding: 0; list-style: none; }
           <span class="section-num">08</span>
           <div class="contact-panel">
             <div class="contact-panel-copy">
-              <p class="section-kicker">Professional opportunities <span class="contact-kicker-rule" aria-hidden="true"></span></p>
+              <p class="section-kicker contact-section-kicker"><span class="contact-kicker-label">Professional opportunities</span><span class="section-mark section-mark--contact" aria-hidden="true"><svg viewBox="0 0 32 32" fill="none"><path d="M4 8h8M20 8h8M4 24h8M20 24h8" stroke="currentColor" stroke-width="1.35" stroke-linecap="round"/><circle cx="16" cy="16" r="6.5" stroke="#76263D" stroke-width="1.45"/><circle cx="16" cy="16" r="2" fill="#76263D"/><path d="M16 2.5v5M16 24.5v5M2.5 16h5M24.5 16h5" stroke="currentColor" stroke-width="1.15" stroke-linecap="round"/></svg></span><span class="contact-kicker-rule" aria-hidden="true"></span></p>
               <h2 id="contact-title" class="contact-close">
                 <span class="contact-line"><em>Competitive</em> insight.</span>
                 <span class="contact-line"><em>Commercial</em> judgement.</span>
