@@ -309,32 +309,32 @@
   var segments = [
     {
       label: "Welcome",
-      text: "Hello, and welcome. Before you explore, pause for a moment. This is V. Sai Manoj’s portfolio. What connects the work here is one question: where can a business create an advantage that customers value and operations can actually deliver?",
+      text: "Hello, and welcome. Before you explore, pause for a moment. This is V. Sai Manoj’s portfolio. The question connecting my work is simple: where can a business create an advantage that customers value and operations can deliver?",
       pitch: 1.07, rate: 0.94
     },
     {
       label: "Capability Snapshot",
-      text: "Start with Capability Snapshot. My focus is competitive intelligence, market-gap analysis, commercial judgement, differentiated service strategy, and business operations. I look at customer needs, competitor offers, positioning, and delivery constraints—not to produce another report, but to find where a business can stand apart and why the opportunity makes commercial sense.",
+      text: "Start with Capability Snapshot. My focus is competitive intelligence, market-gap analysis, commercial judgement, differentiated service strategy, and business operations. I look at customer needs, competitor offers, positioning, and delivery constraints to find where a business can stand apart—and why the opportunity makes commercial sense.",
       pitch: 1.10, rate: 0.92
     },
     {
       label: "My Decision Logic",
-      text: "Next, open My Decision Logic. This is how I approach a problem: define the decision, examine the evidence, compare alternatives, test fit with the business model, and identify practical next steps. I connect market signals with commercial priorities and operational feasibility, so recommendations are not just interesting—they can be evaluated and acted on.",
+      text: "Next, open My Decision Logic. See how I define the decision, examine evidence, compare alternatives, test fit with the business model, and identify practical next steps. I connect market signals with commercial priorities and operational feasibility, so insight becomes a decision a team can evaluate and act on.",
       pitch: 1.02, rate: 0.93
     },
     {
       label: "Experience and Projects",
-      text: "Then explore Experience and Projects. During my Mercedes-Benz internship, I reviewed the Retail of the Future model through inventory access, pricing transparency, dealer flexibility, and customer experience. At NexaHomes, I worked on competitor benchmarking and identifying differentiated service-line opportunities aligned with the business’s positioning. My independent venture research and MBA work show the same pattern: investigate the problem, question assumptions, and structure the choices.",
+      text: "Then explore Experience and Projects. During my Mercedes-Benz internship, I reviewed the Retail of the Future model through inventory access, pricing transparency, dealer flexibility, and customer experience. At NexaHomes, I worked on competitor benchmarking and differentiated service-line opportunities aligned with the business’s positioning. My independent venture research and MBA work show the same discipline: investigate, question assumptions, and structure the choices.",
       pitch: 1.04, rate: 0.92
     },
     {
       label: "The difference I aim to make",
-      text: "What can I bring to a business? A joined-up view of the market, the offer, and the operation. I can help teams see overlooked customer needs, understand where competitors leave room, test whether a new service fits the brand and delivery model, and translate that insight into priorities and recommendations. My value is not claiming to know every answer; it is making the right question clearer and the next decision stronger.",
+      text: "What can I bring? A joined-up view of the market, the offer, and the operation. I help reveal overlooked customer needs, identify where competitors leave room, test whether a service fits the brand and delivery model, and turn findings into clear priorities. My value is making the right question clearer and the next decision stronger.",
       pitch: 1.08, rate: 0.92
     },
     {
       label: "An invitation",
-      text: "So here is my invitation. Give me a real business challenge, with real constraints and a meaningful outcome. Let me show how I research it, map the options, and identify where progress can begin. Judge me by my thinking, the evidence, and the practical value I create—not by promises. I’m Sai Manoj. Let’s turn an overlooked gap into your next advantage.",
+      text: "Here is my invitation. Give me a real business challenge, with real constraints and a meaningful outcome. Let me research it, map the options, and identify where progress can begin. Judge me by my thinking, the evidence, and the practical value I create—not by promises. I’m Sai Manoj. Let’s turn an overlooked gap into your next advantage.",
       pitch: 1.13, rate: 0.93
     }
   ];
@@ -422,7 +422,7 @@
         setProgress(endPercent, expectedMs);
       };
       utterance.onend = function () {
-        if (state === "stopped") return;
+        if (state === "stopped" || state === "failed") return;
         completedWords = segment.endWords;
         if (index === segments.length - 1) {
           state = "finished";
@@ -502,9 +502,7 @@
       if (state === "idle") startGuide(true);
     }, 800);
   }
-  if (document.readyState === "complete") {
-    attemptAutomaticWelcome();
-  } else {
-    window.addEventListener("load", attemptAutomaticWelcome, { once: true });
-  }
+  // The main script is deferred and placed after the portfolio markup; a short
+  // delay lets the first screen render before attempting the spoken welcome.
+  attemptAutomaticWelcome();
 })();
