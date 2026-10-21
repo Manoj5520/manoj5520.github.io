@@ -309,32 +309,32 @@
   var segments = [
     {
       label: "Welcome",
-      text: "Hello, and welcome. Before you explore, pause for a moment. This is V. Sai Manoj’s portfolio. Beyond titles and tools, this is how I think about business problems.",
+      text: "Hello, and welcome. Before you explore, pause for a moment. This is V. Sai Manoj’s portfolio. What connects the work here is one question: where can a business create an advantage that customers value and operations can actually deliver?",
       pitch: 1.07, rate: 0.94
     },
     {
       label: "Capability Snapshot",
-      text: "Start with Capability Snapshot. You’ll find my core strengths: competitive intelligence, market-gap analysis, commercial judgement, differentiated service strategy, and operational improvement. I look beyond existing offers to find underserved needs, identify where a business can stand apart, and assess whether an opportunity is deliverable.",
+      text: "Start with Capability Snapshot. My focus is competitive intelligence, market-gap analysis, commercial judgement, differentiated service strategy, and business operations. I look at customer needs, competitor offers, positioning, and delivery constraints—not to produce another report, but to find where a business can stand apart and why the opportunity makes commercial sense.",
       pitch: 1.10, rate: 0.92
     },
     {
       label: "My Decision Logic",
-      text: "Next, open My Decision Logic. See how I move from observation to recommendation: understand the context, frame the decision, compare alternatives, test commercial fit, and consider operational reality. The goal is clarity on what matters, what is feasible, and what should happen next.",
+      text: "Next, open My Decision Logic. This is how I approach a problem: define the decision, examine the evidence, compare alternatives, test fit with the business model, and identify practical next steps. I connect market signals with commercial priorities and operational feasibility, so recommendations are not just interesting—they can be evaluated and acted on.",
       pitch: 1.02, rate: 0.93
     },
     {
       label: "Experience and Projects",
-      text: "Then explore Experience and Projects. Look for my Mercedes-Benz Retail of the Future review, NexaHomes competitor benchmarking and differentiated service-line research, independent venture research, and MBA research into employee turnover. Across these contexts, the discipline is consistent: question assumptions, examine evidence, and connect insight with action.",
+      text: "Then explore Experience and Projects. During my Mercedes-Benz internship, I reviewed the Retail of the Future model through inventory access, pricing transparency, dealer flexibility, and customer experience. At NexaHomes, I worked on competitor benchmarking and identifying differentiated service-line opportunities aligned with the business’s positioning. My independent venture research and MBA work show the same pattern: investigate the problem, question assumptions, and structure the choices.",
       pitch: 1.04, rate: 0.92
     },
     {
       label: "The difference I aim to make",
-      text: "What difference can I make? I can help teams see beyond the current offer, weigh trade-offs before committing, and connect customer expectations with commercial priorities and operational delivery. I bring curiosity to discovery, structure to decisions, and practical focus. I investigate the right question, challenge the obvious answer, and shape recommendations people can act on.",
+      text: "What can I bring to a business? A joined-up view of the market, the offer, and the operation. I can help teams see overlooked customer needs, understand where competitors leave room, test whether a new service fits the brand and delivery model, and translate that insight into priorities and recommendations. My value is not claiming to know every answer; it is making the right question clearer and the next decision stronger.",
       pitch: 1.08, rate: 0.92
     },
     {
       label: "An invitation",
-      text: "Here is my invitation: give me a real business challenge. Tell me the context, constraints, and outcome you need. Let me investigate, compare the options, and recommend a practical next step. Judge me by the questions I ask and the value I help create. I’m Sai Manoj. Let’s turn an overlooked gap into your next advantage.",
+      text: "So here is my invitation. Give me a real business challenge, with real constraints and a meaningful outcome. Let me show how I research it, map the options, and identify where progress can begin. Judge me by my thinking, the evidence, and the practical value I create—not by promises. I’m Sai Manoj. Let’s turn an overlooked gap into your next advantage.",
       pitch: 1.13, rate: 0.93
     }
   ];
@@ -382,8 +382,13 @@
     return null;
   }
 
-  function startGuide() {
+  var firstSegmentStarted = false;
+  var autoStartTimer = null;
+
+  function startGuide(isAutoStart) {
     synth.cancel();
+    if (autoStartTimer) window.clearTimeout(autoStartTimer);
+    firstSegmentStarted = false;
     state = "speaking";
     completedWords = 0;
     setProgress(0, 0);
@@ -391,7 +396,7 @@
     stopButton.disabled = false;
     label.textContent = "Pause introduction";
     if (buttonIcon) buttonIcon.textContent = "Ⅱ";
-    status.textContent = "Preparing the guided introduction…";
+    status.textContent = isAutoStart ? "Starting your guided introduction…" : "Preparing the guided introduction…";
     var voice = selectVoice();
 
     segments.forEach(function (segment, index) {
@@ -407,7 +412,9 @@
       utterance.volume = 1;
 
       utterance.onstart = function () {
-        if (state === "stopped") return;
+        if (state === "stopped" || state === "failed") return;
+        firstSegmentStarted = true;
+        if (autoStartTimer) window.clearTimeout(autoStartTimer);
         var endPercent = segment.endWords / totalWords * 100;
         var expectedMs = Math.max(2400, segment.words / (145 * segment.rate) * 60000);
         var voiceNote = voice ? "" : " · using your device’s default English voice";
@@ -427,18 +434,37 @@
         }
       };
       utterance.onerror = function (event) {
-        if (state === "stopped" || (event && event.error === "canceled")) return;
-        state = "idle";
-        label.textContent = "Try the introduction again";
+        if (state === "stopped" || state === "failed" || (event && event.error === "canceled")) return;
+        state = "failed";
+        synth.cancel();
+        label.textContent = "Start the guided introduction";
         if (buttonIcon) buttonIcon.textContent = "▶";
         stopButton.disabled = true;
-        status.textContent = "Your browser could not continue the spoken introduction. Please try again or explore the portfolio normally.";
+        status.textContent = "Your browser may block automatic audio. Press Start to hear the guided introduction, or explore the portfolio normally.";
       };
       synth.speak(utterance);
     });
+
+    if (isAutoStart) {
+      autoStartTimer = window.setTimeout(function () {
+        if (state === "speaking" && !firstSegmentStarted) {
+          synth.cancel();
+          state = "idle";
+          label.textContent = "Start the guided introduction";
+          if (buttonIcon) buttonIcon.textContent = "▶";
+          stopButton.disabled = true;
+          status.textContent = "Your browser may block automatic audio. Press Start to hear the guided introduction.";
+          setProgress(0, 0);
+        }
+      }, 2400);
+    }
   }
 
   playButton.addEventListener("click", function () {
+    if (state === "speaking" && !firstSegmentStarted) {
+      startGuide(false);
+      return;
+    }
     if (state === "speaking") {
       synth.pause();
       state = "paused";
@@ -460,6 +486,7 @@
 
   stopButton.addEventListener("click", function () {
     state = "stopped";
+    if (autoStartTimer) window.clearTimeout(autoStartTimer);
     synth.cancel();
     setProgress(0, 180);
     label.textContent = "Listen to the guided introduction";
@@ -467,4 +494,17 @@
     stopButton.disabled = true;
     status.textContent = "Introduction stopped. Press play whenever you are ready.";
   });
+
+  // Attempt the requested automatic welcome on page entry. If browser autoplay
+  // policy blocks speech, the visitor gets a clear one-click fallback instead.
+  function attemptAutomaticWelcome() {
+    window.setTimeout(function () {
+      if (state === "idle") startGuide(true);
+    }, 800);
+  }
+  if (document.readyState === "complete") {
+    attemptAutomaticWelcome();
+  } else {
+    window.addEventListener("load", attemptAutomaticWelcome, { once: true });
+  }
 })();
