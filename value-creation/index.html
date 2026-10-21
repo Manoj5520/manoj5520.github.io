@@ -672,6 +672,50 @@
     .executive-tier-matrix .tier-matrix-note{color:#6B7178!important}
     @media(prefers-reduced-motion:reduce){.strength,.role-card,.global-card,.evidence-card,.top-link{transition:none!important}}
 
+
+    /* Prestigious 3D entry visual on silver-white, plus a four-column matrix that fits its container */
+    .etm-engine{display:grid;grid-template-columns:minmax(0,1.02fr) minmax(300px,.98fr);align-items:center;gap:18px;margin:17px 0 12px;padding:17px 18px 13px;border:1px solid #CCD3DA;border-top:2px solid #FFFFFF;border-radius:5px;background:linear-gradient(135deg,#FFFFFF 0%,#F2F5F8 48%,#E4E8ED 100%);box-shadow:inset 0 1px 0 #FFFFFF,0 2px 0 #D6DCE2,0 12px 25px -23px rgba(34,40,48,.32)}
+    .etm-engine-copy{min-width:0;padding:4px 0 5px}
+    .etm-engine-kicker{display:flex;align-items:center;gap:8px;margin:0 0 9px;color:#76263D;font-size:8px;font-weight:850;letter-spacing:.17em}
+    .etm-engine-kicker span{width:7px;height:7px;border-radius:50%;background:linear-gradient(145deg,#AEB7C0,#FFFFFF);border:1px solid #8F9AA6;box-shadow:0 1px 2px rgba(35,43,53,.18)}
+    .etm-engine-copy h3{margin:0;color:#30343A;font-family:Newsreader,Georgia,serif;font-size:clamp(25px,3vw,36px);font-weight:430;line-height:1.08;letter-spacing:-.035em}
+    .etm-engine-copy h3 em{color:#76263D;font-style:normal}
+    .etm-engine-copy>p:not(.etm-engine-kicker){max-width:510px;margin:10px 0 13px;color:#555D66;font-size:10.5px;line-height:1.65}
+    .etm-engine-steps{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:7px}
+    .etm-engine-steps>div{display:grid;grid-template-columns:20px 1fr;column-gap:7px;align-items:center;padding:7px 8px;border:1px solid #D6DDE3;border-radius:3px;background:linear-gradient(145deg,#FFFFFF,#EEF1F4);box-shadow:inset 0 1px 0 #FFFFFF,0 2px 0 rgba(204,211,218,.55)}
+    .etm-engine-steps>div>span{grid-row:1/3;display:grid;place-items:center;width:19px;height:19px;border-radius:3px;background:#4B0C20;color:#FFFFFF;font-size:7px;font-weight:850}
+    .etm-engine-steps b{color:#34373D;font-size:7px;letter-spacing:.1em}
+    .etm-engine-steps small{color:#6A7077;font-size:8px;line-height:1.4}
+    .etm-engine-art{position:relative;min-width:0;padding:7px 5px 4px;border:1px solid #D6DCE2;border-radius:4px;background:radial-gradient(ellipse at 50% 48%,#FFFFFF 0%,#F2F5F8 56%,#E4E8EC 100%);box-shadow:inset 0 1px 0 #FFFFFF,inset 0 -2px 5px rgba(129,142,155,.08),0 2px 0 #D8DEE4}
+    .etm-art-caption{position:relative;z-index:1;display:flex;justify-content:space-between;gap:8px;padding:0 8px;color:#7C858E;font-size:7px;font-weight:850;letter-spacing:.13em}
+    .etm-art-caption span:first-child{color:#76263D}
+    .etm-orbit-visual{display:block;width:100%;height:auto;max-height:250px;overflow:visible}
+    .etm-art-foot{display:flex;align-items:center;justify-content:center;gap:7px;padding:0 4px 6px;color:#656D76;font-size:7px;font-weight:800;letter-spacing:.09em;text-align:center}
+    .etm-art-dot{display:inline-block;width:6px;height:6px;border-radius:50%;background:#B99557;box-shadow:0 0 0 3px rgba(185,149,87,.13)}
+    .etm-table-wrap{width:100%;max-width:100%;overflow-x:hidden!important}
+    .etm-table{width:100%!important;min-width:0!important;max-width:100%!important;table-layout:fixed!important}
+    .etm-table thead th:nth-child(1){width:6%!important}
+    .etm-table thead th:nth-child(2){width:27%!important}
+    .etm-table thead th:nth-child(3){width:33%!important}
+    .etm-table thead th:nth-child(4){width:34%!important}
+    .etm-table th,.etm-table td{min-width:0!important;max-width:100%!important;overflow-wrap:anywhere!important;word-break:normal!important}
+    .etm-table tbody td{padding:12px 12px!important}
+    .etm-table thead th{padding:10px 11px!important;font-size:8px!important}
+    .etm-table td strong{font-size:10.5px!important;line-height:1.45!important}
+    .etm-table td p{font-size:9.5px!important;line-height:1.62!important}
+    .etm-table .tier-badge{width:38px!important;height:38px!important;font-size:26px!important}
+    .etm-table .tier-rank-label{font-size:6.5px!important}
+    .etm-table .tier-role-chips{gap:4px!important}
+    .etm-table .tier-role-chips span{font-size:7.2px!important;white-space:normal!important;max-width:100%!important}
+    .etm-role-primary{font-size:9px!important;overflow-wrap:anywhere!important}
+    @media(max-width:940px){.etm-engine{grid-template-columns:minmax(0,1fr) minmax(250px,.9fr);gap:12px;padding:14px}.etm-engine-copy h3{font-size:28px}.etm-engine-copy>p:not(.etm-engine-kicker){font-size:10px}.etm-table tbody td{padding:9px 8px!important}.etm-table td strong{font-size:9.5px!important}.etm-table td p{font-size:8.7px!important}}
+    @media(max-width:760px){
+      .etm-engine{grid-template-columns:1fr;gap:10px;padding:13px}.etm-engine-copy h3{font-size:30px}.etm-engine-copy>p:not(.etm-engine-kicker){font-size:11px}.etm-engine-steps>div{padding:8px}.etm-engine-art{max-width:470px;width:100%;margin:0 auto}.etm-orbit-visual{max-height:none}
+      .etm-table thead{display:none}.etm-table,.etm-table tbody,.etm-table tr,.etm-table th,.etm-table td{display:block;width:100%}.etm-table tbody tr{display:grid;grid-template-columns:48px minmax(0,1fr);border-top:2px solid #FFFFFF!important}.etm-table tbody tr:first-child{border-top:0!important}.etm-table tbody th{grid-column:1;grid-row:1/span 3;padding:12px 3px!important;border-right:1px solid rgba(49,34,42,.14)!important;text-align:center}.etm-table tbody td{grid-column:2;padding:11px 12px!important;border-top:1px solid rgba(49,34,42,.1)!important;border-right:0!important}.etm-table tbody td:nth-child(2){border-top:0!important}.etm-table td strong{font-size:10.5px!important}.etm-table td p{font-size:10px!important;line-height:1.55!important}.etm-table td:before{display:block;margin-bottom:5px;color:#737B84;font-size:7px;font-weight:850;letter-spacing:.12em;text-transform:uppercase}.etm-table td:nth-child(2):before{content:"CAPABILITY & THINKING"}.etm-table td:nth-child(3):before{content:"EVIDENCE"}.etm-table td:nth-child(4):before{content:"BUSINESS VALUE & ROLE FIT"}
+    }
+    @media(max-width:480px){.etm-engine-copy h3{font-size:27px}.etm-engine-steps{gap:6px}.etm-engine-steps>div{grid-template-columns:18px 1fr;column-gap:5px;padding:7px 6px}.etm-engine-steps>div>span{width:17px;height:17px;font-size:6.5px}.etm-engine-steps b{font-size:6.5px}.etm-engine-steps small{font-size:7px}.etm-art-caption{font-size:6px}.etm-art-foot{font-size:6px;letter-spacing:.06em}}
+    @media(prefers-reduced-motion:reduce){.etm-engine *{scroll-behavior:auto}}
+
 </style>
 </head>
 <body>
@@ -871,67 +915,119 @@
           <div>
             <p class="tier-matrix-kicker">231999 · PROFESSIONAL VALUE ARCHITECTURE</p>
             <h2 id="tier-matrix-title">Capability &amp; Role Alignment</h2>
-            <p class="tier-matrix-lede">How my strongest thinking patterns, applied business experience and supporting tools translate into value for MNC and international business teams.</p>
+            <p class="tier-matrix-lede">A business-facing view of how I think, use AI, read markets and connect recommendations to operational delivery.</p>
           </div>
           <div class="tier-matrix-stamp" aria-label="Professional profile mark"><span>VSM</span><small>MMXXVI<br>VALUE CREATION</small></div>
         </header>
 
-        <div class="etm-positioning">
-          <span class="etm-positioning-label">DISTINCTIVE COMBINATION</span>
-          <p>Persistent problem-solving + AI-enabled research + market-gap judgement + operational follow-through.</p>
+        <div class="etm-engine" aria-labelledby="etm-engine-title">
+          <div class="etm-engine-copy">
+            <p class="etm-engine-kicker"><span></span> THE VALUE-CREATION ENGINE</p>
+            <h3 id="etm-engine-title">From difficult questions<br>to <em>business-ready action.</em></h3>
+            <p>My differentiator is the combination: persist with the problem, use AI to accelerate research, identify the market or customer gap, then test the idea against business and delivery realities.</p>
+            <div class="etm-engine-steps">
+              <div><span>01</span><b>THINK</b><small>Reframe the problem</small></div>
+              <div><span>02</span><b>RESEARCH</b><small>Use AI with judgement</small></div>
+              <div><span>03</span><b>DISCOVER</b><small>Find the useful gap</small></div>
+              <div><span>04</span><b>EXECUTE</b><small>Connect insight to action</small></div>
+            </div>
+          </div>
+          <div class="etm-engine-art">
+            <div class="etm-art-caption"><span>01—04</span><span>CONNECTED CAPABILITIES</span></div>
+            <svg class="etm-orbit-visual" viewBox="0 0 460 300" role="img" aria-labelledby="etm-orbit-title etm-orbit-desc">
+              <title id="etm-orbit-title">Three-dimensional value creation system</title>
+              <desc id="etm-orbit-desc">A metallic central sphere for business value, connected by orbital rings to four nodes for persistent thinking, AI-assisted research, market opportunity and operational execution.</desc>
+              <defs>
+                <radialGradient id="etmSilverSphere" cx="32%" cy="23%" r="78%"><stop offset="0%" stop-color="#FFFFFF"/><stop offset="28%" stop-color="#E5E9ED"/><stop offset="61%" stop-color="#AEB7C1"/><stop offset="82%" stop-color="#7B8794"/><stop offset="100%" stop-color="#E5E9ED"/></radialGradient>
+                <linearGradient id="etmRing" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#FFFFFF"/><stop offset="30%" stop-color="#AEB7C1"/><stop offset="58%" stop-color="#76263D"/><stop offset="100%" stop-color="#B99557"/></linearGradient>
+                <linearGradient id="etmWineCore" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#70263E"/><stop offset="48%" stop-color="#4B0C20"/><stop offset="100%" stop-color="#29121C"/></linearGradient>
+                <linearGradient id="etmNodeSilver" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#FFFFFF"/><stop offset="100%" stop-color="#D7DDE3"/></linearGradient>
+                <filter id="etmOrbShadow" x="-40%" y="-40%" width="180%" height="190%"><feDropShadow dx="0" dy="7" stdDeviation="7" flood-color="#343C46" flood-opacity=".19"/></filter>
+                <filter id="etmNodeShadow" x="-40%" y="-40%" width="180%" height="180%"><feDropShadow dx="0" dy="3" stdDeviation="2" flood-color="#303944" flood-opacity=".16"/></filter>
+              </defs>
+              <ellipse cx="230" cy="268" rx="117" ry="12" fill="#7F8995" opacity=".12"/>
+              <ellipse cx="230" cy="148" rx="174" ry="78" fill="none" stroke="#AEB8C2" stroke-width="1.2" opacity=".8" transform="rotate(-19 230 148)"/>
+              <ellipse cx="230" cy="148" rx="174" ry="78" fill="none" stroke="url(#etmRing)" stroke-width="3" opacity=".74" transform="rotate(44 230 148)"/>
+              <ellipse cx="230" cy="148" rx="145" ry="104" fill="none" stroke="#B8C1CA" stroke-width="1" stroke-dasharray="2 6" opacity=".9" transform="rotate(-39 230 148)"/>
+              <path d="M98 190C142 72 292 53 357 113" fill="none" stroke="#76263D" stroke-width="1.25" opacity=".48"/>
+              <path d="M100 190C151 256 310 260 360 171" fill="none" stroke="#B99557" stroke-width="1.5" opacity=".65"/>
+              <g filter="url(#etmOrbShadow)">
+                <circle cx="230" cy="148" r="73" fill="url(#etmSilverSphere)" stroke="#FFFFFF" stroke-width="2"/>
+                <circle cx="230" cy="148" r="65" fill="none" stroke="#8793A0" stroke-width=".8" opacity=".75"/>
+                <ellipse cx="230" cy="148" rx="31" ry="65" fill="none" stroke="#8793A0" stroke-width="1" opacity=".8"/>
+                <ellipse cx="230" cy="148" rx="65" ry="25" fill="none" stroke="#8793A0" stroke-width="1" opacity=".8"/>
+                <path d="M169 126C191 111 263 108 291 129" fill="none" stroke="#FFFFFF" stroke-width="3" opacity=".68" stroke-linecap="round"/>
+                <path d="M180 180C204 194 260 195 281 177" fill="none" stroke="#667584" stroke-width="1.5" opacity=".45" stroke-linecap="round"/>
+                <circle cx="230" cy="148" r="39" fill="url(#etmWineCore)" stroke="#FFFFFF" stroke-width="2.5"/>
+                <circle cx="230" cy="148" r="34" fill="none" stroke="#D5C5A3" stroke-width=".8" opacity=".8"/>
+                <text x="230" y="144" text-anchor="middle" font-family="Inter,Arial,sans-serif" font-size="8" font-weight="700" letter-spacing="1.8" fill="#E2D3B2">BUSINESS</text>
+                <text x="230" y="158" text-anchor="middle" font-family="Inter,Arial,sans-serif" font-size="13" font-weight="800" letter-spacing=".6" fill="#FFFFFF">VALUE</text>
+              </g>
+              <g filter="url(#etmNodeShadow)">
+                <g transform="translate(230 35)">
+                  <circle r="22" fill="url(#etmNodeSilver)" stroke="#AEB7C0" stroke-width="1"/><circle r="17" fill="#FFFFFF" stroke="#B7C0C8" stroke-width=".7"/>
+                  <text y="4" text-anchor="middle" font-family="Inter,Arial,sans-serif" font-size="11" font-weight="800" fill="#4B0C20">01</text>
+                  <rect x="-43" y="-32" width="86" height="16" rx="3" fill="#FFFFFF" stroke="#D1D8DE"/><text y="-21" text-anchor="middle" font-family="Inter,Arial,sans-serif" font-size="7" font-weight="800" letter-spacing=".6" fill="#4B0C20">PERSIST</text>
+                </g>
+                <g transform="translate(80 143)">
+                  <circle r="22" fill="url(#etmNodeSilver)" stroke="#AEB7C0" stroke-width="1"/><circle r="17" fill="#FFFFFF" stroke="#B7C0C8" stroke-width=".7"/>
+                  <text y="4" text-anchor="middle" font-family="Inter,Arial,sans-serif" font-size="11" font-weight="800" fill="#284B68">02</text>
+                  <rect x="-45" y="28" width="90" height="17" rx="3" fill="#FFFFFF" stroke="#D1D8DE"/><text y="39" text-anchor="middle" font-family="Inter,Arial,sans-serif" font-size="7" font-weight="800" letter-spacing=".45" fill="#284B68">AI RESEARCH</text>
+                </g>
+                <g transform="translate(380 143)">
+                  <circle r="22" fill="url(#etmNodeSilver)" stroke="#AEB7C0" stroke-width="1"/><circle r="17" fill="#FFFFFF" stroke="#B7C0C8" stroke-width=".7"/>
+                  <text y="4" text-anchor="middle" font-family="Inter,Arial,sans-serif" font-size="11" font-weight="800" fill="#90622D">03</text>
+                  <rect x="-43" y="28" width="86" height="17" rx="3" fill="#FFFFFF" stroke="#D1D8DE"/><text y="39" text-anchor="middle" font-family="Inter,Arial,sans-serif" font-size="7" font-weight="800" letter-spacing=".45" fill="#795324">MARKET GAP</text>
+                </g>
+                <g transform="translate(230 258)">
+                  <circle r="22" fill="url(#etmNodeSilver)" stroke="#AEB7C0" stroke-width="1"/><circle r="17" fill="#FFFFFF" stroke="#B7C0C8" stroke-width=".7"/>
+                  <text y="4" text-anchor="middle" font-family="Inter,Arial,sans-serif" font-size="11" font-weight="800" fill="#566676">04</text>
+                  <rect x="-43" y="24" width="86" height="17" rx="3" fill="#FFFFFF" stroke="#D1D8DE"/><text y="35" text-anchor="middle" font-family="Inter,Arial,sans-serif" font-size="7" font-weight="800" letter-spacing=".4" fill="#566676">EXECUTION</text>
+                </g>
+              </g>
+            </svg>
+            <div class="etm-art-foot"><span class="etm-art-dot"></span> RESEARCH-LED · AI-ENABLED · BUSINESS-ALIGNED</div>
+          </div>
         </div>
 
         <div class="tier-matrix-legend etm-legend" aria-label="Capability tiers">
-          <span><i class="tier-key tier-key-s">S</i> Signature differentiators</span>
-          <span><i class="tier-key tier-key-a">A</i> Applied strengths</span>
-          <span><i class="tier-key tier-key-b">B</i> Execution capabilities</span>
-          <span><i class="tier-key tier-key-c">C</i> Supporting toolkit</span>
+          <span><i class="tier-key tier-key-s">S</i> Signature differentiators</span><span><i class="tier-key tier-key-a">A</i> Applied strengths</span><span><i class="tier-key tier-key-b">B</i> Execution capabilities</span><span><i class="tier-key tier-key-c">C</i> Supporting toolkit</span>
         </div>
 
         <div class="tier-table-wrap etm-table-wrap">
           <table class="tier-table etm-table">
-            <thead><tr><th scope="col">Tier</th><th scope="col">Capability</th><th scope="col">Evidence in my work</th><th scope="col">Business value</th><th scope="col">Relevant roles</th></tr></thead>
+            <thead><tr><th scope="col">Tier</th><th scope="col">Capability &amp; thinking</th><th scope="col">Evidence in my work</th><th scope="col">Business value &amp; role alignment</th></tr></thead>
             <tbody>
               <tr class="tier-row tier-row-s">
                 <th scope="row"><span class="tier-badge">S</span><span class="tier-rank-label">Signature</span></th>
-                <td><strong>Persistent problem-solving, AI-assisted research &amp; opportunity discovery</strong><p>Reframe unresolved questions, compare alternatives, synthesise information with AI, and refine conclusions against evidence.</p></td>
+                <td><strong>Persistent problem-solving, AI-assisted research &amp; opportunity discovery</strong><p>Reframe unresolved questions, compare alternatives, synthesise information with AI and refine conclusions against evidence.</p></td>
                 <td><p><b>NexaHomes:</b> competitor benchmarking and customer context informed differentiated service-line suggestions. <b>ETHIC / independent research:</b> investigate recurring friction, workarounds and potential gaps.</p></td>
-                <td><p>Bring structure to ambiguous problems, speed up research, identify opportunities worth testing, and turn insights into decision-ready options.</p></td>
-                <td><strong class="etm-role-primary">Business Operations / Strategy &amp; Operations</strong><div class="tier-role-chips"><span>Growth Operations</span><span>Market Intelligence</span><span>Commercial Insights</span></div></td>
+                <td><p>Bring structure to ambiguous problems, accelerate research, identify opportunities worth testing and turn insight into decision-ready options.</p><strong class="etm-role-primary">Best fit: Business Operations / Strategy &amp; Operations</strong><div class="tier-role-chips"><span>Growth Operations</span><span>Market Intelligence</span><span>Commercial Insights</span></div></td>
               </tr>
               <tr class="tier-row tier-row-a">
                 <th scope="row"><span class="tier-badge">A</span><span class="tier-rank-label">Applied</span></th>
                 <td><strong>Customer, market &amp; commercial judgement</strong><p>Connect customer requirements, competitor offers, business-model choices and service-positioning fit.</p></td>
                 <td><p><b>NexaHomes:</b> 100+ residential-client portfolio and Hyderabad competitor benchmarking. <b>Mercedes-Benz Silver Star:</b> Retail of the Future study on inventory access, pricing transparency, dealer flexibility and customer experience.</p></td>
-                <td><p>Help teams compare propositions, understand market context and assess practical differentiation opportunities.</p></td>
-                <td><strong class="etm-role-primary">Market &amp; Competitive Intelligence</strong><div class="tier-role-chips"><span>Commercial Operations</span><span>Business Research</span><span>Growth Support</span></div></td>
+                <td><p>Help teams compare propositions, understand market context and assess practical differentiation opportunities.</p><strong class="etm-role-primary">Best fit: Market &amp; Competitive Intelligence</strong><div class="tier-role-chips"><span>Commercial Operations</span><span>Business Research</span><span>Growth Support</span></div></td>
               </tr>
               <tr class="tier-row tier-row-b">
                 <th scope="row"><span class="tier-badge">B</span><span class="tier-rank-label">Execution</span></th>
                 <td><strong>Operations coordination, process improvement &amp; visibility</strong><p>Coordinate handoffs, keep service delivery moving, clarify next actions and organise operational reporting.</p></td>
                 <td><p><b>NexaHomes:</b> customer and vendor coordination, post-sale follow-through, sales-to-delivery alignment, MIS and operational reporting. Excel reporting and Power BI dashboards.</p></td>
-                <td><p>Support consistent delivery, better handoffs, action tracking, useful reporting and practical workflow improvements.</p></td>
-                <td><strong class="etm-role-primary">Business Operations / Process Improvement</strong><div class="tier-role-chips"><span>Operational Excellence</span><span>Program Operations</span><span>Client Operations</span></div></td>
+                <td><p>Support consistent delivery, better handoffs, action tracking, useful reporting and practical workflow improvements.</p><strong class="etm-role-primary">Best fit: Business Operations / Process Improvement</strong><div class="tier-role-chips"><span>Operational Excellence</span><span>Program Operations</span><span>Client Operations</span></div></td>
               </tr>
               <tr class="tier-row tier-row-c">
                 <th scope="row"><span class="tier-badge">C</span><span class="tier-rank-label">Toolkit</span></th>
                 <td><strong>Structured research &amp; complementary digital tools</strong><p>MBA research, survey analysis, documentation and expanding technical fluency.</p></td>
                 <td><p><b>MBA thesis:</b> employee turnover in Bengaluru IT, focused on engagement, growth and culture. Supporting tools: SPSS, foundational SQL, Tableau, Microsoft Office and AI-enabled productivity tools.</p></td>
-                <td><p>Strengthen research quality, reporting support and the clarity of information used in business decisions.</p></td>
-                <td><strong class="etm-role-primary">Business Research / Decision Support</strong><div class="tier-role-chips"><span>Operations Reporting</span><span>Research Support</span></div></td>
+                <td><p>Strengthen research quality, reporting support and clarity of information used in business decisions.</p><strong class="etm-role-primary">Best fit: Business Research / Decision Support</strong><div class="tier-role-chips"><span>Operations Reporting</span><span>Research Support</span></div></td>
               </tr>
             </tbody>
           </table>
         </div>
 
-        <div class="etm-role-strip">
-          <span class="etm-role-strip-label">PRIORITY MNC SEARCH TITLES</span>
-          <span>Business Operations Associate</span><i>·</i><span>Strategy &amp; Operations Associate</span><i>·</i><span>Growth Operations Associate</span><i>·</i><span>Competitive Intelligence Associate</span><i>·</i><span>Process Improvement Associate</span><i>·</i><span>Program Operations Associate</span>
-        </div>
-        <div class="tier-global-band">
-          <div class="tier-global-mark" aria-hidden="true">↗</div>
-          <div><p class="tier-global-kicker">TRANSFERABLE ACROSS MARKETS &amp; INDUSTRIES</p><h3>Market context. Better questions. Practical execution.</h3><p>Portable value for organisations that need structured problem-solving, competitive context, cross-functional delivery and decision-ready information.</p></div>
-        </div>
+        <div class="etm-role-strip"><span class="etm-role-strip-label">PRIORITY MNC SEARCH TITLES</span><span>Business Operations Associate</span><i>·</i><span>Strategy &amp; Operations Associate</span><i>·</i><span>Growth Operations Associate</span><i>·</i><span>Competitive Intelligence Associate</span><i>·</i><span>Process Improvement Associate</span><i>·</i><span>Program Operations Associate</span></div>
+        <div class="tier-global-band"><div class="tier-global-mark" aria-hidden="true">↗</div><div><p class="tier-global-kicker">TRANSFERABLE ACROSS MARKETS &amp; INDUSTRIES</p><h3>Market context. Better questions. Practical execution.</h3><p>Portable value for organisations that need structured problem-solving, competitive context, cross-functional delivery and decision-ready information.</p></div></div>
         <p class="tier-matrix-note">S/A/B/C are presentation tiers for grouping strengths and role relevance, not externally certified scores. Experience examples describe work and analysis; recommendations are not presented as implemented outcomes unless verified.</p>
       </section>
 
