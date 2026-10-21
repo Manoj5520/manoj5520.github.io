@@ -315,36 +315,36 @@
    * most of the expressive work.
    */
   var beats = [
-    { stage: "Welcome", text: "Hello, and welcome.", pitch: 1.04, rate: 0.92, gap: 720 },
-    { stage: "Welcome", text: "Before you explore, let me show you how to read this portfolio.", pitch: 1.03, rate: 0.91, gap: 320 },
-    { stage: "Welcome", text: "This is V. Sai Manoj’s portfolio.", pitch: 1.02, rate: 0.90, gap: 520 },
-    { stage: "The central idea", text: "My work asks one question: where can a business create an advantage customers value and operations deliver?", pitch: 1.02, rate: 0.92, gap: 760 },
+    { stage: "Welcome", text: "Hello, and welcome.", pitch: 0.94, rate: 0.89, gap: 780 },
+    { stage: "Welcome", text: "Before you explore, let me show you how to read this portfolio.", pitch: 0.93, rate: 0.90, gap: 420 },
+    { stage: "Welcome", text: "This is the portfolio of V. Sai Manoj.", pitch: 0.90, rate: 0.88, gap: 720 },
+    { stage: "The central idea", text: "My work asks one question: where can a business create an advantage customers value and operations deliver?", pitch: 0.93, rate: 0.90, gap: 760 },
 
-    { stage: "Capability Snapshot", text: "Start with Capability Snapshot.", pitch: 1.07, rate: 0.93, gap: 300 },
-    { stage: "Capability Snapshot", text: "Competitive intelligence. Market-gap analysis. Commercial judgement. Service-line strategy. Business operations.", pitch: 1.08, rate: 0.91, gap: 580 },
-    { stage: "Capability Snapshot", text: "I examine customer needs, competitor offers, positioning, and delivery constraints.", pitch: 1.04, rate: 0.92, gap: 240 },
-    { stage: "Capability Snapshot", text: "I look for opportunities a business can own—and deliver profitably.", pitch: 1.06, rate: 0.91, gap: 680 },
+    { stage: "Capability Snapshot", text: "Start with Capability Snapshot.", pitch: 0.98, rate: 0.91, gap: 340 },
+    { stage: "Capability Snapshot", text: "Competitive intelligence. Market-gap analysis. Commercial judgement. Service-line strategy. Business operations.", pitch: 1.00, rate: 0.90, gap: 600 },
+    { stage: "Capability Snapshot", text: "I examine customer needs, competitor offers, positioning, and delivery constraints.", pitch: 0.94, rate: 0.90, gap: 260 },
+    { stage: "Capability Snapshot", text: "I look for opportunities a business can own—and deliver profitably.", pitch: 0.97, rate: 0.89, gap: 700 },
 
-    { stage: "My Decision Logic", text: "Next, open My Decision Logic.", pitch: 1.05, rate: 0.92, gap: 300 },
-    { stage: "My Decision Logic", text: "See how I frame a decision, test the evidence, compare options, and identify a practical next move.", pitch: 1.00, rate: 0.92, gap: 520 },
-    { stage: "My Decision Logic", text: "Market signals matter when they connect to commercial priorities and operational reality.", pitch: 1.01, rate: 0.91, gap: 720 },
+    { stage: "My Decision Logic", text: "Next, open My Decision Logic.", pitch: 0.96, rate: 0.90, gap: 340 },
+    { stage: "My Decision Logic", text: "See how I frame decisions, test evidence, compare options, and find the next move.", pitch: 0.90, rate: 0.90, gap: 520 },
+    { stage: "My Decision Logic", text: "Market signals matter when tied to commercial priorities and operational reality.", pitch: 0.91, rate: 0.89, gap: 760 },
 
-    { stage: "Experience and Projects", text: "Then explore Experience and Projects.", pitch: 1.04, rate: 0.92, gap: 300 },
-    { stage: "Experience and Projects", text: "At Mercedes-Benz, I reviewed the Retail of the Future model: inventory access, price transparency, dealer flexibility, and customer experience.", pitch: 1.00, rate: 0.89, gap: 420 },
-    { stage: "Experience and Projects", text: "At NexaHomes, I benchmarked competitors and assessed new service-line opportunities aligned with the business positioning.", pitch: 1.02, rate: 0.90, gap: 420 },
-    { stage: "Experience and Projects", text: "My venture and MBA research reflect the same discipline: question assumptions, connect evidence, structure choices.", pitch: 1.00, rate: 0.90, gap: 780 },
+    { stage: "Experience and Projects", text: "Then explore Experience and Projects.", pitch: 0.94, rate: 0.90, gap: 320 },
+    { stage: "Experience and Projects", text: "At Mercedes-Benz, I reviewed Retail of the Future: inventory access, price transparency, dealer flexibility, and customer experience.", pitch: 0.90, rate: 0.87, gap: 460 },
+    { stage: "Experience and Projects", text: "At NexaHomes, I benchmarked competitors and assessed new service-line opportunities aligned with the business positioning.", pitch: 0.92, rate: 0.88, gap: 460 },
+    { stage: "Experience and Projects", text: "My venture and MBA research reflect the same discipline: question assumptions, connect evidence, structure choices.", pitch: 0.91, rate: 0.88, gap: 800 },
 
-    { stage: "The difference I aim to make", text: "So, what can I bring to a business?", pitch: 0.99, rate: 0.87, gap: 640 },
-    { stage: "The difference I aim to make", text: "A joined-up view of market, offer, and operations.", pitch: 0.98, rate: 0.89, gap: 420 },
-    { stage: "The difference I aim to make", text: "I help teams spot underserved needs, identify competitive gaps, test offer fit, and turn findings into priorities.", pitch: 1.00, rate: 0.89, gap: 520 },
-    { stage: "The difference I aim to make", text: "Not analysis for its own sake—insight that makes decisions clearer and stronger.", pitch: 1.02, rate: 0.88, gap: 820 },
+    { stage: "The difference I aim to make", text: "So, what can I bring to a business?", pitch: 0.88, rate: 0.86, gap: 680 },
+    { stage: "The difference I aim to make", text: "A joined-up view of market, offer, and operations.", pitch: 0.87, rate: 0.88, gap: 460 },
+    { stage: "The difference I aim to make", text: "I help teams spot underserved needs, find competitive gaps, test offer fit, and turn findings into priorities.", pitch: 0.89, rate: 0.87, gap: 560 },
+    { stage: "The difference I aim to make", text: "Not analysis for its own sake—insight that makes decisions clearer and stronger.", pitch: 0.91, rate: 0.86, gap: 850 },
 
-    { stage: "An invitation", text: "Here is my invitation.", pitch: 1.05, rate: 0.91, gap: 460 },
-    { stage: "An invitation", text: "Give me a real business challenge and the outcome that matters.", pitch: 1.05, rate: 0.90, gap: 360 },
-    { stage: "An invitation", text: "Let me investigate, map options, and find where progress can begin.", pitch: 1.07, rate: 0.90, gap: 480 },
-    { stage: "An invitation", text: "Judge my questions, my evidence, and the value I help create.", pitch: 1.07, rate: 0.90, gap: 700 },
-    { stage: "An invitation", text: "I’m Sai Manoj.", pitch: 1.08, rate: 0.91, gap: 360 },
-    { stage: "An invitation", text: "Let’s turn an overlooked gap into your next advantage.", pitch: 1.10, rate: 0.90, gap: 0 }
+    { stage: "An invitation", text: "Here is my invitation.", pitch: 0.95, rate: 0.89, gap: 500 },
+    { stage: "An invitation", text: "Give me a real business challenge—and the outcome that matters.", pitch: 0.96, rate: 0.88, gap: 400 },
+    { stage: "An invitation", text: "Let me investigate, map options, and find where progress can begin.", pitch: 0.98, rate: 0.88, gap: 520 },
+    { stage: "An invitation", text: "Judge my questions, my evidence, and the value I help create.", pitch: 0.97, rate: 0.88, gap: 760 },
+    { stage: "An invitation", text: "Explore the work. Challenge the thinking.", pitch: 0.96, rate: 0.90, gap: 620 },
+    { stage: "An invitation", text: "Let’s turn an overlooked gap into your next advantage.", pitch: 0.99, rate: 0.88, gap: 0 }
   ];
 
   var state = "idle";
@@ -384,23 +384,26 @@
     var english = voices.filter(function (voice) {
       return /^en(-|_)/i.test(voice.lang || "");
     });
-    var preferredPatterns = [
-      /microsoft.*(?:aria|jenny|ava|emma|sonia|sara|natasha|michelle|jane).*natural/i,
-      /microsoft.*natural.*english/i,
-      /google uk english female/i,
-      /google us english/i,
-      /samantha/i,
-      /aria/i,
-      /jenny/i,
-      /sonia/i,
-      /amy|emma|libby/i,
-      /english.*female/i
-    ];
 
-    for (var p = 0; p < preferredPatterns.length; p++) {
+    // Prefer recognised male English voices, including natural/neural variants.
+    // Voice labels vary by operating system and browser.
+    var malePatterns = [
+      /microsoft.*(?:guy|ryan|david|mark|christopher|jason|tony|andrew|brian|eric|roger|thomas|george|daniel|james|oliver|arthur|aaron).*natural/i,
+      /microsoft.*(?:guy|ryan|david|mark|christopher|jason|tony|andrew|brian|eric|roger|thomas|george|daniel|james|oliver|arthur|aaron)/i,
+      /google.*(?:uk|us|english).*male/i,
+      /english.*male/i,
+      /\b(?:daniel|alex|fred|ralph|david|george|james|oliver|aaron|guy|ryan|mark|brian|thomas|christopher|jason|andrew)\b/i
+    ];
+    for (var p = 0; p < malePatterns.length; p++) {
       for (var v = 0; v < english.length; v++) {
-        if (preferredPatterns[p].test(english[v].name)) return english[v];
+        if (malePatterns[p].test(english[v].name)) return english[v];
       }
+    }
+
+    // Avoid well-known female-labelled voices when no male voice is clearly labelled.
+    var femalePattern = /zira|aria|jenny|samantha|susan|hazel|eva|heera|female|sonia|natasha|michelle|jane|amy|emma|libby/i;
+    for (var i = 0; i < english.length; i++) {
+      if (!femalePattern.test(english[i].name)) return english[i];
     }
     return english.length ? english[0] : null;
   }
