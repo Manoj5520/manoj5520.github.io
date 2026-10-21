@@ -120,6 +120,58 @@
     @media(max-width:760px){.thinking-edge-grid{grid-template-columns:1fr}.thinking-edge-card{padding:17px}.thinking-edge-card p{font-size:12px}.thinking-edge:after{width:130px;height:130px;right:-45px}.thinking-edge-heading h2{font-size:clamp(27px,7vw,38px)}}
     @media(prefers-reduced-motion:reduce){.thinking-edge *{scroll-behavior:auto}}
 
+  
+    /* Executive capability tier matrix: positive, evidence-led, and globally legible */
+    .tier-matrix{margin:0 0 32px;padding:clamp(22px,4vw,42px);border:1px solid #D8C6B7;border-top:4px solid #C2A166;border-radius:7px;background:linear-gradient(145deg,#FFFCF7 0%,#F6EEE5 100%);box-shadow:0 20px 44px -36px rgba(55,10,27,.4)}
+    .tier-matrix-head{display:flex;align-items:flex-start;justify-content:space-between;gap:24px;padding-bottom:24px;border-bottom:1px solid #DCCABE}
+    .tier-matrix-kicker{margin:0 0 9px;color:#751C37;font-size:9px;font-weight:850;letter-spacing:.2em}
+    .tier-matrix-head h2{margin:0;color:#421022;font-family:Newsreader,Georgia,serif;font-size:clamp(31px,4.3vw,47px);font-weight:430;letter-spacing:-.04em;line-height:1.1}
+    .tier-matrix-lede{max-width:720px;margin:11px 0 0;color:#67545D;font-size:12.5px;line-height:1.75}
+    .tier-matrix-stamp{display:flex;align-items:center;gap:10px;flex:0 0 auto;padding:9px 11px;border:1px solid #D4B989;background:#F5EBDD;color:#5D1930}
+    .tier-matrix-stamp span{font-family:Newsreader,Georgia,serif;font-size:22px;letter-spacing:-.07em}
+    .tier-matrix-stamp small{padding-left:10px;border-left:1px solid #D0B88D;font-size:7px;font-weight:850;letter-spacing:.12em;line-height:1.6}
+    .tier-matrix-legend{display:flex;gap:9px 18px;flex-wrap:wrap;padding:16px 0;color:#604C55;font-size:9px;font-weight:750}
+    .tier-matrix-legend>span{display:inline-flex;align-items:center;gap:7px}
+    .tier-key{display:inline-grid;place-items:center;width:22px;height:22px;border-radius:3px;color:#fff;font-size:11px;font-style:normal;font-weight:850}
+    .tier-key-s{background:#490D21;border:1px solid #D8FF42;color:#D8FF42}
+    .tier-key-a{background:#7A1C38}
+    .tier-key-b{background:#A97842}
+    .tier-key-c{background:#79656A}
+    .tier-table-wrap{overflow-x:auto;border:1px solid #D8C7B8;border-radius:5px;background:#FFFCF8}
+    .tier-table{width:100%;border-collapse:collapse;text-align:left}
+    .tier-table thead{color:#FFF9F0;background:#4B0C20}
+    .tier-table thead th{padding:13px 14px;border-right:1px solid rgba(255,255,255,.15);font-size:8px;font-weight:850;letter-spacing:.13em;line-height:1.5;text-transform:uppercase;vertical-align:bottom}
+    .tier-table thead th:first-child{width:76px}
+    .tier-table tbody th,.tier-table tbody td{padding:17px 14px;border-top:1px solid #E7D9CC;border-right:1px solid #EEE4DB;vertical-align:top}
+    .tier-table tbody tr:first-child th,.tier-table tbody tr:first-child td{border-top:0}
+    .tier-table tbody td:last-child,.tier-table thead th:last-child{border-right:0}
+    .tier-table tbody th{width:76px;text-align:center;background:#F2E7DB}
+    .tier-badge{display:grid;place-items:center;width:42px;height:42px;margin:0 auto 8px;border-radius:5px;font-family:Newsreader,Georgia,serif;font-size:28px;line-height:1}
+    .tier-rank-label{display:block;color:#6E5960;font-size:7px;font-weight:850;letter-spacing:.06em;line-height:1.45;text-transform:uppercase}
+    .tier-row-s th{background:#390A1B;border-bottom:1px solid #79513B}
+    .tier-row-s .tier-badge{color:#D8FF42;border:1px solid #D8FF42;background:#4A0C21;box-shadow:0 0 14px rgba(216,255,66,.11)}
+    .tier-row-s .tier-rank-label{color:#F0E3D5}
+    .tier-row-a th{background:#F0DECE}
+    .tier-row-a .tier-badge{color:#fffaf4;background:#7A1C38;border:1px solid #7A1C38}
+    .tier-row-b th{background:#F4E7CE}
+    .tier-row-b .tier-badge{color:#fff;background:#A97842;border:1px solid #A97842}
+    .tier-row-c th{background:#EEE5E0}
+    .tier-row-c .tier-badge{color:#fff;background:#79656A;border:1px solid #79656A}
+    .tier-table td strong{display:block;margin-bottom:7px;color:#3C1020;font-size:12px;line-height:1.45}
+    .tier-table td p{margin:0;color:#625059;font-size:10.5px;line-height:1.72}
+    .tier-table td p+p{margin-top:8px}
+    .tier-role-chips{display:flex;gap:5px;flex-wrap:wrap;margin-top:10px}
+    .tier-role-chips span{display:inline-block;padding:4px 6px;border:1px solid #E2D1C3;border-radius:2px;background:#F8F0E7;color:#5D2436;font-size:8px;font-weight:750;line-height:1.4}
+    .tier-row-s .tier-role-chips span{border-color:#E1C6A0;background:#F7EBDD;color:#4C0C20}
+    .tier-global-band{display:flex;align-items:center;gap:17px;margin-top:17px;padding:20px 22px;border-left:4px solid #D8FF42;border-radius:4px;background:linear-gradient(112deg,#2A0916 0%,#4B0C20 68%,#68142D 100%);box-shadow:0 13px 28px -25px rgba(55,10,27,.55)}
+    .tier-global-mark{display:grid;place-items:center;flex:0 0 42px;width:42px;height:42px;border:1px solid #D8FF42;border-radius:50%;color:#D8FF42;font-size:24px}
+    .tier-global-kicker{margin:0 0 5px;color:#D8FF42;font-size:8px;font-weight:850;letter-spacing:.18em}
+    .tier-global-band h3{margin:0 0 6px;color:#FFF9F2;font-family:Newsreader,Georgia,serif;font-size:clamp(21px,2.8vw,29px);font-weight:400;line-height:1.25}
+    .tier-global-band p:last-child{margin:0;color:#EADDE0;font-size:10.5px;line-height:1.7}
+    .tier-matrix-note{margin:11px 0 0;color:#786970;font-size:9px;line-height:1.6}
+    @media(max-width:760px){.tier-matrix-head{gap:12px}.tier-matrix-stamp{padding:7px}.tier-matrix-stamp span{font-size:18px}.tier-table thead{display:none}.tier-table,.tier-table tbody,.tier-table tr,.tier-table th,.tier-table td{display:block;width:100%}.tier-table tbody tr{display:grid;grid-template-columns:58px minmax(0,1fr);border-top:1px solid #DCCABE}.tier-table tbody tr:first-child{border-top:0}.tier-table tbody th{grid-row:1/span 3;grid-column:1;padding:15px 6px;border-right:1px solid #E3D2C2}.tier-badge{width:35px;height:35px;font-size:24px}.tier-table tbody td{grid-column:2;padding:13px 13px;border-right:0;border-top:1px solid #F0E5DB}.tier-table tbody td:nth-child(2){border-top:0}.tier-table td strong{font-size:12px}.tier-table td p{font-size:11px}.tier-global-band{align-items:flex-start;padding:17px}.tier-global-mark{flex-basis:34px;width:34px;height:34px}}
+    @media(max-width:480px){.tier-matrix{padding:19px 13px}.tier-matrix-head{flex-direction:column}.tier-matrix-stamp{align-self:flex-start}.tier-matrix-legend{display:grid;grid-template-columns:1fr 1fr;gap:9px}.tier-matrix-legend>span{font-size:8px}.tier-matrix tbody tr{grid-template-columns:50px minmax(0,1fr)}.tier-rank-label{font-size:6px}.tier-table tbody th{padding:12px 4px}.tier-table tbody td{padding:12px 10px}.tier-role-chips span{font-size:7.5px}.tier-global-band{gap:11px}.tier-global-band h3{font-size:21px}}
+
   </style>
 </head>
 <body>
@@ -311,6 +363,64 @@
           </article>
         </div>
         <div class="thinking-edge-close"><span class="thinking-edge-burst" aria-hidden="true">✳</span><p><strong>The working principle:</strong> keep asking better questions, use AI to extend the work, and turn the clearest evidence into a practical next step.</p></div>
+      </section>
+
+      <section class="tier-matrix" aria-labelledby="tier-matrix-title">
+        <header class="tier-matrix-head">
+          <div>
+            <p class="tier-matrix-kicker">CAPABILITY ARCHITECTURE · BUSINESS VALUE</p>
+            <h2 id="tier-matrix-title">Capability Tier Matrix</h2>
+            <p class="tier-matrix-lede">A structured view of the strengths, practical toolkit and role relevance I bring to business teams—grounded in experience, research and continued application.</p>
+          </div>
+          <div class="tier-matrix-stamp" aria-label="Professional profile mark"><span>VSM</span><small>MMXXVI<br>VALUE CREATION</small></div>
+        </header>
+
+        <div class="tier-matrix-legend" aria-label="Tier definitions">
+          <span><i class="tier-key tier-key-s">S</i> Signature differentiators</span>
+          <span><i class="tier-key tier-key-a">A</i> High-value applied strengths</span>
+          <span><i class="tier-key tier-key-b">B</i> Practical execution capabilities</span>
+          <span><i class="tier-key tier-key-c">C</i> Expanding professional toolkit</span>
+        </div>
+
+        <div class="tier-table-wrap">
+          <table class="tier-table">
+            <thead>
+              <tr><th scope="col">Tier</th><th scope="col">Capability cluster</th><th scope="col">Evidence &amp; practical application</th><th scope="col">Business value &amp; role alignment</th></tr>
+            </thead>
+            <tbody>
+              <tr class="tier-row tier-row-s">
+                <th scope="row"><span class="tier-badge">S</span><span class="tier-rank-label">Signature<br>edge</span></th>
+                <td><strong>Problem framing &amp; opportunity discovery</strong><p>Persistent, iterative thinking; market-gap identification; AI-assisted research and synthesis.</p></td>
+                <td><p>At NexaHomes, competitor benchmarking and customer context informed suggestions for differentiated service-line opportunities. Across research and projects, uses AI tools to structure questions, compare options and refine outputs.</p></td>
+                <td><p>Spot what deserves attention, organise an ambiguous problem, and help teams examine practical opportunities.</p><div class="tier-role-chips"><span>Strategy &amp; Operations</span><span>Growth Operations</span><span>Market Intelligence</span><span>Business Operations</span></div></td>
+              </tr>
+              <tr class="tier-row tier-row-a">
+                <th scope="row"><span class="tier-badge">A</span><span class="tier-rank-label">Applied<br>strengths</span></th>
+                <td><strong>Customer, market &amp; commercial understanding</strong><p>Competitive intelligence, business-model assessment, customer requirements and service-positioning fit.</p></td>
+                <td><p>Worked across a 100+ residential-client portfolio at NexaHomes; benchmarked Hyderabad property-services competitors. Studied Mercedes-Benz Retail of the Future and its implications for retail operations and customer experience.</p></td>
+                <td><p>Connect customer signals and competitor context to clearer commercial choices and differentiated service ideas.</p><div class="tier-role-chips"><span>Commercial Operations</span><span>Competitive Intelligence</span><span>Growth Support</span><span>Business Research</span></div></td>
+              </tr>
+              <tr class="tier-row tier-row-b">
+                <th scope="row"><span class="tier-badge">B</span><span class="tier-rank-label">Execution<br>capabilities</span></th>
+                <td><strong>Operations, coordination &amp; performance visibility</strong><p>Client lifecycle coordination, vendor handoffs, workflow improvement, MIS reporting and operational dashboards.</p></td>
+                <td><p>Practical experience aligning customers, sales, delivery and vendors through post-sale follow-through. Uses Excel for operational reporting and Power BI for dashboarding and business visibility.</p></td>
+                <td><p>Support reliable execution, clearer handoffs, structured reporting and practical process improvements.</p><div class="tier-role-chips"><span>Operational Excellence</span><span>Process Improvement</span><span>Program Operations</span><span>Customer Operations</span></div></td>
+              </tr>
+              <tr class="tier-row tier-row-c">
+                <th scope="row"><span class="tier-badge">C</span><span class="tier-rank-label">Expanding<br>toolkit</span></th>
+                <td><strong>Research methods &amp; complementary digital tools</strong><p>MBA research, survey analysis, structured documentation and growing technical fluency.</p></td>
+                <td><p>MBA research provides a foundation in structured investigation. Supporting tools include SPSS for survey analysis, foundational SQL and beginner-to-intermediate Tableau, alongside Microsoft Office and AI-enabled productivity tools.</p></td>
+                <td><p>Broaden reporting options, strengthen research quality and build additional analytical support around business decisions.</p><div class="tier-role-chips"><span>Business Research</span><span>Decision Support</span><span>Reporting Support</span><span>Operations Analytics</span></div></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="tier-global-band">
+          <div class="tier-global-mark" aria-hidden="true">↗</div>
+          <div><p class="tier-global-kicker">TRANSFERABLE ACROSS MARKETS &amp; INDUSTRIES</p><h3>Understand customers. Read the competitive landscape. Connect decisions to delivery.</h3><p>These are portable business capabilities for Indian and international organisations where market context, cross-functional execution, process clarity and evidence-led decisions matter.</p></div>
+        </div>
+        <p class="tier-matrix-note">Tier labels are a presentation framework for organising current strengths and role relevance—not a standardised external rating. Evidence is drawn from experience and projects; recommended roles indicate fit, not a guarantee of selection.</p>
       </section>
 
       <section class="closing" aria-label="Professional value summary">
