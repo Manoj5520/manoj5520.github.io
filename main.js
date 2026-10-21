@@ -86,26 +86,20 @@
   }
 
 
-  /* ---------- Professional Opportunities trajectory observer ---------- */
-  var opportunitiesTrajectory = document.querySelector(".contact-trajectory-visual");
-  if (opportunitiesTrajectory) {
-    var trajectoryMotion = opportunitiesTrajectory.querySelector(".trajectory-runner-motion");
+  /* ---------- Professional Opportunities capability sequence ---------- */
+  var capabilityVisual = document.querySelector(".capability-visual");
+  if (capabilityVisual) {
     if (reduceMotion) {
-      opportunitiesTrajectory.classList.remove("trajectory-active");
+      capabilityVisual.classList.remove("is-playing");
     } else if ("IntersectionObserver" in window) {
-      var trajectoryObserver = new IntersectionObserver(function (entries) {
+      var capabilityObserver = new IntersectionObserver(function (entries) {
         entries.forEach(function (entry) {
-          entry.target.classList.toggle("trajectory-active", entry.isIntersecting);
-          if (trajectoryMotion) {
-            if (entry.isIntersecting && typeof trajectoryMotion.beginElement === "function") trajectoryMotion.beginElement();
-            if (!entry.isIntersecting && typeof trajectoryMotion.endElement === "function") trajectoryMotion.endElement();
-          }
+          entry.target.classList.toggle("is-playing", entry.isIntersecting);
         });
-      }, { rootMargin: "0px 0px -8% 0px", threshold: 0.18 });
-      trajectoryObserver.observe(opportunitiesTrajectory);
+      }, { rootMargin: "0px 0px -7% 0px", threshold: 0.18 });
+      capabilityObserver.observe(capabilityVisual);
     } else {
-      opportunitiesTrajectory.classList.add("trajectory-active");
-      if (trajectoryMotion && typeof trajectoryMotion.beginElement === "function") trajectoryMotion.beginElement();
+      capabilityVisual.classList.add("is-playing");
     }
   }
 
