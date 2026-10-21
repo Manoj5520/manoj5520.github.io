@@ -1890,6 +1890,128 @@ ul, ol { padding: 0; list-style: none; }
     }
   </style>
 
+  <style id="portfolio-recruiter-finish">
+    /* Six-stage competitive-intelligence chain: distinct but coordinated enterprise palette. */
+    .case-feature .chain { gap:0 !important; align-items:stretch !important; }
+    .case-feature .chain li {
+      min-width:0;
+      margin-right:10px !important;
+      padding:16px 13px 17px !important;
+      border:1px solid transparent !important;
+      border-radius:2px !important;
+      box-shadow:inset 0 1px 0 rgba(255,255,255,.24),0 5px 14px -12px rgba(18,25,32,.38) !important;
+      font-size:11px !important;
+      line-height:1.4 !important;
+      letter-spacing:.12em !important;
+      overflow-wrap:break-word;
+      transition:transform .22s ease,box-shadow .22s ease !important;
+    }
+    .case-feature .chain li:last-child { margin-right:0 !important; }
+    .case-feature .chain li span {
+      position:relative;z-index:1;
+      font-size:12px !important;font-weight:600 !important;
+    }
+    .case-feature .chain li small {
+      position:relative;z-index:1;
+      margin-top:1px;
+      font-size:12px !important;
+      line-height:1.45 !important;
+      letter-spacing:0 !important;
+      font-weight:450 !important;
+      text-transform:none !important;
+    }
+    .case-feature .chain li:nth-child(1) {
+      background:linear-gradient(145deg,#465A6A 0%,#2D3D4A 100%) !important;
+      color:#FFFFFF !important;border-color:#3A4B59 !important;
+    }
+    .case-feature .chain li:nth-child(1) span,
+    .case-feature .chain li:nth-child(1) small { color:#F5F7F9 !important; }
+    .case-feature .chain li:nth-child(1) span { color:#DCE5EB !important; }
+    .case-feature .chain li:nth-child(2) {
+      background:linear-gradient(145deg,#75899A 0%,#53697B 100%) !important;
+      color:#FFFFFF !important;border-color:#617788 !important;
+    }
+    .case-feature .chain li:nth-child(2) span,
+    .case-feature .chain li:nth-child(2) small { color:#FFFFFF !important; }
+    .case-feature .chain li:nth-child(2) span { color:#E6EDF2 !important; }
+    .case-feature .chain li:nth-child(3) {
+      background:linear-gradient(145deg,#F7F9FA 0%,#D3DBE2 52%,#E8EDF1 100%) !important;
+      color:#202830 !important;border-color:#B9C3CC !important;
+      box-shadow:inset 0 1px 0 #FFFFFF,0 5px 14px -12px rgba(18,25,32,.35) !important;
+    }
+    .case-feature .chain li:nth-child(3) span { color:#5E6D79 !important; }
+    .case-feature .chain li:nth-child(3) small { color:#2F3A44 !important; }
+    .case-feature .chain li:nth-child(4) {
+      background:linear-gradient(145deg,#87364D 0%,#682138 100%) !important;
+      color:#FFFFFF !important;border-color:#76263D !important;
+    }
+    .case-feature .chain li:nth-child(4) span { color:#F1DCE2 !important; }
+    .case-feature .chain li:nth-child(4) small { color:#FFF7F9 !important; }
+    .case-feature .chain li:nth-child(5) {
+      background:linear-gradient(145deg,#E7D8C1 0%,#C8AD89 100%) !important;
+      color:#29251F !important;border-color:#C5AC8C !important;
+      box-shadow:inset 0 1px 0 rgba(255,255,255,.8),0 5px 14px -12px rgba(18,25,32,.35) !important;
+    }
+    .case-feature .chain li:nth-child(5) span { color:#6A5239 !important; }
+    .case-feature .chain li:nth-child(5) small { color:#302A23 !important; }
+    .case-feature .chain li:nth-child(6) {
+      background:linear-gradient(145deg,#323941 0%,#20252B 100%) !important;
+      color:#FFFFFF !important;border-color:#22272D !important;
+    }
+    .case-feature .chain li:nth-child(6) span { color:#D5DCE2 !important; }
+    .case-feature .chain li:nth-child(6) small { color:#F7F9FA !important; }
+    .case-feature .chain li:not(:last-child)::after {
+      color:#69747F !important;
+      font-size:14px !important;
+      font-weight:700 !important;
+    }
+    .case-feature .chain li:hover {
+      transform:translateY(-2px) !important;
+      box-shadow:inset 0 1px 0 rgba(255,255,255,.28),0 9px 18px -13px rgba(18,25,32,.4) !important;
+    }
+    /* Small credential seal: understated, secondary to the section title. */
+    .credentials-title-row { display:flex;align-items:center;gap:14px;flex-wrap:wrap; }
+    .credentials-title-row .section-title { margin:0; }
+    .credentials-seal {
+      display:inline-grid;place-items:center;flex:0 0 auto;
+      width:27px;height:31px;margin-top:4px;
+      color:#78838D;opacity:.92;
+    }
+    .credentials-seal svg { display:block;width:100%;height:100%; }
+    .credentials-seal::after {
+      content:"";position:absolute;width:1px;height:24px;background:linear-gradient(180deg,transparent,#C4CAD0,transparent);
+      transform:translateX(20px);opacity:.6;pointer-events:none;
+    }
+    @media (max-width:960px) {
+      .case-feature .chain { grid-template-columns:repeat(3,minmax(0,1fr)) !important; row-gap:10px !important; }
+      .case-feature .chain li { margin-right:6px !important; }
+      .case-feature .chain li:nth-child(3),
+      .case-feature .chain li:nth-child(6) { margin-right:0 !important; }
+    }
+    @media (max-width:650px) {
+      .case-feature .chain { grid-template-columns:minmax(0,1fr) !important; row-gap:0 !important; }
+      .case-feature .chain li,
+      .case-feature .chain li:nth-child(n) {
+        display:grid !important;
+        grid-template-columns:30px minmax(0,1fr) !important;
+        column-gap:8px !important;
+        margin:0 0 8px !important;
+        padding:13px 14px !important;
+      }
+      .case-feature .chain li span { grid-row:1 / span 2; }
+      .case-feature .chain li small { grid-column:2; }
+      .case-feature .chain li:not(:last-child)::after {
+        display:block !important;content:"↓" !important;
+        right:12px !important;left:auto !important;top:auto !important;bottom:-10px !important;
+        transform:none !important;height:15px !important;line-height:15px !important;
+        color:#64717D !important;
+      }
+      .credentials-title-row { gap:10px; }
+      .credentials-seal { width:23px;height:27px; }
+      .credentials-seal::after { transform:translateX(17px);height:20px; }
+    }
+  </style>
+
 </head>
 <body>
   <a class="skip" href="index.html#main">Skip to content</a>
@@ -2513,7 +2635,17 @@ ul, ol { padding: 0; list-style: none; }
           <span class="section-num">07</span>
           <div>
             <p class="section-kicker">Frameworks &amp; credentials</p>
-            <h2 id="credentials-title" class="section-title">Credentials</h2>
+            <div class="credentials-title-row">
+              <h2 id="credentials-title" class="section-title">Credentials</h2>
+              <span class="credentials-seal" aria-hidden="true">
+                <svg viewBox="0 0 32 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="16" cy="13" r="10.2" stroke="currentColor" stroke-width="1.3"/>
+                  <circle cx="16" cy="13" r="6.4" stroke="currentColor" stroke-width="1"/>
+                  <path d="m16 7.2 1.7 3.5 3.9.5-2.8 2.7.7 3.8-3.5-1.8-3.5 1.8.7-3.8-2.8-2.7 3.9-.5L16 7.2Z" fill="#76263D"/>
+                  <path d="m10.7 21.1-1.3 10.2 6.6-3.5 6.6 3.5-1.3-10.2" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round"/>
+                </svg>
+              </span>
+            </div>
           </div>
         </header>
 
@@ -2673,7 +2805,7 @@ ul, ol { padding: 0; list-style: none; }
               <h2 id="contact-title" class="contact-close">
                 <span class="contact-line"><em>Competitive</em> insight.</span>
                 <span class="contact-line"><em>Commercial</em> judgement.</span>
-                <span class="contact-line"><em>Operational impact.</em></span>
+                <span class="contact-line">Operational impact.</span>
               </h2>
               <p class="section-lede contact-intent">I connect competitive research, commercial-model analysis and operational understanding to assess opportunities, clarify trade-offs and turn priorities into executable next steps.</p>
             </div>
