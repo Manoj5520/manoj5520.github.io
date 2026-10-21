@@ -1563,6 +1563,103 @@ ul, ol { padding: 0; list-style: none; }
     @media (prefers-reduced-motion:reduce) { .thinking-card { transition:none !important; } }
   </style>
 
+  <style id="portfolio-elegant-contact-refinement">
+    /* Elegant editorial refinement: disciplined scale, clean alignment, one focal object. */
+    .contact-head { grid-template-columns:72px minmax(0,1fr) !important; gap:22px !important; }
+    .contact-head > .section-num { padding-top:clamp(28px,3vw,38px) !important; }
+    .contact-head > .contact-panel {
+      grid-template-columns:minmax(0,1.25fr) minmax(230px,.75fr) !important;
+      gap:clamp(22px,3vw,42px) !important;
+      padding:clamp(28px,3.7vw,48px) !important;
+      border:1px solid #C8CED4 !important;
+      background:linear-gradient(125deg,#FBFCFD 0%,#F0F3F6 46%,#E1E6EB 100%) !important;
+      box-shadow:0 16px 36px -30px rgba(20,27,34,.24),inset 0 1px 0 #fff !important;
+    }
+    .contact-head > .contact-panel::before {
+      background:linear-gradient(115deg,transparent 0%,rgba(255,255,255,.36) 42%,transparent 58%) !important;
+      opacity:.45 !important;
+    }
+    .contact-head > .contact-panel::after {
+      height:1px !important;
+      background:linear-gradient(90deg,#DCE1E6,#9BA5AF 35%,#E4E8EC 70%,#C5CCD3) !important;
+    }
+    .contact-panel-copy .section-kicker { margin-bottom:24px !important; color:#68727C !important; }
+    .contact-close {
+      display:flex !important;
+      flex-direction:column !important;
+      align-items:flex-start !important;
+      gap:3px !important;
+      max-width:none !important;
+      font-size:clamp(31px,3.65vw,49px) !important;
+      font-weight:520 !important;
+      line-height:1.08 !important;
+      letter-spacing:-.035em !important;
+      color:#171B20 !important;
+    }
+    .contact-line { display:block !important; white-space:nowrap !important; max-width:100% !important; }
+    .contact-line em {
+      color:#76263D !important;
+      font-style:normal !important;
+      font-weight:560 !important;
+    }
+    .contact-intent {
+      max-width:48ch !important;
+      margin-top:22px !important;
+      font-size:14.5px !important;
+      line-height:1.7 !important;
+      color:#424B54 !important;
+    }
+    .contact-metal-visual {
+      min-height:300px !important;
+      background:radial-gradient(ellipse at 51% 47%,rgba(255,255,255,.98) 0%,rgba(225,230,235,.6) 37%,transparent 71%) !important;
+      border:0 !important;
+      box-shadow:none !important;
+    }
+    .contact-metal-grid,
+    .contact-metal-orbit-two,
+    .contact-metal-orbit-three,
+    .contact-metal-node,
+    .contact-metal-plinth,
+    .contact-metal-caption { display:none !important; }
+    .contact-metal-orbit-one {
+      left:6% !important; top:21% !important; width:88% !important; height:58% !important;
+      border-color:rgba(109,38,59,.5) !important;
+      transform:rotate(-23deg) rotateX(65deg) !important;
+      box-shadow:0 0 0 5px rgba(255,255,255,.32) !important;
+    }
+    .contact-metal-globe {
+      left:23% !important; top:20% !important; width:54% !important;
+      background:radial-gradient(circle at 31% 25%,#FFFFFF 0%,#EEF1F4 12%,#C7CFD6 29%,#7E8994 48%,#E5E9ED 60%,#9DA7B1 76%,#EFF2F5 89%,#74808C 100%) !important;
+      box-shadow:inset -12px -13px 23px rgba(44,53,62,.34),inset 7px 7px 13px rgba(255,255,255,.98),0 18px 28px rgba(48,57,66,.15),0 0 0 4px rgba(255,255,255,.68),0 0 0 5px rgba(150,160,170,.32) !important;
+    }
+    .contact-metal-globe::before {
+      background:repeating-linear-gradient(0deg,transparent 0 15px,rgba(255,255,255,.36) 16px,transparent 17px 29px),repeating-linear-gradient(90deg,transparent 0 20px,rgba(72,84,96,.2) 21px,transparent 22px 36px) !important;
+      opacity:.64 !important;
+    }
+    .contact-metal-meridian { border-color:rgba(255,255,255,.88) !important; }
+    .contact-metal-latitude { border-color:rgba(88,100,112,.45) !important; }
+    @media (max-width:1100px) {
+      .contact-head > .contact-panel { grid-template-columns:minmax(0,1.15fr) minmax(190px,.75fr) !important; padding:30px !important; gap:18px !important; }
+      .contact-close { font-size:clamp(29px,3.8vw,42px) !important; }
+      .contact-metal-visual { min-height:270px !important; }
+    }
+    @media (max-width:900px) {
+      .contact-head { grid-template-columns:1fr !important; gap:14px !important; }
+      .contact-head > .section-num { padding-top:0 !important; }
+      .contact-head > .contact-panel { grid-template-columns:minmax(0,1fr) minmax(210px,.72fr) !important; }
+      .contact-close { font-size:clamp(31px,5vw,43px) !important; }
+    }
+    @media (max-width:650px) {
+      .contact-head > .contact-panel { grid-template-columns:1fr !important; padding:24px 20px !important; gap:8px !important; }
+      .contact-close { font-size:clamp(28px,7.5vw,39px) !important; line-height:1.12 !important; }
+      .contact-line { white-space:normal !important; }
+      .contact-intent { margin-top:18px !important; font-size:14px !important; }
+      .contact-metal-visual { min-height:235px !important; margin:0 8px !important; }
+      .contact-metal-globe { left:30% !important; top:12% !important; width:40% !important; }
+      .contact-metal-orbit-one { left:9% !important; top:22% !important; width:82% !important; height:56% !important; }
+    }
+  </style>
+
 </head>
 <body>
   <a class="skip" href="index.html#main">Skip to content</a>
@@ -2329,9 +2426,9 @@ ul, ol { padding: 0; list-style: none; }
             <div class="contact-panel-copy">
               <p class="section-kicker">Professional opportunities <span class="contact-kicker-rule" aria-hidden="true"></span></p>
               <h2 id="contact-title" class="contact-close">
-                <span class="contact-line">Competitive insight.</span>
-                <span class="contact-line contact-line-accent">Commercial judgement.</span>
-                <span class="contact-line">Operational impact.</span>
+                <span class="contact-line"><em>Competitive</em> insight.</span>
+                <span class="contact-line"><em>Commercial</em> judgement.</span>
+                <span class="contact-line"><em>Operational impact.</em></span>
               </h2>
               <p class="section-lede contact-intent">I connect competitive research, commercial-model analysis and operational understanding to assess opportunities, clarify trade-offs and turn priorities into executable next steps.</p>
             </div>
