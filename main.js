@@ -309,32 +309,32 @@
   var segments = [
     {
       label: "Welcome",
-      text: "Hello, and welcome. Before you explore, pause for a moment. This is V. Sai Manoj’s portfolio. Rather than listing skills, I want to show you the thinking that connects my work.",
+      text: "Hello, and welcome. Before you explore, pause for a moment. This is V. Sai Manoj’s portfolio. Beyond titles and tools, this is how I think about business problems.",
       pitch: 1.07, rate: 0.94
     },
     {
       label: "Capability Snapshot",
-      text: "Start with Capability Snapshot. Here are my core strengths: competitive intelligence, market-gap analysis, commercial judgement, differentiated service strategy, and operational improvement. I look beyond what competitors already offer. I ask where customer needs remain underserved, what could set a business apart, and whether the opportunity can be delivered in practice.",
+      text: "Start with Capability Snapshot. You’ll find my core strengths: competitive intelligence, market-gap analysis, commercial judgement, differentiated service strategy, and operational improvement. I look beyond existing offers to find underserved needs, identify where a business can stand apart, and assess whether an opportunity is deliverable.",
       pitch: 1.10, rate: 0.92
     },
     {
       label: "My Decision Logic",
-      text: "Next, open My Decision Logic. It shows how I move from observation to recommendation: understand the context, frame the decision, compare alternatives, test commercial fit, and consider operational reality. The goal is not analysis for its own sake. It is clarity on what matters, what is feasible, and what should happen next.",
+      text: "Next, open My Decision Logic. See how I move from observation to recommendation: understand the context, frame the decision, compare alternatives, test commercial fit, and consider operational reality. The goal is clarity on what matters, what is feasible, and what should happen next.",
       pitch: 1.02, rate: 0.93
     },
     {
       label: "Experience and Projects",
-      text: "Then explore Experience and Projects. Look for my Mercedes-Benz Retail of the Future review, competitor benchmarking and differentiated service-line research at NexaHomes, independent venture research, and MBA research into employee turnover. Different contexts, one discipline: examine evidence, question assumptions, recognise patterns, and connect insight with action.",
+      text: "Then explore Experience and Projects. Look for my Mercedes-Benz Retail of the Future review, NexaHomes competitor benchmarking and differentiated service-line research, independent venture research, and MBA research into employee turnover. Across these contexts, the discipline is consistent: question assumptions, examine evidence, and connect insight with action.",
       pitch: 1.04, rate: 0.92
     },
     {
       label: "The difference I aim to make",
-      text: "What difference can I make? I can help teams see opportunities beyond their current offer, understand trade-offs before committing, and connect customer expectations with commercial priorities and operational delivery. I bring curiosity to discovery, structure to decisions, and a bias for practical action. I do not claim to know every answer; I bring a disciplined way to investigate the right question and build a recommendation people can act on.",
+      text: "What difference can I make? I can help teams see beyond the current offer, weigh trade-offs before committing, and connect customer expectations with commercial priorities and operational delivery. I bring curiosity to discovery, structure to decisions, and practical focus. I investigate the right question, challenge the obvious answer, and shape recommendations people can act on.",
       pitch: 1.08, rate: 0.92
     },
     {
       label: "An invitation",
-      text: "Here is my invitation: give me a real business challenge. Share the context, constraints, and result you need. Give me the chance to explore the problem, map the choices, and show where meaningful progress can begin. Judge me by the questions I ask, the evidence I uncover, and the clarity of my thinking. I’m Sai Manoj. Let’s find what your business is missing—and turn it into an advantage.",
+      text: "Here is my invitation: give me a real business challenge. Tell me the context, constraints, and outcome you need. Let me investigate, compare the options, and recommend a practical next step. Judge me by the questions I ask and the value I help create. I’m Sai Manoj. Let’s turn an overlooked gap into your next advantage.",
       pitch: 1.13, rate: 0.93
     }
   ];
