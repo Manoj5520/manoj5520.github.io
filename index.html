@@ -1753,6 +1753,143 @@ ul, ol { padding: 0; list-style: none; }
     }
   </style>
 
+  <style id="portfolio-decision-single-panel">
+    /* Five-stage decision logic unified into one quiet, executive silver panel. */
+    .thinking-path {
+      display:grid !important;
+      grid-template-columns:repeat(5,minmax(0,1fr)) !important;
+      gap:0 !important;
+      margin:0 !important;
+      padding:0 !important;
+      overflow:hidden;
+      list-style:none !important;
+      border:1px solid #C8CFD6;
+      border-radius:10px;
+      background:linear-gradient(135deg,#F9FAFB 0%,#E8ECF0 48%,#F6F8F9 100%);
+      box-shadow:inset 0 1px 0 rgba(255,255,255,.98),0 12px 30px -26px rgba(20,28,36,.28);
+    }
+    .thinking-path .thinking-card,
+    .thinking-path .thinking-card[data-stage] {
+      display:flex !important;
+      flex-direction:column !important;
+      align-items:flex-start !important;
+      min-width:0 !important;
+      min-height:274px !important;
+      margin:0 !important;
+      padding:21px 17px 18px !important;
+      border:0 !important;
+      border-right:1px solid #D1D7DD !important;
+      border-radius:0 !important;
+      background:transparent !important;
+      box-shadow:none !important;
+      transform:none !important;
+      filter:none !important;
+    }
+    .thinking-path .thinking-card:last-child { border-right:0 !important; }
+    .thinking-path .thinking-card::before,
+    .thinking-path .thinking-card::after { display:none !important; }
+    .thinking-path .thinking-card-top {
+      display:flex !important;
+      align-items:center !important;
+      justify-content:flex-start !important;
+      gap:10px !important;
+      width:100% !important;
+      margin:0 !important;
+    }
+    .thinking-path .thinking-index {
+      width:auto !important;
+      min-width:0 !important;
+      height:28px !important;
+      padding:0 !important;
+      border:0 !important;
+      border-radius:0 !important;
+      background:none !important;
+      box-shadow:none !important;
+      color:#67727D !important;
+      font-size:11px !important;
+      font-weight:650 !important;
+      letter-spacing:.08em !important;
+    }
+    .thinking-path .thinking-icon {
+      display:grid !important;
+      place-items:center !important;
+      width:30px !important;
+      height:30px !important;
+      flex:0 0 30px !important;
+      border:1px solid #D6C4CA !important;
+      border-radius:7px !important;
+      background:linear-gradient(145deg,#FFFFFF,#F0E7EA) !important;
+      box-shadow:inset 0 1px 0 #FFFFFF !important;
+      color:#76263D !important;
+    }
+    .thinking-path .thinking-icon svg { display:block;width:17px !important;height:17px !important; }
+    .thinking-path .thinking-card h3 {
+      margin:24px 0 11px !important;
+      color:#1B2025 !important;
+      font-size:clamp(19px,1.55vw,23px) !important;
+      font-weight:500 !important;
+      line-height:1.12 !important;
+      letter-spacing:-.025em !important;
+    }
+    .thinking-path .thinking-card p {
+      margin:0 !important;
+      color:#39434D !important;
+      font-size:12.5px !important;
+      line-height:1.62 !important;
+    }
+    .thinking-path .thinking-tag {
+      margin-top:auto !important;
+      padding-top:20px !important;
+      color:#76263D !important;
+      font-size:8px !important;
+      font-weight:700 !important;
+      letter-spacing:.13em !important;
+    }
+    .thinking-path .thinking-card:hover {
+      background:rgba(255,255,255,.42) !important;
+      box-shadow:inset 0 2px 0 #76263D !important;
+      transform:none !important;
+    }
+    @media (max-width:1100px) {
+      .thinking-path { grid-template-columns:repeat(3,minmax(0,1fr)) !important; }
+      .thinking-path .thinking-card { min-height:232px !important; }
+      .thinking-path .thinking-card:nth-child(1),
+      .thinking-path .thinking-card:nth-child(2),
+      .thinking-path .thinking-card:nth-child(3) { border-bottom:1px solid #D1D7DD !important; }
+      .thinking-path .thinking-card:nth-child(3) { border-right:0 !important; }
+      .thinking-path .thinking-card:nth-child(4) { border-right:1px solid #D1D7DD !important; }
+      .thinking-path .thinking-card:nth-child(5) { border-right:0 !important; }
+      .thinking-path .thinking-card h3 { font-size:22px !important; margin-top:18px !important; }
+    }
+    @media (max-width:700px) {
+      .thinking-path { grid-template-columns:repeat(2,minmax(0,1fr)) !important; }
+      .thinking-path .thinking-card { min-height:220px !important; padding:18px 15px 16px !important; }
+      .thinking-path .thinking-card:nth-child(odd) { border-right:1px solid #D1D7DD !important; }
+      .thinking-path .thinking-card:nth-child(even) { border-right:0 !important; }
+      .thinking-path .thinking-card:nth-child(3) { border-bottom:1px solid #D1D7DD !important; }
+      .thinking-path .thinking-card:nth-child(4) { border-bottom:1px solid #D1D7DD !important; }
+      .thinking-path .thinking-card:nth-child(1),
+      .thinking-path .thinking-card:nth-child(2) { border-bottom:1px solid #D1D7DD !important; }
+      .thinking-path .thinking-card:nth-child(5) { grid-column:1 / -1; border-right:0 !important; min-height:185px !important; }
+      .thinking-path .thinking-card h3 { font-size:21px !important; }
+      .thinking-path .thinking-card p { font-size:12.5px !important; }
+    }
+    @media (max-width:460px) {
+      .thinking-path { grid-template-columns:minmax(0,1fr) !important; }
+      .thinking-path .thinking-card,
+      .thinking-path .thinking-card:nth-child(n) {
+        min-height:0 !important;
+        padding:17px 18px 16px !important;
+        border-right:0 !important;
+        border-bottom:1px solid #D1D7DD !important;
+      }
+      .thinking-path .thinking-card:last-child { border-bottom:0 !important; }
+      .thinking-path .thinking-card-top { gap:11px !important; }
+      .thinking-path .thinking-card h3 { margin:14px 0 7px !important;font-size:22px !important; }
+      .thinking-path .thinking-tag { padding-top:10px !important; }
+    }
+  </style>
+
 </head>
 <body>
   <a class="skip" href="index.html#main">Skip to content</a>
