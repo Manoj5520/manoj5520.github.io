@@ -20,42 +20,26 @@
   }
 
   /*
-   * Prosody is built from separate speech turns rather than one long paragraph:
-   * warm opening, lightly lifted capability list, measured evidence, lower
-   * value proposition, then a confident invitation. Real silence between turns
-   * lets the visitor process each idea.
+   * Fifteen connected speech turns keep natural phrasing within each thought.
+   * Gaps are deliberately brief: short transitions between sentences and slightly
+   * longer rests only at section changes and before the final invitation.
    */
   var beats = [
-    { stage: "Welcome", text: "Hello, and welcome.", pitch: 0.93, rate: 0.89, gap: 850 },
-    { stage: "Welcome", text: "Before you explore, let me show you how to read this portfolio.", pitch: 0.92, rate: 0.89, gap: 430 },
-    { stage: "Welcome", text: "This is V. Sai Manoj’s portfolio.", pitch: 0.89, rate: 0.87, gap: 750 },
-    { stage: "The central idea", text: "My work asks one question: where can a business create an advantage customers value and operations deliver?", pitch: 0.91, rate: 0.89, gap: 780 },
-
-    { stage: "Capability Snapshot", text: "Start with Capability Snapshot.", pitch: 0.96, rate: 0.90, gap: 360 },
-    { stage: "Capability Snapshot", text: "Competitive intelligence. Market-gap analysis. Commercial judgement. Service-line strategy. Business operations.", pitch: 0.99, rate: 0.89, gap: 600 },
-    { stage: "Capability Snapshot", text: "I examine customer needs, competitor offers, positioning, and delivery constraints.", pitch: 0.93, rate: 0.89, gap: 270 },
-    { stage: "Capability Snapshot", text: "I look for opportunities a business can own—and deliver profitably.", pitch: 0.96, rate: 0.88, gap: 720 },
-
-    { stage: "My Decision Logic", text: "Next, open My Decision Logic.", pitch: 0.95, rate: 0.89, gap: 360 },
-    { stage: "My Decision Logic", text: "See how I frame decisions, test evidence, compare options, and find the next move.", pitch: 0.89, rate: 0.88, gap: 540 },
-    { stage: "My Decision Logic", text: "Market signals matter when tied to commercial priorities and operational reality.", pitch: 0.90, rate: 0.88, gap: 780 },
-
-    { stage: "Experience and Projects", text: "Then explore Experience and Projects.", pitch: 0.93, rate: 0.89, gap: 350 },
-    { stage: "Experience and Projects", text: "At Mercedes-Benz, I reviewed Retail of the Future: inventory access, price transparency, dealer flexibility, and customer experience.", pitch: 0.89, rate: 0.86, gap: 480 },
-    { stage: "Experience and Projects", text: "At NexaHomes, I benchmarked competitors and assessed new service-line opportunities aligned with the business positioning.", pitch: 0.91, rate: 0.87, gap: 480 },
-    { stage: "Experience and Projects", text: "My venture and MBA research reflect the same discipline: question assumptions, connect evidence, structure choices.", pitch: 0.90, rate: 0.87, gap: 820 },
-
-    { stage: "The difference I aim to make", text: "So, what can I bring to a business?", pitch: 0.87, rate: 0.85, gap: 700 },
-    { stage: "The difference I aim to make", text: "A joined-up view of market, offer, and operations.", pitch: 0.86, rate: 0.87, gap: 480 },
-    { stage: "The difference I aim to make", text: "I help teams spot underserved needs, find competitive gaps, test offer fit, and turn findings into priorities.", pitch: 0.88, rate: 0.86, gap: 580 },
-    { stage: "The difference I aim to make", text: "Not analysis for its own sake—insight that makes decisions clearer and stronger.", pitch: 0.90, rate: 0.85, gap: 880 },
-
-    { stage: "An invitation", text: "Here is my invitation.", pitch: 0.94, rate: 0.88, gap: 500 },
-    { stage: "An invitation", text: "Give me a real business challenge—and the outcome that matters.", pitch: 0.95, rate: 0.87, gap: 420 },
-    { stage: "An invitation", text: "Let me investigate, map options, and find where progress can begin.", pitch: 0.97, rate: 0.87, gap: 540 },
-    { stage: "An invitation", text: "Judge my questions, my evidence, and the value I help create.", pitch: 0.96, rate: 0.87, gap: 760 },
-    { stage: "An invitation", text: "Explore the work. Challenge the thinking.", pitch: 0.94, rate: 0.88, gap: 620 },
-    { stage: "An invitation", text: "Let’s turn an overlooked gap into your next advantage.", pitch: 0.98, rate: 0.87, gap: 0 }
+    { stage: "Welcome", text: "Hello, and welcome. This is the portfolio of V. Sai Manoj. In the next two minutes, here is what to look for.", pitch: 0.92, rate: 0.95, gap: 420 },
+    { stage: "Capability Snapshot", text: "Start with Capability Snapshot. My focus is competitive intelligence, market-gap analysis, commercial judgement, service-line strategy, and business operations.", pitch: 0.99, rate: 0.96, gap: 320 },
+    { stage: "Capability Snapshot", text: "I connect customer needs, competitor positioning, and delivery constraints to identify opportunities a business can credibly deliver.", pitch: 0.96, rate: 0.95, gap: 360 },
+    { stage: "My Decision Logic", text: "Then open My Decision Logic. You will see how I frame a decision, test evidence, compare options, and identify practical next steps.", pitch: 0.94, rate: 0.95, gap: 320 },
+    { stage: "My Decision Logic", text: "The aim is simple: connect market signals to commercial priorities and operational reality.", pitch: 0.93, rate: 0.94, gap: 480 },
+    { stage: "Experience and Projects", text: "In Experience and Projects, start with my Mercedes-Benz Retail of the Future review.", pitch: 0.95, rate: 0.94, gap: 260 },
+    { stage: "Experience and Projects", text: "I examined inventory access, price transparency, dealer flexibility, and customer experience—looking at the model’s implications for retail operations.", pitch: 0.91, rate: 0.93, gap: 360 },
+    { stage: "Experience and Projects", text: "At NexaHomes, I benchmarked competitors and assessed differentiated service-line opportunities aligned with the business positioning.", pitch: 0.94, rate: 0.94, gap: 320 },
+    { stage: "Experience and Projects", text: "My independent venture research and MBA research reflect the same method: question assumptions, compare choices, and connect evidence to action.", pitch: 0.93, rate: 0.94, gap: 480 },
+    { stage: "The difference I aim to make", text: "So, what difference can I make?", pitch: 0.89, rate: 0.92, gap: 420 },
+    { stage: "The difference I aim to make", text: "I can help teams see underserved customer needs, identify where competitors leave room, test commercial fit, and turn findings into clear priorities.", pitch: 0.91, rate: 0.94, gap: 320 },
+    { stage: "The difference I aim to make", text: "Not analysis for its own sake. Clearer decisions, grounded recommendations, and practical next steps.", pitch: 0.90, rate: 0.92, gap: 520 },
+    { stage: "An invitation", text: "Here is my invitation. Give me a real business challenge, the constraints, and the outcome that matters.", pitch: 0.95, rate: 0.94, gap: 340 },
+    { stage: "An invitation", text: "Let me investigate, map the options, and show where progress can begin. Judge the work by the questions, the evidence, and the value—not promises.", pitch: 0.96, rate: 0.94, gap: 480 },
+    { stage: "An invitation", text: "Let’s turn an overlooked gap into your next advantage.", pitch: 0.99, rate: 0.95, gap: 0 }
   ];
 
   var state = "idle";
