@@ -292,6 +292,7 @@
   var playButton = document.getElementById("portfolio-guide-toggle");
   var stopButton = document.getElementById("portfolio-guide-stop");
   var label = document.getElementById("portfolio-guide-toggle-label");
+  var buttonIcon = playButton ? playButton.querySelector(".portfolio-guide-play-icon") : null;
   var status = document.getElementById("portfolio-guide-status");
   var progressTrack = document.getElementById("portfolio-guide-progress-track");
   var progressFill = document.querySelector("[data-guide-progress]");
@@ -389,6 +390,7 @@
     playButton.disabled = false;
     stopButton.disabled = false;
     label.textContent = "Pause introduction";
+    if (buttonIcon) buttonIcon.textContent = "Ⅱ";
     status.textContent = "Preparing the guided introduction…";
     var voice = selectVoice();
 
@@ -419,6 +421,7 @@
           state = "finished";
           setProgress(100, 300);
           label.textContent = "Listen again";
+          if (buttonIcon) buttonIcon.textContent = "▶";
           stopButton.disabled = true;
           status.textContent = "Introduction complete. Explore the portfolio at your own pace.";
         }
@@ -427,6 +430,7 @@
         if (state === "stopped" || (event && event.error === "canceled")) return;
         state = "idle";
         label.textContent = "Try the introduction again";
+        if (buttonIcon) buttonIcon.textContent = "▶";
         stopButton.disabled = true;
         status.textContent = "Your browser could not continue the spoken introduction. Please try again or explore the portfolio normally.";
       };
@@ -439,6 +443,7 @@
       synth.pause();
       state = "paused";
       label.textContent = "Resume introduction";
+      if (buttonIcon) buttonIcon.textContent = "▶";
       status.textContent = "Introduction paused. Select Resume to continue.";
       return;
     }
@@ -446,6 +451,7 @@
       synth.resume();
       state = "speaking";
       label.textContent = "Pause introduction";
+      if (buttonIcon) buttonIcon.textContent = "Ⅱ";
       status.textContent = "Resuming the guided introduction…";
       return;
     }
@@ -457,6 +463,7 @@
     synth.cancel();
     setProgress(0, 180);
     label.textContent = "Listen to the guided introduction";
+    if (buttonIcon) buttonIcon.textContent = "▶";
     stopButton.disabled = true;
     status.textContent = "Introduction stopped. Press play whenever you are ready.";
   });
