@@ -15,7 +15,7 @@
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%2314161A'/%3E%3Crect x='14' y='46' width='36' height='3' fill='%236D263B'/%3E%3Ctext x='32' y='38' font-family='Georgia,serif' font-size='24' fill='%23fff' text-anchor='middle'%3EVSM%3C/text%3E%3C/svg%3E">
   <link rel="preload" href="assets/fonts/newsreader-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261019-fullwidth-carousel-02">
+  <link rel="stylesheet" href="/styles.css?v=20261021-case-evidence-symbols-01">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -2234,25 +2234,34 @@ ul, ol { padding: 0; list-style: none; }
 
   <style id="portfolio-thesis-field-icons">
     /* Project 01: label icons are specific to research, evidence and workforce continuity. */
-    .thesis-evidence-grid dt {
+    .thesis-evidence-grid dt,
+    .case-evidence-grid dt {
       display:flex;
       align-items:center;
       gap:9px;
-      min-height:19px;
+      min-height:20px;
       margin-bottom:8px !important;
       letter-spacing:.15em !important;
     }
     .thesis-field-icon {
       display:block;
+      box-sizing:content-box;
       width:17px;
       height:17px;
       flex:0 0 17px;
+      padding:2px;
+      border:1px solid #D8DDE2;
+      border-radius:4px;
+      background:linear-gradient(145deg,#FFFFFF,#F0F2F4);
       color:#56616D;
       overflow:visible;
     }
-    .thesis-evidence-grid .wide .thesis-field-icon { width:18px;height:18px;flex-basis:18px; }
-    .thesis-evidence-grid dd { line-height:1.62; }
-    .thesis-evidence-grid .tags { margin-top:3px; }
+    .thesis-evidence-grid .wide .thesis-field-icon,
+    .case-evidence-grid .wide .thesis-field-icon { width:18px;height:18px;flex-basis:18px; }
+    .thesis-evidence-grid dd,
+    .case-evidence-grid dd { line-height:1.62; }
+    .thesis-evidence-grid .tags,
+    .case-evidence-grid .tags { margin-top:3px; }
     .workstream-roman {
       color:#76263D !important;
       display:inline-block;
@@ -3048,12 +3057,12 @@ ul, ol { padding: 0; list-style: none; }
             <h3 id="case2-title">Premium co-living concept, Hyderabad</h3>
             <p class="case-recognition case-note">A business masterplan for a concept — not an operating company.</p>
           </div>
-          <dl class="case-grid">
-            <div><dt>Business question</dt><dd>What would a credible premium co-living proposition for Hyderabad's IT corridor need to get right?</dd></div>
-            <div><dt>Approach</dt><dd>A business masterplan built from market, location, positioning, financial and operating perspectives.</dd></div>
-            <div><dt>Evidence</dt><dd><ul class="tags"><li>Market and location targeting</li><li>Hyderabad IT corridor</li><li>Competitive analysis</li></ul></dd></div>
-            <div><dt>Insight</dt><dd><ul class="tags"><li>Brand positioning</li><li>Financial planning</li><li>Operating-model design</li></ul></dd></div>
-            <div class="wide"><dt>Business relevance</dt><dd>Shows end-to-end venture thinking: connecting market selection, positioning, economics and operations into one coherent plan.</dd></div>
+          <dl class="case-grid case-evidence-grid">
+            <div><dt><svg class="thesis-field-icon" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M2.8 9 10 3l7.2 6v7.5H2.8Z" stroke="currentColor" stroke-width="1.25" stroke-linejoin="round"/><path d="M7.1 16.5v-4.3h5.8v4.3" stroke="#76263D" stroke-width="1.3" stroke-linejoin="round"/><circle cx="15.7" cy="4.3" r="1.25" fill="#76263D"/></svg><span>Business question</span></dt><dd>What would a credible premium co-living proposition for Hyderabad's IT corridor need to get right?</dd></div>
+            <div><dt><svg class="thesis-field-icon" viewBox="0 0 20 20" fill="none" aria-hidden="true"><circle cx="10" cy="10" r="6.6" stroke="currentColor" stroke-width="1.2"/><circle cx="10" cy="10" r="2.4" stroke="#76263D" stroke-width="1.3"/><path d="M10 1.8v3M18.2 10h-3M10 18.2v-3M1.8 10h3" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg><span>Approach</span></dt><dd>A business masterplan built from market, location, positioning, financial and operating perspectives.</dd></div>
+            <div><dt><svg class="thesis-field-icon" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M3.2 3.5h13.6v12.8H3.2z" stroke="currentColor" stroke-width="1.25"/><path d="M6.1 12.9V10M9.9 12.9V7.2M13.7 12.9V5.3" stroke="#76263D" stroke-width="1.55" stroke-linecap="round"/><path d="M5.5 15h9" stroke="currentColor" stroke-width="1.1" stroke-linecap="round"/></svg><span>Evidence</span></dt><dd><ul class="tags"><li>Market and location targeting</li><li>Hyderabad IT corridor</li><li>Competitive analysis</li></ul></dd></div>
+            <div><dt><svg class="thesis-field-icon" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M3.5 15.8V4.2M3.5 15.8H17" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/><path d="m5.5 13 3.1-3.1 2.5 1.7 4.6-5.1" stroke="#76263D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M12.8 6.5h2.9v2.9" stroke="#76263D" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Insight</span></dt><dd><ul class="tags"><li>Brand positioning</li><li>Financial planning</li><li>Operating-model design</li></ul></dd></div>
+            <div class="wide"><dt><svg class="thesis-field-icon" viewBox="0 0 20 20" fill="none" aria-hidden="true"><rect x="2.8" y="4.3" width="14.4" height="12.4" rx=".7" stroke="currentColor" stroke-width="1.2"/><path d="M6.1 7.6h7.8M6.1 10.2h4.8M6.1 12.8h6.2" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/><path d="m13.2 14.8 1.4 1.4 2.5-2.8" stroke="#76263D" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Business relevance</span></dt><dd>Shows end-to-end venture thinking: connecting market selection, positioning, economics and operations into one coherent plan.</dd></div>
           </dl>
         </article>
 
@@ -3072,12 +3081,12 @@ ul, ol { padding: 0; list-style: none; }
             <li><span>05</span>Service-line opportunities<small>Underserved needs and whitespace assessed</small></li>
             <li><span>06</span>Portfolio direction<small>New service opportunities selected to fit NexaHomes’ positioning</small></li>
           </ol>
-          <dl class="case-grid">
-            <div><dt>Business question</dt><dd>Where can the business stand apart in a competitive residential market?</dd></div>
-            <div><dt>Approach</dt><dd>Competitive research and competitor benchmarking across the local landscape.</dd></div>
-            <div><dt>Evidence</dt><dd>Benchmarking of named market players alongside customer requirements gathered across the client portfolio.</dd></div>
-            <div><dt>Insight</dt><dd>Identified service gaps and under-served market needs, then assessed new service lines against NexaHomes’ customer base, positioning and business model.</dd></div>
-            <div class="wide"><dt>Business relevance</dt><dd>Helped inform the selection of differentiated service offerings that fit NexaHomes’ business direction and could address needs not clearly served by competing local providers—moving the work from competitor comparison to portfolio development.</dd></div>
+          <dl class="case-grid case-evidence-grid">
+            <div><dt><svg class="thesis-field-icon" viewBox="0 0 20 20" fill="none" aria-hidden="true"><circle cx="8.2" cy="8.2" r="5.2" stroke="currentColor" stroke-width="1.25"/><path d="m12.1 12.1 4.4 4.4M8.2 5.8v4.8M5.8 8.2h4.8" stroke="#76263D" stroke-width="1.2" stroke-linecap="round"/></svg><span>Business question</span></dt><dd>Where can the business stand apart in a competitive residential market?</dd></div>
+            <div><dt><svg class="thesis-field-icon" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M3 4.2h5.2v4.2H3zM11.8 4.2H17v4.2h-5.2zM7.4 11.6h5.2v4.2H7.4z" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round"/><path d="M8.2 6.3h3.6M10 8.4v3.2" stroke="#76263D" stroke-width="1.2" stroke-linecap="round"/></svg><span>Approach</span></dt><dd>Competitive research and competitor benchmarking across the local landscape.</dd></div>
+            <div><dt><svg class="thesis-field-icon" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 2.8h8l3.4 3.4v11H4zM12 2.8v3.4h3.4" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round"/><path d="M6.5 13.8v-2.1M9.4 13.8V9.3M12.3 13.8v-3" stroke="#76263D" stroke-width="1.45" stroke-linecap="round"/><path d="M6 15.5h7" stroke="currentColor" stroke-width="1.1" stroke-linecap="round"/></svg><span>Evidence</span></dt><dd>Benchmarking of named market players alongside customer requirements gathered across the client portfolio.</dd></div>
+            <div><dt><svg class="thesis-field-icon" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M3 15.7h14" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/><path d="m4.2 13.6 3.2-4 3.1 2.2 5.3-6" stroke="#76263D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="15.8" cy="5.8" r="1.1" fill="#76263D"/><path d="M13.2 5.8h2.6v2.6" stroke="#76263D" stroke-width="1" stroke-linecap="round"/></svg><span>Insight</span></dt><dd>Identified service gaps and under-served market needs, then assessed new service lines against NexaHomes’ customer base, positioning and business model.</dd></div>
+            <div class="wide"><dt><svg class="thesis-field-icon" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M3.1 5.2h13.8v10.9H3.1z" stroke="currentColor" stroke-width="1.2"/><path d="M6.2 8.1h7.6M6.2 10.7h3.8" stroke="currentColor" stroke-width="1.1" stroke-linecap="round"/><path d="m10.5 14 1.8 1.8 3.1-3.7" stroke="#76263D" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Business relevance</span></dt><dd>Helped inform the selection of differentiated service offerings that fit NexaHomes’ business direction and could address needs not clearly served by competing local providers—moving the work from competitor comparison to portfolio development.</dd></div>
           </dl>
         </article>
       </div>
