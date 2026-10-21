@@ -1469,6 +1469,100 @@ ul, ol { padding: 0; list-style: none; }
     @media (prefers-reduced-motion:reduce) { .chain li { transition:none !important; } }
   </style>
 
+  <style id="portfolio-decision-logic">
+    /* A decision framework based on Manoj's documented work: evidence, unmet need, business fit and execution. */
+    .thinking-path {
+      display:grid;
+      grid-template-columns:repeat(5,minmax(0,1fr));
+      gap:12px;
+      margin:0;
+      padding:0;
+      list-style:none;
+      counter-reset:think;
+    }
+    .thinking-card {
+      position:relative;
+      display:flex;
+      flex-direction:column;
+      align-items:flex-start;
+      min-width:0;
+      min-height:270px;
+      padding:22px 18px 18px;
+      overflow:hidden;
+      border:1px solid #B7C0C8;
+      background:
+        linear-gradient(125deg,rgba(255,255,255,.96) 0%,rgba(211,218,224,.96) 18%,rgba(248,250,252,.98) 37%,rgba(190,199,207,.96) 56%,rgba(245,247,249,.98) 76%,rgba(205,213,220,.98) 100%);
+      color:#1C2228;
+      box-shadow:inset 0 1px 0 rgba(255,255,255,.98),inset 0 -1px 0 rgba(87,99,110,.13),0 10px 24px -18px rgba(22,30,38,.42);
+      transition:transform .28s ease,box-shadow .28s ease,border-color .28s ease;
+    }
+    .thinking-card::before {
+      content:"";
+      position:absolute;
+      left:0;right:0;top:0;height:3px;
+      background:linear-gradient(90deg,#6D263B 0%,#AAB4BD 35%,#FDFEFF 65%,#8D99A4 100%);
+    }
+    .thinking-card::after {
+      content:"";
+      position:absolute;
+      width:120px;height:120px;right:-64px;top:27px;border-radius:50%;
+      border:1px solid rgba(255,255,255,.74);
+      box-shadow:0 0 0 7px rgba(110,123,135,.07),0 0 0 15px rgba(255,255,255,.12);
+      pointer-events:none;
+    }
+    .thinking-card:hover {
+      transform:translateY(-4px);
+      border-color:#8C98A3;
+      box-shadow:inset 0 1px 0 #fff,0 18px 32px -21px rgba(22,30,38,.42);
+    }
+    .thinking-index {
+      position:relative;z-index:1;
+      display:grid;place-items:center;
+      width:35px;height:35px;flex:0 0 auto;
+      border:1px solid #8F9AA4;border-radius:50%;
+      background:linear-gradient(145deg,#fff,#c8d0d7);
+      box-shadow:inset 0 1px 0 #fff,0 4px 9px rgba(42,52,61,.12);
+      color:#652338;font-family:var(--serif);font-size:16px;
+    }
+    .thinking-card h3 {
+      position:relative;z-index:1;
+      margin-top:30px;margin-bottom:12px;
+      color:#181D22;font-family:var(--serif);
+      font-size:clamp(21px,1.8vw,27px);font-weight:500;
+      line-height:1.06;letter-spacing:-.025em;
+      overflow-wrap:normal;
+    }
+    .thinking-card p {
+      position:relative;z-index:1;
+      color:#303943;font-size:13px;line-height:1.58;
+    }
+    .thinking-tag {
+      position:relative;z-index:1;
+      margin-top:auto;padding-top:19px;
+      color:#61243A;font-size:9px;font-weight:750;
+      letter-spacing:.14em;text-transform:uppercase;
+    }
+    @media (max-width:1100px) {
+      .thinking-path { grid-template-columns:repeat(3,minmax(0,1fr)); }
+      .thinking-card { min-height:230px; }
+      .thinking-card h3 { font-size:25px; }
+    }
+    @media (max-width:720px) {
+      .thinking-path { grid-template-columns:repeat(2,minmax(0,1fr));gap:10px; }
+      .thinking-card { min-height:228px;padding:18px 15px 16px; }
+      .thinking-card h3 { margin-top:23px;font-size:23px; }
+      .thinking-card p { font-size:13px; }
+    }
+    @media (max-width:460px) {
+      .thinking-path { grid-template-columns:1fr;gap:10px; }
+      .thinking-card { min-height:0;padding:18px 18px 16px; }
+      .thinking-card h3 { margin-top:18px;max-width:18ch;font-size:25px; }
+      .thinking-card p { max-width:42ch; }
+      .thinking-tag { padding-top:14px; }
+    }
+    @media (prefers-reduced-motion:reduce) { .thinking-card { transition:none !important; } }
+  </style>
+
 </head>
 <body>
   <a class="skip" href="index.html#main">Skip to content</a>
@@ -1749,21 +1843,18 @@ ul, ol { padding: 0; list-style: none; }
         <header class="section-head reveal">
           <span class="section-num">02</span>
           <div>
-            <p class="section-kicker">Structured problem solving</p>
-            <h2 id="approach-title" class="section-title">How I approach a business problem</h2>
-            <p class="section-lede">Start with the business objective, challenge the first assumption, and establish what the evidence supports before deciding what deserves attention, investment or change.</p>
+            <p class="section-kicker">My decision logic</p>
+            <h2 id="approach-title" class="section-title">I look for the gap between need, offer and delivery.</h2>
+            <p class="section-lede">I compare what customers need, what the market already offers, and what the operating model can reliably deliver. The unresolved gap—not the first idea—is what I investigate.</p>
           </div>
         </header>
 
-        <ol class="steps">
-          <li class="step reveal"><span class="step-num">01</span><h3>Define</h3><p>Clarify the business objective, the decision required and what success means.</p></li>
-          <li class="step reveal"><span class="step-num">02</span><h3>Investigate</h3><p>Examine the process, customer need, market context and constraints—not just the visible symptom.</p></li>
-          <li class="step reveal"><span class="step-num">03</span><h3>Benchmark</h3><p>Compare competitors, existing solutions and alternative ways of delivering value.</p></li>
-          <li class="step reveal"><span class="step-num">04</span><h3>Find the gap</h3><p>Identify where expectations, current performance and available solutions diverge.</p></li>
-          <li class="step reveal"><span class="step-num">05</span><h3>Test the evidence</h3><p>Separate observed facts from assumptions; verify what can be checked.</p></li>
-          <li class="step reveal"><span class="step-num">06</span><h3>Assess trade-offs</h3><p>Weigh customer value, commercial potential, feasibility and operational impact.</p></li>
-          <li class="step reveal"><span class="step-num">07</span><h3>Prioritise</h3><p>Recommend the most credible next step, with clear ownership and practical constraints.</p></li>
-          <li class="step reveal"><span class="step-num">08</span><h3>Validate</h3><p>Use feedback and results to refine the decision—or stop when the evidence is weak.</p></li>
+        <ol class="thinking-path">
+          <li class="thinking-card reveal"><span class="thinking-index">01</span><h3>Frame the decision</h3><p>What must change, for whom, and why does it matter commercially?</p><span class="thinking-tag">DECISION</span></li>
+          <li class="thinking-card reveal"><span class="thinking-index">02</span><h3>Read the real context</h3><p>Compare customer behaviour and workarounds with competitor offers and the process as it actually runs.</p><span class="thinking-tag">CONTEXT</span></li>
+          <li class="thinking-card reveal"><span class="thinking-index">03</span><h3>Isolate the residual gap</h3><p>Find what current offers or workflows still leave unresolved—not just the visible symptom.</p><span class="thinking-tag">GAP</span></li>
+          <li class="thinking-card reveal"><span class="thinking-index">04</span><h3>Test business fit</h3><p>Weigh customer value, differentiation, commercial logic and operational feasibility together.</p><span class="thinking-tag">VIABILITY</span></li>
+          <li class="thinking-card reveal"><span class="thinking-index">05</span><h3>Earn the recommendation</h3><p>Separate evidence from hypothesis, test critical unknowns, then act—or stop if the case is weak.</p><span class="thinking-tag">EVIDENCE → ACTION</span></li>
         </ol>
       </div>
     </section>
@@ -1946,9 +2037,9 @@ ul, ol { padding: 0; list-style: none; }
         <header class="section-head reveal">
           <span class="section-num">04</span>
           <div>
-            <p class="section-kicker">Selected research &amp; business work</p>
-            <h2 id="research-title" class="section-title">How I investigate a problem</h2>
-            <p class="section-lede">Three pieces of work, each read the same way: the question, the approach, the evidence, the insight and why it matters to a business.</p>
+            <p class="section-kicker">Selected research &amp; business work · evidence-led</p>
+            <h2 id="research-title" class="section-title">Three contexts. One decision discipline.</h2>
+            <p class="section-lede">I start with a decision that needs to be made, compare the evidence and available alternatives, then isolate what remains unresolved. I test whether the finding matters commercially and can be delivered operationally—and label assumptions where evidence is incomplete.</p>
           </div>
         </header>
 
