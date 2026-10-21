@@ -2853,6 +2853,73 @@ ul, ol { padding: 0; list-style: none; }
     }
   </style>
 
+
+  <style id="portfolio-snapshot-explicit-earth-track">
+    /* Explicit, transform-based Earth spin. Two copies of the map make a seamless 360° loop. */
+    .snapshot-stage .snapshot-globe {
+      isolation:isolate !important;
+      overflow:hidden !important;
+      background:#06172A !important;
+      border-radius:50% !important;
+      contain:paint;
+    }
+    .snapshot-stage .snapshot-globe::before {
+      content:none !important;
+      display:none !important;
+      background:none !important;
+      animation:none !important;
+    }
+    .snapshot-stage .snapshot-earth-track {
+      position:absolute !important;
+      inset:0 auto 0 0 !important;
+      width:400% !important;
+      height:100% !important;
+      display:flex !important;
+      flex-flow:row nowrap !important;
+      align-items:stretch !important;
+      gap:0 !important;
+      transform:translate3d(0,0,0);
+      animation:snapshotEarthTrackTurn 30s linear infinite !important;
+      will-change:transform;
+      z-index:1 !important;
+    }
+    .snapshot-stage .snapshot-earth-track img {
+      display:block !important;
+      flex:0 0 50% !important;
+      width:50% !important;
+      max-width:none !important;
+      min-width:0 !important;
+      height:100% !important;
+      object-fit:fill !important;
+      border:0 !important;
+      border-radius:0 !important;
+      margin:0 !important;
+      padding:0 !important;
+      box-shadow:none !important;
+      opacity:1 !important;
+      filter:saturate(1.08) contrast(1.04) brightness(1.02) !important;
+      transform:none !important;
+    }
+    .snapshot-stage .snapshot-globe::after {
+      z-index:3 !important;
+      pointer-events:none !important;
+      background:
+        radial-gradient(ellipse at 29% 23%,rgba(255,255,255,.23) 0%,rgba(255,255,255,.06) 18%,transparent 43%),
+        radial-gradient(ellipse at 50% 48%,transparent 48%,rgba(2,10,24,.18) 72%,rgba(1,7,19,.62) 100%),
+        linear-gradient(108deg,rgba(235,247,255,.15) 0%,transparent 27%,transparent 64%,rgba(0,6,18,.3) 100%) !important;
+    }
+    .snapshot-stage .snapshot-globe-meridian,
+    .snapshot-stage .snapshot-globe-latitude,
+    .snapshot-stage .snapshot-globe-core { display:none !important; }
+    @keyframes snapshotEarthTrackTurn {
+      from { transform:translate3d(0,0,0); }
+      to { transform:translate3d(-50%,0,0); }
+    }
+    @media (prefers-reduced-motion:reduce) {
+      .snapshot-stage .snapshot-earth-track { animation:none !important; transform:translate3d(-25%,0,0) !important; will-change:auto !important; }
+    }
+  </style>
+
 </head>
 <body>
   <a class="skip" href="index.html#main">Skip to content</a>
@@ -3115,7 +3182,7 @@ ul, ol { padding: 0; list-style: none; }
             <div class="snapshot-orbit snapshot-orbit-one"></div>
             <div class="snapshot-orbit snapshot-orbit-two"></div>
             <div class="snapshot-plinth snapshot-plinth-back"></div>
-            <div class="snapshot-globe"><span class="snapshot-globe-meridian"></span><span class="snapshot-globe-latitude"></span><span class="snapshot-globe-core"></span></div>
+            <div class="snapshot-globe" aria-label="Rotating Earth"><div class="snapshot-earth-track" aria-hidden="true"><img src="https://eoimages.gsfc.nasa.gov/images/imagerecords/57000/57752/land_shallow_topo_2048.jpg" alt="" draggable="false"><img src="https://eoimages.gsfc.nasa.gov/images/imagerecords/57000/57752/land_shallow_topo_2048.jpg" alt="" draggable="false"></div><span class="snapshot-globe-meridian"></span><span class="snapshot-globe-latitude"></span><span class="snapshot-globe-core"></span></div>
             <div class="snapshot-plinth snapshot-plinth-front"><span>INSIGHT</span><i></i><span>OPPORTUNITY</span><i></i><span>EXECUTION</span></div>
             <div class="snapshot-float-card snapshot-card-market"><span>i / COMPETITORS</span><strong>Competitive<br>landscape</strong><small>Positioning · benchmarking</small></div>
             <div class="snapshot-float-card snapshot-card-gap"><span>ii / MARKET GAPS</span><strong>Underserved<br>needs</strong><small>Customer demand · service gaps</small></div>
@@ -3742,6 +3809,6 @@ ul, ol { padding: 0; list-style: none; }
     <div class="viewer-stage" id="viewer-stage"></div>
   </dialog>
 
-  <script src="/main.js?v=20261021-earth-visible-rotation-02" defer></script>
+  <script src="/main.js?v=20261021-earth-track-explicit-02" defer></script>
 </body>
 </html>
