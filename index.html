@@ -2066,8 +2066,28 @@ ul, ol { padding: 0; list-style: none; }
     .section-mark--portfolio { width:24px;height:25px;color:#52606C; }
     .section-mark--contact { width:25px;height:25px;color:#596571; margin-left:0; }
     .snapshot-eyebrow-label { min-width:0; }
-    .section-mark--market { width:25px;height:25px;flex:0 0 auto;color:#53606C; }
-    .section-mark--market svg { display:block;width:100%;height:100%; }
+    .section-mark--market {
+      width:32px;height:32px;flex:0 0 auto;color:#76263D;
+      perspective:360px;transform-style:preserve-3d;
+      animation:marketEmblemFloat 6.4s ease-in-out infinite;
+      filter:drop-shadow(0 2px 2px rgba(83,53,33,.1));
+    }
+    .section-mark--market svg { display:block;width:100%;height:100%;overflow:visible;transition:transform .45s cubic-bezier(.2,.72,.25,1),filter .45s ease; }
+    .section-mark--market:hover svg { transform:rotateX(5deg) rotateY(-9deg) translateY(-1px);filter:drop-shadow(1px 3px 2px rgba(76,36,24,.18)); }
+    .section-mark--market .market-share-pulse { transform-box:fill-box;transform-origin:center;animation:marketSharePulse 3.8s ease-out infinite; }
+    .section-mark--market .market-share-line { stroke-dasharray:32;stroke-dashoffset:0;animation:marketShareGlide 6.8s ease-in-out infinite; }
+    @keyframes marketEmblemFloat {
+      0%,100% { transform:translateY(0) rotateX(0deg) rotateY(0deg); }
+      50% { transform:translateY(-1.2px) rotateX(2.5deg) rotateY(-3.5deg); }
+    }
+    @keyframes marketSharePulse {
+      0%,100% { opacity:.35;transform:scale(.84); }
+      55% { opacity:.8;transform:scale(1.04); }
+    }
+    @keyframes marketShareGlide {
+      0%,100% { opacity:.92; }
+      50% { opacity:1; }
+    }
     .contact-panel-copy .contact-section-kicker {
       display:flex !important;
       align-items:center;
@@ -2080,7 +2100,7 @@ ul, ol { padding: 0; list-style: none; }
       .section-mark { width:21px;height:22px; }
       .section-mark--profile { width:32px;height:22px; }
       .section-mark--decision { width:23px;height:23px; }
-      .section-mark--market { width:21px;height:21px; }
+      .section-mark--market { width:26px;height:26px; }
       .snapshot-eyebrow { gap:10px !important; }
       .contact-section-kicker { gap:8px !important; }
       .contact-section-kicker .contact-kicker-rule { flex-basis:28px; }
@@ -2088,8 +2108,12 @@ ul, ol { padding: 0; list-style: none; }
     @media (max-width:420px) {
       .snapshot-eyebrow { gap:8px !important; }
       .snapshot-number { width:38px !important;height:38px !important; }
-      .section-mark--market { width:19px;height:19px; }
+      .section-mark--market { width:22px;height:22px; }
       .snapshot-eyebrow-label { font-size:9px;letter-spacing:.14em; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .section-mark--market, .section-mark--market .market-share-pulse, .section-mark--market .market-share-line { animation:none !important; }
+      .section-mark--market svg { transition:none !important; }
     }
   </style>
 
@@ -2320,7 +2344,29 @@ ul, ol { padding: 0; list-style: none; }
       <div class="wrap">
         <div class="snapshot-hero">
           <header class="snapshot-copy reveal">
-            <div class="snapshot-eyebrow"><span class="snapshot-number">01</span><span class="snapshot-eyebrow-label">Capability snapshot · evidence-led</span><span class="section-mark section-mark--market" aria-hidden="true"><svg viewBox="0 0 32 32" fill="none"><circle cx="11.5" cy="11.5" r="6.4" stroke="currentColor" stroke-width="1.45"/><path d="m16.2 16.2 5.1 5.1M4 23.5h8.5M14 23.5h8M4.7 19.9c1.5-1.5 3.2-2.5 5.1-2.9" stroke="currentColor" stroke-width="1.35" stroke-linecap="round"/><circle cx="11.5" cy="11.5" r="2" fill="#76263D"/><path d="M22 5.5h5.5M24.75 2.75v5.5" stroke="#76263D" stroke-width="1.25" stroke-linecap="round"/></svg></span></div>
+            <div class="snapshot-eyebrow"><span class="snapshot-number">01</span><span class="snapshot-eyebrow-label">Capability snapshot · evidence-led</span><span class="section-mark section-mark--market" aria-hidden="true"><svg class="market-share-emblem" viewBox="0 0 36 36" fill="none" role="img" aria-label="Market intelligence and rising share-price signal">
+  <defs>
+    <linearGradient id="marketMetalFace" x1="5" y1="4" x2="30" y2="33" gradientUnits="userSpaceOnUse"><stop stop-color="#FFFDF8"/><stop offset=".38" stop-color="#F2E7D2"/><stop offset=".68" stop-color="#D1B783"/><stop offset="1" stop-color="#F9F2E6"/></linearGradient>
+    <linearGradient id="marketMetalEdge" x1="6" y1="4" x2="31" y2="32" gradientUnits="userSpaceOnUse"><stop stop-color="#F4E5BF"/><stop offset=".47" stop-color="#AA884B"/><stop offset="1" stop-color="#E8D6AB"/></linearGradient>
+    <linearGradient id="marketBarGold" x1="0" y1="9" x2="0" y2="27" gradientUnits="userSpaceOnUse"><stop stop-color="#FDF8EB"/><stop offset=".48" stop-color="#C9A967"/><stop offset="1" stop-color="#8D6B34"/></linearGradient>
+    <linearGradient id="marketBurgundyLine" x1="7" y1="25" x2="28" y2="8" gradientUnits="userSpaceOnUse"><stop stop-color="#9B4B62"/><stop offset=".55" stop-color="#76263D"/><stop offset="1" stop-color="#4D1729"/></linearGradient>
+    <filter id="marketEmblemShadow" x="-25%" y="-25%" width="150%" height="160%"><feDropShadow dx="0" dy="1.1" stdDeviation=".75" flood-color="#5C3D2A" flood-opacity=".2"/></filter>
+  </defs>
+  <g class="market-emblem-depth" filter="url(#marketEmblemShadow)">
+    <circle cx="18" cy="18" r="15.1" fill="url(#marketMetalFace)" stroke="url(#marketMetalEdge)" stroke-width="1.05"/>
+    <circle cx="18" cy="18" r="12.8" stroke="#FFFFFF" stroke-opacity=".9" stroke-width=".65"/>
+    <path d="M8.1 26.5H28" stroke="#7B6B52" stroke-opacity=".5" stroke-width=".75" stroke-linecap="round"/>
+    <path d="M8.9 25V20.3h3V25M14.2 25V15.8h3V25M19.5 25V11.7h3V25" fill="url(#marketBarGold)" stroke="#8E6F3B" stroke-opacity=".72" stroke-width=".45"/>
+    <path d="M8.2 18.8 13.5 16l5.2 1.05 7.8-8.05" stroke="#4E192A" stroke-opacity=".22" stroke-width="2.7" stroke-linecap="round" stroke-linejoin="round" transform="translate(0 .85)"/>
+    <path class="market-share-line" d="M8.2 18.8 13.5 16l5.2 1.05 7.8-8.05" stroke="url(#marketBurgundyLine)" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="8.2" cy="18.8" r="1.05" fill="#F8F0E4" stroke="#76263D" stroke-width=".85"/>
+    <circle cx="13.5" cy="16" r="1.05" fill="#F8F0E4" stroke="#76263D" stroke-width=".85"/>
+    <circle cx="18.7" cy="17.05" r="1.05" fill="#F8F0E4" stroke="#76263D" stroke-width=".85"/>
+    <circle class="market-share-end" cx="26.5" cy="9" r="1.55" fill="#76263D" stroke="#FFF7E8" stroke-width=".75"/>
+    <circle class="market-share-pulse" cx="26.5" cy="9" r="3.05" stroke="#76263D" stroke-opacity=".5" stroke-width=".6"/>
+    <path d="M7 9.2h3.3M8.65 7.55v3.3" stroke="#B18E4C" stroke-width=".7" stroke-linecap="round" opacity=".9"/>
+  </g>
+</svg></span></div>
             <h2 id="value-title" class="snapshot-title">Reading the market.<br><em>Rethinking the playbook.</em></h2>
             <p class="snapshot-lede">I assess how businesses compete, where customer demand is underserved, and which differentiated opportunities fit the commercial model and can be executed in practice.</p>
             <div class="snapshot-tags" aria-label="Core capabilities">
