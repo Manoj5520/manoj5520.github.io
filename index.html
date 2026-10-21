@@ -2006,6 +2006,38 @@ ul, ol { padding: 0; list-style: none; }
     }
   </style>
 
+
+  <style id="portfolio-headline-keyword-depth">
+    /* One restrained visual signature for the three strategic keywords; wording remains unchanged. */
+    .contact-close .contact-line em {
+      color: #76263D !important;
+      display: inline-block;
+      position: relative;
+      font-style: normal !important;
+      font-weight: 560 !important;
+      text-shadow:
+        0.55px 0 rgba(166, 89, 109, .8),
+        1.1px 1px 0 rgba(78, 22, 39, .22),
+        0 3px 7px rgba(118, 38, 61, .09);
+      -webkit-text-stroke: .08px rgba(118, 38, 61, .35);
+    }
+    .contact-close .contact-line em::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: -.035em;
+      height: 1.5px;
+      background: linear-gradient(90deg, #76263D 0%, #B26C80 52%, #76263D 100%);
+      box-shadow: 0 1px 0 rgba(68, 16, 31, .22);
+      opacity: .82;
+      pointer-events: none;
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .contact-close .contact-line em { transform: none !important; }
+    }
+  </style>
+
 </head>
 <body>
   <a class="skip" href="index.html#main">Skip to content</a>
@@ -2801,7 +2833,7 @@ ul, ol { padding: 0; list-style: none; }
               <h2 id="contact-title" class="contact-close">
                 <span class="contact-line"><em>Competitive</em> insight.</span>
                 <span class="contact-line"><em>Commercial</em> judgement.</span>
-                <span class="contact-line"><em>Impact</em> through operations.</span>
+                <span class="contact-line">Operational <em>impact.</em></span>
               </h2>
               <p class="section-lede contact-intent">I connect competitive research, commercial-model analysis and operational understanding to assess opportunities, clarify trade-offs and turn priorities into executable next steps.</p>
             </div>
