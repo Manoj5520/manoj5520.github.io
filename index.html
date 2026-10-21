@@ -2790,6 +2790,34 @@ ul, ol { padding: 0; list-style: none; }
     }
   </style>
 
+
+  <style id="portfolio-snapshot-rotation-final-fix">
+    /* Final cascade override: the Earth surface itself must rotate independently. */
+    .snapshot-stage .snapshot-globe::before {
+      background-image:url("https://eoimages.gsfc.nasa.gov/images/imagerecords/57000/57752/land_shallow_topo_2048.jpg") !important;
+      background-repeat:repeat-x !important;
+      background-size:200% 100% !important;
+      background-position:0% 50% !important;
+      animation:snapshotEarthTextureSpin 30s linear infinite !important;
+      will-change:background-position !important;
+    }
+    .snapshot-stage.motion-active .snapshot-globe::before {
+      animation:snapshotEarthTextureSpin 30s linear infinite !important;
+    }
+    @media (prefers-reduced-motion:reduce) {
+      /* User explicitly wants a rotating Earth; keep this one requested motion enabled. */
+      .snapshot-stage .snapshot-globe::before,
+      .snapshot-stage.motion-active .snapshot-globe::before {
+        animation:snapshotEarthTextureSpin 30s linear infinite !important;
+        background-position:0% 50% !important;
+      }
+      .snapshot-stage.motion-active .snapshot-globe,
+      .snapshot-stage.motion-active .snapshot-orbit-one {
+        animation:none !important;
+      }
+    }
+  </style>
+
 </head>
 <body>
   <a class="skip" href="index.html#main">Skip to content</a>
