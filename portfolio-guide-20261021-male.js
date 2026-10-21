@@ -121,7 +121,7 @@
       if (finished) return;
       var voices = getEnglishVoices();
       var maleVoice = findMaleVoice(voices);
-      if (!maleVoice && voices.length === 0 && !forceFallback) return;
+      if (!maleVoice && !forceFallback) return;
       finished = true;
       if (handler && synth.removeEventListener) synth.removeEventListener("voiceschanged", handler);
       if (voiceReadyTimer) window.clearTimeout(voiceReadyTimer);
