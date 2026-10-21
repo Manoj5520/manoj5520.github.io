@@ -277,6 +277,71 @@ ul, ol { padding: 0; list-style: none; }
 .vb-num { display: block; font-family: var(--serif); font-size: 15px; color: var(--muted); margin-bottom: 26px; }
 .value-block h3 { font-family: var(--serif); font-weight: 400; font-size: clamp(28px, 3vw, 38px); line-height: 1.1; letter-spacing: -.01em; text-transform: none; margin-bottom: 16px; }
 .value-block p { font-size: 17px; color: var(--charcoal); max-width: 440px; }
+
+/* ---------- Capability snapshot: sculptural 3D business system ---------- */
+.snapshot-hero {
+  display: grid; grid-template-columns: minmax(0, .94fr) minmax(0, 1.06fr);
+  gap: clamp(28px, 5vw, 76px); align-items: center; min-height: 500px;
+  padding: 8px 0 clamp(48px, 6vw, 78px); border-bottom: 1px solid var(--rule);
+}
+.snapshot-copy { position: relative; z-index: 2; }
+.snapshot-eyebrow { display:flex; align-items:center; gap:16px; margin-bottom:clamp(26px,3vw,38px); color:var(--muted); font-size:11px; font-weight:600; letter-spacing:.19em; text-transform:uppercase; }
+.snapshot-number { display:inline-flex; align-items:center; justify-content:center; width:42px; height:42px; border:1px solid var(--rule-strong); border-radius:50%; font-family:var(--serif); font-size:17px; font-weight:400; letter-spacing:0; color:var(--burgundy); }
+.snapshot-title { max-width: 680px; font-family:var(--serif); font-size:clamp(44px,5.5vw,78px); line-height:.99; letter-spacing:-.045em; font-weight:400; }
+.snapshot-title em { color:var(--burgundy); font-weight:400; }
+.snapshot-lede { max-width:540px; margin-top:26px; color:var(--charcoal); font-size:clamp(15px,1.35vw,18px); line-height:1.7; }
+.snapshot-tags { display:flex; flex-wrap:wrap; gap:8px; margin-top:25px; }
+.snapshot-tags span { padding:7px 10px; border:1px solid var(--rule); color:var(--charcoal); font-size:10px; letter-spacing:.08em; text-transform:uppercase; }
+.snapshot-cta { display:inline-flex; align-items:center; gap:22px; margin-top:30px; padding-bottom:7px; border-bottom:1px solid var(--burgundy); color:var(--burgundy); font-size:11px; font-weight:600; letter-spacing:.15em; text-transform:uppercase; }
+.snapshot-cta span { font-size:17px; transition:transform .25s var(--ease); }
+.snapshot-cta:hover span { transform:translate(3px,-3px); }
+.snapshot-stage { position:relative; isolation:isolate; min-width:0; min-height:470px; perspective:1100px; transform-style:preserve-3d; overflow:hidden; background:radial-gradient(ellipse at 50% 42%,rgba(255,255,255,.98) 0%,rgba(225,230,235,.82) 43%,rgba(207,213,220,.42) 75%,rgba(238,241,244,0) 100%); }
+.snapshot-stage::before { content:""; position:absolute; left:8%; right:2%; bottom:11%; height:25%; border-radius:50%; background:rgba(109,38,59,.13); filter:blur(28px); transform:rotateX(68deg); }
+.snapshot-stage-glow { position:absolute; width:55%; aspect-ratio:1; left:23%; top:10%; border-radius:50%; background:radial-gradient(circle,rgba(255,255,255,.95),rgba(205,174,151,.19) 48%,transparent 72%); }
+.snapshot-orbit { position:absolute; z-index:2; left:18%; top:17%; width:68%; height:56%; border:1px solid rgba(109,38,59,.52); border-radius:50%; transform:rotate(-27deg) rotateX(63deg); box-shadow:0 0 0 8px rgba(109,38,59,.035), inset 0 0 0 7px rgba(255,255,255,.42); }
+.snapshot-orbit-two { left:12%; top:23%; width:78%; height:48%; border-color:rgba(160,119,83,.65); transform:rotate(31deg) rotateX(65deg); }
+.snapshot-plinth { position:absolute; left:13%; width:76%; height:24%; border-radius:50%; transform:rotateX(67deg); }
+.snapshot-plinth-back { z-index:1; top:45%; background:linear-gradient(145deg,#f8f5ef,#c7c0b8 38%,#fff 53%,#7b2637 55%,#3b1019 68%,#b18b6b 76%,#f5f1e9 83%); box-shadow:0 18px 26px rgba(25,18,18,.18); }
+.snapshot-plinth-front { z-index:5; top:55%; left:7%; width:88%; height:25%; display:flex; justify-content:center; align-items:center; gap:clamp(6px,1vw,15px); padding-top:1.2%; border:1px solid rgba(255,255,255,.72); background:linear-gradient(155deg,#5b1725 0%,#260b12 48%,#74283a 75%,#1b1013 100%); color:#f8eee2; box-shadow:0 24px 24px rgba(28,15,17,.23),inset 0 1px 0 rgba(255,255,255,.42); transform:rotateX(66deg); font-size:clamp(7px,.7vw,10px); letter-spacing:.12em; white-space:nowrap; }
+.snapshot-plinth-front i { display:block; width:3px; height:3px; border-radius:50%; background:#e8c59a; box-shadow:0 0 8px #e8c59a; }
+.snapshot-globe { position:absolute; z-index:4; left:32%; top:24%; width:38%; aspect-ratio:1; border-radius:50%; overflow:hidden; border:1px solid rgba(255,255,255,.95); background:radial-gradient(circle at 32% 23%,#fff 0%,#e4d8c9 9%,#8e7b70 23%,#26272b 44%,#111419 65%,#6d263b 81%,#171319 100%); box-shadow:inset -15px -17px 28px rgba(0,0,0,.55),inset 8px 8px 15px rgba(255,255,255,.85),0 24px 38px rgba(28,18,19,.3),0 0 0 7px rgba(255,255,255,.4),0 0 0 8px rgba(109,38,59,.23); transform:translateZ(55px); }
+.snapshot-globe::before { content:""; position:absolute; inset:9% 14%; border:1px solid rgba(237,203,158,.65); border-radius:48% 52% 43% 57%; transform:rotate(28deg); background:repeating-linear-gradient(26deg,transparent 0 13px,rgba(232,196,150,.18) 14px 15px,transparent 16px 28px),repeating-linear-gradient(112deg,transparent 0 18px,rgba(232,196,150,.2) 19px 20px,transparent 21px 35px); clip-path:polygon(12% 0,83% 4%,100% 26%,87% 44%,100% 67%,73% 100%,34% 87%,22% 65%,0 49%,15% 26%); }
+.snapshot-globe::after { content:""; position:absolute; inset:0; border-radius:50%; background:linear-gradient(118deg,rgba(255,255,255,.82),transparent 24%,transparent 58%,rgba(0,0,0,.48)); }
+.snapshot-globe-meridian { position:absolute; z-index:2; left:21%; top:-5%; width:58%; height:110%; border:1px solid rgba(239,213,179,.62); border-radius:50%; transform:rotate(28deg); }
+.snapshot-globe-latitude { position:absolute; z-index:2; left:-5%; top:38%; width:110%; height:27%; border:1px solid rgba(239,213,179,.55); border-radius:50%; transform:rotate(-15deg); }
+.snapshot-globe-core { position:absolute; z-index:3; left:17%; top:15%; width:20%; aspect-ratio:1; border-radius:50%; background:rgba(255,255,255,.9); filter:blur(12px); }
+.snapshot-float-card { position:absolute; z-index:6; width:31%; min-height:106px; padding:13px 14px; border:1px solid rgba(255,255,255,.92); outline:1px solid rgba(109,38,59,.17); background:linear-gradient(135deg,rgba(255,255,255,.83),rgba(237,232,226,.58)); box-shadow:0 16px 30px rgba(35,26,27,.11),inset 0 1px 0 #fff; backdrop-filter:blur(8px); transform:rotateY(-9deg) rotateX(3deg) translateZ(38px); }
+.snapshot-float-card span { display:block; color:var(--burgundy); font-size:9px; font-weight:600; letter-spacing:.14em; }
+.snapshot-float-card strong { display:block; margin-top:8px; font-family:var(--serif); font-size:clamp(16px,1.6vw,22px); font-weight:400; line-height:1.03; }
+.snapshot-float-card small { display:block; margin-top:8px; color:var(--muted); font-size:9px; line-height:1.4; }
+.snapshot-card-market { top:17%; left:1%; }
+.snapshot-card-model { top:7%; right:2%; transform:rotateY(9deg) rotateX(3deg) translateZ(42px); }
+.snapshot-card-delivery { right:0; bottom:18%; width:34%; transform:rotateY(8deg) rotateX(2deg) translateZ(48px); }
+.snapshot-stage-caption { position:absolute; z-index:7; left:5%; bottom:3%; color:var(--muted); font-size:9px; font-weight:600; letter-spacing:.14em; text-transform:uppercase; }
+@media (max-width:960px) {
+  .snapshot-hero { grid-template-columns:1fr; gap:24px; min-height:0; }
+  .snapshot-copy { max-width:760px; }
+  .snapshot-stage { min-height:440px; }
+  .snapshot-title { font-size:clamp(46px,8vw,72px); }
+}
+@media (max-width:560px) {
+  .snapshot-hero { padding-bottom:38px; }
+  .snapshot-eyebrow { margin-bottom:24px; }
+  .snapshot-title { font-size:clamp(39px,10vw,54px); }
+  .snapshot-lede { font-size:15px; }
+  .snapshot-stage { min-height:330px; margin:0 -10px; }
+  .snapshot-float-card { min-height:78px; padding:9px 8px; width:34%; }
+  .snapshot-float-card span { font-size:7px; }
+  .snapshot-float-card strong { font-size:15px; }
+  .snapshot-float-card small { font-size:7px; }
+  .snapshot-card-market { left:0; top:16%; }
+  .snapshot-card-model { right:0; top:6%; }
+  .snapshot-card-delivery { right:0; bottom:16%; width:37%; }
+  .snapshot-plinth-front { left:3%; width:94%; font-size:6px; gap:5px; }
+  .snapshot-stage-caption { font-size:7px; left:3%; }
+}
+@media (prefers-reduced-motion:reduce) { .snapshot-cta span { transition:none; } }
+
 .flow i { font-style: normal; color: var(--muted); padding: 0 2px; }
 
 /* ---------- 02 Approach ---------- */
@@ -1427,14 +1492,29 @@ ul, ol { padding: 0; list-style: none; }
         <!-- ============ 01 VALUE ============ -->
     <section class="section" id="value" aria-labelledby="value-title">
       <div class="wrap">
-        <header class="section-head reveal">
-          <span class="section-num">01</span>
-          <div>
-            <p class="section-kicker">Capability snapshot · evidence-led</p>
-            <h2 id="value-title" class="section-title">Seeing where business can work better.</h2>
-            <p class="section-lede">I examine how companies compete, how their operating models perform, and where a sharper decision or a better process can create commercial value.</p>
+        <div class="snapshot-hero">
+          <header class="snapshot-copy reveal">
+            <div class="snapshot-eyebrow"><span class="snapshot-number">01</span><span>Capability snapshot · evidence-led</span></div>
+            <h2 id="value-title" class="snapshot-title">Reading the market.<br><em>Rethinking the playbook.</em></h2>
+            <p class="snapshot-lede">I assess how businesses compete, where customer demand is underserved, and which differentiated opportunities fit the commercial model and can be executed in practice.</p>
+            <div class="snapshot-tags" aria-label="Core capabilities">
+              <span>Competitive intelligence</span><span>Opportunity assessment</span><span>Business operations</span>
+            </div>
+            <a class="snapshot-cta" href="#research">Explore the evidence <span aria-hidden="true">↗</span></a>
+          </header>
+          <div class="snapshot-stage reveal" role="img" aria-label="Three-dimensional business strategy sculpture illustrating market signals, opportunity assessment, business-model fit and execution">
+            <div class="snapshot-stage-glow"></div>
+            <div class="snapshot-orbit snapshot-orbit-one"></div>
+            <div class="snapshot-orbit snapshot-orbit-two"></div>
+            <div class="snapshot-plinth snapshot-plinth-back"></div>
+            <div class="snapshot-globe"><span class="snapshot-globe-meridian"></span><span class="snapshot-globe-latitude"></span><span class="snapshot-globe-core"></span></div>
+            <div class="snapshot-plinth snapshot-plinth-front"><span>INSIGHT</span><i></i><span>OPPORTUNITY</span><i></i><span>EXECUTION</span></div>
+            <div class="snapshot-float-card snapshot-card-market"><span>01 / SIGNAL</span><strong>Market<br>position</strong><small>Trends · competition · demand</small></div>
+            <div class="snapshot-float-card snapshot-card-model"><span>02 / FIT</span><strong>Business<br>model</strong><small>Need · viability · differentiation</small></div>
+            <div class="snapshot-float-card snapshot-card-delivery"><span>03 / DELIVERY</span><strong>Operational<br>reality</strong><small>Process · ownership · execution</small></div>
+            <div class="snapshot-stage-caption">From market evidence to executable business choices</div>
           </div>
-        </header>
+        </div>
 
         <div class="value-grid">
           <article class="value-block reveal">
