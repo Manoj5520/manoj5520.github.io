@@ -1660,6 +1660,33 @@ ul, ol { padding: 0; list-style: none; }
     }
   </style>
 
+  <style id="portfolio-decision-icon-refinement">
+    /* Keep the metallic system consistent; use small stage-specific icons and accents for scanning. */
+    .thinking-card-top { position:relative;z-index:2;display:flex;align-items:center;justify-content:space-between;width:100%;gap:12px; }
+    .thinking-index { width:32px !important;height:32px !important;font-size:14px !important;border-color:#A8B1BA !important;color:#424D57 !important; }
+    .thinking-icon {
+      display:grid;place-items:center;width:37px;height:37px;flex:0 0 37px;
+      border:1px solid var(--stage-border,#C6CDD4);
+      border-radius:10px;
+      background:linear-gradient(145deg,var(--stage-bg,#F4F6F8),rgba(255,255,255,.88));
+      box-shadow:inset 0 1px 0 rgba(255,255,255,.98),0 3px 9px rgba(30,38,46,.05);
+      color:var(--stage-color,#76263D);
+    }
+    .thinking-icon svg { width:21px;height:21px;display:block; }
+    .thinking-card[data-stage="decision"] { --stage-color:#76263D;--stage-bg:#F5E9ED;--stage-border:#D9BBC5; }
+    .thinking-card[data-stage="context"] { --stage-color:#52697D;--stage-bg:#EAF0F5;--stage-border:#C2CFDA; }
+    .thinking-card[data-stage="gap"] { --stage-color:#866747;--stage-bg:#F2ECE4;--stage-border:#D9C9B7; }
+    .thinking-card[data-stage="fit"] { --stage-color:#4F6B59;--stage-bg:#E8EFEA;--stage-border:#C4D2C8; }
+    .thinking-card[data-stage="recommendation"] { --stage-color:#454D57;--stage-bg:#EAEDF0;--stage-border:#C6CDD4; }
+    .thinking-card[data-stage]::before { background:linear-gradient(90deg,var(--stage-color) 0%,var(--stage-border) 34%,#FDFEFF 68%,var(--stage-border) 100%) !important; }
+    .thinking-card[data-stage] .thinking-tag { color:var(--stage-color) !important; }
+    .thinking-card[data-stage] .thinking-index { color:var(--stage-color) !important;border-color:var(--stage-border) !important; }
+    @media (max-width:720px) {
+      .thinking-card-top { margin-bottom:0; }
+      .thinking-icon { width:35px;height:35px;flex-basis:35px; }
+    }
+  </style>
+
 </head>
 <body>
   <a class="skip" href="index.html#main">Skip to content</a>
@@ -1947,11 +1974,26 @@ ul, ol { padding: 0; list-style: none; }
         </header>
 
         <ol class="thinking-path">
-          <li class="thinking-card reveal"><span class="thinking-index">01</span><h3>Frame the decision</h3><p>What must change, for whom, and why does it matter commercially?</p><span class="thinking-tag">DECISION</span></li>
-          <li class="thinking-card reveal"><span class="thinking-index">02</span><h3>Read the real context</h3><p>Compare customer behaviour and workarounds with competitor offers and the process as it actually runs.</p><span class="thinking-tag">CONTEXT</span></li>
-          <li class="thinking-card reveal"><span class="thinking-index">03</span><h3>Isolate the residual gap</h3><p>Find what current offers or workflows still leave unresolved—not just the visible symptom.</p><span class="thinking-tag">GAP</span></li>
-          <li class="thinking-card reveal"><span class="thinking-index">04</span><h3>Test business fit</h3><p>Weigh customer value, differentiation, commercial logic and operational feasibility together.</p><span class="thinking-tag">VIABILITY</span></li>
-          <li class="thinking-card reveal"><span class="thinking-index">05</span><h3>Earn the recommendation</h3><p>Separate evidence from hypothesis, test critical unknowns, then act—or stop if the case is weak.</p><span class="thinking-tag">EVIDENCE → ACTION</span></li>
+          <li class="thinking-card reveal" data-stage="decision">
+            <div class="thinking-card-top"><span class="thinking-index">01</span><span class="thinking-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="3"/><path d="M12 1.5v3M12 19.5v3M1.5 12h3M19.5 12h3"/></svg></span></div>
+            <h3>Frame the decision</h3><p>What must change, for whom, and why does it matter commercially?</p><span class="thinking-tag">DECISION</span>
+          </li>
+          <li class="thinking-card reveal" data-stage="context">
+            <div class="thinking-card-top"><span class="thinking-index">02</span><span class="thinking-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="10.5" cy="10.5" r="6.7"/><path d="m15.5 15.5 5 5M8 10.5h5M10.5 8v5"/></svg></span></div>
+            <h3>Read the real context</h3><p>Compare customer behaviour and workarounds with competitor offers and the process as it actually runs.</p><span class="thinking-tag">CONTEXT</span>
+          </li>
+          <li class="thinking-card reveal" data-stage="gap">
+            <div class="thinking-card-top"><span class="thinking-index">03</span><span class="thinking-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h6v6H4zM14 13h6v6h-6zM14 4l-3 3m-1 8-3 3M17 4v4M15 6h4"/></svg></span></div>
+            <h3>Isolate the residual gap</h3><p>Find what current offers or workflows still leave unresolved—not just the visible symptom.</p><span class="thinking-tag">GAP</span>
+          </li>
+          <li class="thinking-card reveal" data-stage="fit">
+            <div class="thinking-card-top"><span class="thinking-index">04</span><span class="thinking-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v17M5 7h14M5 7l-3 6h6L5 7zm14 0-3 6h6l-3-6zM8 21h8"/></svg></span></div>
+            <h3>Test business fit</h3><p>Weigh customer value, differentiation, commercial logic and operational feasibility together.</p><span class="thinking-tag">VIABILITY</span>
+          </li>
+          <li class="thinking-card reveal" data-stage="recommendation">
+            <div class="thinking-card-top"><span class="thinking-index">05</span><span class="thinking-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h9l4 4v14H6zM15 3v5h4M9 13l2 2 5-5"/></svg></span></div>
+            <h3>Earn the recommendation</h3><p>Separate evidence from hypothesis, test critical unknowns, then act—or stop if the case is weak.</p><span class="thinking-tag">EVIDENCE → ACTION</span>
+          </li>
         </ol>
       </div>
     </section>
