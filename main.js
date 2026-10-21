@@ -59,6 +59,20 @@
     reveals.forEach(function (el) { io.observe(el); });
   }
 
+
+  /* ---------- Capability snapshot motion ---------- */
+  var snapshotStage = document.querySelector(".snapshot-stage");
+  if (snapshotStage && !reduceMotion && "IntersectionObserver" in window) {
+    var snapshotMotionObserver = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        entry.target.classList.toggle("motion-active", entry.isIntersecting);
+      });
+    }, { rootMargin: "40px 0px", threshold: 0.22 });
+    snapshotMotionObserver.observe(snapshotStage);
+  } else if (snapshotStage && !reduceMotion) {
+    snapshotStage.classList.add("motion-active");
+  }
+
   /* ---------- Active navigation + progress ---------- */
   var links = Array.prototype.slice.call(document.querySelectorAll(".nav ul a"));
   var sections = links.map(function (a) { return document.querySelector(a.getAttribute("href")); });
