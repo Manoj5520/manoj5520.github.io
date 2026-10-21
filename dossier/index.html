@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#EEF1F4">
+  <meta name="theme-color" content="#4B0C20">
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
   <meta name="description" content="V. Sai Manoj — professional portfolio, resume, LinkedIn, Instagram and email contact links.">
   <title>V. Sai Manoj | Digital Dossier &amp; Contact Hub</title>
@@ -426,6 +426,459 @@
   
     .brand-mini { display:block; margin-top:-5px; color:var(--muted); font-size:9px; line-height:1.35; text-align:center; }
     @media (max-width:600px) { .brand-mini { margin-top:-4px; font-size:8.5px; } }
+
+
+    /* 2026-10-21 premium hub refinement: warm ivory, deep burgundy, restrained brass */
+    :root {
+      --navy: #24131A;
+      --ink: #39101E;
+      --accent: #70152F;
+      --blue: #39101E;
+      --silver: #EEE4D8;
+      --line: #D8C8BA;
+      --muted: #665760;
+      --page: #F5F0E9;
+      --white: #FFFCF8;
+      --brass: #B99557;
+      --wine: #4B0C20;
+    }
+    body {
+      color: var(--navy);
+      background:
+        radial-gradient(ellipse at 5% 0%, rgba(185,149,87,.12), transparent 34rem),
+        linear-gradient(135deg, #F6F1EA 0%, #FBF8F3 48%, #EEE4DA 100%);
+      font-family: Inter, "Segoe UI", Arial, Helvetica, sans-serif;
+      line-height: 1.55;
+    }
+    a:focus-visible {
+      outline: 3px solid var(--brass);
+      outline-offset: 4px;
+      border-radius: 4px;
+    }
+    .page {
+      width: min(920px, calc(100% - 40px));
+      padding: 34px 0 30px;
+    }
+    .eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 17px;
+      color: var(--accent);
+      font-size: 10px;
+      letter-spacing: .22em;
+    }
+    .eyebrow::before {
+      content: "";
+      display: inline-block;
+      width: 28px;
+      height: 2px;
+      background: var(--brass);
+      flex: 0 0 28px;
+    }
+    .profile-header {
+      position: relative;
+      overflow: hidden;
+      padding: 24px 27px 21px;
+      border: 1px solid #DCCBB9;
+      border-top: 3px solid var(--brass);
+      border-bottom: 3px solid var(--accent);
+      background: linear-gradient(118deg, #FFFCF7 0%, #F5EDE3 72%, #EBD9CB 100%);
+      box-shadow: 0 18px 38px -32px rgba(58,17,31,.38);
+    }
+    .profile-identity {
+      grid-template-columns: 112px minmax(0,1fr) !important;
+      gap: 22px !important;
+    }
+    .profile-photo {
+      width: 112px !important;
+      height: 172px !important;
+      border: 3px solid #FFFCF8 !important;
+      outline: 1px solid #CFBDAA !important;
+      box-shadow: 0 12px 26px -16px rgba(56,15,30,.48) !important;
+    }
+    .profile-copy h1 {
+      color: var(--wine) !important;
+      -webkit-text-fill-color: var(--wine) !important;
+      font-family: Georgia, "Times New Roman", serif !important;
+      font-size: clamp(39px, 5.5vw, 55px) !important;
+      line-height: 1.02 !important;
+      letter-spacing: -.045em !important;
+      text-shadow: none !important;
+    }
+    .profile-copy .role {
+      margin-top: 12px !important;
+      color: #6F1A32 !important;
+      font-size: 11px !important;
+      font-weight: 750 !important;
+      letter-spacing: .105em !important;
+      line-height: 1.65 !important;
+      text-transform: uppercase;
+    }
+    .profile-copy .intro {
+      max-width: 590px !important;
+      margin-top: 12px !important;
+      color: #41323A !important;
+      font-size: 14px !important;
+      line-height: 1.72 !important;
+    }
+    .profile-signature {
+      position: relative;
+      margin-top: 20px !important;
+      padding: 16px 0 0 20px !important;
+      border-top: 1px solid #D8C4B1 !important;
+      color: var(--wine) !important;
+      font-size: clamp(20px, 3.2vw, 25px) !important;
+      letter-spacing: -.015em;
+    }
+    .profile-signature::before {
+      content: "";
+      position: absolute;
+      top: -2px;
+      left: 0;
+      width: 42px;
+      height: 3px;
+      background: var(--brass);
+    }
+    .brand-strip {
+      gap: 12px !important;
+      margin-top: 18px !important;
+    }
+    .brand-item {
+      position: relative;
+      border: 1px solid #DDCFC2 !important;
+      border-radius: 7px !important;
+      background: rgba(255,252,248,.96) !important;
+      box-shadow: 0 10px 24px -22px rgba(67,21,36,.45) !important;
+      transition: transform .24s ease, border-color .24s ease, box-shadow .24s ease !important;
+    }
+    .brand-item::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 14px;
+      right: 14px;
+      height: 2px;
+      background: var(--brass);
+      opacity: .8;
+    }
+    .brand-item:hover {
+      transform: translateY(-3px) !important;
+      border-color: #A77B4F !important;
+      box-shadow: 0 16px 28px -22px rgba(67,21,36,.42) !important;
+    }
+    .brand-role {
+      color: #4B3942 !important;
+      font-size: 10.5px !important;
+      line-height: 1.5 !important;
+    }
+    main > section {
+      margin-top: 26px;
+    }
+    .section-label {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 11px;
+      color: #6C4A55;
+      font-size: 10px;
+      letter-spacing: .2em;
+    }
+    .section-label::before {
+      content: "";
+      display: inline-block;
+      width: 22px;
+      height: 2px;
+      background: var(--brass);
+      flex: 0 0 22px;
+    }
+    .card,
+    .resume-panel,
+    .tagline {
+      border-color: #DCCBBE;
+      border-radius: 7px;
+      box-shadow: 0 12px 28px -24px rgba(64,18,34,.34);
+      transition: transform .24s ease, border-color .24s ease, box-shadow .24s ease;
+    }
+    main > section > .card {
+      min-height: 78px;
+      padding: 17px 18px;
+      background: #FFFCF8;
+    }
+    .card:hover {
+      transform: translateY(-2px);
+      border-color: #B99579;
+      box-shadow: 0 17px 30px -24px rgba(64,18,34,.4);
+    }
+    .card-title {
+      color: #26131B;
+      font-size: 14px;
+      letter-spacing: -.01em;
+      line-height: 1.45;
+    }
+    .card-desc {
+      margin-top: 4px;
+      color: #65535D;
+      font-size: 12px;
+      line-height: 1.55;
+    }
+    .icon {
+      flex-basis: 42px;
+      width: 42px;
+      height: 42px;
+      color: var(--accent);
+      background: #F0E4D9;
+      border: 1px solid #DDC9B8;
+      border-radius: 5px;
+    }
+    .arrow {
+      color: var(--accent);
+      font-size: 21px;
+      transition: transform .2s ease;
+    }
+    .card:hover .arrow {
+      transform: translateX(3px);
+    }
+    .portfolio-card {
+      border: 1px solid #5D162B !important;
+      border-left: 4px solid var(--brass) !important;
+      background: linear-gradient(112deg, #68142D 0%, #480B1E 100%) !important;
+      box-shadow: 0 13px 28px -21px rgba(71,8,28,.5) !important;
+    }
+    .portfolio-card .icon {
+      color: #FFF9F0 !important;
+      background: rgba(255,255,255,.09) !important;
+      border-color: rgba(255,255,255,.2) !important;
+    }
+    .portfolio-card .card-title,
+    .portfolio-card .arrow {
+      color: #FFF9F0 !important;
+    }
+    .portfolio-card .card-desc {
+      color: #E9D9D5 !important;
+    }
+    .portfolio-card:hover {
+      border-color: #A9854C !important;
+      border-left-color: #D5B46E !important;
+      background: linear-gradient(112deg, #761933 0%, #520D24 100%) !important;
+      box-shadow: 0 18px 32px -22px rgba(71,8,28,.58) !important;
+    }
+    .resume-panel {
+      position: relative;
+      overflow: hidden;
+      padding: 19px !important;
+      background: linear-gradient(135deg, #FFFCF8 0%, #F6EDE3 100%) !important;
+      border: 1px solid #D7C2AF !important;
+      border-top: 2px solid var(--brass) !important;
+    }
+    .resume-panel > .card {
+      background: transparent !important;
+      box-shadow: none !important;
+    }
+    .resume-panel .icon {
+      color: #FFF9F0;
+      background: var(--accent);
+      border-color: var(--accent);
+      font-size: 15px;
+      letter-spacing: -.03em;
+    }
+    .resume-actions {
+      gap: 11px;
+      margin-top: 16px;
+    }
+    .button {
+      min-height: 48px;
+      border-radius: 4px;
+      font-size: 11px;
+      letter-spacing: .06em;
+      transition: background .2s ease, color .2s ease, border-color .2s ease, transform .2s ease;
+    }
+    .button-primary {
+      color: #FFF9F0;
+      background: var(--accent);
+      border-color: var(--accent);
+      box-shadow: 0 4px 0 rgba(70,12,29,.12);
+    }
+    .button-primary:hover {
+      color: #fff;
+      background: #4E0B20;
+      border-color: #4E0B20;
+      transform: translateY(-1px);
+    }
+    .button-secondary {
+      color: var(--accent);
+      background: #FFFCF8;
+      border-color: #9F6F69;
+    }
+    .button-secondary:hover {
+      color: #fff;
+      background: var(--accent);
+      border-color: var(--accent);
+    }
+    .contact-grid {
+      gap: 12px;
+    }
+    .contact-grid .card {
+      min-height: 82px;
+      padding: 15px;
+      border-radius: 7px;
+      background: rgba(255,252,248,.96);
+    }
+    .contact-grid .icon {
+      background: #F2EAE2;
+      border-color: #E1D4C8;
+    }
+    .contact-grid .contact-linkedin .icon { color: #0A66C2; background: #E9F2FA; border-color: #D0E1EE; }
+    .contact-grid .contact-instagram .icon { color: #A13B72; background: #F7EAF1; border-color: #EAD3DF; }
+    .contact-grid .contact-gmail .icon { color: #B3261E; background: #F8E9E6; border-color: #EBD0CC; }
+    .contact-grid .contact-whatsapp .icon { color: #16865A; background: #E7F4EC; border-color: #CFE6D8; }
+    .contact-grid .card:hover {
+      border-color: #B58C6D;
+      background: #FFFFFF;
+    }
+    .whatsapp-panel {
+      position: relative;
+      overflow: hidden;
+      gap: 24px;
+      margin-top: 28px;
+      padding: 24px !important;
+      border: 1px solid #5A152B !important;
+      border-left: 4px solid var(--brass) !important;
+      border-radius: 8px;
+      background: linear-gradient(118deg, #4A0B1E 0%, #70152F 68%, #511026 100%) !important;
+      box-shadow: 0 20px 40px -30px rgba(64,8,27,.62);
+    }
+    .whatsapp-panel-copy .section-label {
+      color: #D8B976 !important;
+    }
+    .whatsapp-panel-copy .section-label::before {
+      background: #D8B976;
+    }
+    .whatsapp-panel-copy h2 {
+      color: #FFFAF2;
+      font-size: clamp(23px, 3.1vw, 30px);
+      line-height: 1.22;
+    }
+    .whatsapp-panel-copy > p:not(.section-label) {
+      color: #EBDDE0;
+      font-size: 12.5px;
+    }
+    .whatsapp-button {
+      margin-top: 16px;
+      padding: 12px 15px;
+      border-radius: 4px;
+      color: #34101C;
+      background: #D7B56F;
+      font-size: 11px;
+      letter-spacing: .025em;
+      transition: background .2s ease, transform .2s ease;
+    }
+    .whatsapp-button:hover {
+      color: #34101C;
+      background: #E7C987;
+      transform: translateY(-1px);
+    }
+    .whatsapp-qr {
+      border: 1px solid #D7B56F;
+      border-radius: 6px;
+      box-shadow: 0 8px 24px -15px rgba(0,0,0,.5);
+      color: #5F3443;
+      background: #FFFCF8;
+    }
+    footer {
+      gap: 10px 18px;
+      margin-top: 20px;
+      padding-top: 17px;
+      border-top: 1px solid #D8C7B8;
+      color: #6A5960;
+      font-size: 10.5px;
+    }
+    footer span:nth-child(2) {
+      color: var(--accent) !important;
+      font-size: 13px;
+    }
+    footer a {
+      color: var(--accent);
+      text-decoration: underline;
+      text-decoration-color: #C5A56C;
+      text-underline-offset: 4px;
+    }
+    @media (max-width: 700px) {
+      .page {
+        width: min(100% - 28px, 560px);
+        padding-top: 22px;
+      }
+      .profile-header {
+        padding: 17px 16px 18px;
+      }
+      .profile-identity {
+        grid-template-columns: 82px minmax(0,1fr) !important;
+        gap: 13px !important;
+        align-items: start !important;
+      }
+      .profile-photo {
+        width: 82px !important;
+        height: 146px !important;
+      }
+      .profile-copy h1 {
+        font-size: clamp(29px, 7.8vw, 39px) !important;
+      }
+      .profile-copy .role {
+        font-size: 9px !important;
+        letter-spacing: .065em !important;
+      }
+      .profile-copy .intro {
+        font-size: 12px !important;
+        line-height: 1.55 !important;
+      }
+      .profile-signature {
+        margin-top: 16px !important;
+        padding: 13px 0 0 12px !important;
+        font-size: clamp(18px, 4.8vw, 22px) !important;
+      }
+      .brand-strip {
+        grid-template-columns: repeat(2, minmax(0,1fr)) !important;
+        gap: 9px !important;
+      }
+      .brand-item {
+        border-radius: 6px !important;
+      }
+      main > section {
+        margin-top: 22px;
+      }
+      main > section > .card {
+        padding: 14px 12px;
+      }
+      .card-title { font-size: 13px; }
+      .card-desc { font-size: 11px; }
+      .resume-panel { padding: 14px !important; }
+      .resume-actions { gap: 8px; }
+      .button { font-size: 10px; letter-spacing: .025em; }
+      .contact-grid { gap: 9px; }
+      .contact-grid .card { min-height: 72px; padding: 12px 10px; }
+      .icon { flex-basis: 36px; width: 36px; height: 36px; font-size: 17px; }
+      .whatsapp-panel {
+        grid-template-columns: minmax(0,1fr) 106px;
+        gap: 12px;
+        padding: 14px !important;
+      }
+      .whatsapp-panel-copy h2 { font-size: 21px; }
+      .whatsapp-panel-copy > p:not(.section-label) { font-size: 11px; }
+      .whatsapp-qr { padding: 5px; font-size: 8px; }
+    }
+    @media (max-width: 390px) {
+      .profile-identity { grid-template-columns: 1fr !important; }
+      .profile-photo { width: 90px !important; height: 160px !important; }
+      .resume-actions { grid-template-columns: 1fr; }
+      .whatsapp-panel { grid-template-columns: 1fr; }
+      .whatsapp-qr { width: 145px; justify-self: center; }
+      .contact-grid { grid-template-columns: 1fr; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .brand-item, .card, .button, .whatsapp-button { transition: none !important; }
+      .card:hover, .brand-item:hover, .whatsapp-button:hover { transform: none !important; }
+    }
+
 
 </style>
 </head>
