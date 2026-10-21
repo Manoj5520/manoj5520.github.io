@@ -2760,6 +2760,36 @@ ul, ol { padding: 0; list-style: none; }
     }
   </style>
 
+
+  <style id="portfolio-snapshot-earth-rotation-fix">
+    /* Fail-safe: Earth texture rotates continuously without waiting for JS/viewport class. */
+    .snapshot-stage .snapshot-globe::before {
+      background-position:0% 50% !important;
+      animation:snapshotEarthTextureSpin 30s linear infinite !important;
+      will-change:background-position;
+    }
+    .snapshot-stage.motion-active .snapshot-globe::before {
+      background-position:0% 50% !important;
+      animation:snapshotEarthTextureSpin 30s linear infinite !important;
+      will-change:background-position;
+    }
+    .snapshot-stage .snapshot-globe {
+      transform:translateZ(32px) !important;
+    }
+    @keyframes snapshotEarthTextureSpin {
+      from { background-position:0% 50%; }
+      to { background-position:200% 50%; }
+    }
+    @media (prefers-reduced-motion:reduce) {
+      .snapshot-stage .snapshot-globe::before,
+      .snapshot-stage.motion-active .snapshot-globe::before {
+        animation:none !important;
+        will-change:auto !important;
+        background-position:50% 50% !important;
+      }
+    }
+  </style>
+
 </head>
 <body>
   <a class="skip" href="index.html#main">Skip to content</a>
@@ -3649,6 +3679,6 @@ ul, ol { padding: 0; list-style: none; }
     <div class="viewer-stage" id="viewer-stage"></div>
   </dialog>
 
-  <script src="/main.js?v=20261021-snapshot-globe-motion-01" defer></script>
+  <script src="/main.js?v=20261021-snapshot-earth-rotation-fix-01" defer></script>
 </body>
 </html>
