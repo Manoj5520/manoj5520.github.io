@@ -892,6 +892,96 @@
     a.portfolio-card[href="/value-creation/"]:hover{border-color:#a9854c;border-left-color:#d5b46e;background:linear-gradient(112deg,#761933 0%,#520d24 100%)}
   </style>
 
+  <style id="minimal-3d-refinement">
+    :root{--navy:#202025;--ink:#3B1725;--accent:#76263D;--brass:#B99A65;--line:#E2DDD7;--muted:#69656A;--page:#F8F7F4;--white:#FFFFFF}
+    html{scroll-behavior:smooth}
+    body{background:#F8F7F4!important;color:#222126!important;font-family:Inter,"Segoe UI",Arial,sans-serif}
+    .page{width:min(920px,calc(100% - 40px));padding:28px 0 30px}
+    .eyebrow{margin-bottom:13px;color:#76263D;font-size:9px;letter-spacing:.21em}
+    .eyebrow:before{height:1px;width:25px;background:#B99A65}
+    .profile-header{padding:22px 24px 18px!important;background:#FFFFFF!important;border:1px solid #E1D9D1!important;border-top:2px solid #B99A65!important;border-bottom:2px solid #76263D!important;box-shadow:0 1px 0 #fff,0 4px 0 #EEE9E3,0 13px 28px -25px rgba(32,20,25,.26)!important}
+    .profile-identity{grid-template-columns:96px minmax(0,1fr)!important;gap:19px!important}
+    .profile-photo{width:96px!important;height:150px!important;border:3px solid #fff!important;outline:1px solid #DCD4CC!important;box-shadow:0 2px 0 #E6DFD8,0 7px 18px -15px rgba(25,18,21,.35)!important}
+    .profile-copy h1{color:#501327!important;-webkit-text-fill-color:#501327!important;font-family:Newsreader,Georgia,"Times New Roman",serif!important;font-size:clamp(39px,5.2vw,54px)!important;letter-spacing:-.045em!important;text-shadow:none!important}
+    .profile-copy .role{margin-top:9px!important;color:#6B2438!important;font-size:9.5px!important;font-weight:750!important;letter-spacing:.10em!important;line-height:1.7!important}
+    .profile-copy .intro{max-width:590px!important;margin-top:10px!important;color:#454147!important;font-size:13px!important;line-height:1.7!important}
+    .profile-signature{margin-top:16px!important;padding:12px 0 0 17px!important;border-top:1px solid #E5DED7!important;color:#501327!important;font-family:Newsreader,Georgia,serif!important;font-size:clamp(19px,2.8vw,25px)!important;line-height:1.35!important}
+    .profile-signature:before{top:-1px!important;width:28px!important;height:2px!important;background:#B99A65!important}
+    .brand-strip{gap:12px!important;margin-top:17px!important;perspective:1100px}
+    .brand-item{position:relative!important;display:grid!important;grid-template-rows:76px minmax(30px,auto)!important;align-content:start!important;justify-items:center!important;align-items:start!important;gap:9px!important;min-height:127px!important;padding:12px 10px 13px!important;border:1px solid #E1DAD3!important;border-radius:4px!important;background:#FFFFFF!important;box-shadow:0 1px 0 rgba(255,255,255,.95),0 3px 0 #EBE6E0,0 12px 24px -23px rgba(27,20,22,.35)!important;transform:translateZ(0);transform-style:preserve-3d;transition:transform .24s ease,border-color .24s ease,box-shadow .24s ease!important}
+    .brand-item:before{top:0!important;left:12px!important;right:12px!important;height:2px!important;background:#B99A65!important;opacity:.8!important}
+    .brand-item:hover{transform:perspective(900px) translateY(-3px) rotateX(1deg)!important;border-color:#C9B7A9!important;box-shadow:0 2px 0 #E2D8CE,0 15px 25px -20px rgba(37,18,26,.30)!important}
+    .brand-logo-area,.brand-logo-area.brand-nexa-area,.brand-logo-area.christ-logo-area,.brand-logo-area.mychoices-area,.brand-logo-area.mercedes-logo-area{background:transparent!important}
+    .brand-logo-area img,.brand-logo-area img.mercedes-lockup,.brand-logo-area img.christ-logo,.brand-logo-area img.mychoices-logo,.brand-logo-area.brand-nexa-area img{filter:none!important}
+    .brand-role{color:#49444A!important;font-size:10px!important;font-weight:650!important;line-height:1.45!important}
+    .brand-mini{color:#777078!important;font-size:8px!important;letter-spacing:.035em!important}
+    main>section{margin-top:22px}
+    .section-label{color:#6C5960!important;font-size:9px!important;letter-spacing:.18em!important}
+    .section-label:before{width:18px!important;height:1px!important;background:#B99A65!important}
+    .card,.resume-panel,.tagline{border-color:#E1DAD3!important;border-radius:4px!important;box-shadow:0 1px 0 rgba(255,255,255,.95),0 3px 0 #EBE6E0,0 12px 24px -24px rgba(30,22,24,.35)!important;transition:transform .22s ease,border-color .22s ease,box-shadow .22s ease!important}
+    .card{background:#FFFFFF!important}
+    .card:hover{transform:perspective(900px) translateY(-2px) rotateX(.5deg)!important;border-color:#CDB9A8!important;box-shadow:0 2px 0 #E4DAD0,0 14px 22px -20px rgba(30,22,24,.30)!important}
+    .portfolio-card,.portfolio-card:hover,a.portfolio-card[href="/value-creation/"],a.portfolio-card[href="/value-creation/"]:hover{border:1px solid #DDD5CE!important;border-left:3px solid #76263D!important;background:#FFFFFF!important;color:#272329!important}
+    .portfolio-card .icon,a.portfolio-card[href="/value-creation/"] .icon{color:#76263D!important;background:#F6F3F0!important;border:1px solid #E4DDD6!important}
+    .portfolio-card .card-title,.portfolio-card .arrow,a.portfolio-card[href="/value-creation/"] .card-title,a.portfolio-card[href="/value-creation/"] .arrow{color:#501327!important}
+    .portfolio-card .card-desc,a.portfolio-card[href="/value-creation/"] .card-desc{color:#696168!important}
+    .card-title{color:#28242A!important;font-size:13px!important}
+    .card-desc{color:#68616A!important;font-size:11px!important}
+    .icon{border-radius:3px!important;background:#F5F3F0!important;border-color:#E3DDD6!important;color:#76263D!important}
+    .resume-panel{padding:15px!important;background:#FFFFFF!important;border-top:2px solid #B99A65!important}
+    .button{min-height:42px!important;border-radius:3px!important;font-size:10px!important;letter-spacing:.055em!important;box-shadow:none!important}
+    .button-primary{background:#4B1728!important;border-color:#4B1728!important;color:#FFFFFF!important}
+    .button-primary:hover{background:#76263D!important;border-color:#76263D!important}
+    .button-secondary{background:#FFFFFF!important;border-color:#D9CBC0!important;color:#4B1728!important}
+    .button-secondary:hover{background:#F5F0EA!important;color:#4B1728!important;border-color:#B99A65!important}
+    .contact-grid{gap:10px!important}
+    .contact-grid .card{min-height:70px!important;padding:12px!important;background:#FFFFFF!important}
+    .contact-grid .icon,.contact-grid .contact-linkedin .icon,.contact-grid .contact-instagram .icon,.contact-grid .contact-gmail .icon,.contact-grid .contact-whatsapp .icon{background:#F6F4F1!important;border-color:#E4DDD6!important}
+    .contact-grid .contact-linkedin .icon{color:#2867A8!important}
+    .contact-grid .contact-instagram .icon{color:#8C4669!important}
+    .contact-grid .contact-gmail .icon{color:#A44840!important}
+    .contact-grid .contact-whatsapp .icon{color:#36795C!important}
+    .whatsapp-panel{margin-top:20px!important;padding:19px!important;border:1px solid #E0D7CF!important;border-left:3px solid #76263D!important;border-radius:4px!important;background:#FFFFFF!important;box-shadow:0 2px 0 #EBE6E0,0 13px 26px -25px rgba(30,22,24,.32)!important}
+    .whatsapp-panel-copy .section-label,.whatsapp-panel-copy .section-label:before{color:#76263D!important;background:#B99A65!important}
+    .whatsapp-panel-copy h2{color:#3A1B27!important;font-size:clamp(22px,3vw,28px)!important}
+    .whatsapp-panel-copy>p:not(.section-label){color:#696168!important;font-size:11px!important}
+    .whatsapp-button{background:#4B1728!important;color:#FFFFFF!important;border:1px solid #4B1728!important;border-radius:3px!important;padding:10px 13px!important}
+    .whatsapp-button:hover{background:#76263D!important;color:#FFFFFF!important;transform:translateY(-1px)}
+    .whatsapp-qr{border:1px solid #E2D8CF!important;border-radius:4px!important;box-shadow:0 2px 0 #EBE6E0,0 8px 19px -17px rgba(30,22,24,.3)!important;background:#FFFFFF!important}
+    footer{padding-top:13px!important;border-top:1px solid #E1DAD3!important;color:#777078!important;font-size:9px!important}
+    footer span:nth-child(2){color:#62525A!important;font-family:Inter,Arial,sans-serif!important;font-size:10px!important}
+    footer a{color:#76263D!important;text-decoration-color:#B99A65!important}
+    @media(max-width:700px){
+      .page{width:calc(100% - 28px)!important;padding-top:20px!important}
+      .profile-header{padding:16px 15px 15px!important}
+      .profile-identity{grid-template-columns:76px minmax(0,1fr)!important;gap:12px!important}
+      .profile-photo{width:76px!important;height:118px!important}
+      .profile-copy h1{font-size:clamp(29px,7.4vw,38px)!important}
+      .profile-copy .role{font-size:8px!important;letter-spacing:.055em!important}
+      .profile-copy .intro{font-size:11px!important;line-height:1.55!important}
+      .profile-signature{margin-top:12px!important;padding:10px 0 0 10px!important;font-size:clamp(17px,4.4vw,21px)!important}
+      .brand-strip{gap:8px!important;grid-template-columns:repeat(2,minmax(0,1fr))!important}
+      .brand-item{grid-template-rows:66px minmax(28px,auto)!important;min-height:116px!important;padding:10px 7px!important}
+      .brand-logo-area,.brand-logo-area.brand-nexa-area,.brand-logo-area.christ-logo-area,.brand-logo-area.mychoices-area,.brand-logo-area.mercedes-logo-area{height:66px!important;min-height:66px!important;flex-basis:66px!important}
+      .brand-logo-area img,.brand-logo-area img.mercedes-lockup,.brand-logo-area img.christ-logo,.brand-logo-area img.mychoices-logo,.brand-logo-area.brand-nexa-area img{height:60px!important;max-height:60px!important}
+      .brand-logo-area img.mercedes-lockup{width:60px!important;max-width:60px!important}
+      .brand-role{font-size:9px!important}
+      .main>section{margin-top:19px}
+      .resume-panel{padding:12px!important}
+      .contact-grid{gap:8px!important}
+      .contact-grid .card{min-height:64px!important;padding:10px!important}
+      .whatsapp-panel{padding:13px!important}
+    }
+    @media(max-width:390px){
+      .profile-identity{grid-template-columns:1fr!important}
+      .profile-photo{width:84px!important;height:130px!important}
+      .brand-strip{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+      .whatsapp-panel{grid-template-columns:1fr!important}
+      .whatsapp-qr{width:140px;justify-self:center}
+    }
+    @media(prefers-reduced-motion:reduce){.brand-item,.card,.button,.whatsapp-button{transition:none!important}.brand-item:hover,.card:hover,.whatsapp-button:hover{transform:none!important}}
+  </style>
+
 </head>
 <body>
   <div class="page">
