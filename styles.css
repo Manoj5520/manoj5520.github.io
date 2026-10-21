@@ -1824,3 +1824,154 @@ ul, ol { padding: 0; list-style: none; }
   .hero-social .social-link.gmail:hover { background:#FFF0EE !important; }
   .hero-social .social-link.whatsapp:hover { background:#E8F9F0 !important; }
 }
+
+
+/* ==========================================================
+   Portfolio guided welcome — user-initiated voice introduction
+   ========================================================== */
+.portfolio-guide {
+  position: relative;
+  margin: 24px 0 22px;
+  padding: clamp(18px, 2.3vw, 26px);
+  border: 1px solid #c3cbd3;
+  border-left: 3px solid var(--burgundy);
+  border-radius: 3px;
+  background: linear-gradient(112deg, rgba(255,255,255,.94), rgba(225,230,235,.82));
+  box-shadow: 0 12px 30px rgba(20,22,26,.065);
+  overflow: hidden;
+}
+.portfolio-guide::after {
+  content: "";
+  position: absolute;
+  top: -45px;
+  right: -36px;
+  width: 148px;
+  height: 148px;
+  border: 1px solid rgba(117,27,54,.13);
+  border-radius: 50%;
+  box-shadow: 0 0 0 14px rgba(117,27,54,.025), 0 0 0 29px rgba(117,27,54,.02);
+  pointer-events: none;
+}
+.portfolio-guide-topline {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+.portfolio-guide-kicker,
+.portfolio-guide-duration {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .15em;
+  line-height: 1.35;
+  text-transform: uppercase;
+}
+.portfolio-guide-kicker { color: var(--burgundy); }
+.portfolio-guide-duration { color: #68717b; white-space: nowrap; }
+.portfolio-guide h2 {
+  position: relative;
+  z-index: 1;
+  max-width: 37rem;
+  margin: 0 0 8px;
+  font-family: var(--serif);
+  font-size: clamp(21px, 2.05vw, 28px);
+  font-weight: 450;
+  letter-spacing: -.025em;
+  line-height: 1.14;
+}
+.portfolio-guide-description {
+  position: relative;
+  z-index: 1;
+  max-width: 41rem;
+  margin: 0 0 17px;
+  color: #505965;
+  font-size: 13px;
+  line-height: 1.65;
+}
+.portfolio-guide-controls {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 9px;
+}
+.portfolio-guide-play,
+.portfolio-guide-stop {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  min-height: 42px;
+  padding: 10px 15px;
+  border: 1px solid transparent;
+  border-radius: 2px;
+  font: 650 12px/1.25 var(--sans);
+  letter-spacing: .015em;
+  cursor: pointer;
+  transition: background .18s ease, color .18s ease, border-color .18s ease, transform .18s ease;
+}
+.portfolio-guide-play {
+  color: #fff;
+  background: var(--burgundy);
+  box-shadow: 0 5px 12px rgba(117,27,54,.13);
+}
+.portfolio-guide-play:hover { background: #5e132a; transform: translateY(-1px); }
+.portfolio-guide-play:focus-visible,
+.portfolio-guide-stop:focus-visible { outline: 2px solid var(--burgundy); outline-offset: 3px; }
+.portfolio-guide-play:disabled,
+.portfolio-guide-stop:disabled { opacity: .45; cursor: not-allowed; transform: none; }
+.portfolio-guide-play-icon {
+  display: inline-grid;
+  width: 21px;
+  height: 21px;
+  place-items: center;
+  border: 1px solid rgba(255,255,255,.55);
+  border-radius: 50%;
+  font-size: 9px;
+}
+.portfolio-guide-stop {
+  color: #333840;
+  background: rgba(255,255,255,.56);
+  border-color: #c7cdd4;
+}
+.portfolio-guide-stop:hover:not(:disabled) { background: #fff; border-color: #929ca7; }
+.portfolio-guide-progress {
+  position: relative;
+  z-index: 1;
+  height: 3px;
+  margin-top: 17px;
+  overflow: hidden;
+  background: #d7dce2;
+}
+.portfolio-guide-progress span {
+  display: block;
+  width: 0;
+  height: 100%;
+  background: linear-gradient(90deg, var(--burgundy), #a84b66, #bd9b81);
+  transition: width .35s linear;
+}
+.portfolio-guide-status {
+  position: relative;
+  z-index: 1;
+  margin-top: 8px;
+  color: #626b76;
+  font-size: 10px;
+  line-height: 1.5;
+  letter-spacing: .035em;
+}
+@media (max-width: 640px) {
+  .portfolio-guide { margin: 20px 0; padding: 17px; }
+  .portfolio-guide-topline { align-items: flex-start; }
+  .portfolio-guide-kicker, .portfolio-guide-duration { font-size: 9px; letter-spacing: .11em; }
+  .portfolio-guide h2 { font-size: 23px; max-width: 27rem; }
+  .portfolio-guide-description { font-size: 12px; }
+  .portfolio-guide-play, .portfolio-guide-stop { min-height: 42px; }
+  .portfolio-guide::after { right: -74px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .portfolio-guide-play, .portfolio-guide-stop, .portfolio-guide-progress span { transition: none; }
+}
