@@ -283,3 +283,181 @@
   });
   setActive(0);
 })();
+
+
+/* ==========================================================
+   Portfolio guided introduction — browser voice with controls
+   ========================================================== */
+(function () {
+  var playButton = document.getElementById("portfolio-guide-toggle");
+  var stopButton = document.getElementById("portfolio-guide-stop");
+  var label = document.getElementById("portfolio-guide-toggle-label");
+  var status = document.getElementById("portfolio-guide-status");
+  var progressTrack = document.getElementById("portfolio-guide-progress-track");
+  var progressFill = document.querySelector("[data-guide-progress]");
+  if (!playButton || !stopButton || !label || !status || !progressTrack || !progressFill) return;
+
+  var synth = window.speechSynthesis;
+  if (!synth || typeof window.SpeechSynthesisUtterance !== "function") {
+    playButton.disabled = true;
+    stopButton.disabled = true;
+    status.textContent = "This browser does not support spoken introductions. You can still explore the portfolio normally.";
+    return;
+  }
+
+  var segments = [
+    {
+      label: "Welcome",
+      text: "Hello, and welcome. Before you explore, pause for a moment. This is V. Sai Manoj’s portfolio. Rather than listing skills, I want to show you the thinking that connects my work.",
+      pitch: 1.07, rate: 0.94
+    },
+    {
+      label: "Capability Snapshot",
+      text: "Start with Capability Snapshot. Here are my core strengths: competitive intelligence, market-gap analysis, commercial judgement, differentiated service strategy, and operational improvement. I look beyond what competitors already offer. I ask where customer needs remain underserved, what could set a business apart, and whether the opportunity can be delivered in practice.",
+      pitch: 1.10, rate: 0.92
+    },
+    {
+      label: "My Decision Logic",
+      text: "Next, open My Decision Logic. It shows how I move from observation to recommendation: understand the context, frame the decision, compare alternatives, test commercial fit, and consider operational reality. The goal is not analysis for its own sake. It is clarity on what matters, what is feasible, and what should happen next.",
+      pitch: 1.02, rate: 0.93
+    },
+    {
+      label: "Experience and Projects",
+      text: "Then explore Experience and Projects. Look for my Mercedes-Benz Retail of the Future review, competitor benchmarking and differentiated service-line research at NexaHomes, independent venture research, and MBA research into employee turnover. Different contexts, one discipline: examine evidence, question assumptions, recognise patterns, and connect insight with action.",
+      pitch: 1.04, rate: 0.92
+    },
+    {
+      label: "The difference I aim to make",
+      text: "What difference can I make? I can help teams see opportunities beyond their current offer, understand trade-offs before committing, and connect customer expectations with commercial priorities and operational delivery. I bring curiosity to discovery, structure to decisions, and a bias for practical action. I do not claim to know every answer; I bring a disciplined way to investigate the right question and build a recommendation people can act on.",
+      pitch: 1.08, rate: 0.92
+    },
+    {
+      label: "An invitation",
+      text: "Here is my invitation: give me a real business challenge. Share the context, constraints, and result you need. Give me the chance to explore the problem, map the choices, and show where meaningful progress can begin. Judge me by the questions I ask, the evidence I uncover, and the clarity of my thinking. I’m Sai Manoj. Let’s find what your business is missing—and turn it into an advantage.",
+      pitch: 1.13, rate: 0.93
+    }
+  ];
+
+  var state = "idle";
+  var totalWords = 0;
+  var completedWords = 0;
+  segments.forEach(function (segment) {
+    segment.words = segment.text.trim().split(/\s+/).length;
+    segment.startWords = totalWords;
+    totalWords += segment.words;
+    segment.endWords = totalWords;
+  });
+
+  function setProgress(percent, duration) {
+    var value = Math.max(0, Math.min(100, percent));
+    progressFill.style.transitionDuration = (duration || 350) + "ms";
+    progressFill.style.width = value + "%";
+    progressTrack.setAttribute("aria-valuenow", String(Math.round(value)));
+  }
+
+  function selectVoice() {
+    var voices = synth.getVoices ? synth.getVoices() : [];
+    var preferredPatterns = [
+      /aria.*natural/i,
+      /jenny.*natural/i,
+      /google.*uk english female/i,
+      /google.*us english/i,
+      /samantha/i,
+      /zira/i,
+      /aria/i,
+      /jenny/i,
+      /sonia/i,
+      /amy|emma|libby/i,
+      /english.*female/i
+    ];
+    for (var p = 0; p < preferredPatterns.length; p++) {
+      for (var v = 0; v < voices.length; v++) {
+        if (preferredPatterns[p].test(voices[v].name) && /^en(-|_)/i.test(voices[v].lang || "")) return voices[v];
+      }
+    }
+    for (var i = 0; i < voices.length; i++) {
+      if (/^en(-|_)/i.test(voices[i].lang || "")) return voices[i];
+    }
+    return null;
+  }
+
+  function startGuide() {
+    synth.cancel();
+    state = "speaking";
+    completedWords = 0;
+    setProgress(0, 0);
+    playButton.disabled = false;
+    stopButton.disabled = false;
+    label.textContent = "Pause introduction";
+    status.textContent = "Preparing the guided introduction…";
+    var voice = selectVoice();
+
+    segments.forEach(function (segment, index) {
+      var utterance = new window.SpeechSynthesisUtterance(segment.text);
+      if (voice) {
+        utterance.voice = voice;
+        utterance.lang = voice.lang || "en-US";
+      } else {
+        utterance.lang = "en-US";
+      }
+      utterance.pitch = segment.pitch;
+      utterance.rate = segment.rate;
+      utterance.volume = 1;
+
+      utterance.onstart = function () {
+        if (state === "stopped") return;
+        var endPercent = segment.endWords / totalWords * 100;
+        var expectedMs = Math.max(2400, segment.words / (145 * segment.rate) * 60000);
+        var voiceNote = voice ? "" : " · using your device’s default English voice";
+        status.textContent = "Now guiding you through " + segment.label + voiceNote + ".";
+        setProgress(endPercent, expectedMs);
+      };
+      utterance.onend = function () {
+        if (state === "stopped") return;
+        completedWords = segment.endWords;
+        if (index === segments.length - 1) {
+          state = "finished";
+          setProgress(100, 300);
+          label.textContent = "Listen again";
+          stopButton.disabled = true;
+          status.textContent = "Introduction complete. Explore the portfolio at your own pace.";
+        }
+      };
+      utterance.onerror = function (event) {
+        if (state === "stopped" || (event && event.error === "canceled")) return;
+        state = "idle";
+        label.textContent = "Try the introduction again";
+        stopButton.disabled = true;
+        status.textContent = "Your browser could not continue the spoken introduction. Please try again or explore the portfolio normally.";
+      };
+      synth.speak(utterance);
+    });
+  }
+
+  playButton.addEventListener("click", function () {
+    if (state === "speaking") {
+      synth.pause();
+      state = "paused";
+      label.textContent = "Resume introduction";
+      status.textContent = "Introduction paused. Select Resume to continue.";
+      return;
+    }
+    if (state === "paused") {
+      synth.resume();
+      state = "speaking";
+      label.textContent = "Pause introduction";
+      status.textContent = "Resuming the guided introduction…";
+      return;
+    }
+    startGuide();
+  });
+
+  stopButton.addEventListener("click", function () {
+    state = "stopped";
+    synth.cancel();
+    setProgress(0, 180);
+    label.textContent = "Listen to the guided introduction";
+    stopButton.disabled = true;
+    status.textContent = "Introduction stopped. Press play whenever you are ready.";
+  });
+})();
