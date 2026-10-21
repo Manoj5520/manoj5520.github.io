@@ -2918,6 +2918,132 @@ ul, ol { padding: 0; list-style: none; }
     /* Explicitly requested: keep the Earth rotation running even when system-wide reduced motion is enabled. */
   </style>
 
+
+  <style id="professional-opportunities-trajectory">
+    /* A tailored strategic-value signature: quiet silver field, burgundy trajectory, no generic globe/cards. */
+    .contact-trajectory-visual {
+      position:relative;
+      align-self:center;
+      min-width:0;
+      width:100%;
+      min-height:365px;
+      padding:8px 10px 0;
+      overflow:hidden;
+      isolation:isolate;
+      background:
+        radial-gradient(ellipse at 72% 28%,rgba(255,255,255,.95) 0%,rgba(225,232,237,.54) 40%,rgba(238,242,245,0) 76%);
+    }
+    .trajectory-signature {
+      display:flex;
+      align-items:center;
+      gap:10px;
+      padding:6px 5px 0;
+      color:#68737D;
+    }
+    .trajectory-monogram {
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      width:30px;
+      height:27px;
+      border:1px solid #B7C1CA;
+      border-bottom:2px solid #76263D;
+      background:linear-gradient(145deg,#FFFFFF,#E7ECF0);
+      color:#252D35;
+      font:600 10px/1 var(--serif);
+      letter-spacing:.08em;
+      box-shadow:inset 0 1px 0 #FFFFFF,0 2px 5px rgba(40,49,58,.05);
+      flex:0 0 auto;
+    }
+    .trajectory-signature-rule { height:1px;width:30px;background:linear-gradient(90deg,#76263D,#C7CDD3);flex:0 0 auto; }
+    .trajectory-signature-label { font:600 9px/1.4 var(--sans);letter-spacing:.16em; }
+    .trajectory-svg {
+      display:block;
+      position:relative;
+      z-index:1;
+      width:100%;
+      height:auto;
+      max-height:350px;
+      overflow:visible;
+      margin:2px 0 0;
+    }
+    .trajectory-path-shadow { opacity:.7; }
+    .trajectory-path {
+      stroke-dasharray:600;
+      stroke-dashoffset:0;
+      filter:drop-shadow(0 1px 1px rgba(118,38,61,.12));
+    }
+    .trajectory-light-trail { stroke-dasharray:1 600;stroke-dashoffset:0;opacity:0; }
+    .trajectory-node { opacity:1; }
+    .trajectory-runner { opacity:0; }
+    .trajectory-peak { opacity:1; }
+    .trajectory-foot {
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+      margin:-1px 4px 0;
+      padding:13px 5px 4px;
+      border-top:1px solid rgba(166,177,187,.48);
+      color:#69737D;
+      font:600 8px/1.4 var(--sans);
+      letter-spacing:.13em;
+    }
+    .trajectory-foot > span:first-child { color:#76263D; }
+    .trajectory-foot i { color:#76263D;font-style:normal;padding:0 3px; }
+    .contact-trajectory-visual.trajectory-active .trajectory-path {
+      animation:trajectoryLineDraw 2.2s cubic-bezier(.22,.65,.25,1) both;
+    }
+    .contact-trajectory-visual.trajectory-active .trajectory-light-trail {
+      animation:trajectoryLightSweep 2.4s ease-out .25s both;
+    }
+    .contact-trajectory-visual.trajectory-active .trajectory-node {
+      animation:trajectoryNodeReveal .42s ease-out both;
+    }
+    .contact-trajectory-visual.trajectory-active .trajectory-node-1 { animation-delay:.2s; }
+    .contact-trajectory-visual.trajectory-active .trajectory-node-2 { animation-delay:.45s; }
+    .contact-trajectory-visual.trajectory-active .trajectory-node-3 { animation-delay:.7s; }
+    .contact-trajectory-visual.trajectory-active .trajectory-node-4 { animation-delay:.95s; }
+    .contact-trajectory-visual.trajectory-active .trajectory-node-5 { animation-delay:1.2s; }
+    .contact-trajectory-visual.trajectory-active .trajectory-runner { opacity:1; }
+    .contact-trajectory-visual.trajectory-active .trajectory-peak { animation:trajectoryPeakGlint 1.2s ease-out .85s both; }
+    @keyframes trajectoryLineDraw { from { stroke-dashoffset:600; } to { stroke-dashoffset:0; } }
+    @keyframes trajectoryLightSweep {
+      0% { stroke-dasharray:1 600;stroke-dashoffset:600;opacity:0; }
+      12% { opacity:.9; }
+      100% { stroke-dasharray:125 475;stroke-dashoffset:-600;opacity:0; }
+    }
+    @keyframes trajectoryNodeReveal {
+      0% { opacity:0;transform:scale(.55);transform-box:fill-box;transform-origin:center; }
+      75% { opacity:1;transform:scale(1.12); }
+      100% { opacity:1;transform:scale(1); }
+    }
+    @keyframes trajectoryPeakGlint {
+      0%,100% { opacity:.85; }
+      35% { opacity:1;filter:drop-shadow(0 0 4px rgba(255,255,255,.95)); }
+    }
+    @media (max-width:1100px) {
+      .contact-trajectory-visual { min-height:330px;padding-inline:3px; }
+      .trajectory-signature-label { font-size:8px; }
+    }
+    @media (max-width:650px) {
+      .contact-trajectory-visual { min-height:275px;padding:4px 0 0; }
+      .trajectory-signature { gap:8px; }
+      .trajectory-foot { font-size:7px;letter-spacing:.1em;gap:8px; }
+      .trajectory-svg { margin-top:6px; }
+    }
+    @media (prefers-reduced-motion:reduce) {
+      .contact-trajectory-visual.trajectory-active .trajectory-path,
+      .contact-trajectory-visual.trajectory-active .trajectory-light-trail,
+      .contact-trajectory-visual.trajectory-active .trajectory-node,
+      .contact-trajectory-visual.trajectory-active .trajectory-peak {
+        animation:none !important;
+      }
+      .trajectory-path { stroke-dashoffset:0 !important; }
+      .trajectory-light-trail,.trajectory-runner { display:none !important; }
+    }
+  </style>
+
 </head>
 <body>
   <a class="skip" href="index.html#main">Skip to content</a>
@@ -3739,17 +3865,45 @@ ul, ol { padding: 0; list-style: none; }
               </h2>
               <p class="section-lede contact-intent">I connect competitive research, commercial-model analysis and operational understanding to assess opportunities, clarify trade-offs and turn priorities into executable next steps.</p>
             </div>
-            <div class="contact-metal-visual" aria-hidden="true">
-              <div class="contact-metal-grid"></div>
-              <div class="contact-metal-orbit contact-metal-orbit-one"></div>
-              <div class="contact-metal-orbit contact-metal-orbit-two"></div>
-              <div class="contact-metal-orbit contact-metal-orbit-three"></div>
-              <div class="contact-metal-globe"><span class="contact-metal-meridian"></span><span class="contact-metal-meridian contact-metal-meridian-two"></span><span class="contact-metal-meridian contact-metal-meridian-three"></span><span class="contact-metal-latitude"></span><span class="contact-metal-highlight"></span></div>
-              <div class="contact-metal-node contact-metal-node-one"><span>01 / MARKET</span><b>Signals</b></div>
-              <div class="contact-metal-node contact-metal-node-two"><span>02 / COMMERCIAL</span><b>Judgement</b></div>
-              <div class="contact-metal-node contact-metal-node-three"><span>03 / DELIVERY</span><b>Execution</b></div>
-              <div class="contact-metal-plinth"><span>INSIGHT</span><i></i><span>DECISION</span><i></i><span>IMPACT</span></div>
-              <p class="contact-metal-caption">Evidence → judgement → action</p>
+            <div class="contact-trajectory-visual" role="img" aria-label="Strategic value trajectory: market signals, unmet needs, commercial fit, decision and business impact">
+              <div class="trajectory-signature"><span class="trajectory-monogram">VSM</span><span class="trajectory-signature-rule"></span><span class="trajectory-signature-label">STRATEGIC VALUE TRAJECTORY</span></div>
+              <svg class="trajectory-svg" viewBox="0 0 520 390" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <defs>
+                  <linearGradient id="trajectoryBurgundy" x1="38" y1="326" x2="470" y2="79" gradientUnits="userSpaceOnUse"><stop stop-color="#5B172A"/><stop offset=".56" stop-color="#76263D"/><stop offset="1" stop-color="#A66C7C"/></linearGradient>
+                  <linearGradient id="trajectorySilver" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#FFFFFF"/><stop offset=".5" stop-color="#BAC4CE"/><stop offset="1" stop-color="#FDFEFF"/></linearGradient>
+                  <radialGradient id="trajectoryNode" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(0 0) rotate(90) scale(8)"><stop stop-color="#FFFFFF"/><stop offset="1" stop-color="#C7D0D8"/></radialGradient>
+                  <filter id="trajectorySoftShadow" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#48545F" flood-opacity=".15"/></filter>
+                  <clipPath id="trajectoryPlotClip"><rect x="10" y="18" width="500" height="330" rx="2"/></clipPath>
+                </defs>
+                <g class="trajectory-guides" stroke="#A7B2BC" stroke-width=".8" stroke-opacity=".21">
+                  <path d="M18 72H500M18 132H500M18 192H500M18 252H500M18 312H500"/>
+                  <path d="M70 36V340M150 36V340M230 36V340M310 36V340M390 36V340M470 36V340"/>
+                </g>
+                <g class="trajectory-labels" fill="#69747E" font-family="Inter,Arial,sans-serif" font-size="9" font-weight="600" letter-spacing="1.05">
+                  <text x="22" y="303">SIGNALS</text>
+                  <text x="114" y="260">UNMET NEEDS</text>
+                  <text x="216" y="199">COMMERCIAL FIT</text>
+                  <text x="332" y="144">DECISION</text>
+                  <text x="470" y="55" text-anchor="end" fill="#76263D">BUSINESS IMPACT</text>
+                </g>
+                <g clip-path="url(#trajectoryPlotClip)">
+                  <path class="trajectory-path-shadow" d="M 38 326 C 82 327, 93 285, 142 286 S 201 261, 242 223 S 302 220, 342 173 S 409 151, 470 79" fill="none" stroke="#76263D" stroke-opacity=".12" stroke-width="12" stroke-linecap="round"/>
+                  <path class="trajectory-path" d="M 38 326 C 82 327, 93 285, 142 286 S 201 261, 242 223 S 302 220, 342 173 S 409 151, 470 79" fill="none" stroke="url(#trajectoryBurgundy)" stroke-width="3" stroke-linecap="round"/>
+                  <path class="trajectory-light-trail" d="M 38 326 C 82 327, 93 285, 142 286 S 201 261, 242 223 S 302 220, 342 173 S 409 151, 470 79" fill="none" stroke="#FFFFFF" stroke-opacity=".85" stroke-width="1" stroke-linecap="round"/>
+                </g>
+                <g class="trajectory-nodes" filter="url(#trajectorySoftShadow)">
+                  <g class="trajectory-node trajectory-node-1"><circle cx="38" cy="326" r="6.5" fill="url(#trajectorySilver)" stroke="#76263D" stroke-width="1.4"/><circle cx="38" cy="326" r="1.7" fill="#76263D"/></g>
+                  <g class="trajectory-node trajectory-node-2"><circle cx="142" cy="286" r="6.5" fill="url(#trajectorySilver)" stroke="#76263D" stroke-width="1.4"/><circle cx="142" cy="286" r="1.7" fill="#76263D"/></g>
+                  <g class="trajectory-node trajectory-node-3"><circle cx="242" cy="223" r="6.5" fill="url(#trajectorySilver)" stroke="#76263D" stroke-width="1.4"/><circle cx="242" cy="223" r="1.7" fill="#76263D"/></g>
+                  <g class="trajectory-node trajectory-node-4"><circle cx="342" cy="173" r="6.5" fill="url(#trajectorySilver)" stroke="#76263D" stroke-width="1.4"/><circle cx="342" cy="173" r="1.7" fill="#76263D"/></g>
+                  <g class="trajectory-node trajectory-node-5"><circle cx="470" cy="79" r="7" fill="url(#trajectorySilver)" stroke="#76263D" stroke-width="1.5"/><circle cx="470" cy="79" r="1.9" fill="#76263D"/></g>
+                </g>
+                <g class="trajectory-peak" stroke="#76263D" stroke-width="1.8" stroke-linecap="round" fill="none"><path d="M456 79H470V93"/></g>
+                <circle class="trajectory-runner" r="5.5" fill="#FFFFFF" stroke="#76263D" stroke-width="1.4" filter="url(#trajectorySoftShadow)">
+                  <animateMotion class="trajectory-runner-motion" begin="indefinite" dur="5.2s" repeatCount="indefinite" rotate="auto" path="M 38 326 C 82 327, 93 285, 142 286 S 201 261, 242 223 S 302 220, 342 173 S 409 151, 470 79"/>
+                </circle>
+              </svg>
+              <div class="trajectory-foot"><span>V. SAI MANOJ</span><span>INSIGHT <i>·</i> JUDGEMENT <i>·</i> EXECUTION</span></div>
             </div>
           </div>
         </header>
@@ -3807,6 +3961,6 @@ ul, ol { padding: 0; list-style: none; }
     <div class="viewer-stage" id="viewer-stage"></div>
   </dialog>
 
-  <script src="/main.js?v=20261021-earth-track-explicit-02" defer></script>
+  <script src="/main.js?v=20261021-strategic-trajectory-01" defer></script>
 </body>
 </html>
