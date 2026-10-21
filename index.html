@@ -2622,6 +2622,144 @@ ul, ol { padding: 0; list-style: none; }
     }
   </style>
 
+
+  <style id="portfolio-snapshot-earth-globe">
+    /* Capability Snapshot: one realistic rotating Earth, with editorial restraint. */
+    .snapshot-stage {
+      min-height:500px !important;
+      overflow:hidden !important;
+      background:
+        radial-gradient(ellipse at 51% 45%,rgba(255,255,255,.94) 0%,rgba(233,239,243,.78) 35%,rgba(220,228,234,.44) 63%,rgba(238,241,244,0) 82%) !important;
+    }
+    .snapshot-stage::before {
+      left:16% !important;
+      right:9% !important;
+      bottom:8% !important;
+      height:18% !important;
+      background:rgba(49,66,80,.13) !important;
+      filter:blur(36px) !important;
+      transform:rotateX(66deg) !important;
+    }
+    .snapshot-stage-glow {
+      left:13% !important;
+      top:1% !important;
+      width:74% !important;
+      background:radial-gradient(circle,rgba(255,255,255,.9) 0%,rgba(185,207,221,.22) 43%,rgba(238,242,246,0) 72%) !important;
+    }
+    /* Remove infographic-style furniture and floating cards. Keep only one quiet orbital line. */
+    .snapshot-plinth,
+    .snapshot-float-card,
+    .snapshot-stage-caption,
+    .snapshot-orbit-two,
+    .snapshot-globe-meridian,
+    .snapshot-globe-latitude,
+    .snapshot-globe-core {
+      display:none !important;
+    }
+    .snapshot-orbit-one {
+      display:block !important;
+      z-index:1 !important;
+      left:8% !important;
+      top:21% !important;
+      width:84% !important;
+      height:57% !important;
+      border:1px solid rgba(93,126,148,.24) !important;
+      border-radius:50% !important;
+      box-shadow:0 0 0 1px rgba(255,255,255,.25) !important;
+      transform:rotate(-25deg) rotateX(67deg) !important;
+    }
+    .snapshot-globe {
+      z-index:3 !important;
+      left:18% !important;
+      top:11% !important;
+      width:64% !important;
+      aspect-ratio:1 !important;
+      overflow:hidden !important;
+      border:1px solid rgba(232,242,248,.92) !important;
+      border-radius:50% !important;
+      background:#07182B !important;
+      transform:translateZ(32px) !important;
+      box-shadow:
+        inset -21px -19px 33px rgba(2,10,24,.5),
+        inset 9px 8px 18px rgba(255,255,255,.2),
+        0 23px 40px rgba(43,61,76,.16),
+        0 0 0 1px rgba(118,151,174,.2),
+        0 0 26px rgba(126,171,199,.12) !important;
+      will-change:transform;
+    }
+    .snapshot-globe::before {
+      content:"" !important;
+      display:block !important;
+      position:absolute !important;
+      inset:0 !important;
+      border:0 !important;
+      clip-path:none !important;
+      transform:none !important;
+      border-radius:50% !important;
+      background-color:#07182B !important;
+      background-image:url("https://eoimages.gsfc.nasa.gov/images/imagerecords/57000/57752/land_shallow_topo_2048.jpg") !important;
+      background-repeat:repeat-x !important;
+      background-size:200% 100% !important;
+      background-position:0% 50% !important;
+      filter:saturate(1.08) contrast(1.04) brightness(1.02) !important;
+      opacity:1 !important;
+      animation:none;
+      will-change:background-position;
+    }
+    .snapshot-globe::after {
+      content:"" !important;
+      position:absolute !important;
+      inset:0 !important;
+      display:block !important;
+      border-radius:50% !important;
+      background:
+        radial-gradient(ellipse at 29% 23%,rgba(255,255,255,.25) 0%,rgba(255,255,255,.07) 18%,transparent 43%),
+        radial-gradient(ellipse at 50% 48%,transparent 48%,rgba(2,10,24,.18) 72%,rgba(1,7,19,.62) 100%),
+        linear-gradient(108deg,rgba(235,247,255,.16) 0%,transparent 27%,transparent 64%,rgba(0,6,18,.3) 100%) !important;
+      box-shadow:inset 0 0 0 1px rgba(235,246,253,.2),inset -10px -5px 18px rgba(2,12,27,.24) !important;
+    }
+    .snapshot-stage.motion-active .snapshot-globe {
+      animation:snapshotEarthFloat 16s ease-in-out infinite !important;
+    }
+    .snapshot-stage.motion-active .snapshot-globe::before {
+      animation:snapshotEarthTextureSpin 42s linear infinite !important;
+    }
+    .snapshot-stage.motion-active .snapshot-orbit-one {
+      animation:snapshotEarthOrbitDrift 34s ease-in-out infinite !important;
+    }
+    @keyframes snapshotEarthTextureSpin {
+      from { background-position:0% 50%; }
+      to { background-position:200% 50%; }
+    }
+    @keyframes snapshotEarthFloat {
+      0%,100% { transform:translateZ(32px) translateY(0) rotateX(0deg); }
+      50% { transform:translateZ(40px) translateY(-3px) rotateX(1deg); }
+    }
+    @keyframes snapshotEarthOrbitDrift {
+      0%,100% { transform:rotate(-25deg) rotateX(67deg) rotateZ(-1deg); }
+      50% { transform:rotate(-25deg) rotateX(67deg) rotateZ(1deg); }
+    }
+    @media (max-width:960px) {
+      .snapshot-stage { min-height:460px !important; }
+      .snapshot-globe { left:20% !important;top:10% !important;width:60% !important; }
+      .snapshot-orbit-one { left:9% !important;top:20% !important;width:82% !important;height:58% !important; }
+    }
+    @media (max-width:560px) {
+      .snapshot-stage { min-height:340px !important;margin:0 -10px !important; }
+      .snapshot-globe { left:16% !important;top:9% !important;width:68% !important; }
+      .snapshot-orbit-one { left:7% !important;top:19% !important;width:86% !important;height:58% !important; }
+    }
+    @media (prefers-reduced-motion:reduce) {
+      .snapshot-stage.motion-active .snapshot-globe,
+      .snapshot-stage.motion-active .snapshot-globe::before,
+      .snapshot-stage.motion-active .snapshot-orbit-one {
+        animation:none !important;
+        will-change:auto !important;
+      }
+      .snapshot-globe::before { background-position:50% 50% !important; }
+    }
+  </style>
+
 </head>
 <body>
   <a class="skip" href="index.html#main">Skip to content</a>
