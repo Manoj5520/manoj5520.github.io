@@ -2919,128 +2919,262 @@ ul, ol { padding: 0; list-style: none; }
   </style>
 
 
-  <style id="professional-opportunities-trajectory">
-    /* A tailored strategic-value signature: quiet silver field, burgundy trajectory, no generic globe/cards. */
-    .contact-trajectory-visual {
+  <style id="professional-opportunities-capability-sequence">
+    /* A signature capability sequence, tailored to the user's actual strategy and operations strengths. */
+    .capability-visual {
       position:relative;
-      align-self:center;
+      align-self:stretch;
       min-width:0;
-      width:100%;
-      min-height:365px;
-      padding:8px 10px 0;
+      min-height:410px;
+      padding:17px 17px 12px;
       overflow:hidden;
       isolation:isolate;
       background:
-        radial-gradient(ellipse at 72% 28%,rgba(255,255,255,.95) 0%,rgba(225,232,237,.54) 40%,rgba(238,242,245,0) 76%);
+        radial-gradient(ellipse at 56% 43%,rgba(255,255,255,.96) 0%,rgba(232,238,242,.72) 36%,rgba(225,232,237,.3) 69%,rgba(239,242,245,0) 86%);
     }
-    .trajectory-signature {
+    .capability-visual-top {
+      position:relative;
+      z-index:5;
       display:flex;
       align-items:center;
-      gap:10px;
-      padding:6px 5px 0;
-      color:#68737D;
+      gap:11px;
+      min-height:23px;
+      color:#697580;
+      font:600 9px/1.4 var(--sans);
+      letter-spacing:.16em;
+      text-transform:uppercase;
     }
-    .trajectory-monogram {
-      display:inline-flex;
+    .capability-top-rule { height:1px;flex:1;background:linear-gradient(90deg,#76263D 0%,#C3CBD2 65%,rgba(195,203,210,0) 100%); }
+    .capability-top-index { color:#8A949D;font-size:8px;letter-spacing:.12em;white-space:nowrap; }
+    .capability-stage {
+      position:relative;
+      min-height:333px;
+      margin-top:2px;
+      overflow:hidden;
+      isolation:isolate;
+    }
+    .capability-orbits {
+      position:absolute;
+      z-index:0;
+      inset:0;
+      width:100%;
+      height:100%;
+      overflow:visible;
+      transform-origin:50% 50%;
+      opacity:.9;
+    }
+    .capability-ring-outer,.capability-ring-inner { transform-box:view-box;transform-origin:260px 164px; }
+    .capability-ring-outer { opacity:.78; }
+    .capability-ring-inner { opacity:.62; }
+    .capability-underlay-spike { stroke-dasharray:420;stroke-dashoffset:0; }
+    .capability-sequence {
+      position:absolute;
+      z-index:2;
+      inset:38px 0 24px;
+    }
+    .capability-item {
+      position:absolute;
+      inset:0;
+      display:flex;
+      flex-direction:column;
       align-items:center;
       justify-content:center;
-      width:30px;
-      height:27px;
-      border:1px solid #B7C1CA;
+      gap:13px;
+      padding:12px 10px 14px;
+      text-align:center;
+      opacity:0;
+      transform:translate3d(0,10px,0) scale(.985);
+      filter:blur(1px);
+    }
+    .capability-item-number {
+      display:inline-flex;
+      align-items:center;
+      gap:7px;
+      color:#76263D;
+      font:600 9px/1.2 var(--sans);
+      letter-spacing:.16em;
+    }
+    .capability-item-number i { color:#9AA4AD;font-style:normal;font-weight:500; }
+    .capability-item strong {
+      max-width:16ch;
+      color:#1E252C;
+      font:400 clamp(25px,2.5vw,35px)/1.02 var(--serif);
+      letter-spacing:-.035em;
+      text-wrap:balance;
+    }
+    .capability-item-rule {
+      width:38px;
+      height:2px;
+      background:linear-gradient(90deg,#76263D,#C8AEB6);
+      transform-origin:center;
+      transform:scaleX(.25);
+    }
+    .capability-final-lockup {
+      position:absolute;
+      z-index:4;
+      inset:24px 4px 18px;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      gap:13px;
+      padding:13px clamp(8px,1.6vw,18px);
+      opacity:1;
+      background:linear-gradient(140deg,rgba(255,255,255,.91),rgba(239,243,246,.8));
+      border:1px solid rgba(187,197,205,.85);
+      box-shadow:inset 0 1px 0 #FFFFFF,0 15px 28px -25px rgba(36,48,59,.28);
+    }
+    .capability-final-name-row {
+      display:grid;
+      grid-template-columns:42px minmax(0,1fr) 82px;
+      align-items:center;
+      gap:10px;
+      min-width:0;
+    }
+    .capability-final-monogram {
+      display:grid;
+      place-items:center;
+      width:40px;
+      height:40px;
+      border:1px solid #B8C2CA;
       border-bottom:2px solid #76263D;
-      background:linear-gradient(145deg,#FFFFFF,#E7ECF0);
+      background:linear-gradient(145deg,#FFFFFF,#E4E9ED);
+      box-shadow:inset 0 1px 0 #FFFFFF,0 2px 5px rgba(37,45,53,.05);
       color:#252D35;
-      font:600 10px/1 var(--serif);
-      letter-spacing:.08em;
-      box-shadow:inset 0 1px 0 #FFFFFF,0 2px 5px rgba(40,49,58,.05);
-      flex:0 0 auto;
+      font:500 12px/1 var(--serif);
+      letter-spacing:.05em;
     }
-    .trajectory-signature-rule { height:1px;width:30px;background:linear-gradient(90deg,#76263D,#C7CDD3);flex:0 0 auto; }
-    .trajectory-signature-label { font:600 9px/1.4 var(--sans);letter-spacing:.16em; }
-    .trajectory-svg {
-      display:block;
+    .capability-final-name-wrap { display:flex;flex-direction:column;gap:5px;min-width:0; }
+    .capability-final-name-wrap strong {
+      color:#1C2228;
+      font:500 clamp(23px,2.25vw,31px)/1.02 var(--serif);
+      letter-spacing:-.035em;
+    }
+    .capability-final-eyebrow {
+      color:#697580;
+      font:600 7px/1.4 var(--sans);
+      letter-spacing:.13em;
+      white-space:nowrap;
+    }
+    .capability-spike-arrow { display:block;width:100%;height:auto;overflow:visible; }
+    .capability-spike-line {
+      stroke-dasharray:142;
+      stroke-dashoffset:142;
+    }
+    .capability-spike-head { opacity:0; }
+    .capability-spike-shadow { opacity:0; }
+    .capability-final-divider { width:100%;height:1px;background:linear-gradient(90deg,#76263D 0%,#C7CFD6 43%,rgba(199,207,214,.2) 100%); }
+    .capability-final-tagline {
+      margin:0;
+      color:#76263D;
+      font:italic 400 clamp(17px,1.7vw,23px)/1.12 var(--serif);
+      letter-spacing:-.01em;
+    }
+    .capability-final-tags {
+      display:flex;
+      flex-wrap:wrap;
+      gap:5px;
+    }
+    .capability-final-tags span {
+      display:inline-flex;
+      padding:5px 7px;
+      border:1px solid #D5DBE0;
+      background:rgba(255,255,255,.76);
+      color:#46525D;
+      font:500 8px/1.2 var(--sans);
+      letter-spacing:.015em;
+    }
+    .capability-visual-footer {
       position:relative;
-      z-index:1;
-      width:100%;
-      height:auto;
-      max-height:350px;
-      overflow:visible;
-      margin:2px 0 0;
-    }
-    .trajectory-path-shadow { opacity:.7; }
-    .trajectory-path {
-      stroke-dasharray:600;
-      stroke-dashoffset:0;
-      filter:drop-shadow(0 1px 1px rgba(118,38,61,.12));
-    }
-    .trajectory-light-trail { stroke-dasharray:1 600;stroke-dashoffset:0;opacity:0; }
-    .trajectory-node { opacity:1; }
-    .trajectory-runner { opacity:0; }
-    .trajectory-peak { opacity:1; }
-    .trajectory-foot {
+      z-index:4;
       display:flex;
       align-items:center;
-      justify-content:space-between;
-      gap:12px;
-      margin:-1px 4px 0;
-      padding:13px 5px 4px;
-      border-top:1px solid rgba(166,177,187,.48);
-      color:#69737D;
-      font:600 8px/1.4 var(--sans);
-      letter-spacing:.13em;
+      justify-content:center;
+      gap:11px;
+      padding-top:8px;
+      border-top:1px solid rgba(171,182,192,.45);
+      color:#68747E;
+      font:600 7px/1.4 var(--sans);
+      letter-spacing:.17em;
     }
-    .trajectory-foot > span:first-child { color:#76263D; }
-    .trajectory-foot i { color:#76263D;font-style:normal;padding:0 3px; }
-    .contact-trajectory-visual.trajectory-active .trajectory-path {
-      animation:trajectoryLineDraw 2.2s cubic-bezier(.22,.65,.25,1) both;
+    .capability-visual-footer i { width:3px;height:3px;border-radius:50%;background:#76263D; }
+    .capability-visual.is-playing .capability-final-lockup {
+      animation:capabilityFinalReveal .85s cubic-bezier(.2,.7,.25,1) 7.75s both;
     }
-    .contact-trajectory-visual.trajectory-active .trajectory-light-trail {
-      animation:trajectoryLightSweep 2.4s ease-out .25s both;
+    .capability-visual.is-playing .capability-item-01 { animation:capabilityWordReveal 8.8s ease-in-out 0s both; }
+    .capability-visual.is-playing .capability-item-02 { animation:capabilityWordReveal 8.8s ease-in-out .93s both; }
+    .capability-visual.is-playing .capability-item-03 { animation:capabilityWordReveal 8.8s ease-in-out 1.86s both; }
+    .capability-visual.is-playing .capability-item-04 { animation:capabilityWordReveal 8.8s ease-in-out 2.79s both; }
+    .capability-visual.is-playing .capability-item-05 { animation:capabilityWordReveal 8.8s ease-in-out 3.72s both; }
+    .capability-visual.is-playing .capability-item-06 { animation:capabilityWordReveal 8.8s ease-in-out 4.65s both; }
+    .capability-visual.is-playing .capability-item-07 { animation:capabilityWordReveal 8.8s ease-in-out 5.58s both; }
+    .capability-visual.is-playing .capability-item-08 { animation:capabilityWordReveal 8.8s ease-in-out 6.51s both; }
+    .capability-visual.is-playing .capability-spike-line { animation:capabilityArrowDraw 1.05s ease-out 8.15s both; }
+    .capability-visual.is-playing .capability-spike-head,
+    .capability-visual.is-playing .capability-spike-shadow { animation:capabilityArrowFinish .3s ease-out 9.05s both; }
+    .capability-visual.is-playing .capability-ring-outer { animation:capabilityOuterOrbit 34s linear infinite; }
+    .capability-visual.is-playing .capability-ring-inner { animation:capabilityInnerOrbit 42s linear infinite; }
+    @keyframes capabilityWordReveal {
+      0% { opacity:0;transform:translate3d(0,10px,0) scale(.985);filter:blur(2px); }
+      4% { opacity:1;transform:translate3d(0,0,0) scale(1);filter:blur(0); }
+      10% { opacity:1;transform:translate3d(0,0,0) scale(1);filter:blur(0); }
+      14% { opacity:0;transform:translate3d(0,-5px,0) scale(1.005);filter:blur(1px); }
+      100% { opacity:0;transform:translate3d(0,-5px,0) scale(1.005);filter:blur(1px); }
     }
-    .contact-trajectory-visual.trajectory-active .trajectory-node {
-      animation:trajectoryNodeReveal .42s ease-out both;
+    @keyframes capabilityFinalReveal {
+      0% { opacity:0;transform:translateY(8px); }
+      100% { opacity:1;transform:translateY(0); }
     }
-    .contact-trajectory-visual.trajectory-active .trajectory-node-1 { animation-delay:.2s; }
-    .contact-trajectory-visual.trajectory-active .trajectory-node-2 { animation-delay:.45s; }
-    .contact-trajectory-visual.trajectory-active .trajectory-node-3 { animation-delay:.7s; }
-    .contact-trajectory-visual.trajectory-active .trajectory-node-4 { animation-delay:.95s; }
-    .contact-trajectory-visual.trajectory-active .trajectory-node-5 { animation-delay:1.2s; }
-    .contact-trajectory-visual.trajectory-active .trajectory-runner { opacity:1; }
-    .contact-trajectory-visual.trajectory-active .trajectory-peak { animation:trajectoryPeakGlint 1.2s ease-out .85s both; }
-    @keyframes trajectoryLineDraw { from { stroke-dashoffset:600; } to { stroke-dashoffset:0; } }
-    @keyframes trajectoryLightSweep {
-      0% { stroke-dasharray:1 600;stroke-dashoffset:600;opacity:0; }
-      12% { opacity:.9; }
-      100% { stroke-dasharray:125 475;stroke-dashoffset:-600;opacity:0; }
+    @keyframes capabilityArrowDraw {
+      to { stroke-dashoffset:0; }
     }
-    @keyframes trajectoryNodeReveal {
-      0% { opacity:0;transform:scale(.55);transform-box:fill-box;transform-origin:center; }
-      75% { opacity:1;transform:scale(1.12); }
-      100% { opacity:1;transform:scale(1); }
+    @keyframes capabilityArrowFinish {
+      from { opacity:0; }
+      to { opacity:1; }
     }
-    @keyframes trajectoryPeakGlint {
-      0%,100% { opacity:.85; }
-      35% { opacity:1;filter:drop-shadow(0 0 4px rgba(255,255,255,.95)); }
+    @keyframes capabilityOuterOrbit {
+      from { transform:rotate(0deg); }
+      to { transform:rotate(360deg); }
+    }
+    @keyframes capabilityInnerOrbit {
+      from { transform:rotate(360deg); }
+      to { transform:rotate(0deg); }
     }
     @media (max-width:1100px) {
-      .contact-trajectory-visual { min-height:330px;padding-inline:3px; }
-      .trajectory-signature-label { font-size:8px; }
+      .capability-visual { min-height:380px;padding:14px 13px 11px; }
+      .capability-stage { min-height:304px; }
+      .capability-final-name-row { grid-template-columns:38px minmax(0,1fr) 64px;gap:8px; }
+      .capability-final-monogram { width:36px;height:36px; }
+      .capability-final-eyebrow { font-size:6.5px;letter-spacing:.1em; }
+      .capability-final-tags span { font-size:7.5px;padding:4px 6px; }
     }
     @media (max-width:650px) {
-      .contact-trajectory-visual { min-height:275px;padding:4px 0 0; }
-      .trajectory-signature { gap:8px; }
-      .trajectory-foot { font-size:7px;letter-spacing:.1em;gap:8px; }
-      .trajectory-svg { margin-top:6px; }
+      .capability-visual { min-height:330px;padding:12px 9px 9px; }
+      .capability-stage { min-height:254px; }
+      .capability-sequence { inset:33px 0 14px; }
+      .capability-item strong { font-size:clamp(24px,6vw,31px); }
+      .capability-final-lockup { inset:17px 0 11px;padding:10px 8px;gap:9px; }
+      .capability-final-name-row { grid-template-columns:32px minmax(0,1fr) 52px;gap:7px; }
+      .capability-final-monogram { width:31px;height:33px;font-size:10px; }
+      .capability-final-name-wrap strong { font-size:22px; }
+      .capability-final-eyebrow { font-size:6px;letter-spacing:.07em;white-space:normal; }
+      .capability-spike-arrow { width:52px; }
+      .capability-final-tagline { font-size:18px; }
+      .capability-final-tags { gap:4px; }
+      .capability-final-tags span { font-size:7px;padding:4px 5px; }
+      .capability-visual-footer { gap:8px;font-size:6.5px;letter-spacing:.12em; }
     }
     @media (prefers-reduced-motion:reduce) {
-      .contact-trajectory-visual.trajectory-active .trajectory-path,
-      .contact-trajectory-visual.trajectory-active .trajectory-light-trail,
-      .contact-trajectory-visual.trajectory-active .trajectory-node,
-      .contact-trajectory-visual.trajectory-active .trajectory-peak {
-        animation:none !important;
-      }
-      .trajectory-path { stroke-dashoffset:0 !important; }
-      .trajectory-light-trail,.trajectory-runner { display:none !important; }
+      .capability-visual.is-playing .capability-final-lockup,
+      .capability-visual.is-playing .capability-item,
+      .capability-visual.is-playing .capability-spike-line,
+      .capability-visual.is-playing .capability-spike-head,
+      .capability-visual.is-playing .capability-spike-shadow,
+      .capability-visual.is-playing .capability-ring-outer,
+      .capability-visual.is-playing .capability-ring-inner { animation:none !important; }
+      .capability-final-lockup { opacity:1 !important;transform:none !important; }
+      .capability-item { display:none !important; }
+      .capability-spike-line { stroke-dashoffset:0 !important; }
+      .capability-spike-head,.capability-spike-shadow { opacity:1 !important; }
     }
   </style>
 
@@ -3865,45 +3999,57 @@ ul, ol { padding: 0; list-style: none; }
               </h2>
               <p class="section-lede contact-intent">I connect competitive research, commercial-model analysis and operational understanding to assess opportunities, clarify trade-offs and turn priorities into executable next steps.</p>
             </div>
-            <div class="contact-trajectory-visual" role="img" aria-label="Strategic value trajectory: market signals, unmet needs, commercial fit, decision and business impact">
-              <div class="trajectory-signature"><span class="trajectory-monogram">VSM</span><span class="trajectory-signature-rule"></span><span class="trajectory-signature-label">STRATEGIC VALUE TRAJECTORY</span></div>
-              <svg class="trajectory-svg" viewBox="0 0 520 390" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                <defs>
-                  <linearGradient id="trajectoryBurgundy" x1="38" y1="326" x2="470" y2="79" gradientUnits="userSpaceOnUse"><stop stop-color="#5B172A"/><stop offset=".56" stop-color="#76263D"/><stop offset="1" stop-color="#A66C7C"/></linearGradient>
-                  <linearGradient id="trajectorySilver" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#FFFFFF"/><stop offset=".5" stop-color="#BAC4CE"/><stop offset="1" stop-color="#FDFEFF"/></linearGradient>
-                  <radialGradient id="trajectoryNode" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(0 0) rotate(90) scale(8)"><stop stop-color="#FFFFFF"/><stop offset="1" stop-color="#C7D0D8"/></radialGradient>
-                  <filter id="trajectorySoftShadow" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#48545F" flood-opacity=".15"/></filter>
-                  <clipPath id="trajectoryPlotClip"><rect x="10" y="18" width="500" height="330" rx="2"/></clipPath>
-                </defs>
-                <g class="trajectory-guides" stroke="#A7B2BC" stroke-width=".8" stroke-opacity=".21">
-                  <path d="M18 72H500M18 132H500M18 192H500M18 252H500M18 312H500"/>
-                  <path d="M70 36V340M150 36V340M230 36V340M310 36V340M390 36V340M470 36V340"/>
-                </g>
-                <g class="trajectory-labels" fill="#69747E" font-family="Inter,Arial,sans-serif" font-size="9" font-weight="600" letter-spacing="1.05">
-                  <text x="22" y="303">SIGNALS</text>
-                  <text x="114" y="260">UNMET NEEDS</text>
-                  <text x="216" y="199">COMMERCIAL FIT</text>
-                  <text x="332" y="144">DECISION</text>
-                  <text x="470" y="55" text-anchor="end" fill="#76263D">BUSINESS IMPACT</text>
-                </g>
-                <g clip-path="url(#trajectoryPlotClip)">
-                  <path class="trajectory-path-shadow" d="M 38 326 C 82 327, 93 285, 142 286 S 201 261, 242 223 S 302 220, 342 173 S 409 151, 470 79" fill="none" stroke="#76263D" stroke-opacity=".12" stroke-width="12" stroke-linecap="round"/>
-                  <path class="trajectory-path" d="M 38 326 C 82 327, 93 285, 142 286 S 201 261, 242 223 S 302 220, 342 173 S 409 151, 470 79" fill="none" stroke="url(#trajectoryBurgundy)" stroke-width="3" stroke-linecap="round"/>
-                  <path class="trajectory-light-trail" d="M 38 326 C 82 327, 93 285, 142 286 S 201 261, 242 223 S 302 220, 342 173 S 409 151, 470 79" fill="none" stroke="#FFFFFF" stroke-opacity=".85" stroke-width="1" stroke-linecap="round"/>
-                </g>
-                <g class="trajectory-nodes" filter="url(#trajectorySoftShadow)">
-                  <g class="trajectory-node trajectory-node-1"><circle cx="38" cy="326" r="6.5" fill="url(#trajectorySilver)" stroke="#76263D" stroke-width="1.4"/><circle cx="38" cy="326" r="1.7" fill="#76263D"/></g>
-                  <g class="trajectory-node trajectory-node-2"><circle cx="142" cy="286" r="6.5" fill="url(#trajectorySilver)" stroke="#76263D" stroke-width="1.4"/><circle cx="142" cy="286" r="1.7" fill="#76263D"/></g>
-                  <g class="trajectory-node trajectory-node-3"><circle cx="242" cy="223" r="6.5" fill="url(#trajectorySilver)" stroke="#76263D" stroke-width="1.4"/><circle cx="242" cy="223" r="1.7" fill="#76263D"/></g>
-                  <g class="trajectory-node trajectory-node-4"><circle cx="342" cy="173" r="6.5" fill="url(#trajectorySilver)" stroke="#76263D" stroke-width="1.4"/><circle cx="342" cy="173" r="1.7" fill="#76263D"/></g>
-                  <g class="trajectory-node trajectory-node-5"><circle cx="470" cy="79" r="7" fill="url(#trajectorySilver)" stroke="#76263D" stroke-width="1.5"/><circle cx="470" cy="79" r="1.9" fill="#76263D"/></g>
-                </g>
-                <g class="trajectory-peak" stroke="#76263D" stroke-width="1.8" stroke-linecap="round" fill="none"><path d="M456 79H470V93"/></g>
-                <circle class="trajectory-runner" r="5.5" fill="#FFFFFF" stroke="#76263D" stroke-width="1.4" filter="url(#trajectorySoftShadow)">
-                  <animateMotion class="trajectory-runner-motion" begin="indefinite" dur="5.2s" repeatCount="indefinite" rotate="auto" path="M 38 326 C 82 327, 93 285, 142 286 S 201 261, 242 223 S 302 220, 342 173 S 409 151, 470 79"/>
-                </circle>
-              </svg>
-              <div class="trajectory-foot"><span>V. SAI MANOJ</span><span>INSIGHT <i>·</i> JUDGEMENT <i>·</i> EXECUTION</span></div>
+            <div class="capability-visual" role="img" aria-label="Animated capability sequence: competitive intelligence, market gap analysis, commercial judgement, service-line strategy, business operations, process improvement, growth operations and cross-functional execution. Final signature: V. Sai Manoj — from market signals to business impact.">
+              <div class="capability-visual-top"><span class="capability-top-label">CAPABILITY PROFILE</span><span class="capability-top-rule"></span><span class="capability-top-index">08 / 08</span></div>
+              <div class="capability-stage">
+                <svg class="capability-orbits" viewBox="0 0 520 330" fill="none" aria-hidden="true">
+                  <defs>
+                    <linearGradient id="capabilityRingSilver" x1="60" y1="35" x2="458" y2="288" gradientUnits="userSpaceOnUse"><stop stop-color="#FFFFFF"/><stop offset=".42" stop-color="#AEBBC5"/><stop offset=".7" stop-color="#FDFEFF"/><stop offset="1" stop-color="#B9C5CE"/></linearGradient>
+                    <linearGradient id="capabilityRingBurgundy" x1="58" y1="270" x2="466" y2="58" gradientUnits="userSpaceOnUse"><stop stop-color="#76263D" stop-opacity=".08"/><stop offset=".52" stop-color="#76263D" stop-opacity=".52"/><stop offset="1" stop-color="#76263D" stop-opacity=".06"/></linearGradient>
+                    <radialGradient id="capabilityHalo"><stop stop-color="#FFFFFF" stop-opacity=".86"/><stop offset=".58" stop-color="#DDE5EB" stop-opacity=".3"/><stop offset="1" stop-color="#E9EEF2" stop-opacity="0"/></radialGradient>
+                  </defs>
+                  <ellipse cx="260" cy="164" rx="211" ry="145" fill="url(#capabilityHalo)"/>
+                  <g class="capability-ring-outer">
+                    <ellipse cx="260" cy="164" rx="200" ry="82" stroke="url(#capabilityRingSilver)" stroke-width="1.35"/>
+                    <ellipse cx="260" cy="164" rx="200" ry="82" stroke="#FFFFFF" stroke-opacity=".66" stroke-width=".6" transform="rotate(24 260 164)"/>
+                    <ellipse cx="260" cy="164" rx="200" ry="82" stroke="url(#capabilityRingBurgundy)" stroke-width="1" transform="rotate(-25 260 164)"/>
+                    <circle cx="59" cy="164" r="3.5" fill="#FFFFFF" stroke="#76263D" stroke-width="1.1"/>
+                    <circle cx="460" cy="164" r="3.5" fill="#FFFFFF" stroke="#AAB6C0" stroke-width="1.1"/>
+                  </g>
+                  <g class="capability-ring-inner">
+                    <ellipse cx="260" cy="164" rx="145" ry="123" stroke="#B9C5CE" stroke-opacity=".62" stroke-width=".9" transform="rotate(29 260 164)"/>
+                    <ellipse cx="260" cy="164" rx="122" ry="62" stroke="#FFFFFF" stroke-opacity=".7" stroke-width=".8" transform="rotate(-26 260 164)"/>
+                  </g>
+                  <path d="M86 258C147 244 184 218 222 194S287 155 329 128 392 90 433 54" stroke="#76263D" stroke-opacity=".13" stroke-width="8" stroke-linecap="round"/>
+                  <path class="capability-underlay-spike" d="M86 258C147 244 184 218 222 194S287 155 329 128 392 90 433 54" stroke="url(#capabilityRingBurgundy)" stroke-width="1.5" stroke-linecap="round"/>
+                </svg>
+                <div class="capability-sequence" aria-hidden="true">
+                  <div class="capability-item capability-item-01" aria-hidden="true"><span class="capability-item-number">01 <i>/ 08</i></span><strong>Competitive intelligence</strong><span class="capability-item-rule"></span></div>
+                <div class="capability-item capability-item-02" aria-hidden="true"><span class="capability-item-number">02 <i>/ 08</i></span><strong>Market gap analysis</strong><span class="capability-item-rule"></span></div>
+                <div class="capability-item capability-item-03" aria-hidden="true"><span class="capability-item-number">03 <i>/ 08</i></span><strong>Commercial judgement</strong><span class="capability-item-rule"></span></div>
+                <div class="capability-item capability-item-04" aria-hidden="true"><span class="capability-item-number">04 <i>/ 08</i></span><strong>Service-line strategy</strong><span class="capability-item-rule"></span></div>
+                <div class="capability-item capability-item-05" aria-hidden="true"><span class="capability-item-number">05 <i>/ 08</i></span><strong>Business operations</strong><span class="capability-item-rule"></span></div>
+                <div class="capability-item capability-item-06" aria-hidden="true"><span class="capability-item-number">06 <i>/ 08</i></span><strong>Process improvement</strong><span class="capability-item-rule"></span></div>
+                <div class="capability-item capability-item-07" aria-hidden="true"><span class="capability-item-number">07 <i>/ 08</i></span><strong>Growth operations</strong><span class="capability-item-rule"></span></div>
+                <div class="capability-item capability-item-08" aria-hidden="true"><span class="capability-item-number">08 <i>/ 08</i></span><strong>Cross-functional execution</strong><span class="capability-item-rule"></span></div>
+                </div>
+                <div class="capability-final-lockup" aria-hidden="true">
+                  <div class="capability-final-name-row">
+                    <span class="capability-final-monogram">VSM</span>
+                    <div class="capability-final-name-wrap"><strong>V. Sai Manoj</strong><span class="capability-final-eyebrow">STRATEGY · COMMERCIAL · OPERATIONS</span></div>
+                    <svg class="capability-spike-arrow" viewBox="0 0 105 70" fill="none">
+                      <path class="capability-spike-shadow" d="M5 60C20 56 22 43 37 45S58 36 67 25 82 18 93 6" stroke="#76263D" stroke-opacity=".14" stroke-width="8" stroke-linecap="round"/>
+                      <path class="capability-spike-line" d="M5 60C20 56 22 43 37 45S58 36 67 25 82 18 93 6" stroke="#76263D" stroke-width="2.3" stroke-linecap="round"/>
+                      <path class="capability-spike-head" d="M81 7H94V20" stroke="#76263D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                      <circle cx="93" cy="6" r="3" fill="#FFFFFF" stroke="#76263D" stroke-width="1.2"/>
+                    </svg>
+                  </div>
+                  <div class="capability-final-divider"></div>
+                  <p class="capability-final-tagline">From market signals to business impact.</p>
+                  <div class="capability-final-tags"><span>Competitive intelligence</span><span>Market gap analysis</span><span>Commercial fit</span><span>Service-line strategy</span><span>Business operations</span></div>
+                </div>
+              </div>
+              <div class="capability-visual-footer"><span>INSIGHT</span><i></i><span>JUDGEMENT</span><i></i><span>EXECUTION</span></div>
             </div>
           </div>
         </header>
@@ -3961,6 +4107,6 @@ ul, ol { padding: 0; list-style: none; }
     <div class="viewer-stage" id="viewer-stage"></div>
   </dialog>
 
-  <script src="/main.js?v=20261021-strategic-trajectory-01" defer></script>
+  <script src="/main.js?v=20261021-capability-sequence-final-01" defer></script>
 </body>
 </html>
