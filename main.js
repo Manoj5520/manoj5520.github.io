@@ -73,6 +73,18 @@
     snapshotStage.classList.add("motion-active");
   }
 
+
+  /* ---------- Project 03 viewport glint observer ---------- */
+  var project03Chain = document.querySelector(".case-feature .chain");
+  if (project03Chain && !reduceMotion && "IntersectionObserver" in window) {
+    var project03GlintObserver = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        entry.target.classList.toggle("market-glint-active", entry.isIntersecting);
+      });
+    }, { rootMargin: "0px 0px -6% 0px", threshold: 0.2 });
+    project03GlintObserver.observe(project03Chain);
+  }
+
   /* ---------- Active navigation + progress ---------- */
   var links = Array.prototype.slice.call(document.querySelectorAll(".nav ul a"));
   var sections = links.map(function (a) { return document.querySelector(a.getAttribute("href")); });
