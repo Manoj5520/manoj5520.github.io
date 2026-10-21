@@ -286,7 +286,9 @@
 
 
 /* ==========================================================
-   Portfolio guided introduction — browser voice with controls
+   Portfolio guided introduction — human-paced spoken delivery
+   Cadence: warm welcome, lifted capability cues, grounded evidence,
+   lower measured value proposition, confident invitation.
    ========================================================== */
 (function () {
   var playButton = document.getElementById("portfolio-guide-toggle");
@@ -306,48 +308,69 @@
     return;
   }
 
-  var segments = [
-    {
-      label: "Welcome",
-      text: "Hello, and welcome. Before you explore, pause for a moment. This is V. Sai Manoj’s portfolio. My work asks one question: where can a business create an advantage customers value and operations can deliver?",
-      pitch: 1.07, rate: 0.94
-    },
-    {
-      label: "Capability Snapshot",
-      text: "Start with Capability Snapshot. My focus: competitive intelligence, market-gap analysis, commercial judgement, service-line strategy, and business operations. I examine customer needs, competitor offers, positioning, and delivery constraints to find where a business can stand apart—and why it makes commercial sense.",
-      pitch: 1.10, rate: 0.92
-    },
-    {
-      label: "My Decision Logic",
-      text: "Next, open My Decision Logic. See how I frame a decision, examine evidence, compare alternatives, test business-model fit, and identify next steps. I connect market signals to commercial priorities and operational feasibility, turning insight into decisions teams can act on.",
-      pitch: 1.02, rate: 0.93
-    },
-    {
-      label: "Experience and Projects",
-      text: "Then explore Experience and Projects. During my Mercedes-Benz internship, I reviewed the Retail of the Future model, considering inventory access, pricing transparency, dealer flexibility, and customer experience. At NexaHomes, I benchmarked competitors and assessed differentiated service lines aligned with the business positioning. My venture and MBA research show how I question assumptions and connect evidence to action.",
-      pitch: 1.04, rate: 0.92
-    },
-    {
-      label: "The difference I aim to make",
-      text: "What can I bring? A joined-up view of market, offer, and operations. I help teams spot underserved needs, see where competitors leave room, test service fit with brand and delivery, and turn findings into priorities. My aim is to make the next decision clearer and stronger.",
-      pitch: 1.08, rate: 0.92
-    },
-    {
-      label: "An invitation",
-      text: "Give me a real business challenge, clear constraints, and a meaningful outcome. Let me research it, map the options, and show where progress can begin. Judge me by my thinking, evidence, and practical value—not promises. I’m Sai Manoj. Let’s turn an overlooked gap into your next advantage.",
-      pitch: 1.13, rate: 0.93
-    }
+  /*
+   * Each beat is one spoken thought. Sentence boundaries are real pauses,
+   * not punctuation piled into a single long speech-synthesis paragraph.
+   * Pitch changes are deliberately subtle; pace, silence and contrast do
+   * most of the expressive work.
+   */
+  var beats = [
+    { stage: "Welcome", text: "Hello, and welcome.", pitch: 1.04, rate: 0.92, gap: 720 },
+    { stage: "Welcome", text: "Before you explore, let me show you how to read this portfolio.", pitch: 1.03, rate: 0.91, gap: 320 },
+    { stage: "Welcome", text: "I’m V. Sai Manoj.", pitch: 1.02, rate: 0.90, gap: 520 },
+    { stage: "The central idea", text: "My work asks one question: where can a business create an advantage customers value, and operations can deliver?", pitch: 1.02, rate: 0.92, gap: 760 },
+
+    { stage: "Capability Snapshot", text: "Start with Capability Snapshot.", pitch: 1.07, rate: 0.93, gap: 300 },
+    { stage: "Capability Snapshot", text: "Competitive intelligence. Market-gap analysis. Commercial judgement. Service-line strategy. Business operations.", pitch: 1.08, rate: 0.91, gap: 580 },
+    { stage: "Capability Snapshot", text: "I examine customer needs, competitor offers, positioning, and delivery constraints.", pitch: 1.04, rate: 0.92, gap: 240 },
+    { stage: "Capability Snapshot", text: "The aim is to find where a business can stand apart—and why that opportunity makes commercial sense.", pitch: 1.06, rate: 0.91, gap: 680 },
+
+    { stage: "My Decision Logic", text: "Next, open My Decision Logic.", pitch: 1.05, rate: 0.92, gap: 300 },
+    { stage: "My Decision Logic", text: "See how I frame a decision, examine the evidence, compare alternatives, test business-model fit, and identify the next practical move.", pitch: 1.00, rate: 0.92, gap: 520 },
+    { stage: "My Decision Logic", text: "Market signals matter most when they connect to commercial priorities and operational feasibility.", pitch: 1.01, rate: 0.91, gap: 720 },
+
+    { stage: "Experience and Projects", text: "Then explore Experience and Projects.", pitch: 1.04, rate: 0.92, gap: 300 },
+    { stage: "Experience and Projects", text: "During my Mercedes-Benz internship, I reviewed the Retail of the Future model—considering inventory access, pricing transparency, dealer flexibility, and customer experience.", pitch: 1.00, rate: 0.89, gap: 420 },
+    { stage: "Experience and Projects", text: "At NexaHomes, I benchmarked competitors and assessed differentiated service-line opportunities aligned with the business positioning.", pitch: 1.02, rate: 0.90, gap: 420 },
+    { stage: "Experience and Projects", text: "My venture and MBA research show the same discipline: question assumptions, connect evidence, and structure the choices.", pitch: 1.00, rate: 0.90, gap: 780 },
+
+    { stage: "The difference I aim to make", text: "So, what can I bring to a business?", pitch: 0.99, rate: 0.87, gap: 640 },
+    { stage: "The difference I aim to make", text: "A joined-up view of the market, the offer, and the operation.", pitch: 0.98, rate: 0.89, gap: 420 },
+    { stage: "The difference I aim to make", text: "I help teams spot underserved needs, see where competitors leave room, test whether an offer fits the brand and delivery model, and turn findings into priorities.", pitch: 1.00, rate: 0.89, gap: 520 },
+    { stage: "The difference I aim to make", text: "Not analysis for its own sake. Insight that makes the next decision clearer—and stronger.", pitch: 1.02, rate: 0.88, gap: 820 },
+
+    { stage: "An invitation", text: "Here is my invitation.", pitch: 1.05, rate: 0.91, gap: 460 },
+    { stage: "An invitation", text: "Give me a real business challenge, with clear constraints and a meaningful outcome.", pitch: 1.05, rate: 0.90, gap: 360 },
+    { stage: "An invitation", text: "Let me investigate the problem, map the options, and show where progress can begin.", pitch: 1.07, rate: 0.90, gap: 480 },
+    { stage: "An invitation", text: "Judge me by the questions I ask, the evidence I uncover, and the practical value I help create.", pitch: 1.07, rate: 0.90, gap: 700 },
+    { stage: "An invitation", text: "I’m Sai Manoj.", pitch: 1.08, rate: 0.91, gap: 360 },
+    { stage: "An invitation", text: "Let’s turn an overlooked gap into your next advantage.", pitch: 1.10, rate: 0.90, gap: 0 }
   ];
 
   var state = "idle";
+  var currentIndex = 0;
   var totalWords = 0;
   var completedWords = 0;
-  segments.forEach(function (segment) {
-    segment.words = segment.text.trim().split(/\s+/).length;
-    segment.startWords = totalWords;
-    totalWords += segment.words;
-    segment.endWords = totalWords;
+  var firstBeatStarted = false;
+  var autoStartTimer = null;
+  var nextBeatTimer = null;
+  var activeUtterance = false;
+  var pendingIndex = null;
+  var chosenVoice = null;
+
+  beats.forEach(function (beat) {
+    beat.words = beat.text.trim().split(/\s+/).length;
+    beat.startWords = totalWords;
+    totalWords += beat.words;
+    beat.endWords = totalWords;
   });
+
+  function clearTimers() {
+    if (autoStartTimer) window.clearTimeout(autoStartTimer);
+    if (nextBeatTimer) window.clearTimeout(nextBeatTimer);
+    autoStartTimer = null;
+    nextBeatTimer = null;
+  }
 
   function setProgress(percent, duration) {
     var value = Math.max(0, Math.min(100, percent));
@@ -358,98 +381,135 @@
 
   function selectVoice() {
     var voices = synth.getVoices ? synth.getVoices() : [];
+    var english = voices.filter(function (voice) {
+      return /^en(-|_)/i.test(voice.lang || "");
+    });
     var preferredPatterns = [
-      /aria.*natural/i,
-      /jenny.*natural/i,
-      /google.*uk english female/i,
-      /google.*us english/i,
+      /microsoft.*(?:aria|jenny|ava|emma|sonia|sara|natasha|michelle|jane).*natural/i,
+      /microsoft.*natural.*english/i,
+      /google uk english female/i,
+      /google us english/i,
       /samantha/i,
-      /zira/i,
       /aria/i,
       /jenny/i,
       /sonia/i,
       /amy|emma|libby/i,
       /english.*female/i
     ];
+
     for (var p = 0; p < preferredPatterns.length; p++) {
-      for (var v = 0; v < voices.length; v++) {
-        if (preferredPatterns[p].test(voices[v].name) && /^en(-|_)/i.test(voices[v].lang || "")) return voices[v];
+      for (var v = 0; v < english.length; v++) {
+        if (preferredPatterns[p].test(english[v].name)) return english[v];
       }
     }
-    for (var i = 0; i < voices.length; i++) {
-      if (/^en(-|_)/i.test(voices[i].lang || "")) return voices[i];
-    }
-    return null;
+    return english.length ? english[0] : null;
   }
 
-  var firstSegmentStarted = false;
-  var autoStartTimer = null;
+  function finishGuide() {
+    state = "finished";
+    activeUtterance = false;
+    pendingIndex = null;
+    clearTimers();
+    setProgress(100, 250);
+    label.textContent = "Listen again";
+    if (buttonIcon) buttonIcon.textContent = "▶";
+    stopButton.disabled = true;
+    status.textContent = "Introduction complete. Explore the portfolio at your own pace.";
+  }
+
+  function scheduleBeat(index, delay) {
+    pendingIndex = index;
+    if (nextBeatTimer) window.clearTimeout(nextBeatTimer);
+    nextBeatTimer = window.setTimeout(function () {
+      nextBeatTimer = null;
+      if (state === "paused") return;
+      if (state !== "speaking") return;
+      pendingIndex = null;
+      speakBeat(index);
+    }, delay);
+  }
+
+  function speakBeat(index) {
+    if (state !== "speaking") return;
+    if (index >= beats.length) {
+      finishGuide();
+      return;
+    }
+
+    currentIndex = index;
+    var beat = beats[index];
+    var utterance = new window.SpeechSynthesisUtterance(beat.text);
+    activeUtterance = true;
+
+    if (chosenVoice) {
+      utterance.voice = chosenVoice;
+      utterance.lang = chosenVoice.lang || "en-US";
+    } else {
+      utterance.lang = "en-US";
+    }
+    utterance.pitch = beat.pitch;
+    utterance.rate = beat.rate;
+    utterance.volume = 1;
+
+    utterance.onstart = function () {
+      if (state === "stopped" || state === "failed") return;
+      firstBeatStarted = true;
+      if (autoStartTimer) window.clearTimeout(autoStartTimer);
+      var expectedMs = Math.max(1200, beat.words / (145 * beat.rate) * 60000);
+      var voiceNote = chosenVoice ? "" : " · using your device’s default English voice";
+      status.textContent = "Now guiding you through " + beat.stage + voiceNote + ".";
+      setProgress(beat.endWords / totalWords * 100, expectedMs + beat.gap);
+    };
+
+    utterance.onend = function () {
+      if (state === "stopped" || state === "failed") return;
+      activeUtterance = false;
+      completedWords = beat.endWords;
+      if (index === beats.length - 1) {
+        finishGuide();
+      } else {
+        scheduleBeat(index + 1, beat.gap);
+      }
+    };
+
+    utterance.onerror = function (event) {
+      activeUtterance = false;
+      if (state === "stopped" || state === "failed" || (event && event.error === "canceled")) return;
+      state = "failed";
+      clearTimers();
+      synth.cancel();
+      label.textContent = "Start the guided introduction";
+      if (buttonIcon) buttonIcon.textContent = "▶";
+      stopButton.disabled = true;
+      status.textContent = "Your browser may block automatic audio. Press Start to hear the guided introduction.";
+    };
+
+    synth.speak(utterance);
+  }
 
   function startGuide(isAutoStart) {
+    clearTimers();
     synth.cancel();
-    if (autoStartTimer) window.clearTimeout(autoStartTimer);
-    firstSegmentStarted = false;
-    state = "speaking";
+    chosenVoice = selectVoice();
+    firstBeatStarted = false;
+    currentIndex = 0;
     completedWords = 0;
+    pendingIndex = null;
+    activeUtterance = false;
+    state = "speaking";
     setProgress(0, 0);
-    playButton.disabled = false;
     stopButton.disabled = false;
     label.textContent = "Pause introduction";
     if (buttonIcon) buttonIcon.textContent = "Ⅱ";
     status.textContent = isAutoStart ? "Starting your guided introduction…" : "Preparing the guided introduction…";
-    var voice = selectVoice();
-
-    segments.forEach(function (segment, index) {
-      var utterance = new window.SpeechSynthesisUtterance(segment.text);
-      if (voice) {
-        utterance.voice = voice;
-        utterance.lang = voice.lang || "en-US";
-      } else {
-        utterance.lang = "en-US";
-      }
-      utterance.pitch = segment.pitch;
-      utterance.rate = segment.rate;
-      utterance.volume = 1;
-
-      utterance.onstart = function () {
-        if (state === "stopped" || state === "failed") return;
-        firstSegmentStarted = true;
-        if (autoStartTimer) window.clearTimeout(autoStartTimer);
-        var endPercent = segment.endWords / totalWords * 100;
-        var expectedMs = Math.max(2400, segment.words / (145 * segment.rate) * 60000);
-        var voiceNote = voice ? "" : " · using your device’s default English voice";
-        status.textContent = "Now guiding you through " + segment.label + voiceNote + ".";
-        setProgress(endPercent, expectedMs);
-      };
-      utterance.onend = function () {
-        if (state === "stopped" || state === "failed") return;
-        completedWords = segment.endWords;
-        if (index === segments.length - 1) {
-          state = "finished";
-          setProgress(100, 300);
-          label.textContent = "Listen again";
-          if (buttonIcon) buttonIcon.textContent = "▶";
-          stopButton.disabled = true;
-          status.textContent = "Introduction complete. Explore the portfolio at your own pace.";
-        }
-      };
-      utterance.onerror = function (event) {
-        if (state === "stopped" || state === "failed" || (event && event.error === "canceled")) return;
-        state = "failed";
-        synth.cancel();
-        label.textContent = "Start the guided introduction";
-        if (buttonIcon) buttonIcon.textContent = "▶";
-        stopButton.disabled = true;
-        status.textContent = "Your browser may block automatic audio. Press Start to hear the guided introduction, or explore the portfolio normally.";
-      };
-      synth.speak(utterance);
-    });
+    speakBeat(0);
 
     if (isAutoStart) {
       autoStartTimer = window.setTimeout(function () {
-        if (state === "speaking" && !firstSegmentStarted) {
-          synth.cancel();
+        if (state === "speaking" && !firstBeatStarted) {
           state = "idle";
+          clearTimers();
+          synth.cancel();
           label.textContent = "Start the guided introduction";
           if (buttonIcon) buttonIcon.textContent = "▶";
           stopButton.disabled = true;
@@ -461,33 +521,43 @@
   }
 
   playButton.addEventListener("click", function () {
-    if (state === "speaking" && !firstSegmentStarted) {
+    if (state === "speaking" && !firstBeatStarted) {
       startGuide(false);
       return;
     }
     if (state === "speaking") {
-      synth.pause();
+      if (nextBeatTimer) {
+        window.clearTimeout(nextBeatTimer);
+        nextBeatTimer = null;
+      }
       state = "paused";
+      if (activeUtterance) synth.pause();
       label.textContent = "Resume introduction";
       if (buttonIcon) buttonIcon.textContent = "▶";
       status.textContent = "Introduction paused. Select Resume to continue.";
       return;
     }
     if (state === "paused") {
-      synth.resume();
       state = "speaking";
       label.textContent = "Pause introduction";
       if (buttonIcon) buttonIcon.textContent = "Ⅱ";
       status.textContent = "Resuming the guided introduction…";
+      if (activeUtterance) {
+        synth.resume();
+      } else {
+        scheduleBeat(pendingIndex === null ? currentIndex + 1 : pendingIndex, 220);
+      }
       return;
     }
-    startGuide();
+    startGuide(false);
   });
 
   stopButton.addEventListener("click", function () {
     state = "stopped";
-    if (autoStartTimer) window.clearTimeout(autoStartTimer);
+    clearTimers();
     synth.cancel();
+    activeUtterance = false;
+    pendingIndex = null;
     setProgress(0, 180);
     label.textContent = "Listen to the guided introduction";
     if (buttonIcon) buttonIcon.textContent = "▶";
@@ -495,14 +565,10 @@
     status.textContent = "Introduction stopped. Press play whenever you are ready.";
   });
 
-  // Attempt the requested automatic welcome on page entry. If browser autoplay
-  // policy blocks speech, the visitor gets a clear one-click fallback instead.
-  function attemptAutomaticWelcome() {
-    window.setTimeout(function () {
-      if (state === "idle") startGuide(true);
-    }, 800);
-  }
-  // The main script is deferred and placed after the portfolio markup; a short
-  // delay lets the first screen render before attempting the spoken welcome.
-  attemptAutomaticWelcome();
+  // Attempt automatic welcome on page entry. Browsers may require a click
+  // before allowing sound; the control stays available if automatic speech is blocked.
+  window.setTimeout(function () {
+    if (state === "idle") startGuide(true);
+  }, 850);
 })();
+
