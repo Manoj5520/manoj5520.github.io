@@ -85,6 +85,30 @@
     project03GlintObserver.observe(project03Chain);
   }
 
+
+  /* ---------- Professional Opportunities trajectory observer ---------- */
+  var opportunitiesTrajectory = document.querySelector(".contact-trajectory-visual");
+  if (opportunitiesTrajectory) {
+    var trajectoryMotion = opportunitiesTrajectory.querySelector(".trajectory-runner-motion");
+    if (reduceMotion) {
+      opportunitiesTrajectory.classList.remove("trajectory-active");
+    } else if ("IntersectionObserver" in window) {
+      var trajectoryObserver = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          entry.target.classList.toggle("trajectory-active", entry.isIntersecting);
+          if (trajectoryMotion) {
+            if (entry.isIntersecting && typeof trajectoryMotion.beginElement === "function") trajectoryMotion.beginElement();
+            if (!entry.isIntersecting && typeof trajectoryMotion.endElement === "function") trajectoryMotion.endElement();
+          }
+        });
+      }, { rootMargin: "0px 0px -8% 0px", threshold: 0.18 });
+      trajectoryObserver.observe(opportunitiesTrajectory);
+    } else {
+      opportunitiesTrajectory.classList.add("trajectory-active");
+      if (trajectoryMotion && typeof trajectoryMotion.beginElement === "function") trajectoryMotion.beginElement();
+    }
+  }
+
   /* ---------- Active navigation + progress ---------- */
   var links = Array.prototype.slice.call(document.querySelectorAll(".nav ul a"));
   var sections = links.map(function (a) { return document.querySelector(a.getAttribute("href")); });
