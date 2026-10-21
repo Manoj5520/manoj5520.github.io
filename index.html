@@ -2818,6 +2818,41 @@ ul, ol { padding: 0; list-style: none; }
     }
   </style>
 
+
+  <style id="portfolio-snapshot-surface-rotation">
+    /*
+      Animate the Earth map on the sphere itself, not a pseudo-element.
+      This avoids the prior cascade conflict and gives a visible west-to-east rotation.
+    */
+    .snapshot-stage .snapshot-globe {
+      background-color:#07182B !important;
+      background-image:url("https://eoimages.gsfc.nasa.gov/images/imagerecords/57000/57752/land_shallow_topo_2048.jpg") !important;
+      background-repeat:repeat-x !important;
+      background-size:200% 100% !important;
+      background-position:0% 50% !important;
+      animation:snapshotEarthSurfaceRotate 30s linear infinite !important;
+    }
+    .snapshot-stage .snapshot-globe::before {
+      display:none !important;
+      content:none !important;
+      background:none !important;
+      animation:none !important;
+    }
+    .snapshot-stage.motion-active .snapshot-globe {
+      animation:snapshotEarthSurfaceRotate 30s linear infinite, snapshotEarthFloat 16s ease-in-out infinite !important;
+    }
+    @keyframes snapshotEarthSurfaceRotate {
+      from { background-position:0% 50%; }
+      to { background-position:200% 50%; }
+    }
+    @media (prefers-reduced-motion:reduce) {
+      .snapshot-stage .snapshot-globe,
+      .snapshot-stage.motion-active .snapshot-globe {
+        animation:snapshotEarthSurfaceRotate 30s linear infinite !important;
+      }
+    }
+  </style>
+
 </head>
 <body>
   <a class="skip" href="index.html#main">Skip to content</a>
@@ -3707,6 +3742,6 @@ ul, ol { padding: 0; list-style: none; }
     <div class="viewer-stage" id="viewer-stage"></div>
   </dialog>
 
-  <script src="/main.js?v=20261021-snapshot-earth-rotation-fix-01" defer></script>
+  <script src="/main.js?v=20261021-earth-visible-rotation-02" defer></script>
 </body>
 </html>
