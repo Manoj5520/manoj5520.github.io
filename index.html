@@ -2231,6 +2231,54 @@ ul, ol { padding: 0; list-style: none; }
     }
   </style>
 
+
+  <style id="portfolio-thesis-field-icons">
+    /* Project 01: label icons are specific to research, evidence and workforce continuity. */
+    .thesis-evidence-grid dt {
+      display:flex;
+      align-items:center;
+      gap:9px;
+      min-height:19px;
+      margin-bottom:8px !important;
+      letter-spacing:.15em !important;
+    }
+    .thesis-field-icon {
+      display:block;
+      width:17px;
+      height:17px;
+      flex:0 0 17px;
+      color:#56616D;
+      overflow:visible;
+    }
+    .thesis-evidence-grid .wide .thesis-field-icon { width:18px;height:18px;flex-basis:18px; }
+    .thesis-evidence-grid dd { line-height:1.62; }
+    .thesis-evidence-grid .tags { margin-top:3px; }
+    .workstream-roman {
+      color:#76263D !important;
+      display:inline-block;
+      text-transform:none !important;
+      font-family:var(--serif);
+      font-weight:500;
+      font-size:13px;
+      letter-spacing:0 !important;
+      margin-right:1px;
+    }
+    .kpi-index {
+      display:inline-block;
+      font-family:var(--serif) !important;
+      font-size:14px !important;
+      font-weight:500 !important;
+      letter-spacing:0 !important;
+      text-transform:none !important;
+      color:#76263D !important;
+      line-height:1.1;
+    }
+    @media (max-width:700px) {
+      .thesis-evidence-grid dt { gap:7px; }
+      .thesis-field-icon { width:15px;height:15px;flex-basis:15px; }
+    }
+  </style>
+
 </head>
 <body>
   <a class="skip" href="index.html#main">Skip to content</a>
@@ -2639,25 +2687,25 @@ ul, ol { padding: 0; list-style: none; }
 
             <div class="mb-workstreams">
               <section class="mb-workstream">
-                <p class="mb-workstream-index">i / PEOPLE OPERATIONS</p>
+                <p class="mb-workstream-index"><span class="workstream-roman">i</span><span> / PEOPLE OPERATIONS</span></p>
                 <h4>HR &amp; candidate screening</h4>
                 <p>Assisted with initial profile screening and role-fit considerations, including relevant skills, communication, behavioural suitability and readiness for a high-touch luxury retail environment.</p>
                 <ul class="tags"><li>Candidate screening support</li><li>Role-fit considerations</li><li>Interview scheduling</li><li>Candidate documentation</li></ul>
               </section>
               <section class="mb-workstream">
-                <p class="mb-workstream-index">ii / MARKET &amp; BRAND</p>
+                <p class="mb-workstream-index"><span class="workstream-roman">ii</span><span> / MARKET &amp; BRAND</span></p>
                 <h4>Localised luxury marketing</h4>
                 <p>Supported promotional planning for premium customer segments in Hyderabad, considering local-market relevance across micro-markets such as Jubilee Hills, Banjara Hills, Gachibowli and HITEC City while keeping luxury-brand positioning in view.</p>
                 <ul class="tags"><li>Local-market fit</li><li>Premium audience context</li><li>Luxury positioning</li><li>Brand alignment</li></ul>
               </section>
               <section class="mb-workstream">
-                <p class="mb-workstream-index">iii / CUSTOMER ENGAGEMENT</p>
+                <p class="mb-workstream-index"><span class="workstream-roman">iii</span><span> / CUSTOMER ENGAGEMENT</span></p>
                 <h4>Consultative vehicle discussions</h4>
                 <p>Engaged with walk-in prospects to understand intended use and preferences, then discussed relevant sedan, SUV and MPV options across the C-Class, E-Class, S-Class, GLE, GLS, V-Class and AMG/Maybach portfolios. Where relevant to the enquiry, product conversations included differentiators such as MBUX, ADAS and air-suspension features.</p>
                 <ul class="tags"><li>Customer needs analysis</li><li>Vehicle-segment matching</li><li>Product portfolio knowledge</li><li>Customer experience</li></ul>
               </section>
               <section class="mb-workstream">
-                <p class="mb-workstream-index">iv / RETAIL DOCUMENTATION</p>
+                <p class="mb-workstream-index"><span class="workstream-roman">iv</span><span> / RETAIL DOCUMENTATION</span></p>
                 <h4>Finance &amp; booking support</h4>
                 <p>Assisted with billing entries, invoice preparation, customer booking-ledger documentation and transaction entries to support booking and vehicle-delivery paperwork.</p>
                 <ul class="tags"><li>Billing support</li><li>Invoice documentation</li><li>Booking ledgers</li><li>Transaction-entry support</li></ul>
@@ -2983,12 +3031,12 @@ ul, ol { padding: 0; list-style: none; }
             <h3 id="case1-title">Forecasting employee turnover in the Bangalore IT industry</h3>
             <p class="case-recognition"><span>Academic Excellence Award for Outstanding Research</span> CHRIST (Deemed to be University)</p>
           </div>
-          <dl class="case-grid">
-            <div><dt>Business question</dt><dd>What drives employee turnover in Bangalore's IT industry, and what does that suggest for retention?</dd></div>
-            <div><dt>Approach</dt><dd>Analysis of workforce survey data using SPSS and Excel (operational reporting).</dd></div>
-            <div><dt>Evidence</dt><dd><ul class="tags"><li>Workforce survey data</li><li>SPSS</li><li>Excel (operational reporting)</li></ul></dd></div>
-            <div><dt>Insight</dt><dd>Attrition-driver analysis leading to retention insights.</dd></div>
-            <div class="wide"><dt>Business relevance</dt><dd>Attrition is a workforce-continuity and planning question for any people-intensive business. This was academic research; it was not commercially implemented.</dd></div>
+          <dl class="case-grid thesis-evidence-grid">
+            <div><dt><svg class="thesis-field-icon" viewBox="0 0 20 20" fill="none" aria-hidden="true"><circle cx="8.6" cy="8.6" r="5.4" stroke="currentColor" stroke-width="1.35"/><path d="m12.7 12.7 4.1 4.1M8.6 6.4v4.4M6.4 8.6h4.4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/><circle cx="8.6" cy="8.6" r="1.2" fill="#76263D"/></svg><span>Business question</span></dt><dd>What drives employee turnover in Bangalore's IT industry, and what does that suggest for retention?</dd></div>
+            <div><dt><svg class="thesis-field-icon" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M3.4 3.6h7.8l3.3 3.3v3.3M11.2 3.7v3.5h3.2M4 16.5h4.8M4 13.4h3.2" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/><path d="m9 14.6 2 2 4.5-5" stroke="#76263D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Approach</span></dt><dd>Analysis of workforce survey data using SPSS and Excel (operational reporting).</dd></div>
+            <div><dt><svg class="thesis-field-icon" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M5 2.8h7l3.1 3.1v11H5zM12 2.8v3.1h3.1M7.5 9h5M7.5 11.8h5M7.5 14.6h3" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/><circle cx="4" cy="9" r=".8" fill="#76263D"/><circle cx="4" cy="12" r=".8" fill="#76263D"/><circle cx="4" cy="15" r=".8" fill="#76263D"/></svg><span>Evidence</span></dt><dd><ul class="tags"><li>Workforce survey data</li><li>SPSS</li><li>Excel (operational reporting)</li></ul></dd></div>
+            <div><dt><svg class="thesis-field-icon" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M3 15.8 7 11.7l3 2.1 6.7-7" stroke="currentColor" stroke-width="1.35" stroke-linecap="round" stroke-linejoin="round"/><circle cx="7" cy="11.7" r="1.05" fill="#76263D"/><circle cx="10" cy="13.8" r="1.05" fill="#76263D"/><path d="M13.4 3.5v3.3M11.75 5.15h3.3" stroke="#76263D" stroke-width="1.1" stroke-linecap="round"/></svg><span>Insight</span></dt><dd>Attrition-driver analysis leading to retention insights.</dd></div>
+            <div class="wide"><dt><svg class="thesis-field-icon" viewBox="0 0 20 20" fill="none" aria-hidden="true"><circle cx="6.2" cy="6.2" r="2.15" stroke="currentColor" stroke-width="1.25"/><circle cx="13.8" cy="7" r="1.8" stroke="#76263D" stroke-width="1.25"/><path d="M2.7 15.9c.3-2.4 1.6-3.8 3.5-3.8s3.2 1.4 3.5 3.8M11 12.6c.7-.7 1.5-1 2.5-1 1.9 0 3.1 1.3 3.4 3.5M10 4h1.3" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg><span>Business relevance</span></dt><dd>Attrition is a workforce-continuity and planning question for any people-intensive business. This was academic research; it was not commercially implemented.</dd></div>
           </dl>
         </article>
 
