@@ -317,7 +317,7 @@
   var beats = [
     { stage: "Welcome", text: "Hello, and welcome.", pitch: 1.04, rate: 0.92, gap: 720 },
     { stage: "Welcome", text: "Before you explore, let me show you how to read this portfolio.", pitch: 1.03, rate: 0.91, gap: 320 },
-    { stage: "Welcome", text: "I’m V. Sai Manoj.", pitch: 1.02, rate: 0.90, gap: 520 },
+    { stage: "Welcome", text: "This is V. Sai Manoj’s portfolio.", pitch: 1.02, rate: 0.90, gap: 520 },
     { stage: "The central idea", text: "My work asks one question: where can a business create an advantage customers value and operations deliver?", pitch: 1.02, rate: 0.92, gap: 760 },
 
     { stage: "Capability Snapshot", text: "Start with Capability Snapshot.", pitch: 1.07, rate: 0.93, gap: 300 },
