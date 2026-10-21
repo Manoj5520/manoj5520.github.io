@@ -1975,3 +1975,21 @@ ul, ol { padding: 0; list-style: none; }
 @media (prefers-reduced-motion: reduce) {
   .portfolio-guide-play, .portfolio-guide-stop, .portfolio-guide-progress span { transition: none; }
 }
+
+
+/* Recorded portfolio introduction: one continuous MP3 with a speed control. */
+.portfolio-guide-audio-controls { align-items: center; gap: 10px; }
+.portfolio-guide-audio {
+  display: block;
+  flex: 1 1 300px;
+  width: min(100%, 460px);
+  min-width: 0;
+  height: 42px;
+}
+.portfolio-guide-speed {
+  flex: 0 0 auto;
+  min-width: 104px;
+}
+@media (max-width: 480px) {
+  .portfolio-guide-audio { flex-basis: 100%; width: 100%; }
+}
