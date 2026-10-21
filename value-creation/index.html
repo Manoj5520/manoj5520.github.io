@@ -386,7 +386,78 @@
     .etm-table .tier-row-c .tier-role-chips span{border-color:#DDE1E5!important;background:#F3F4F6!important;color:#59626C!important}
     .etm-table .tier-row-a td,.etm-table .tier-row-b td,.etm-table .tier-row-c td{background:#FFFCF8!important}
 
-  </style>
+  
+    /* Clear tier separation + restrained dimensional letter tiles */
+    .etm-table tbody tr.tier-row-s td{
+      background:linear-gradient(105deg,#F8EEE9 0%,#FFFCF8 28%,#FFFCF8 100%)!important;
+      border-top:2px solid #DCC7B8!important;
+      border-bottom:1px solid #E9DCD2!important;
+    }
+    .etm-table tbody tr.tier-row-a td{
+      background:linear-gradient(105deg,#EAF0F5 0%,#F9FBFD 30%,#FFFFFF 100%)!important;
+      border-top:2px solid #D2DEE8!important;
+      border-bottom:1px solid #E0E8EF!important;
+    }
+    .etm-table tbody tr.tier-row-b td{
+      background:linear-gradient(105deg,#F5EDDF 0%,#FCF9F2 30%,#FFFFFF 100%)!important;
+      border-top:2px solid #E6D8C1!important;
+      border-bottom:1px solid #EBE0D0!important;
+    }
+    .etm-table tbody tr.tier-row-c td{
+      background:linear-gradient(105deg,#EEF0F2 0%,#F9FAFB 30%,#FFFFFF 100%)!important;
+      border-top:2px solid #D9DEE3!important;
+      border-bottom:1px solid #E5E8EA!important;
+    }
+    .etm-table tbody tr.tier-row-s td:nth-child(2){box-shadow:inset 3px 0 0 #76263D!important}
+    .etm-table tbody tr.tier-row-a td:nth-child(2){box-shadow:inset 3px 0 0 #284B68!important}
+    .etm-table tbody tr.tier-row-b td:nth-child(2){box-shadow:inset 3px 0 0 #9B7447!important}
+    .etm-table tbody tr.tier-row-c td:nth-child(2){box-shadow:inset 3px 0 0 #68717B!important}
+    .etm-table tbody tr.tier-row-s>th{background:linear-gradient(145deg,#5C1830 0%,#3B0A1B 70%,#280611 100%)!important;box-shadow:inset 3px 0 0 #C5A96F, inset 0 1px 0 rgba(255,255,255,.16)!important}
+    .etm-table tbody tr.tier-row-a>th{background:linear-gradient(145deg,#F0F4F8 0%,#DFE7EF 100%)!important;box-shadow:inset 3px 0 0 #284B68, inset 0 1px 0 #FFFFFF!important}
+    .etm-table tbody tr.tier-row-b>th{background:linear-gradient(145deg,#FAF4E9 0%,#EBDDCA 100%)!important;box-shadow:inset 3px 0 0 #9B7447, inset 0 1px 0 #FFFFFF!important}
+    .etm-table tbody tr.tier-row-c>th{background:linear-gradient(145deg,#F5F6F7 0%,#E4E7EA 100%)!important;box-shadow:inset 3px 0 0 #68717B, inset 0 1px 0 #FFFFFF!important}
+    .etm-table .tier-badge{
+      position:relative!important;
+      display:grid!important;
+      place-items:center!important;
+      border-radius:4px!important;
+      transform:perspective(180px) rotateX(3deg)!important;
+      transform-style:preserve-3d!important;
+      transition:transform .22s ease,box-shadow .22s ease!important;
+      text-shadow:0 1px 1px rgba(0,0,0,.22);
+    }
+    .etm-table .tier-row-s .tier-badge{
+      background:linear-gradient(145deg,#7C2944 0%,#4B0C20 52%,#300714 100%)!important;
+      border:1px solid #D0B47A!important;color:#FFF4DF!important;
+      box-shadow:inset 1px 1px 0 rgba(255,255,255,.23),inset -2px -2px 0 rgba(0,0,0,.14),0 3px 0 #270510,0 5px 8px rgba(42,5,17,.2)!important;
+    }
+    .etm-table .tier-row-a .tier-badge{
+      background:linear-gradient(145deg,#54728C 0%,#284B68 55%,#1A334A 100%)!important;
+      border:1px solid #C3D1DD!important;color:#FFFFFF!important;
+      box-shadow:inset 1px 1px 0 rgba(255,255,255,.29),inset -2px -2px 0 rgba(0,0,0,.12),0 3px 0 #1B3449,0 5px 8px rgba(31,57,78,.18)!important;
+    }
+    .etm-table .tier-row-b .tier-badge{
+      background:linear-gradient(145deg,#C09A65 0%,#9B7447 56%,#77542F 100%)!important;
+      border:1px solid #E4D2B3!important;color:#FFFFFF!important;
+      box-shadow:inset 1px 1px 0 rgba(255,255,255,.3),inset -2px -2px 0 rgba(0,0,0,.12),0 3px 0 #6E4E2D,0 5px 8px rgba(88,62,34,.17)!important;
+    }
+    .etm-table .tier-row-c .tier-badge{
+      background:linear-gradient(145deg,#9099A3 0%,#68717B 56%,#4F5862 100%)!important;
+      border:1px solid #D7DDE2!important;color:#FFFFFF!important;
+      box-shadow:inset 1px 1px 0 rgba(255,255,255,.32),inset -2px -2px 0 rgba(0,0,0,.12),0 3px 0 #46505A,0 5px 8px rgba(47,54,61,.16)!important;
+    }
+    .etm-table tbody tr:hover .tier-badge{
+      transform:perspective(180px) rotateY(-8deg) rotateX(5deg) translateY(-2px)!important;
+    }
+    .etm-table .tier-row-s .tier-role-chips span{background:#F3E6DE!important;border-color:#DFC4B5!important;color:#4B0C20!important}
+    .etm-table .tier-row-a .tier-role-chips span{background:#E8EFF5!important;border-color:#CDDCE8!important;color:#284B68!important}
+    .etm-table .tier-row-b .tier-role-chips span{background:#F4EAD8!important;border-color:#E4D3B5!important;color:#795A34!important}
+    .etm-table .tier-row-c .tier-role-chips span{background:#EBEEF0!important;border-color:#D8DDE1!important;color:#59626C!important}
+    .etm-legend .tier-key{box-shadow:inset 1px 1px 0 rgba(255,255,255,.24),0 2px 0 rgba(30,20,25,.12)!important;transition:transform .2s ease,box-shadow .2s ease!important}
+    .etm-legend>span:hover .tier-key{transform:perspective(120px) rotateY(-10deg) translateY(-1px);box-shadow:inset 1px 1px 0 rgba(255,255,255,.28),0 3px 0 rgba(30,20,25,.15),0 5px 8px rgba(30,20,25,.1)!important}
+    @media(prefers-reduced-motion:reduce){.etm-table .tier-badge,.etm-legend .tier-key{transition:none!important}.etm-table tbody tr:hover .tier-badge,.etm-legend>span:hover .tier-key{transform:none!important}}
+
+</style>
 </head>
 <body>
   <div class="shell">
