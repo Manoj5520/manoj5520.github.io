@@ -251,6 +251,113 @@
       .tier-matrix-legend>span{font-size:8px}
     }
 
+  
+    /* Minimal executive presentation: remove competing colour blocks and compact for desktop */
+    body{background:#F7F5F1}
+    .thinking-edge{margin-bottom:18px;padding:22px 24px;border:1px solid #D6C9BE;border-top:2px solid #76263D;border-left:3px solid #76263D;border-radius:5px;background:#35101F;box-shadow:none}
+    .thinking-edge:after{width:130px;height:130px;top:-65px;right:-50px;border-color:rgba(194,161,102,.14);box-shadow:0 0 0 18px rgba(194,161,102,.018),0 0 0 36px rgba(194,161,102,.014)}
+    .thinking-edge-kicker{color:#D7BD8A;font-size:8px;letter-spacing:.17em}
+    .thinking-edge-signal{width:6px;height:6px;background:#C2A166;box-shadow:none}
+    .thinking-edge-heading h2{max-width:860px;font-size:clamp(27px,3.4vw,37px);line-height:1.12}
+    .thinking-edge-heading h2 span{color:#D7BD8A;text-shadow:none}
+    .thinking-edge-intro{max-width:780px;margin-top:10px;font-size:11px;line-height:1.6;color:#E8DDE0}
+    .thinking-edge-grid{gap:9px;margin-top:15px}
+    .thinking-edge-card,.thinking-edge-card-featured{padding:13px 14px 12px;border:1px solid rgba(255,255,255,.13);border-top:1px solid #AD8A5C;border-radius:3px;background:rgba(255,255,255,.035);box-shadow:none}
+    .thinking-edge-number{width:23px;height:23px;margin-bottom:8px;border-color:#B99557;color:#E2C99A;font-size:8px;box-shadow:none}
+    .thinking-edge-card h3{margin-bottom:5px;font-size:12px}
+    .thinking-edge-card p{font-size:9.5px;line-height:1.6;color:#E4DADF}
+    .thinking-edge-foot{margin-top:9px;padding-top:7px;border-top:1px solid rgba(255,255,255,.10);color:#D7BD8A;font-size:7px;letter-spacing:.1em}
+    .thinking-edge-close{gap:9px;margin-top:10px;padding:9px 11px;border:1px solid rgba(194,161,102,.3);border-radius:3px;background:rgba(194,161,102,.055)}
+    .thinking-edge-burst{flex-basis:22px;width:22px;height:22px;color:#D7BD8A;font-size:18px;text-shadow:none}
+    .thinking-edge-close p{font-size:9.5px;color:#F0E8E9}
+    .thinking-edge-close strong{color:#D7BD8A}
+    .executive-tier-matrix{margin-top:18px;padding:22px 22px 18px;border:1px solid #D8D0C8;border-top:2px solid #76263D;border-radius:5px;background:#FBFAF7;box-shadow:none}
+    .executive-tier-matrix .tier-matrix-head{gap:16px;padding-bottom:13px}
+    .executive-tier-matrix .tier-matrix-kicker{margin-bottom:5px;color:#76263D;font-size:8px;letter-spacing:.16em}
+    .executive-tier-matrix .tier-matrix-head h2{font-size:clamp(26px,3vw,34px);letter-spacing:-.025em}
+    .executive-tier-matrix .tier-matrix-lede{max-width:760px;margin-top:7px;font-size:10.5px;line-height:1.55;color:#62575A}
+    .executive-tier-matrix .tier-matrix-stamp{padding:6px 8px;border-color:#D5C8B7;background:#F4F0E9}
+    .executive-tier-matrix .tier-matrix-stamp span{font-size:17px}
+    .executive-tier-matrix .tier-matrix-stamp small{font-size:6px}
+    .etm-positioning{grid-template-columns:140px minmax(0,1fr);gap:12px;margin:12px 0 4px;padding:10px 13px;border:1px solid #E1D6CB;border-left:3px solid #76263D;border-radius:2px;background:#F2ECE4}
+    .etm-positioning-label{color:#76263D;font-size:7px;letter-spacing:.12em}
+    .etm-positioning p{color:#35232B;font-size:15px;line-height:1.3}
+    .etm-legend{gap:7px 13px;padding:9px 0;color:#63565A;font-size:8px}
+    .etm-legend .tier-key{width:18px;height:18px;border-radius:2px;font-size:9px}
+    .etm-legend .tier-key-s{color:#D8FF42;background:#35101F;border-color:#35101F;box-shadow:none}
+    .etm-legend .tier-key-a{background:#76263D}
+    .etm-legend .tier-key-b{background:#9A7955}
+    .etm-legend .tier-key-c{background:#877A7B}
+    .etm-table-wrap{border-color:#DAD1C8;border-radius:3px;box-shadow:none}
+    .etm-table{table-layout:fixed}
+    .etm-table thead{background:#4B0C20}
+    .etm-table thead th{padding:8px 9px;color:#F8F4EE;font-size:7px;letter-spacing:.09em}
+    .etm-table thead th:nth-child(1){width:5%}
+    .etm-table thead th:nth-child(2){width:23%}
+    .etm-table thead th:nth-child(3){width:25%}
+    .etm-table thead th:nth-child(4){width:25%}
+    .etm-table thead th:nth-child(5){width:22%}
+    .etm-table tbody th,.etm-table tbody td{padding:9px 9px;border-color:#E8E0D8}
+    .etm-table tbody th{background:#F0EBE4}
+    .etm-table .tier-row-s>th{background:#3E1122;box-shadow:none}
+    .etm-table .tier-row-s .tier-badge{width:29px;height:29px;margin-bottom:5px;border:1px solid #B99557;border-radius:3px;background:#3E1122;color:#E6D4A8;box-shadow:none;font-size:20px}
+    .etm-table .tier-row-s .tier-rank-label{color:#F2E9DE}
+    .etm-table .tier-row-a .tier-badge,.etm-table .tier-row-b .tier-badge,.etm-table .tier-row-c .tier-badge{width:29px;height:29px;margin-bottom:5px;border-radius:3px;font-size:20px}
+    .etm-table .tier-rank-label{font-size:6px;letter-spacing:.04em}
+    .etm-table td strong{margin-bottom:4px;color:#35202A;font-size:9px;line-height:1.35}
+    .etm-table td p{font-size:8px;line-height:1.48;color:#5D5054}
+    .etm-table td p+p{margin-top:4px}
+    .etm-role-primary{margin-bottom:5px;padding-left:6px;border-left:2px solid #B99557;font-size:8px;line-height:1.4}
+    .etm-table .tier-role-chips{gap:3px;margin-top:5px}
+    .etm-table .tier-role-chips span{padding:2px 4px;border-color:#E3D7CB;background:#F4F0E9;color:#5B2738;font-size:6.5px;line-height:1.35}
+    .etm-role-strip{display:flex;align-items:center;gap:5px 8px;flex-wrap:wrap;margin-top:10px;padding:8px 10px;border:1px solid #E0D6CC;background:#F5F1EA;color:#65545A;font-size:8px;line-height:1.45}
+    .etm-role-strip-label{margin-right:3px;color:#76263D;font-size:7px;font-weight:850;letter-spacing:.1em}
+    .etm-role-strip span:not(.etm-role-strip-label){font-weight:600;color:#4A2732}
+    .etm-role-strip i{color:#B99557;font-style:normal}
+    .executive-tier-matrix .tier-global-band{gap:10px;margin-top:10px;padding:10px 12px;border:1px solid #E3D6C8;border-left:3px solid #B99557;border-radius:2px;background:#F4EEE6;box-shadow:none}
+    .executive-tier-matrix .tier-global-mark{flex-basis:25px;width:25px;height:25px;border:1px solid #B99557;border-radius:50%;color:#76263D;font-size:15px}
+    .executive-tier-matrix .tier-global-kicker{margin-bottom:3px;color:#76263D;font-size:6.5px;letter-spacing:.12em}
+    .executive-tier-matrix .tier-global-band h3{margin-bottom:2px;color:#3C1424;font-size:16px}
+    .executive-tier-matrix .tier-global-band p:last-child{color:#64565A;font-size:8px;line-height:1.45}
+    .executive-tier-matrix .tier-matrix-note{margin-top:6px;color:#796D70;font-size:7px;line-height:1.4}
+    .top-links .top-link[href="#capability-matrix"]{border-color:#C2A166;color:#4B0C20;background:#F5F0E8}
+    .top-links .top-link[href="#capability-matrix"]:hover{background:#4B0C20;color:#fff;border-color:#4B0C20}
+    @media(min-width:1000px){.executive-tier-matrix{scroll-margin-top:18px}.thinking-edge{scroll-margin-top:18px}}
+    @media(max-width:760px){
+      .thinking-edge{padding:19px 16px}
+      .thinking-edge-heading h2{font-size:clamp(25px,6vw,32px)}
+      .thinking-edge-grid{gap:7px}
+      .thinking-edge-card,.thinking-edge-card-featured{padding:12px}
+      .thinking-edge-card h3{font-size:12px}
+      .thinking-edge-card p{font-size:10.5px}
+      .executive-tier-matrix{padding:17px 12px 14px}
+      .etm-positioning{grid-template-columns:1fr;gap:4px}
+      .etm-positioning p{font-size:14px}
+      .etm-legend{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:7px;font-size:8px}
+      .etm-table thead{display:none}
+      .etm-table,.etm-table tbody,.etm-table tr,.etm-table th,.etm-table td{display:block;width:100%}
+      .etm-table tbody tr{display:grid;grid-template-columns:42px minmax(0,1fr);border-top:1px solid #DAD1C8}
+      .etm-table tbody tr:first-child{border-top:0}
+      .etm-table tbody th{grid-column:1;grid-row:1/span 4;padding:10px 3px;border-right:1px solid #E3D2C2;text-align:center}
+      .etm-table tbody td{grid-column:2;padding:9px 10px;border-top:1px solid #F0E5DB;border-right:0}
+      .etm-table tbody td:nth-child(2){border-top:0}
+      .etm-table td strong{font-size:10px}
+      .etm-table td p{font-size:9.5px;line-height:1.5}
+      .etm-table td:before{display:block;margin-bottom:4px;color:#936B44;font-size:6px;font-weight:850;letter-spacing:.12em;text-transform:uppercase}
+      .etm-table td:nth-child(2):before{content:"CAPABILITY"}
+      .etm-table td:nth-child(3):before{content:"EVIDENCE"}
+      .etm-table td:nth-child(4):before{content:"BUSINESS VALUE"}
+      .etm-table td:nth-child(5):before{content:"ROLE FIT"}
+      .etm-role-strip{gap:5px 6px}
+      .executive-tier-matrix .tier-global-band{align-items:flex-start;padding:10px}
+    }
+    @media(max-width:480px){
+      .executive-tier-matrix .tier-matrix-head{flex-direction:row;align-items:flex-start}
+      .executive-tier-matrix .tier-matrix-stamp{display:none}
+      .etm-role-strip{font-size:7px}
+      .etm-role-strip-label{width:100%;font-size:6.5px}
+    }
+
   </style>
 </head>
 <body>
@@ -258,6 +365,7 @@
     <header class="topbar">
       <a class="wordmark" href="/" aria-label="Return to V. Sai Manoj portfolio">V. Sai Manoj<small>Business Operations · Strategy &amp; Growth</small></a>
       <nav class="top-links" aria-label="Page navigation">
+        <a class="top-link" href="#capability-matrix">Capability matrix ↓</a>
         <a class="top-link" href="/dossier/">Portfolio hub ↗</a>
         <a class="top-link primary" href="/assets/docs/Vannam-Sai-Manoj-Resume.pdf">View resume ↗</a>
       </nav>
@@ -444,145 +552,73 @@
         <div class="thinking-edge-close"><span class="thinking-edge-burst" aria-hidden="true">✳</span><p><strong>The working principle:</strong> keep asking better questions, use AI to extend the work, and turn the clearest evidence into a practical next step.</p></div>
       </section>
 
-      <section class="tier-matrix executive-tier-matrix" aria-labelledby="tier-matrix-title">
+      <section class="tier-matrix executive-tier-matrix" id="capability-matrix" aria-labelledby="tier-matrix-title">
         <header class="tier-matrix-head">
           <div>
             <p class="tier-matrix-kicker">231999 · PROFESSIONAL VALUE ARCHITECTURE</p>
-            <h2 id="tier-matrix-title">Executive Capability Matrix</h2>
-            <p class="tier-matrix-lede">The combination I bring: persistent problem-solving, AI-enabled research, market-gap judgement and operational follow-through—mapped to the workstreams where these strengths can contribute in established and globally scaling businesses.</p>
+            <h2 id="tier-matrix-title">Capability &amp; Role Alignment</h2>
+            <p class="tier-matrix-lede">How my strongest thinking patterns, applied business experience and supporting tools translate into value for MNC and international business teams.</p>
           </div>
           <div class="tier-matrix-stamp" aria-label="Professional profile mark"><span>VSM</span><small>MMXXVI<br>VALUE CREATION</small></div>
         </header>
 
         <div class="etm-positioning">
-          <span class="etm-positioning-label">CORE VALUE PROPOSITION</span>
-          <p>A research-led business operator who keeps investigating the unresolved question, uses AI to accelerate synthesis, identifies customer and competitive gaps, and connects recommendations to delivery realities.</p>
+          <span class="etm-positioning-label">DISTINCTIVE COMBINATION</span>
+          <p>Persistent problem-solving + AI-enabled research + market-gap judgement + operational follow-through.</p>
         </div>
 
         <div class="tier-matrix-legend etm-legend" aria-label="Capability tiers">
-          <span><i class="tier-key tier-key-s">S</i> Signature value drivers</span>
-          <span><i class="tier-key tier-key-a">A</i> Strong applied capabilities</span>
-          <span><i class="tier-key tier-key-b">B</i> Execution &amp; business enablement</span>
-          <span><i class="tier-key tier-key-c">C</i> Supporting professional toolkit</span>
+          <span><i class="tier-key tier-key-s">S</i> Signature differentiators</span>
+          <span><i class="tier-key tier-key-a">A</i> Applied strengths</span>
+          <span><i class="tier-key tier-key-b">B</i> Execution capabilities</span>
+          <span><i class="tier-key tier-key-c">C</i> Supporting toolkit</span>
         </div>
 
         <div class="tier-table-wrap etm-table-wrap">
           <table class="tier-table etm-table">
-            <thead>
-              <tr>
-                <th scope="col">Tier</th>
-                <th scope="col">Capability &amp; thinking pattern</th>
-                <th scope="col">Evidence from my work</th>
-                <th scope="col">Value to MNC / global business teams</th>
-                <th scope="col">Role-family alignment</th>
-              </tr>
-            </thead>
+            <thead><tr><th scope="col">Tier</th><th scope="col">Capability</th><th scope="col">Evidence in my work</th><th scope="col">Business value</th><th scope="col">Relevant roles</th></tr></thead>
             <tbody>
               <tr class="tier-row tier-row-s">
-                <th scope="row"><span class="tier-badge">S</span><span class="tier-rank-label">Signature<br>value drivers</span></th>
-                <td>
-                  <div class="etm-capability"><strong>Persistent problem-framing</strong><p>Stay with an unresolved question; reframe it, test assumptions, compare explanations and keep iterating until the evidence or decision path improves.</p></div>
-                  <div class="etm-capability"><strong>AI-assisted research &amp; synthesis</strong><p>Use AI to structure inquiry, compare options, synthesise information and refine work products—then review the logic and source evidence.</p></div>
-                  <div class="etm-capability"><strong>Market-gap &amp; opportunity judgement</strong><p>Look beyond visible symptoms to the residual gap between customer need, current alternatives, business positioning and practical delivery.</p></div>
-                </td>
-                <td>
-                  <p><b>NexaHomes:</b> competitor benchmarking and customer context informed suggestions for differentiated service-line opportunities aligned with the business's positioning.</p>
-                  <p><b>Independent research / ETHIC:</b> a friction-first approach to investigating recurring problems, existing workarounds and potential product gaps.</p>
-                  <p><b>Working method:</b> practical AI-assisted research and iterative output refinement across research, planning and project work.</p>
-                </td>
-                <td>
-                  <p>Structure ambiguous business questions; turn scattered signals into decision-ready options; surface whitespace worth evaluating; accelerate research without outsourcing judgement to a tool.</p>
-                  <div class="tier-role-chips"><span>Problem framing</span><span>Opportunity assessment</span><span>Decision support</span></div>
-                </td>
-                <td>
-                  <div class="etm-role-primary">Business Operations / Strategy &amp; Operations</div>
-                  <div class="tier-role-chips"><span>Market Intelligence</span><span>Commercial Insights</span><span>Growth Operations</span></div>
-                </td>
+                <th scope="row"><span class="tier-badge">S</span><span class="tier-rank-label">Signature</span></th>
+                <td><strong>Persistent problem-solving, AI-assisted research &amp; opportunity discovery</strong><p>Reframe unresolved questions, compare alternatives, synthesise information with AI, and refine conclusions against evidence.</p></td>
+                <td><p><b>NexaHomes:</b> competitor benchmarking and customer context informed differentiated service-line suggestions. <b>ETHIC / independent research:</b> investigate recurring friction, workarounds and potential gaps.</p></td>
+                <td><p>Bring structure to ambiguous problems, speed up research, identify opportunities worth testing, and turn insights into decision-ready options.</p></td>
+                <td><strong class="etm-role-primary">Business Operations / Strategy &amp; Operations</strong><div class="tier-role-chips"><span>Growth Operations</span><span>Market Intelligence</span><span>Commercial Insights</span></div></td>
               </tr>
               <tr class="tier-row tier-row-a">
-                <th scope="row"><span class="tier-badge">A</span><span class="tier-rank-label">Applied<br>strengths</span></th>
-                <td>
-                  <div class="etm-capability"><strong>Customer-to-business understanding</strong><p>Connect customer requirements and behaviour with the service proposition and how an organisation delivers it.</p></div>
-                  <div class="etm-capability"><strong>Competitive &amp; commercial benchmarking</strong><p>Compare competitor offerings, positioning and service choices to identify differentiation opportunities.</p></div>
-                  <div class="etm-capability"><strong>Business-model awareness</strong><p>Consider how operating choices affect access, transparency, flexibility and customer experience.</p></div>
-                </td>
-                <td>
-                  <p><b>NexaHomes:</b> worked across a 100+ residential-client portfolio and benchmarked Hyderabad market participants, including My Home Group and ASBL.</p>
-                  <p><b>Mercedes-Benz Silver Star:</b> studied the Retail of the Future model, including inventory access, pricing transparency, dealer flexibility and the customer journey.</p>
-                </td>
-                <td>
-                  <p>Help teams interpret market context, compare service propositions, assess customer fit and shape better-informed commercial choices.</p>
-                  <div class="tier-role-chips"><span>Customer insight</span><span>Service positioning</span><span>Competitor comparison</span></div>
-                </td>
-                <td>
-                  <div class="etm-role-primary">Market &amp; Competitive Intelligence</div>
-                  <div class="tier-role-chips"><span>Commercial Operations</span><span>Business Research</span><span>Growth Support</span></div>
-                </td>
+                <th scope="row"><span class="tier-badge">A</span><span class="tier-rank-label">Applied</span></th>
+                <td><strong>Customer, market &amp; commercial judgement</strong><p>Connect customer requirements, competitor offers, business-model choices and service-positioning fit.</p></td>
+                <td><p><b>NexaHomes:</b> 100+ residential-client portfolio and Hyderabad competitor benchmarking. <b>Mercedes-Benz Silver Star:</b> Retail of the Future study on inventory access, pricing transparency, dealer flexibility and customer experience.</p></td>
+                <td><p>Help teams compare propositions, understand market context and assess practical differentiation opportunities.</p></td>
+                <td><strong class="etm-role-primary">Market &amp; Competitive Intelligence</strong><div class="tier-role-chips"><span>Commercial Operations</span><span>Business Research</span><span>Growth Support</span></div></td>
               </tr>
               <tr class="tier-row tier-row-b">
-                <th scope="row"><span class="tier-badge">B</span><span class="tier-rank-label">Execution &amp;<br>enablement</span></th>
-                <td>
-                  <div class="etm-capability"><strong>Cross-functional operating rhythm</strong><p>Coordinate client requirements, sales, delivery and vendor handoffs through the service lifecycle.</p></div>
-                  <div class="etm-capability"><strong>Process-improvement orientation</strong><p>Notice handoff friction, clarify ownership and next steps, and propose practical workflow improvements.</p></div>
-                  <div class="etm-capability"><strong>Operational visibility</strong><p>Organise business information through Excel reporting, MIS views and Power BI dashboards.</p></div>
-                </td>
-                <td>
-                  <p><b>NexaHomes:</b> customer coordination, vendor communication, post-sale follow-through, sales-to-delivery alignment and operational reporting.</p>
-                  <p><b>Tools:</b> practical Excel reporting and intermediate Power BI dashboard use, as self-assessed.</p>
-                </td>
-                <td>
-                  <p>Support consistent service delivery, clearer handoffs, action tracking, reliable reporting and measurable process-improvement work with the team.</p>
-                  <div class="tier-role-chips"><span>Workflow clarity</span><span>Action tracking</span><span>Operational reporting</span></div>
-                </td>
-                <td>
-                  <div class="etm-role-primary">Business Operations / Process Improvement</div>
-                  <div class="tier-role-chips"><span>Operational Excellence</span><span>Program Operations</span><span>Client Operations</span></div>
-                </td>
+                <th scope="row"><span class="tier-badge">B</span><span class="tier-rank-label">Execution</span></th>
+                <td><strong>Operations coordination, process improvement &amp; visibility</strong><p>Coordinate handoffs, keep service delivery moving, clarify next actions and organise operational reporting.</p></td>
+                <td><p><b>NexaHomes:</b> customer and vendor coordination, post-sale follow-through, sales-to-delivery alignment, MIS and operational reporting. Excel reporting and Power BI dashboards.</p></td>
+                <td><p>Support consistent delivery, better handoffs, action tracking, useful reporting and practical workflow improvements.</p></td>
+                <td><strong class="etm-role-primary">Business Operations / Process Improvement</strong><div class="tier-role-chips"><span>Operational Excellence</span><span>Program Operations</span><span>Client Operations</span></div></td>
               </tr>
               <tr class="tier-row tier-row-c">
-                <th scope="row"><span class="tier-badge">C</span><span class="tier-rank-label">Supporting<br>toolkit</span></th>
-                <td>
-                  <div class="etm-capability"><strong>Structured management research</strong><p>MBA research adds discipline in defining questions, organising evidence and presenting conclusions.</p></div>
-                  <div class="etm-capability"><strong>Complementary analytical tools</strong><p>SPSS for survey analysis; foundational SQL; beginner-to-intermediate Tableau; Microsoft Office and structured documentation.</p></div>
-                </td>
-                <td>
-                  <p><b>Academic foundation:</b> MBA thesis on employee turnover in the Bengaluru IT industry, examining engagement, growth and culture.</p>
-                  <p><b>Toolset:</b> applied survey analysis and developing technical fluency that complements business research and operational work.</p>
-                </td>
-                <td>
-                  <p>Support structured research, qualitative and survey-based insight, better-presented business information and a broader toolkit for day-to-day decision support.</p>
-                  <div class="tier-role-chips"><span>Research support</span><span>Survey insight</span><span>Reporting support</span></div>
-                </td>
-                <td>
-                  <div class="etm-role-primary">Business Research / Decision Support</div>
-                  <div class="tier-role-chips"><span>Operations Analytics support</span><span>Insight documentation</span></div>
-                </td>
+                <th scope="row"><span class="tier-badge">C</span><span class="tier-rank-label">Toolkit</span></th>
+                <td><strong>Structured research &amp; complementary digital tools</strong><p>MBA research, survey analysis, documentation and expanding technical fluency.</p></td>
+                <td><p><b>MBA thesis:</b> employee turnover in Bengaluru IT, focused on engagement, growth and culture. Supporting tools: SPSS, foundational SQL, Tableau, Microsoft Office and AI-enabled productivity tools.</p></td>
+                <td><p>Strengthen research quality, reporting support and the clarity of information used in business decisions.</p></td>
+                <td><strong class="etm-role-primary">Business Research / Decision Support</strong><div class="tier-role-chips"><span>Operations Reporting</span><span>Research Support</span></div></td>
               </tr>
             </tbody>
           </table>
         </div>
 
-        <div class="etm-role-section">
-          <div class="etm-role-section-head">
-            <p class="tier-matrix-kicker">MNC ROLE ALIGNMENT · PRIORITISED</p>
-            <h3>Where your profile is most commercially relevant</h3>
-            <p>Search the function and the level together. The first roles below make best use of your combined research, commercial judgement and operations evidence.</p>
-          </div>
-          <div class="etm-role-grid">
-            <article class="etm-role-card etm-role-card-top"><span class="etm-priority">01 · FIRST PRIORITY</span><h4>Business Operations / Strategy &amp; Operations</h4><p>Best overall intersection of problem framing, stakeholder coordination, operating-model awareness and follow-through.</p><div class="etm-search-titles"><b>Search titles</b><span>Business Operations Associate · Strategy &amp; Operations Associate · Business Operations Specialist · Business Operations Program Associate</span></div></article>
-            <article class="etm-role-card etm-role-card-top"><span class="etm-priority">02 · FIRST PRIORITY</span><h4>Commercial / Growth Operations</h4><p>Use customer and competitive context to support service priorities, growth initiatives and execution—not digital-campaign ownership.</p><div class="etm-search-titles"><b>Search titles</b><span>Commercial Operations Associate · Growth Operations Associate · Business Growth Operations</span></div></article>
-            <article class="etm-role-card"><span class="etm-priority">03 · STRONG SPECIALISATION</span><h4>Market &amp; Competitive Intelligence</h4><p>A natural lane for your benchmarking, synthesis and market-gap thinking where roles emphasise business research and insight communication.</p><div class="etm-search-titles"><b>Search titles</b><span>Competitive Intelligence Associate · Market Intelligence Associate · Commercial Insights Associate</span></div></article>
-            <article class="etm-role-card"><span class="etm-priority">04 · STRONG ADJACENCY</span><h4>Process Improvement / Operational Excellence</h4><p>Target associate-level roles focused on workflow analysis, process documentation, handoffs, reporting and continuous improvement support.</p><div class="etm-search-titles"><b>Search titles</b><span>Process Improvement Associate · Process Excellence Associate · Operations Improvement Specialist</span></div></article>
-            <article class="etm-role-card"><span class="etm-priority">05 · ADJACENT FIT</span><h4>Program / Project / Product Operations</h4><p>Leverage coordination and structured thinking to keep operational workstreams, dependencies, action owners and delivery steps aligned.</p><div class="etm-search-titles"><b>Search titles</b><span>Program Operations Associate · Project Operations Coordinator · Product Operations Associate (business-operations focus)</span></div></article>
-            <article class="etm-role-card"><span class="etm-priority">06 · ADJACENT FIT</span><h4>Customer / Client Operations</h4><p>Bring customer requirements, service continuity and cross-functional handoffs together in customer-facing operating environments.</p><div class="etm-search-titles"><b>Search titles</b><span>Client Operations Specialist · Customer Operations Associate · Customer Experience Operations</span></div></article>
-          </div>
+        <div class="etm-role-strip">
+          <span class="etm-role-strip-label">PRIORITY MNC SEARCH TITLES</span>
+          <span>Business Operations Associate</span><i>·</i><span>Strategy &amp; Operations Associate</span><i>·</i><span>Growth Operations Associate</span><i>·</i><span>Competitive Intelligence Associate</span><i>·</i><span>Process Improvement Associate</span><i>·</i><span>Program Operations Associate</span>
         </div>
-
         <div class="tier-global-band">
           <div class="tier-global-mark" aria-hidden="true">↗</div>
-          <div><p class="tier-global-kicker">TRANSFERABLE ACROSS MARKETS &amp; INDUSTRIES</p><h3>Investigate the problem. Interpret the market. Connect insight to execution.</h3><p>Portable value for Indian MNCs, global capability centres and international businesses that need structured problem-solving, competitive context, coordinated operations and decision-ready information.</p></div>
+          <div><p class="tier-global-kicker">TRANSFERABLE ACROSS MARKETS &amp; INDUSTRIES</p><h3>Market context. Better questions. Practical execution.</h3><p>Portable value for organisations that need structured problem-solving, competitive context, cross-functional delivery and decision-ready information.</p></div>
         </div>
-        <p class="tier-matrix-note">The tiers are an executive presentation framework—not an external certification or standardised score. Experience examples describe work and analysis performed; suggested services and improvements are not presented as launched outcomes unless verified.</p>
+        <p class="tier-matrix-note">S/A/B/C are presentation tiers for grouping strengths and role relevance, not externally certified scores. Experience examples describe work and analysis; recommendations are not presented as implemented outcomes unless verified.</p>
       </section>
 
       <section class="closing" aria-label="Professional value summary">
