@@ -2117,6 +2117,120 @@ ul, ol { padding: 0; list-style: none; }
     }
   </style>
 
+
+  <style id="snapshot-globe-motion-refinement">
+    /* A restrained, dimensional market-intelligence object—not a generated infographic. */
+    .snapshot-stage {
+      min-height:500px !important;
+      background:
+        radial-gradient(ellipse at 50% 41%,rgba(255,255,255,.99) 0%,rgba(231,234,237,.88) 39%,rgba(210,216,222,.45) 72%,rgba(238,241,244,0) 100%) !important;
+    }
+    .snapshot-stage::before {
+      left:10% !important;right:7% !important;bottom:10% !important;height:23% !important;
+      background:rgba(35,39,45,.16) !important;filter:blur(30px) !important;
+    }
+    .snapshot-stage-glow {
+      width:64% !important;left:18% !important;top:7% !important;
+      background:radial-gradient(circle,rgba(255,255,255,.98),rgba(176,184,192,.15) 48%,transparent 73%) !important;
+    }
+    .snapshot-globe {
+      left:27% !important;top:17% !important;width:46% !important;
+      transform:translateZ(52px) rotateX(-2deg) rotateY(-7deg) !important;
+      transform-style:preserve-3d !important;transform-origin:center center !important;
+      will-change:transform;transition:filter .6s ease;
+      background:radial-gradient(circle at 31% 23%,#FAF8F3 0%,#C6C6C2 9%,#787B7F 23%,#353A40 43%,#15191F 64%,#4D1A2B 82%,#151418 100%) !important;
+      box-shadow:inset -18px -18px 30px rgba(0,0,0,.62),inset 9px 8px 17px rgba(255,255,255,.85),0 25px 38px rgba(22,26,31,.25),0 0 0 6px rgba(255,255,255,.52),0 0 0 7px rgba(88,98,108,.25) !important;
+    }
+    .snapshot-globe::before {
+      border-color:rgba(223,215,201,.58) !important;
+      background:
+        repeating-linear-gradient(26deg,transparent 0 13px,rgba(222,216,205,.15) 14px 15px,transparent 16px 28px),
+        repeating-linear-gradient(112deg,transparent 0 18px,rgba(225,218,205,.17) 19px 20px,transparent 21px 35px) !important;
+    }
+    .snapshot-globe::after {
+      background:linear-gradient(118deg,rgba(255,255,255,.75),transparent 23%,transparent 58%,rgba(0,0,0,.54)) !important;
+    }
+    .snapshot-globe-meridian { border-color:rgba(224,214,196,.66) !important; }
+    .snapshot-globe-latitude { border-color:rgba(218,211,200,.58) !important; }
+    .snapshot-globe-core { background:rgba(255,253,246,.82) !important; }
+    .snapshot-orbit {
+      border-color:rgba(118,38,61,.43) !important;
+      box-shadow:0 0 0 7px rgba(51,58,65,.025),inset 0 0 0 6px rgba(255,255,255,.34) !important;
+      transform-origin:center center;
+    }
+    .snapshot-orbit-two { border-color:rgba(132,141,150,.64) !important; }
+    .snapshot-float-card {
+      width:28% !important;min-height:94px !important;padding:12px 12px 11px !important;
+      border:1px solid rgba(186,192,198,.88) !important;outline:1px solid rgba(118,38,61,.1) !important;
+      background:linear-gradient(145deg,rgba(255,255,255,.96),rgba(238,241,244,.91)) !important;
+      box-shadow:0 11px 24px rgba(25,30,35,.09),inset 0 1px 0 #fff !important;
+      backdrop-filter:blur(5px) !important;
+    }
+    .snapshot-float-card span { color:#76263D !important;font-size:8.5px !important;letter-spacing:.105em !important; }
+    .snapshot-float-card strong { margin-top:7px !important;font-size:clamp(16px,1.45vw,21px) !important;line-height:1.06 !important; }
+    .snapshot-float-card small { margin-top:7px !important;color:#636B74 !important;font-size:8.5px !important;line-height:1.4 !important; }
+    .snapshot-card-market { left:.5% !important;top:16% !important;transform:rotateY(-4deg) rotateX(1.5deg) translateZ(26px) !important; }
+    .snapshot-card-gap { right:1% !important;top:6% !important;transform:rotateY(4deg) rotateX(1.5deg) translateZ(30px) !important; }
+    .snapshot-card-opportunity { right:0 !important;bottom:14% !important;width:30% !important;transform:rotateY(3deg) rotateX(1deg) translateZ(34px) !important; }
+    .snapshot-stage-caption { left:4% !important;bottom:2.5% !important;color:#606973 !important;font-size:8px !important;letter-spacing:.12em !important; }
+
+    /* Motion is tied to visibility by IntersectionObserver in main.js. */
+    .snapshot-stage.motion-active .snapshot-globe { animation:snapshotGlobe3DDrift 10.5s cubic-bezier(.42,0,.28,1) infinite; }
+    .snapshot-stage.motion-active .snapshot-globe-meridian { animation:snapshotMeridianDrift 12.5s ease-in-out infinite; }
+    .snapshot-stage.motion-active .snapshot-globe-latitude { animation:snapshotLatitudeDrift 9.5s ease-in-out infinite; }
+    .snapshot-stage.motion-active .snapshot-orbit-one { animation:snapshotNearOrbitDrift 18s ease-in-out infinite; }
+    .snapshot-stage.motion-active .snapshot-orbit-two { animation:snapshotFarOrbitDrift 21s ease-in-out infinite; }
+
+    @keyframes snapshotGlobe3DDrift {
+      0%,100% { transform:translateZ(52px) rotateX(-2deg) rotateY(-7deg); }
+      50% { transform:translateZ(69px) rotateX(1.5deg) rotateY(7deg); }
+    }
+    @keyframes snapshotMeridianDrift {
+      0%,100% { transform:rotate(28deg) rotateY(-10deg); }
+      50% { transform:rotate(28deg) rotateY(10deg); }
+    }
+    @keyframes snapshotLatitudeDrift {
+      0%,100% { transform:rotate(-15deg) translateY(-1px) scaleX(.97); }
+      50% { transform:rotate(-15deg) translateY(2px) scaleX(.9); }
+    }
+    @keyframes snapshotNearOrbitDrift {
+      0%,100% { transform:rotate(-27deg) rotateX(63deg) rotateZ(-2deg); }
+      50% { transform:rotate(-27deg) rotateX(63deg) rotateZ(2deg); }
+    }
+    @keyframes snapshotFarOrbitDrift {
+      0%,100% { transform:rotate(31deg) rotateX(65deg) rotateZ(2deg); }
+      50% { transform:rotate(31deg) rotateX(65deg) rotateZ(-2deg); }
+    }
+    @media (max-width:960px) {
+      .snapshot-stage { min-height:480px !important; }
+      .snapshot-globe { left:27% !important;top:19% !important;width:46% !important; }
+      .snapshot-float-card { width:28% !important; }
+      .snapshot-card-market { top:15% !important; }
+      .snapshot-card-gap { top:5% !important; }
+      .snapshot-card-opportunity { bottom:13% !important;width:29% !important; }
+    }
+    @media (max-width:560px) {
+      .snapshot-stage { min-height:365px !important;margin:0 -10px !important; }
+      .snapshot-globe { left:27% !important;top:22% !important;width:45% !important; }
+      .snapshot-float-card { width:32% !important;min-height:75px !important;padding:8px 7px !important; }
+      .snapshot-float-card span { font-size:7px !important;letter-spacing:.07em !important; }
+      .snapshot-float-card strong { font-size:14px !important;margin-top:5px !important; }
+      .snapshot-float-card small { font-size:7px !important;line-height:1.3 !important;margin-top:5px !important; }
+      .snapshot-card-market { left:0 !important;top:13% !important; }
+      .snapshot-card-gap { right:0 !important;top:4% !important; }
+      .snapshot-card-opportunity { right:0 !important;bottom:14% !important;width:35% !important; }
+      .snapshot-plinth-front { left:3% !important;width:94% !important;font-size:6px !important;gap:5px !important; }
+      .snapshot-stage-caption { left:3% !important;bottom:2% !important;font-size:6.5px !important;letter-spacing:.07em !important; }
+    }
+    @media (prefers-reduced-motion:reduce) {
+      .snapshot-stage.motion-active .snapshot-globe,
+      .snapshot-stage.motion-active .snapshot-globe-meridian,
+      .snapshot-stage.motion-active .snapshot-globe-latitude,
+      .snapshot-stage.motion-active .snapshot-orbit-one,
+      .snapshot-stage.motion-active .snapshot-orbit-two { animation:none !important; }
+    }
+  </style>
+
 </head>
 <body>
   <a class="skip" href="index.html#main">Skip to content</a>
@@ -2374,17 +2488,17 @@ ul, ol { padding: 0; list-style: none; }
             </div>
             <a class="snapshot-cta" href="#research">Explore the evidence <span aria-hidden="true">↗</span></a>
           </header>
-          <div class="snapshot-stage reveal" role="img" aria-label="Three-dimensional business strategy sculpture illustrating market signals, opportunity assessment, business-model fit and execution">
+          <div class="snapshot-stage reveal" role="img" aria-label="Three-dimensional market intelligence globe illustrating competitor benchmarking, underserved customer needs, and differentiated service-line opportunities aligned with business positioning and operational delivery">
             <div class="snapshot-stage-glow"></div>
             <div class="snapshot-orbit snapshot-orbit-one"></div>
             <div class="snapshot-orbit snapshot-orbit-two"></div>
             <div class="snapshot-plinth snapshot-plinth-back"></div>
             <div class="snapshot-globe"><span class="snapshot-globe-meridian"></span><span class="snapshot-globe-latitude"></span><span class="snapshot-globe-core"></span></div>
             <div class="snapshot-plinth snapshot-plinth-front"><span>INSIGHT</span><i></i><span>OPPORTUNITY</span><i></i><span>EXECUTION</span></div>
-            <div class="snapshot-float-card snapshot-card-market"><span>01 / SIGNAL</span><strong>Market<br>position</strong><small>Trends · competition · demand</small></div>
-            <div class="snapshot-float-card snapshot-card-model"><span>02 / FIT</span><strong>Business<br>model</strong><small>Need · viability · differentiation</small></div>
-            <div class="snapshot-float-card snapshot-card-delivery"><span>03 / DELIVERY</span><strong>Operational<br>reality</strong><small>Process · ownership · execution</small></div>
-            <div class="snapshot-stage-caption">From market evidence to executable business choices</div>
+            <div class="snapshot-float-card snapshot-card-market"><span>i / COMPETITORS</span><strong>Competitive<br>landscape</strong><small>Positioning · benchmarking</small></div>
+            <div class="snapshot-float-card snapshot-card-gap"><span>ii / MARKET GAPS</span><strong>Underserved<br>needs</strong><small>Customer demand · service gaps</small></div>
+            <div class="snapshot-float-card snapshot-card-opportunity"><span>iii / SERVICE-LINE FIT</span><strong>New service<br>opportunities</strong><small>Positioning · delivery fit</small></div>
+            <div class="snapshot-stage-caption">Evidence → unmet need → differentiated opportunity</div>
           </div>
         </div>
 
@@ -2427,23 +2541,23 @@ ul, ol { padding: 0; list-style: none; }
 
         <ol class="thinking-path">
           <li class="thinking-card reveal" data-stage="decision">
-            <div class="thinking-card-top"><span class="thinking-index">01</span><span class="thinking-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="3"/><path d="M12 1.5v3M12 19.5v3M1.5 12h3M19.5 12h3"/></svg></span></div>
+            <div class="thinking-card-top"><span class="thinking-index">i</span><span class="thinking-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="3"/><path d="M12 1.5v3M12 19.5v3M1.5 12h3M19.5 12h3"/></svg></span></div>
             <h3>Frame the decision</h3><p>What must change, for whom, and why does it matter commercially?</p><span class="thinking-tag">DECISION</span>
           </li>
           <li class="thinking-card reveal" data-stage="context">
-            <div class="thinking-card-top"><span class="thinking-index">02</span><span class="thinking-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="10.5" cy="10.5" r="6.7"/><path d="m15.5 15.5 5 5M8 10.5h5M10.5 8v5"/></svg></span></div>
+            <div class="thinking-card-top"><span class="thinking-index">ii</span><span class="thinking-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="10.5" cy="10.5" r="6.7"/><path d="m15.5 15.5 5 5M8 10.5h5M10.5 8v5"/></svg></span></div>
             <h3>Read the real context</h3><p>Compare customer behaviour and workarounds with competitor offers and the process as it actually runs.</p><span class="thinking-tag">CONTEXT</span>
           </li>
           <li class="thinking-card reveal" data-stage="gap">
-            <div class="thinking-card-top"><span class="thinking-index">03</span><span class="thinking-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h6v6H4zM14 13h6v6h-6zM14 4l-3 3m-1 8-3 3M17 4v4M15 6h4"/></svg></span></div>
+            <div class="thinking-card-top"><span class="thinking-index">iii</span><span class="thinking-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h6v6H4zM14 13h6v6h-6zM14 4l-3 3m-1 8-3 3M17 4v4M15 6h4"/></svg></span></div>
             <h3>Isolate the residual gap</h3><p>Find what current offers or workflows still leave unresolved—not just the visible symptom.</p><span class="thinking-tag">GAP</span>
           </li>
           <li class="thinking-card reveal" data-stage="fit">
-            <div class="thinking-card-top"><span class="thinking-index">04</span><span class="thinking-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v17M5 7h14M5 7l-3 6h6L5 7zm14 0-3 6h6l-3-6zM8 21h8"/></svg></span></div>
+            <div class="thinking-card-top"><span class="thinking-index">iv</span><span class="thinking-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v17M5 7h14M5 7l-3 6h6L5 7zm14 0-3 6h6l-3-6zM8 21h8"/></svg></span></div>
             <h3>Test business fit</h3><p>Weigh customer value, differentiation, commercial logic and operational feasibility together.</p><span class="thinking-tag">VIABILITY</span>
           </li>
           <li class="thinking-card reveal" data-stage="recommendation">
-            <div class="thinking-card-top"><span class="thinking-index">05</span><span class="thinking-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h9l4 4v14H6zM15 3v5h4M9 13l2 2 5-5"/></svg></span></div>
+            <div class="thinking-card-top"><span class="thinking-index">v</span><span class="thinking-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h9l4 4v14H6zM15 3v5h4M9 13l2 2 5-5"/></svg></span></div>
             <h3>Earn the recommendation</h3><p>Separate evidence from hypothesis, test critical unknowns, then act—or stop if the case is weak.</p><span class="thinking-tag">EVIDENCE → ACTION</span>
           </li>
         </ol>
@@ -2525,25 +2639,25 @@ ul, ol { padding: 0; list-style: none; }
 
             <div class="mb-workstreams">
               <section class="mb-workstream">
-                <p class="mb-workstream-index">01 / PEOPLE OPERATIONS</p>
+                <p class="mb-workstream-index">i / PEOPLE OPERATIONS</p>
                 <h4>HR &amp; candidate screening</h4>
                 <p>Assisted with initial profile screening and role-fit considerations, including relevant skills, communication, behavioural suitability and readiness for a high-touch luxury retail environment.</p>
                 <ul class="tags"><li>Candidate screening support</li><li>Role-fit considerations</li><li>Interview scheduling</li><li>Candidate documentation</li></ul>
               </section>
               <section class="mb-workstream">
-                <p class="mb-workstream-index">02 / MARKET &amp; BRAND</p>
+                <p class="mb-workstream-index">ii / MARKET &amp; BRAND</p>
                 <h4>Localised luxury marketing</h4>
                 <p>Supported promotional planning for premium customer segments in Hyderabad, considering local-market relevance across micro-markets such as Jubilee Hills, Banjara Hills, Gachibowli and HITEC City while keeping luxury-brand positioning in view.</p>
                 <ul class="tags"><li>Local-market fit</li><li>Premium audience context</li><li>Luxury positioning</li><li>Brand alignment</li></ul>
               </section>
               <section class="mb-workstream">
-                <p class="mb-workstream-index">03 / CUSTOMER ENGAGEMENT</p>
+                <p class="mb-workstream-index">iii / CUSTOMER ENGAGEMENT</p>
                 <h4>Consultative vehicle discussions</h4>
                 <p>Engaged with walk-in prospects to understand intended use and preferences, then discussed relevant sedan, SUV and MPV options across the C-Class, E-Class, S-Class, GLE, GLS, V-Class and AMG/Maybach portfolios. Where relevant to the enquiry, product conversations included differentiators such as MBUX, ADAS and air-suspension features.</p>
                 <ul class="tags"><li>Customer needs analysis</li><li>Vehicle-segment matching</li><li>Product portfolio knowledge</li><li>Customer experience</li></ul>
               </section>
               <section class="mb-workstream">
-                <p class="mb-workstream-index">04 / RETAIL DOCUMENTATION</p>
+                <p class="mb-workstream-index">iv / RETAIL DOCUMENTATION</p>
                 <h4>Finance &amp; booking support</h4>
                 <p>Assisted with billing entries, invoice preparation, customer booking-ledger documentation and transaction entries to support booking and vehicle-delivery paperwork.</p>
                 <ul class="tags"><li>Billing support</li><li>Invoice documentation</li><li>Booking ledgers</li><li>Transaction-entry support</li></ul>
@@ -2672,12 +2786,12 @@ ul, ol { padding: 0; list-style: none; }
             <p>These are proposed measurement areas—not claims of results already achieved. I would establish a baseline, agree ownership and definitions, then track movement with the team.</p>
           </div>
           <div class="kpi-grid">
-            <article class="kpi-card"><span class="kpi-index">01</span><h4>Handoff completeness</h4><p>Share of cases with clear scope, owner, customer commitments and next step at transfer.</p></article>
-            <article class="kpi-card"><span class="kpi-index">02</span><h4>Milestone reliability</h4><p>On-time milestone rate, slippage reasons and overdue actions across workstreams.</p></article>
-            <article class="kpi-card"><span class="kpi-index">03</span><h4>Cycle time &amp; rework</h4><p>Elapsed time between key process stages, repeat touches and avoidable rework.</p></article>
-            <article class="kpi-card"><span class="kpi-index">04</span><h4>Issue ageing</h4><p>Open issues by age, accountable owner, blocker and time to resolution.</p></article>
-            <article class="kpi-card"><span class="kpi-index">05</span><h4>Reporting reliability</h4><p>Data completeness, refresh timeliness, definition consistency and exception visibility.</p></article>
-            <article class="kpi-card"><span class="kpi-index">06</span><h4>Insight-to-action</h4><p>Benchmark findings translated into prioritised actions, owners and review dates.</p></article>
+            <article class="kpi-card"><span class="kpi-index">i</span><h4>Handoff completeness</h4><p>Share of cases with clear scope, owner, customer commitments and next step at transfer.</p></article>
+            <article class="kpi-card"><span class="kpi-index">ii</span><h4>Milestone reliability</h4><p>On-time milestone rate, slippage reasons and overdue actions across workstreams.</p></article>
+            <article class="kpi-card"><span class="kpi-index">iii</span><h4>Cycle time &amp; rework</h4><p>Elapsed time between key process stages, repeat touches and avoidable rework.</p></article>
+            <article class="kpi-card"><span class="kpi-index">iv</span><h4>Issue ageing</h4><p>Open issues by age, accountable owner, blocker and time to resolution.</p></article>
+            <article class="kpi-card"><span class="kpi-index">v</span><h4>Reporting reliability</h4><p>Data completeness, refresh timeliness, definition consistency and exception visibility.</p></article>
+            <article class="kpi-card"><span class="kpi-index">vi</span><h4>Insight-to-action</h4><p>Benchmark findings translated into prioritised actions, owners and review dates.</p></article>
           </div>
         </section>
       </div>
