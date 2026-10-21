@@ -1781,3 +1781,46 @@ ul, ol { padding: 0; list-style: none; }
 @media (prefers-reduced-motion: reduce) {
   .hero-social .social-link { transition: none !important; }
 }
+
+
+/* Official-colour refinement for hero social controls */
+.hero-social .social-link {
+  position: relative;
+  border-width: 1px 1px 2px !important;
+  border-style: solid !important;
+  transition: transform .2s ease, box-shadow .2s ease, background .2s ease, border-color .2s ease;
+}
+.hero-social .social-link.linkedin {
+  color: #0A66C2 !important;
+  border-color: #C3D9ED !important;
+  border-bottom-color: #0A66C2 !important;
+  background: linear-gradient(180deg,#FFFFFF 0%,#F4F9FD 100%) !important;
+}
+.hero-social .social-link.instagram {
+  color: #C13584 !important;
+  border-color: #E7C8D9 !important;
+  border-bottom-color: #C13584 !important;
+  background: linear-gradient(180deg,#FFFFFF 0%,#FFF6FA 100%) !important;
+}
+.hero-social .social-link.instagram svg,
+.hero-social .social-link.instagram svg .fill {
+  color: #C13584 !important;
+}
+.hero-social .social-link.gmail {
+  color: #EA4335 !important;
+  border-color: #EFC9C6 !important;
+  border-bottom-color: #EA4335 !important;
+  background: linear-gradient(180deg,#FFFFFF 0%,#FFF7F6 100%) !important;
+}
+.hero-social .social-link.whatsapp {
+  color: #128C7E !important;
+  border-color: #BFE5D9 !important;
+  border-bottom-color: #25D366 !important;
+  background: linear-gradient(180deg,#FFFFFF 0%,#F2FBF7 100%) !important;
+}
+@media (hover:hover) and (pointer:fine) {
+  .hero-social .social-link.linkedin:hover { background:#EAF4FC !important; }
+  .hero-social .social-link.instagram:hover { background:#FDECF4 !important; }
+  .hero-social .social-link.gmail:hover { background:#FFF0EE !important; }
+  .hero-social .social-link.whatsapp:hover { background:#E8F9F0 !important; }
+}
