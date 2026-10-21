@@ -2915,9 +2915,7 @@ ul, ol { padding: 0; list-style: none; }
       from { transform:translate3d(0,0,0); }
       to { transform:translate3d(-50%,0,0); }
     }
-    @media (prefers-reduced-motion:reduce) {
-      .snapshot-stage .snapshot-earth-track { animation:none !important; transform:translate3d(-25%,0,0) !important; will-change:auto !important; }
-    }
+    /* Explicitly requested: keep the Earth rotation running even when system-wide reduced motion is enabled. */
   </style>
 
 </head>
