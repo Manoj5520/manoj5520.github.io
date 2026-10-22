@@ -1493,6 +1493,125 @@
     }
   </style>
 
+
+  <style id="luxury-selected-work-and-closing-panel-20261022">
+    /* 04 / Selected Work — a deliberate project-file emblem in the existing luxury identity */
+    .dossier-work-logo {
+      color: #7A233C !important;
+      background: linear-gradient(145deg,#FBF0F3 0%,#EEDBE2 100%) !important;
+      border: 1px solid #D9B8C3 !important;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.98), 0 4px 9px rgba(65,26,40,.07) !important;
+    }
+    .dossier-work-logo svg { width: 23px !important; height: 23px !important; }
+
+    /* Closing contact panel — deep burgundy, muted champagne and platinum */
+    .whatsapp-panel {
+      position: relative !important;
+      isolation: isolate;
+      overflow: hidden !important;
+      gap: clamp(18px,3vw,30px) !important;
+      padding: clamp(20px,3vw,30px) !important;
+      border: 1px solid #6D263B !important;
+      border-left: 4px solid #C7A86A !important;
+      border-radius: 7px !important;
+      background: linear-gradient(118deg,#351321 0%,#54172D 57%,#3D1828 100%) !important;
+      box-shadow: 0 18px 38px -27px rgba(47,14,29,.55), inset 0 1px 0 rgba(255,255,255,.07) !important;
+    }
+    .whatsapp-panel::after {
+      content: "";
+      position: absolute;
+      z-index: -1;
+      width: 300px;
+      height: 300px;
+      right: 7%;
+      top: -220px;
+      border: 1px solid rgba(213,184,119,.16);
+      border-radius: 50%;
+      box-shadow: 0 0 0 24px rgba(213,184,119,.025), 0 0 0 48px rgba(213,184,119,.018);
+      pointer-events: none;
+    }
+    .whatsapp-panel-copy .section-label {
+      color: #D8BD86 !important;
+      letter-spacing: .2em !important;
+    }
+    .whatsapp-panel-copy .section-label::before { background: #D8BD86 !important; }
+    .whatsapp-panel-copy h2 {
+      color: #FFF9F1 !important;
+      font-family: Georgia,"Times New Roman",serif !important;
+      font-weight: 400 !important;
+      font-size: clamp(23px,3.1vw,31px) !important;
+      line-height: 1.18 !important;
+      letter-spacing: -.018em;
+      max-width: 23ch;
+    }
+    .whatsapp-panel-copy > p:not(.section-label) {
+      color: #E2D6DA !important;
+      font-size: 12px !important;
+      line-height: 1.7 !important;
+      max-width: 76ch;
+    }
+    .whatsapp-button {
+      display: inline-flex !important;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 16px !important;
+      padding: 11px 15px !important;
+      border: 1px solid #D8BE89 !important;
+      border-radius: 4px !important;
+      background: linear-gradient(145deg,#E7D5AA 0%,#C8A568 100%) !important;
+      color: #361724 !important;
+      font-size: 11px !important;
+      font-weight: 750 !important;
+      letter-spacing: .025em;
+      box-shadow: 0 5px 12px -8px rgba(0,0,0,.5), inset 0 1px 0 rgba(255,255,255,.45);
+      transition: transform .2s ease, filter .2s ease;
+    }
+    .whatsapp-button:hover {
+      color: #2D101D !important;
+      background: linear-gradient(145deg,#F0E2C4 0%,#D9B97B 100%) !important;
+      filter: brightness(1.02);
+      transform: translateY(-1px);
+    }
+    .whatsapp-qr {
+      position: relative;
+      z-index: 1;
+      display: flex !important;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px !important;
+      padding: 10px !important;
+      border: 1px solid #CFB57D !important;
+      border-radius: 6px !important;
+      background: linear-gradient(145deg,#FFFFFF 0%,#F4F2EE 100%) !important;
+      color: #5B2639 !important;
+      font-size: 9px !important;
+      letter-spacing: .16em !important;
+      box-shadow: 0 9px 22px -16px rgba(0,0,0,.55), inset 0 1px 0 rgba(255,255,255,.95) !important;
+    }
+    .whatsapp-qr img {
+      display: block;
+      width: 100%;
+      max-width: 140px;
+      height: auto;
+      padding: 2px;
+      background: #FFFFFF;
+      image-rendering: pixelated;
+    }
+    .whatsapp-qr span { color: #6D263B !important; }
+    @media(max-width:600px) {
+      .whatsapp-panel { gap: 14px !important; padding: 17px !important; }
+      .whatsapp-panel-copy h2 { font-size: 23px !important; }
+      .whatsapp-qr { padding: 7px !important; }
+      .whatsapp-qr img { max-width: 112px; }
+    }
+    @media(max-width:390px) {
+      .whatsapp-panel { grid-template-columns: 1fr !important; }
+      .whatsapp-qr { width: 148px; justify-self: center; margin-top: 4px; }
+      .whatsapp-qr img { max-width: 128px; }
+    }
+  </style>
+
 </head>
 <body>
   <div class="page">
@@ -1572,7 +1691,7 @@
       <section aria-labelledby="projects-heading">
         <h2 class="section-label" id="projects-heading">04 / Selected Work</h2>
         <a class="card portfolio-card" href="https://manoj5520.github.io/projects/">
-          <span class="icon" aria-hidden="true">↗</span>
+          <span class="icon dossier-link-logo dossier-work-logo" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><rect x="3" y="5" width="13" height="15" rx="1.6" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M7 9h5M7 12h5M7 15h3" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M8 3h12a1 1 0 0 1 1 1v13" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><path d="m14.5 12.7 2 2 4-4.2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
           <span class="card-copy"><span class="card-title">Projects &amp; One-Page Briefs</span><span class="card-desc">Three illustrative work samples and downloadable PDFs</span></span>
           <span class="arrow" aria-hidden="true">→</span>
         </a>
