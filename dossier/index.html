@@ -1258,6 +1258,193 @@
     }
   </style>
 
+
+  <style id="contact-refinement-20261022-v2">
+    /* Compact, brand-forward contact cards: authentic marks with restrained pastel tints */
+    .contact-grid {
+      display: grid !important;
+      grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+      gap: 11px !important;
+      align-items: stretch;
+    }
+    .contact-grid > a.card,
+    .contact-grid > details.contact-phone {
+      position: relative;
+      display: flex !important;
+      flex-direction: column !important;
+      align-items: center !important;
+      justify-content: center !important;
+      gap: 8px !important;
+      min-width: 0;
+      min-height: 104px !important;
+      padding: 13px 12px 12px !important;
+      text-align: center !important;
+      border: 1px solid #C6D0DA !important;
+      border-top: 3px solid #A7B4C1 !important;
+      border-left: 1px solid #C6D0DA !important;
+      border-radius: 6px !important;
+      background: linear-gradient(145deg, #FFFFFF 0%, #F2F5F8 58%, #E6ECF2 100%) !important;
+      box-shadow: 0 8px 19px -17px rgba(24,34,45,.52), inset 0 1px 0 rgba(255,255,255,.98) !important;
+      transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+    }
+    .contact-grid > a.contact-linkedin.card { border-top-color: #0A66C2 !important; }
+    .contact-grid > a.contact-instagram.card { border-top-color: #C13584 !important; }
+    .contact-grid > a.contact-gmail.card { border-top-color: #EA4335 !important; }
+    .contact-grid > a.contact-whatsapp.card { border-top-color: #25D366 !important; }
+    .contact-grid > details.contact-phone { border-top-color: #6D263B !important; }
+
+    .contact-grid .icon {
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      flex: 0 0 40px !important;
+      width: 40px !important;
+      height: 40px !important;
+      background: #F0F3F6 !important;
+      border: 1px solid #D4DCE4 !important;
+      border-radius: 7px !important;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.98), 0 2px 5px rgba(24,34,45,.04) !important;
+    }
+    .contact-grid .linkedin-icon { color: #0A66C2 !important; background: #DCEBFA !important; border-color: #B9D4F1 !important; }
+    .contact-grid .instagram-icon { color: #B83280 !important; background: #F8E3EF !important; border-color: #EEC7DA !important; }
+    .contact-grid .gmail-icon { color: #D93025 !important; background: #FCE8E6 !important; border-color: #F2C9C5 !important; }
+    .contact-grid .whatsapp-icon { color: #128C4A !important; background: #D8F5E2 !important; border-color: #B2E5C4 !important; }
+    .contact-grid .phone-icon { color: #6D263B !important; background: #EFE9ED !important; border-color: #D8C8D0 !important; }
+
+    .contact-grid .social-icon svg,
+    .contact-grid .social-icon img {
+      display: block;
+      width: 22px !important;
+      height: 22px !important;
+      max-width: 22px;
+      max-height: 22px;
+      object-fit: contain;
+    }
+    .contact-grid .linkedin-icon svg { fill: currentColor !important; }
+    .contact-grid .instagram-icon svg,
+    .contact-grid .gmail-icon svg,
+    .contact-grid .whatsapp-icon svg {
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 1.9;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+    .contact-grid .instagram-icon svg .fill { fill: currentColor; stroke: none; }
+    .contact-grid .card-copy {
+      display: block !important;
+      width: 100%;
+      min-width: 0;
+      flex: 0 1 auto !important;
+      text-align: center !important;
+    }
+    .contact-grid .card-title { display: none !important; }
+    .contact-grid .card-desc {
+      display: block !important;
+      margin: 0 !important;
+      color: #394858 !important;
+      font-size: 11.5px !important;
+      line-height: 1.45 !important;
+      font-weight: 600 !important;
+      overflow-wrap: anywhere;
+    }
+    .contact-grid .arrow {
+      position: absolute !important;
+      top: 7px !important;
+      right: 10px !important;
+      color: #788797 !important;
+      font-size: 16px;
+    }
+    .contact-grid > a.card:hover,
+    .contact-grid > details.contact-phone:hover {
+      transform: translateY(-2px);
+      border-color: #AEBAC6 !important;
+      background: linear-gradient(145deg, #FFFFFF 0%, #E9EFF5 100%) !important;
+      box-shadow: 0 13px 24px -19px rgba(24,34,45,.42), inset 0 1px 0 rgba(255,255,255,.98) !important;
+    }
+    .contact-grid > a.contact-linkedin.card:hover { border-top-color: #0A66C2 !important; }
+    .contact-grid > a.contact-instagram.card:hover { border-top-color: #C13584 !important; }
+    .contact-grid > a.contact-gmail.card:hover { border-top-color: #EA4335 !important; }
+    .contact-grid > a.contact-whatsapp.card:hover { border-top-color: #25D366 !important; }
+
+    /* Phone stays private in the initial view; first click reveals a separate call link. */
+    .contact-grid > details.contact-phone { cursor: default; }
+    .contact-grid .contact-phone-summary {
+      display: flex !important;
+      flex-direction: column !important;
+      align-items: center !important;
+      justify-content: center !important;
+      gap: 8px !important;
+      width: 100%;
+      padding: 0 !important;
+      margin: 0;
+      list-style: none;
+      cursor: pointer;
+      text-align: center;
+    }
+    .contact-grid .contact-phone-summary::-webkit-details-marker { display: none; }
+    .contact-grid .contact-phone-summary::marker { content: ""; }
+    .contact-grid .contact-phone-reveal {
+      width: 100%;
+      padding-top: 8px;
+      border-top: 1px solid #D4DCE4;
+      text-align: center;
+    }
+    .contact-grid .contact-phone-reveal a {
+      display: inline-block;
+      color: #6D263B !important;
+      font-size: 12px;
+      font-weight: 700;
+      line-height: 1.5;
+      overflow-wrap: anywhere;
+    }
+    .contact-grid .contact-phone-reveal a span {
+      display: block;
+      margin-top: 2px;
+      color: #5B6877 !important;
+      font-size: 10px;
+      font-weight: 500;
+    }
+    .contact-grid .contact-phone[open] { min-height: 132px !important; }
+    .contact-grid .contact-phone[open] .arrow { transform: rotate(45deg); }
+
+    /* Match the QR contact area to the same polished silver identity */
+    .whatsapp-panel {
+      border: 1px solid #C6D0DA !important;
+      border-left: 3px solid #25D366 !important;
+      border-radius: 6px !important;
+      background: linear-gradient(125deg, #FFFFFF 0%, #F0F4F7 60%, #E2E9EF 100%) !important;
+      box-shadow: 0 14px 30px -27px rgba(24,34,45,.4) !important;
+    }
+    .whatsapp-panel-copy .section-label { color: #526171 !important; }
+    .whatsapp-panel-copy .section-label::before { background: #0A66C2 !important; }
+    .whatsapp-panel-copy h2 { color: #252B33 !important; }
+    .whatsapp-panel-copy > p:not(.section-label) { color: #586574 !important; }
+    .whatsapp-button {
+      color: #0B3B23 !important;
+      background: #D8F5E2 !important;
+      border: 1px solid #A8DDB9 !important;
+      border-radius: 5px !important;
+    }
+    .whatsapp-button:hover { color: #082E1B !important; background: #BCECCB !important; }
+    .whatsapp-qr {
+      border: 1px solid #BEC9D4 !important;
+      border-radius: 6px !important;
+      background: linear-gradient(145deg, #FFFFFF, #E6EBF1) !important;
+      color: #566474 !important;
+    }
+    @media (max-width: 520px) {
+      .contact-grid { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; gap: 8px !important; }
+      .contact-grid > a.card,
+      .contact-grid > details.contact-phone { min-height: 96px !important; padding: 11px 7px 10px !important; gap: 7px !important; }
+      .contact-grid .contact-phone-summary { gap: 7px !important; }
+      .contact-grid .icon { flex-basis: 36px !important; width: 36px !important; height: 36px !important; }
+      .contact-grid .social-icon svg,
+      .contact-grid .social-icon img { width: 20px !important; height: 20px !important; }
+      .contact-grid .card-desc { font-size: 10.5px !important; }
+    }
+  </style>
+
 </head>
 <body>
   <div class="page">
@@ -1361,11 +1548,16 @@
             <span class="card-copy"><span class="card-desc">manojkikri73@gmail.com</span></span>
             <span class="arrow" aria-hidden="true">↗</span>
           </a>
-          <a class="card" href="tel:+918897732299">
-            <span class="icon social-icon phone-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M7.1 3.4h2.7l1.3 4.2-1.8 1.5a15 15 0 0 0 5.6 5.6l1.5-1.8 4.2 1.3v2.7c0 1.2-1 2.2-2.2 2.2C10 19.1 4.9 14 4.9 5.6c0-1.2 1-2.2 2.2-2.2Z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-            <span class="card-copy"><span class="card-desc">+91 88977 32299</span></span>
-            <span class="arrow" aria-hidden="true">↗</span>
-          </a>
+          <details class="card contact-phone">
+            <summary class="contact-phone-summary" aria-label="Reveal phone number">
+              <span class="icon social-icon phone-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M7.1 3.4h2.7l1.3 4.2-1.8 1.5a15 15 0 0 0 5.6 5.6l1.5-1.8 4.2 1.3v2.7c0 1.2-1 2.2-2.2 2.2C10 19.1 4.9 14 4.9 5.6c0-1.2 1-2.2 2.2-2.2Z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+              <span class="card-copy"><span class="card-desc">Tap to reveal phone number</span></span>
+              <span class="arrow" aria-hidden="true">↗</span>
+            </summary>
+            <div class="contact-phone-reveal">
+              <a href="tel:+918897732299" aria-label="Call V. Sai Manoj">+91 88977 32299 <span>· Tap to call</span></a>
+            </div>
+          </details>
           <a class="card contact-whatsapp" href="https://wa.me/918897732299" target="_blank" rel="noopener noreferrer" aria-label="Message V. Sai Manoj on WhatsApp">
             <span class="icon social-icon whatsapp-icon" aria-hidden="true"><img src="https://cdn.simpleicons.org/whatsapp/25D366" alt="" width="24" height="24"></span>
             <span class="card-copy"><span class="card-desc">Message directly · +91 88977 32299</span></span>
