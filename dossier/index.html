@@ -1040,59 +1040,108 @@
     }
     @media(prefers-reduced-motion:reduce){.brand-item,.card,.button,.whatsapp-button{transition:none!important}.brand-item:hover,.card:hover,.whatsapp-button:hover{transform:none!important}}
   
-    /* Luxury platinum contact treatment with authentic platform marks */
-    .contact-grid .card {
+    /* Luxury platinum contact cards — distinct platform colours, silver surfaces */
+    .contact-grid > a.card {
+      position: relative;
       min-width: 0;
-      gap: 13px;
-      min-height: 78px;
-      padding: 15px 16px;
-      border: 1px solid #C7D0DA !important;
-      border-left: 2px solid #6D263B !important;
-      border-radius: 5px;
-      background: linear-gradient(145deg, #FFFFFF 0%, #F0F3F6 100%) !important;
-      box-shadow: 0 10px 24px -21px rgba(20, 22, 26, .42);
+      min-height: 84px;
+      gap: 15px;
+      padding: 16px 18px;
+      border: 1px solid #B9C5D1 !important;
+      border-left: 4px solid #8A96A3 !important;
+      border-radius: 7px !important;
+      background: linear-gradient(135deg, #FFFFFF 0%, #F2F5F8 48%, #E1E7ED 100%) !important;
+      box-shadow: 0 12px 25px -21px rgba(25, 34, 44, .62), inset 0 1px 0 rgba(255,255,255,.96);
+      transition: transform .22s ease, box-shadow .22s ease, border-color .22s ease, background .22s ease;
     }
+    .contact-grid > a.contact-linkedin.card { border-left-color: #0A66C2 !important; }
+    .contact-grid > a.contact-instagram.card { border-left-color: #C13584 !important; }
+    .contact-grid > a.contact-gmail.card { border-left-color: #EA4335 !important; }
+    .contact-grid > a.contact-whatsapp.card { border-left-color: #25D366 !important; }
+    .contact-grid > a.card:not(.contact-linkedin):not(.contact-instagram):not(.contact-gmail):not(.contact-whatsapp) { border-left-color: #6D263B !important; }
     .contact-grid .icon {
-      flex: 0 0 40px;
-      width: 40px;
-      height: 40px;
-      background: linear-gradient(145deg, #FBFCFD 0%, #E5EAF0 100%) !important;
-      border: 1px solid #CCD4DD !important;
-      border-radius: 4px;
+      flex: 0 0 46px !important;
+      width: 46px !important;
+      height: 46px !important;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(145deg, #FFFFFF 0%, #DDE4EC 100%) !important;
+      border: 1px solid #C4CFDA !important;
+      border-radius: 6px !important;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.95), 0 3px 8px rgba(25,34,44,.06);
     }
-    .social-icon img { display: block; width: 22px; height: 22px; object-fit: contain; }
-    .contact-grid .contact-linkedin .icon { color: #0A66C2; }
-    .contact-grid .contact-instagram .icon { color: #A13B72; }
-    .contact-grid .contact-gmail .icon { color: #EA4335; }
-    .contact-grid .contact-whatsapp .icon { color: #25D366; }
-    .contact-grid .phone-icon { color: #6D263B; }
+    .contact-grid .social-icon img {
+      display: block;
+      width: 27px !important;
+      height: 27px !important;
+      object-fit: contain;
+    }
+    .contact-grid .contact-linkedin .icon { color: #0A66C2 !important; }
+    .contact-grid .contact-instagram .icon { color: #C13584 !important; }
+    .contact-grid .contact-gmail .icon { color: #EA4335 !important; }
+    .contact-grid .contact-whatsapp .icon { color: #25D366 !important; }
+    .contact-grid .phone-icon { color: #6D263B !important; }
     .contact-grid .card-copy { display: block; flex: 1 1 auto; min-width: 0; }
     .contact-grid .card-title {
-      display: block;
+      display: block !important;
       margin: 0;
-      color: #20252C;
-      font-size: 13px;
-      font-weight: 700;
-      line-height: 1.35;
+      color: #1E2731 !important;
+      font-size: 13.5px !important;
+      font-weight: 750 !important;
+      line-height: 1.38 !important;
       letter-spacing: .005em;
     }
     .contact-grid .card-desc {
-      display: block;
-      margin: 4px 0 0;
-      color: #596675;
-      font-size: 11px;
-      line-height: 1.45;
+      display: block !important;
+      margin: 5px 0 0 !important;
+      color: #566474 !important;
+      font-size: 11.5px !important;
+      line-height: 1.5 !important;
       font-weight: 400;
     }
-    .contact-grid .arrow { color: #6D263B; align-self: flex-start; }
-    .contact-grid .card:hover {
-      border-color: #AAB6C3 !important;
-      border-left-color: #0A66C2 !important;
-      background: linear-gradient(145deg, #FFFFFF 0%, #E8EEF4 100%) !important;
-      box-shadow: 0 14px 30px -22px rgba(20, 22, 26, .45);
+    .contact-grid .arrow { color: #667587 !important; align-self: flex-start; }
+    .contact-grid > a.card:hover {
+      transform: translateY(-3px);
+      border-color: #93A3B3 !important;
+      background: linear-gradient(135deg, #FFFFFF 0%, #E6EDF4 100%) !important;
+      box-shadow: 0 17px 32px -22px rgba(25, 34, 44, .55), inset 0 1px 0 rgba(255,255,255,.98);
     }
-    .whatsapp-button { background: #25D366; color: #103B28; }
-    .whatsapp-button:hover { background: #30E477; color: #103B28; }
+    .contact-grid > a.contact-linkedin.card:hover { border-left-color: #0A66C2 !important; }
+    .contact-grid > a.contact-instagram.card:hover { border-left-color: #C13584 !important; }
+    .contact-grid > a.contact-gmail.card:hover { border-left-color: #EA4335 !important; }
+    .contact-grid > a.contact-whatsapp.card:hover { border-left-color: #25D366 !important; }
+
+    /* Keep the QR contact feature within the same silver-and-platinum identity */
+    .whatsapp-panel {
+      border: 1px solid #B9C5D1 !important;
+      border-left: 4px solid #25D366 !important;
+      border-radius: 7px !important;
+      background: linear-gradient(125deg, #FFFFFF 0%, #EDF1F5 55%, #DCE3EA 100%) !important;
+      box-shadow: 0 18px 36px -30px rgba(25, 34, 44, .5) !important;
+    }
+    .whatsapp-panel-copy .section-label { color: #526171 !important; }
+    .whatsapp-panel-copy .section-label::before { background: #0A66C2 !important; }
+    .whatsapp-panel-copy h2 { color: #252B33 !important; }
+    .whatsapp-panel-copy > p:not(.section-label) { color: #586574 !important; }
+    .whatsapp-button {
+      color: #0B3B23 !important;
+      background: #25D366 !important;
+      border: 1px solid #1FBA58 !important;
+      border-radius: 5px !important;
+    }
+    .whatsapp-button:hover { color: #082E1B !important; background: #3DE27A !important; }
+    .whatsapp-qr {
+      border: 1px solid #BEC9D4 !important;
+      border-radius: 6px !important;
+      background: linear-gradient(145deg, #FFFFFF, #E6EBF1) !important;
+      color: #566474 !important;
+    }
+    @media (max-width: 520px) {
+      .contact-grid > a.card { min-height: 74px; padding: 13px !important; gap: 11px; }
+      .contact-grid .icon { flex-basis: 40px !important; width: 40px !important; height: 40px !important; }
+      .contact-grid .social-icon img { width: 24px !important; height: 24px !important; }
+    }
 
   </style>
 
