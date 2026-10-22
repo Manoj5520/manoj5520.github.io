@@ -1993,3 +1993,24 @@ ul, ol { padding: 0; list-style: none; }
 @media (max-width: 480px) {
   .portfolio-guide-audio { flex-basis: 100%; width: 100%; }
 }
+
+
+/* Luxury silver social links, with the genuine symbol for each platform */
+.hero-social .social-link {
+  min-height: 46px;
+  padding: 10px 15px;
+  gap: 10px;
+  border: 1px solid #B9C5D1;
+  border-bottom-width: 3px;
+  border-radius: 6px;
+  background: linear-gradient(145deg, #FFFFFF 0%, #F0F3F6 58%, #E0E6ED 100%);
+  box-shadow: 0 9px 20px -17px rgba(20, 28, 38, .60), inset 0 1px 0 rgba(255,255,255,.95);
+}
+.hero-social .social-link img { display:block; width:21px; height:21px; object-fit:contain; flex:0 0 21px; }
+.hero-social .social-link.linkedin { color:#0A66C2; border-bottom-color:#0A66C2; }
+.hero-social .social-link.instagram { color:#C13584; border-bottom-color:#C13584; }
+.hero-social .social-link.gmail { color:#EA4335; border-bottom-color:#EA4335; }
+.hero-social .social-link.whatsapp { color:#25D366; border-bottom-color:#25D366; }
+@media (hover:hover) and (pointer:fine) {
+  .hero-social .social-link:hover { border-color:#99A8B8; border-bottom-color:currentColor; background:linear-gradient(145deg,#FFFFFF 0%,#E4EBF3 100%); box-shadow:0 15px 28px -20px rgba(20,28,38,.52); }
+}
