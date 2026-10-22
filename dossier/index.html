@@ -1612,6 +1612,184 @@
     }
   </style>
 
+
+  <style id="executive-connection-panel-refinement-20261022">
+    /* Executive close: platinum, ivory and burgundy; champagne used only as a fine accent. */
+    .whatsapp-panel {
+      display: grid !important;
+      grid-template-columns: minmax(0, 1fr) 154px !important;
+      align-items: center !important;
+      gap: clamp(20px, 3vw, 34px) !important;
+      position: relative !important;
+      isolation: isolate;
+      overflow: hidden !important;
+      padding: clamp(22px, 3vw, 30px) !important;
+      border: 1px solid #C5CBD3 !important;
+      border-left: 3px solid #7A263F !important;
+      border-radius: 7px !important;
+      background: linear-gradient(125deg, #FCFCFB 0%, #F3F5F7 53%, #E5EAF0 100%) !important;
+      box-shadow: 0 14px 32px -27px rgba(28, 32, 40, .42), inset 0 1px 0 rgba(255,255,255,.98) !important;
+    }
+    .whatsapp-panel::after {
+      content: "";
+      position: absolute;
+      z-index: -1;
+      width: 300px;
+      height: 300px;
+      right: 5%;
+      top: -225px;
+      border: 1px solid rgba(185, 152, 95, .20);
+      border-radius: 50%;
+      box-shadow: 0 0 0 24px rgba(185,152,95,.035), 0 0 0 48px rgba(122,38,63,.018);
+      pointer-events: none;
+    }
+    .whatsapp-panel-copy { min-width: 0; }
+    .whatsapp-panel-copy .section-label.connection-kicker {
+      display: flex !important;
+      align-items: center;
+      gap: 10px;
+      width: fit-content;
+      max-width: 100%;
+      margin: 0 0 13px !important;
+      padding: 0 !important;
+      color: #70263D !important;
+      background: transparent !important;
+      font-size: 9px !important;
+      font-weight: 750 !important;
+      line-height: 1.25 !important;
+      letter-spacing: .19em !important;
+      text-transform: uppercase;
+    }
+    .whatsapp-panel-copy .section-label.connection-kicker::before {
+      content: none !important;
+      display: none !important;
+    }
+    .connection-emblem {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      flex: 0 0 38px;
+      width: 38px;
+      height: 38px;
+      border: 1px solid #D6C6A6;
+      border-radius: 9px;
+      background: linear-gradient(145deg, #FFFFFF 0%, #F4EEE3 58%, #E5D8C2 100%);
+      box-shadow: 0 4px 9px -6px rgba(63, 37, 34, .32), inset 0 1px 0 rgba(255,255,255,.98);
+    }
+    .connection-emblem svg {
+      display: block;
+      width: 29px;
+      height: 29px;
+      overflow: visible;
+      filter: drop-shadow(0 1px 1px rgba(62,31,42,.12));
+    }
+    .connection-kicker-text { display: inline-block; padding-top: 1px; }
+    .whatsapp-panel-copy h2 {
+      max-width: 31ch !important;
+      margin: 0 !important;
+      color: #3B1B29 !important;
+      font-family: Georgia, "Times New Roman", serif !important;
+      font-size: clamp(25px, 2.65vw, 33px) !important;
+      font-weight: 400 !important;
+      line-height: 1.16 !important;
+      letter-spacing: -.022em !important;
+      text-wrap: balance;
+    }
+    .whatsapp-panel-copy > p:not(.section-label) {
+      max-width: 78ch !important;
+      margin: 10px 0 0 !important;
+      color: #586371 !important;
+      font-family: Arial, Helvetica, sans-serif !important;
+      font-size: 12px !important;
+      font-weight: 400 !important;
+      line-height: 1.72 !important;
+    }
+    .whatsapp-button {
+      display: inline-flex !important;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 17px !important;
+      padding: 11px 15px !important;
+      border: 1px solid #642137 !important;
+      border-radius: 4px !important;
+      background: linear-gradient(145deg, #6D263B 0%, #491728 100%) !important;
+      color: #FFFFFF !important;
+      font-size: 11px !important;
+      font-weight: 700 !important;
+      letter-spacing: .025em;
+      box-shadow: 0 5px 12px -8px rgba(61, 20, 37, .55), inset 0 1px 0 rgba(255,255,255,.13);
+      transition: transform .2s ease, background .2s ease, box-shadow .2s ease;
+    }
+    .whatsapp-button::after {
+      content: "↗";
+      display: inline-block;
+      color: #E3CB9A;
+      font-size: 13px;
+      line-height: 1;
+    }
+    .whatsapp-button span { display: none !important; }
+    .whatsapp-button:hover {
+      color: #FFFFFF !important;
+      background: linear-gradient(145deg, #7B3048 0%, #572036 100%) !important;
+      box-shadow: 0 8px 15px -9px rgba(61,20,37,.55);
+      transform: translateY(-1px);
+    }
+    .whatsapp-qr {
+      display: flex !important;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 8px !important;
+      width: 100%;
+      padding: 9px !important;
+      border: 1px solid #C8CED7 !important;
+      border-radius: 6px !important;
+      background: linear-gradient(145deg, #FFFFFF 0%, #F3F4F4 100%) !important;
+      color: #63233A !important;
+      font-size: 9px !important;
+      font-weight: 750 !important;
+      letter-spacing: .16em !important;
+      box-shadow: 0 8px 18px -15px rgba(25,30,40,.38), inset 0 1px 0 rgba(255,255,255,.98) !important;
+    }
+    .whatsapp-qr img {
+      display: block;
+      width: 100%;
+      max-width: 128px !important;
+      height: auto;
+      padding: 2px;
+      background: #FFFFFF;
+      image-rendering: pixelated;
+    }
+    .whatsapp-qr span {
+      color: #63233A !important;
+      text-align: center;
+      font-size: 8px !important;
+      letter-spacing: .17em !important;
+    }
+    @media(max-width: 700px) {
+      .whatsapp-panel {
+        grid-template-columns: minmax(0,1fr) 122px !important;
+        gap: 16px !important;
+        padding: 18px !important;
+      }
+      .connection-emblem { flex-basis: 34px; width: 34px; height: 34px; }
+      .connection-emblem svg { width: 26px; height: 26px; }
+      .whatsapp-panel-copy h2 { font-size: clamp(23px, 4vw, 28px) !important; max-width: 30ch !important; }
+      .whatsapp-qr img { max-width: 104px !important; }
+    }
+    @media(max-width: 440px) {
+      .whatsapp-panel { grid-template-columns: 1fr !important; }
+      .whatsapp-panel-copy h2 { max-width: 27ch !important; }
+      .whatsapp-qr { width: 140px; justify-self: center; margin-top: 4px; }
+      .whatsapp-qr img { max-width: 118px !important; }
+    }
+    @media(prefers-reduced-motion: reduce) {
+      .whatsapp-button { transition: none !important; }
+      .whatsapp-button:hover { transform: none !important; }
+    }
+  </style>
+
 </head>
 <body>
   <div class="page">
@@ -1735,7 +1913,39 @@
 
       <section class="whatsapp-panel" aria-label="WhatsApp QR contact">
         <div class="whatsapp-panel-copy">
-          <p class="section-label">Direct connection</p>
+          <p class="section-label connection-kicker">
+            <span class="connection-emblem" aria-hidden="true">
+              <svg viewBox="0 0 48 48" focusable="false">
+                <defs>
+                  <linearGradient id="connection-metal" x1="0" y1="0" x2="1" y2="1">
+                    <stop offset="0" stop-color="#EAD9B6"/>
+                    <stop offset=".52" stop-color="#B9985F"/>
+                    <stop offset="1" stop-color="#80603C"/>
+                  </linearGradient>
+                  <radialGradient id="connection-orb" cx=".3" cy=".2" r=".85">
+                    <stop offset="0" stop-color="#FFFFFF"/>
+                    <stop offset=".24" stop-color="#E7D5B5"/>
+                    <stop offset=".62" stop-color="#B79A69"/>
+                    <stop offset="1" stop-color="#74533D"/>
+                  </radialGradient>
+                  <radialGradient id="connection-burgundy-orb" cx=".28" cy=".18" r=".9">
+                    <stop offset="0" stop-color="#E5C8D1"/>
+                    <stop offset=".35" stop-color="#8A4059"/>
+                    <stop offset="1" stop-color="#431729"/>
+                  </radialGradient>
+                </defs>
+                <path d="M14 16.5 33.5 12.5M15.5 19.5 27.5 33M32.5 17.5 29.5 28" fill="none" stroke="url(#connection-metal)" stroke-width="3.1" stroke-linecap="round"/>
+                <path d="M14 16.5 33.5 12.5M15.5 19.5 27.5 33M32.5 17.5 29.5 28" fill="none" stroke="#FFFFFF" stroke-opacity=".7" stroke-width=".8" stroke-linecap="round"/>
+                <circle cx="13" cy="16" r="7" fill="url(#connection-orb)" stroke="#FFFFFF" stroke-opacity=".9" stroke-width="1.2"/>
+                <circle cx="34" cy="12.5" r="6.2" fill="url(#connection-burgundy-orb)" stroke="#FFFFFF" stroke-opacity=".92" stroke-width="1.2"/>
+                <circle cx="28.5" cy="34" r="7" fill="url(#connection-orb)" stroke="#FFFFFF" stroke-opacity=".9" stroke-width="1.2"/>
+                <circle cx="10.8" cy="13.6" r="1.8" fill="#FFFFFF" fill-opacity=".8"/>
+                <circle cx="32.1" cy="10.4" r="1.5" fill="#FFFFFF" fill-opacity=".7"/>
+                <circle cx="26.2" cy="31.4" r="1.8" fill="#FFFFFF" fill-opacity=".8"/>
+              </svg>
+            </span>
+            <span class="connection-kicker-text">Direct connection</span>
+          </p>
           <h2>Clearer decisions. Better processes. Dependable execution.</h2>
           <p>Professional conversations around Business Operations, Process Excellence, Growth Operations and Business Transformation.</p>
           <a class="whatsapp-button" href="https://wa.me/918897732299" target="_blank" rel="noopener noreferrer">Connect professionally <span aria-hidden="true">↗</span></a>
