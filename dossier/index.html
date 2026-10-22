@@ -1868,6 +1868,63 @@
     }
   </style>
 
+
+  <style id="mychoices-centering-correction-v2">
+    /* Correct the My Choices card's inner content alignment, not only the logo image. */
+    .brand-strip > .brand-item-mychoices {
+      justify-self: stretch !important;
+      width: 100% !important;
+      box-sizing: border-box !important;
+      padding-left: 8px !important;
+      padding-right: 8px !important;
+    }
+    .brand-strip > .brand-item-mychoices > .brand-logo-area.mychoices-area,
+    .brand-strip > .brand-item-mychoices > .brand-role {
+      position: relative !important;
+      left: 8px !important;
+      width: calc(100% - 8px) !important;
+      justify-self: stretch !important;
+      box-sizing: border-box !important;
+    }
+    .brand-strip > .brand-item-mychoices > .brand-logo-area.mychoices-area {
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      padding-left: 0 !important;
+      padding-right: 0 !important;
+    }
+    .brand-strip > .brand-item-mychoices > .brand-logo-area.mychoices-area > img.mychoices-logo {
+      position: static !important;
+      display: block !important;
+      flex: 0 1 auto !important;
+      width: auto !important;
+      height: auto !important;
+      max-width: min(100%, 132px) !important;
+      max-height: 52px !important;
+      margin-left: auto !important;
+      margin-right: auto !important;
+      object-fit: contain !important;
+      object-position: center center !important;
+      transform: none !important;
+    }
+    .brand-strip > .brand-item-mychoices > .brand-role {
+      text-align: center !important;
+      justify-content: center !important;
+      align-items: flex-start !important;
+    }
+    @media (max-width: 600px) {
+      .brand-strip > .brand-item-mychoices > .brand-logo-area.mychoices-area,
+      .brand-strip > .brand-item-mychoices > .brand-role {
+        left: 5px !important;
+        width: calc(100% - 5px) !important;
+      }
+      .brand-strip > .brand-item-mychoices > .brand-logo-area.mychoices-area > img.mychoices-logo {
+        max-width: min(100%, 120px) !important;
+        max-height: 46px !important;
+      }
+    }
+  </style>
+
 </head>
 <body>
   <div class="page">
