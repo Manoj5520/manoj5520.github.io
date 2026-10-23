@@ -1972,24 +1972,28 @@ body.dossier-2026{margin:0;background:var(--d-bg);color:var(--d-ink);font:15px/1
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.dossier-2026 *,.dossier-2026 *:before,.dossier-2026 *:after{transition:none!important;animation:none!important}}
 </style>
 <style id="dossier-minimal-portfolio-link">
-.dossier-main-link{position:relative;isolation:isolate;display:flex;align-items:center;justify-content:space-between;gap:24px;min-height:120px;margin-top:20px;padding:24px 27px;overflow:hidden;background:linear-gradient(105deg,#fff 0%,#fbfaf9 66%,#f0ebea 100%);border:1px solid #d8d4d1;border-left:3px solid var(--d-burgundy);box-shadow:0 10px 28px -27px rgba(23,25,29,.55);transition:transform .28s ease,border-color .28s ease,box-shadow .28s ease}
-.dossier-main-link:before{content:"";position:absolute;z-index:-1;right:88px;top:-64px;width:190px;height:190px;border:1px solid rgba(112,40,61,.12);border-radius:50%;box-shadow:0 0 0 18px rgba(112,40,61,.025),0 0 0 38px rgba(112,40,61,.02);pointer-events:none;transition:transform .45s ease}
-.dossier-main-link:after{content:"";position:absolute;z-index:-1;right:0;top:0;bottom:0;width:25%;background:linear-gradient(135deg,transparent,rgba(112,40,61,.04));pointer-events:none}
-.dossier-main-link:hover{transform:translateY(-3px);border-color:#bdaab0;border-left-color:var(--d-burgundy);box-shadow:0 18px 34px -26px rgba(23,25,29,.36)}
-.dossier-main-link:hover:before{transform:translate(-8px,4px) scale(1.05)}
-.dossier-main-link-copy{display:flex;flex-direction:column;min-width:0}
-.dossier-main-link-label{display:flex;align-items:center;gap:8px;color:var(--d-burgundy);font-size:9px;font-weight:750;letter-spacing:.16em;line-height:1.5}
-.dossier-main-link-label i{display:block;width:6px;height:6px;border-radius:50%;background:var(--d-burgundy);box-shadow:0 0 0 4px rgba(112,40,61,.08)}
-.dossier-main-link-copy strong{display:block;margin-top:7px;color:var(--d-ink);font:400 clamp(26px,3.2vw,39px)/1.08 var(--d-serif);letter-spacing:-.025em}
-.dossier-main-link-copy strong em{color:var(--d-burgundy);font-weight:400}
-.dossier-main-link-description{margin-top:7px;color:var(--d-muted);font-size:11px;letter-spacing:.015em}
-.dossier-main-link-action{position:relative;z-index:1;display:inline-flex;flex:0 0 auto;align-items:center;gap:18px;padding:13px 15px;background:var(--d-ink);color:#fff;font-size:9px;font-weight:750;letter-spacing:.12em;white-space:nowrap;transition:background .25s,transform .25s;box-shadow:4px 4px 0 rgba(112,40,61,.18)}
-.dossier-main-link-action b{font-size:18px;font-weight:400;transition:transform .25s}
-.dossier-main-link:hover .dossier-main-link-action{background:var(--d-burgundy);transform:translate(-2px,-2px)}
-.dossier-main-link:hover .dossier-main-link-action b{transform:translate(2px,-2px)}
-.dossier-main-link-monogram{display:none}
-@media(max-width:620px){.dossier-main-link{align-items:flex-start;flex-direction:column;gap:17px;padding:20px 17px}.dossier-main-link-copy strong{font-size:clamp(27px,7.8vw,34px)}.dossier-main-link-description{max-width:260px;font-size:10px;line-height:1.7}.dossier-main-link-action{align-self:flex-start;padding:11px 13px}.dossier-main-link:before{right:-48px;top:-75px}}
-@media(prefers-reduced-motion:reduce){.dossier-main-link,.dossier-main-link:before,.dossier-main-link-action,.dossier-main-link-action b{transition:none!important}.dossier-main-link:hover{transform:none}}
+.dossier-main-link{position:relative;isolation:isolate;display:grid;grid-template-columns:minmax(0,1fr) 190px auto;align-items:center;gap:clamp(16px,2.4vw,32px);min-height:132px;margin-top:20px;padding:22px 25px;overflow:hidden;background:linear-gradient(105deg,#fff 0%,#fbfaf9 66%,#f0ebea 100%);border:1px solid #d8d4d1;border-left:3px solid var(--d-burgundy);box-shadow:0 10px 28px -27px rgba(23,25,29,.55);transition:transform .28s ease,border-color .28s ease,box-shadow .28s ease}
+.dossier-main-link:before{content:"";position:absolute;z-index:-1;right:-30px;top:-70px;width:210px;height:210px;border:1px solid rgba(112,40,61,.075);border-radius:50%;box-shadow:0 0 0 16px rgba(112,40,61,.022),0 0 0 34px rgba(112,40,61,.015);pointer-events:none;transition:transform .45s ease}
+.dossier-main-link:after{content:"";position:absolute;z-index:-1;right:0;top:0;bottom:0;width:28%;background:linear-gradient(135deg,transparent,rgba(112,40,61,.035));pointer-events:none}
+.dossier-main-link:hover{transform:translateY(-3px);border-color:#bdaab0;border-left-color:var(--d-burgundy);box-shadow:0 18px 34px -26px rgba(23,25,29,.36)}.dossier-main-link:hover:before{transform:translate(-5px,3px) scale(1.025)}
+.dossier-main-link-copy{display:flex;flex-direction:column;min-width:0;position:relative;z-index:1}
+.dossier-main-link-label{display:flex;align-items:center;gap:8px;color:var(--d-burgundy);font-size:9px;font-weight:750;letter-spacing:.16em;line-height:1.5}.dossier-main-link-label i{display:block;width:6px;height:6px;flex:0 0 6px;border-radius:50%;background:var(--d-burgundy);box-shadow:0 0 0 4px rgba(112,40,61,.08)}
+.dossier-main-link-copy strong{display:block;margin-top:7px;color:var(--d-ink);font:400 clamp(26px,3.1vw,39px)/1.08 var(--d-serif);letter-spacing:-.025em}.dossier-main-link-copy strong em{color:var(--d-burgundy);font-weight:400}.dossier-main-link-description{margin-top:7px;color:var(--d-muted);font-size:11px;letter-spacing:.015em}
+.dossier-main-link-mark{position:relative;display:block;width:190px;height:92px;overflow:hidden;isolation:isolate}
+.dossier-mark-orbit{position:absolute;left:50%;top:37px;width:110px;height:36px;border:1px solid rgba(112,40,61,.28);border-radius:50%;transform:translate(-50%,-50%) rotate(-25deg);pointer-events:none}
+.dossier-mark-orbit-a{animation:mark-orbit-settle 1.15s cubic-bezier(.2,.7,.2,1) both}.dossier-mark-orbit-b{width:88px;height:56px;border-color:rgba(95,101,109,.28);transform:translate(-50%,-50%) rotate(43deg);animation:mark-orbit-second 1.25s .06s cubic-bezier(.2,.7,.2,1) both}
+.dossier-mark-ball-flight{position:absolute;z-index:3;right:16px;top:9px;width:19px;height:19px;animation:mark-ball-hop 1.05s cubic-bezier(.2,.7,.2,1) both}
+.dossier-mark-ball{display:block;width:19px;height:19px;border-radius:50%;background:radial-gradient(circle at 29% 23%,#fff 0 5%,#eadde0 12%,#bd8796 29%,#70283d 63%,#431724 100%);border:1px solid rgba(255,255,255,.85);box-shadow:inset -3px -4px 6px rgba(28,11,17,.28),inset 2px 2px 4px rgba(255,255,255,.48),0 4px 7px rgba(64,22,36,.18);animation:mark-ball-float 3.4s 1.05s ease-in-out infinite}
+.dossier-mark-word{position:absolute;z-index:2;top:31px;left:15px;right:12px;display:flex;align-items:center;justify-content:center;gap:2px;height:24px;color:var(--d-ink);font:650 15px/1 var(--d-serif);letter-spacing:.05em;white-space:nowrap}.dossier-mark-word i{display:inline-block;font-style:normal;opacity:0;animation:mark-letter-assemble .66s var(--lag) cubic-bezier(.16,.8,.2,1.15) forwards}.dossier-mark-word i:nth-child(3n){color:var(--d-burgundy)}.dossier-mark-caption{position:absolute;bottom:8px;left:0;right:0;color:#77777b;text-align:center;font-size:7px;font-weight:700;letter-spacing:.17em}
+.dossier-main-link-action{position:relative;z-index:1;display:inline-flex;align-items:center;justify-content:center;gap:18px;min-height:50px;padding:0 16px;background:var(--d-burgundy);color:#fff;font-size:9px;font-weight:750;letter-spacing:.11em;white-space:nowrap;transition:background .25s,transform .25s;box-shadow:3px 3px 0 rgba(112,40,61,.16)}.dossier-main-link-action b{font-size:18px;font-weight:400;transition:transform .25s}.dossier-main-link:hover .dossier-main-link-action{background:var(--d-ink);transform:translate(-2px,-2px)}.dossier-main-link:hover .dossier-main-link-action b{transform:translate(2px,-2px)}
+@keyframes mark-letter-assemble{0%{opacity:0;transform:translate(var(--dx),var(--dy)) scale(.7) rotate(-13deg);filter:blur(2px)}72%{opacity:1;filter:blur(0);transform:translate(0,-2px) scale(1.04) rotate(1deg)}100%{opacity:1;transform:translate(0,0) scale(1) rotate(0);filter:blur(0)}}
+@keyframes mark-ball-hop{0%{transform:translate(-104px,47px) scale(.55)}52%{transform:translate(-8px,-9px) scale(1.08)}68%{transform:translate(3px,3px) scale(.94)}82%{transform:translate(-2px,-2px) scale(1.02)}100%{transform:translate(0,0) scale(1)}}
+@keyframes mark-ball-float{0%,100%{transform:translateY(0)}50%{transform:translateY(-3px)}}
+@keyframes mark-orbit-settle{0%{opacity:0;transform:translate(-50%,-50%) rotate(-47deg) scale(.68)}100%{opacity:1;transform:translate(-50%,-50%) rotate(-25deg) scale(1)}}
+@keyframes mark-orbit-second{0%{opacity:0;transform:translate(-50%,-50%) rotate(65deg) scale(.6)}100%{opacity:1;transform:translate(-50%,-50%) rotate(43deg) scale(1)}}
+@media(max-width:950px){.dossier-main-link{grid-template-columns:minmax(0,1fr) 150px auto;gap:16px;padding:20px}.dossier-main-link-mark{width:150px}.dossier-mark-word{left:4px;right:4px;font-size:13px;gap:1px}.dossier-mark-ball-flight{right:8px}.dossier-main-link-action{gap:10px;padding:0 12px;font-size:8px}}
+@media(max-width:680px){.dossier-main-link{grid-template-columns:minmax(0,1fr) 78px;gap:12px;padding:19px 16px;min-height:0}.dossier-main-link-copy strong{font-size:clamp(25px,6.8vw,33px)}.dossier-main-link-description{font-size:10px;line-height:1.7}.dossier-main-link-mark{grid-column:2;grid-row:1;width:78px;height:77px;margin-top:3px}.dossier-mark-orbit{left:38px;top:34px;width:66px;height:27px}.dossier-mark-orbit-b{width:55px;height:40px}.dossier-mark-word{top:28px;left:0;right:0;gap:0;font-size:8px;letter-spacing:.02em}.dossier-mark-ball-flight{right:3px;top:7px;width:15px;height:15px}.dossier-mark-ball{width:15px;height:15px}.dossier-mark-caption{bottom:5px;font-size:5px;letter-spacing:.1em}.dossier-main-link-action{grid-column:1/-1;justify-self:start;min-height:43px;padding:0 13px;font-size:9px;gap:15px}}
+@media(prefers-reduced-motion:reduce){.dossier-main-link,.dossier-main-link:before,.dossier-main-link-action,.dossier-main-link-action b,.dossier-mark-orbit,.dossier-mark-word i,.dossier-mark-ball-flight,.dossier-mark-ball{animation:none!important;transition:none!important;filter:none!important}.dossier-mark-word i{opacity:1;transform:none}.dossier-main-link:hover{transform:none}}
 </style>
 </head>
 <body class="dossier-2026">
@@ -2054,8 +2058,15 @@ body.dossier-2026{margin:0;background:var(--d-bg);color:var(--d-ink);font:15px/1
               <strong>Explore my <em>main portfolio.</em></strong>
               <span class="dossier-main-link-description">Strategy · Operations · Selected work · Credentials</span>
             </span>
+            <span class="dossier-main-link-mark" aria-hidden="true">
+              <span class="dossier-mark-orbit dossier-mark-orbit-a"></span><span class="dossier-mark-orbit dossier-mark-orbit-b"></span>
+              <span class="dossier-mark-ball-flight"><span class="dossier-mark-ball"></span></span>
+              <span class="dossier-mark-word">
+                <i style="--dx:-34px;--dy:-19px;--lag:.02s">P</i><i style="--dx:20px;--dy:-25px;--lag:.09s">O</i><i style="--dx:-23px;--dy:21px;--lag:.16s">R</i><i style="--dx:25px;--dy:18px;--lag:.23s">T</i><i style="--dx:-30px;--dy:2px;--lag:.30s">F</i><i style="--dx:30px;--dy:-3px;--lag:.37s">O</i><i style="--dx:-10px;--dy:-25px;--lag:.44s">L</i><i style="--dx:15px;--dy:24px;--lag:.51s">I</i><i style="--dx:35px;--dy:12px;--lag:.58s">O</i>
+              </span>
+              <span class="dossier-mark-caption">THOUGHT → EXECUTION</span>
+            </span>
             <span class="dossier-main-link-action"><span>VIEW PORTFOLIO</span><b aria-hidden="true">↗</b></span>
-            <span class="dossier-main-link-monogram" aria-hidden="true">VSM</span>
           </a>
       </section>
 
