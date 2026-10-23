@@ -405,6 +405,29 @@ ul, ol { padding: 0; list-style: none; }
 .role-minor h3 { font-family: var(--serif); font-weight: 400; font-size: 22px; margin-bottom: 4px; }
 .role-minor p:last-child { font-size: 14.5px; color: var(--charcoal); }
 
+/* Tata Motors OSTA: high-contrast emblem and precise training context */
+.role-minor-tata { padding-bottom:18px; }
+.tata-osta-head { display:grid; grid-template-columns:82px minmax(0,1fr); gap:13px; align-items:center; }
+.tata-osta-logo { display:flex; flex-direction:column; align-items:center; justify-content:center; gap:4px; width:82px; min-height:80px; padding:10px 8px; color:#fff; background:linear-gradient(145deg,#132b4a,#0b1a2c); border:1px solid #203e61; box-shadow:0 8px 20px -16px rgba(10,24,42,.8); }
+.tata-osta-logo img { display:block; width:35px; height:35px; object-fit:contain; filter:brightness(0) invert(1); }
+.tata-osta-logo span { color:#fff; font-size:8px; font-weight:750; letter-spacing:.08em; text-align:center; }
+.tata-osta-identity { min-width:0; }
+.role-minor-tata .role-period { margin-bottom:5px; }
+.role-minor-tata h3 { font-size:clamp(18px,2vw,21px); line-height:1.18; margin-bottom:4px; }
+.tata-osta-subtitle { margin:0!important; color:var(--muted)!important; font-size:10px!important; line-height:1.5!important; }
+.tata-osta-summary { margin:13px 0 0!important; font-size:13px!important; line-height:1.65!important; color:var(--charcoal)!important; }
+/* Real police-partnership archive photo, deliberately distinct from personal evidence */
+.mcf-police-gallery { grid-template-columns:minmax(0,1fr); }
+.mcf-police-gallery .mcf-programme-image img { height:215px; object-fit:contain; background:#f6f7f8; }
+.mcf-police-gallery .mcf-programme-image span { font-size:10px; }
+@media (max-width:390px) {
+  .tata-osta-head { grid-template-columns:68px minmax(0,1fr); gap:10px; }
+  .tata-osta-logo { width:68px; min-height:74px; }
+  .tata-osta-logo img { width:31px; height:31px; }
+  .role-minor-tata h3 { font-size:18px; }
+  .mcf-police-gallery .mcf-programme-image img { height:180px; }
+}
+
 /* My Choices Foundation: secondary, evidence-linked social-impact experience */
 .role-minor-mcf { padding-bottom: 16px; }
 .mcf-experience-head { display:grid; grid-template-columns:82px minmax(0,1fr); align-items:center; gap:13px; }
@@ -3756,10 +3779,19 @@ ul, ol { padding: 0; list-style: none; }
         <div class="exposure">
           <p class="exposure-label reveal">Supporting exposure</p>
           <div class="exposure-grid">
-            <article class="role-minor reveal">
-              <p class="role-period">Apr – May 2021</p>
-              <h3>Tata Motors</h3>
-              <p>Organizational Structure Training Program</p>
+            <article class="role-minor role-minor-tata reveal" aria-labelledby="tata-osta-title">
+              <div class="tata-osta-head">
+                <a class="tata-osta-logo" href="https://www.tatamotors.com/" target="_blank" rel="noopener noreferrer" aria-label="Visit Tata Motors official website">
+                  <img src="https://upload.wikimedia.org/wikipedia/commons/8/8e/Tata_logo.svg" width="451" height="414" alt="Tata emblem" loading="lazy">
+                  <span>TATA MOTORS</span>
+                </a>
+                <div class="tata-osta-identity">
+                  <p class="role-period">Apr – May 2021</p>
+                  <h3 id="tata-osta-title">OSTA — Organisational Structure Training</h3>
+                  <p class="tata-osta-subtitle">Tata Motors · Structured training exposure</p>
+                </div>
+              </div>
+              <p class="tata-osta-summary">Explored how organisational structure connects business functions, departmental responsibilities and reporting relationships within an automotive enterprise.</p>
             </article>
             <article class="role-minor role-minor-mcf reveal" aria-labelledby="mcf-experience-title">
               <div class="mcf-experience-head">
@@ -3772,23 +3804,14 @@ ul, ol { padding: 0; list-style: none; }
                   <p class="mcf-experience-subtitle">Social Concern Project · Impact Internship</p>
                 </div>
               </div>
-              <p class="mcf-experience-summary">Supported communication design and Excel-based coordination for a project addressing gender-based violence prevention. The Foundation’s Head of Interventions commended the thought-provoking questions raised during the project.</p>
-              <div class="mcf-programme-gallery" aria-label="My Choices Foundation programme context">
-                <a class="mcf-programme-image" href="https://www.mychoicesfoundation.org/2021-a-year-of-persistent-strength/" target="_blank" rel="noopener noreferrer">
-                  <img src="https://www.mychoicesfoundation.org/wp-content/uploads/2021/12/Blog-Cover-3-1024x576.png" width="1000" height="563" alt="Community members viewing an educational booklet during a My Choices Foundation field programme" loading="lazy">
-                  <span>Community prevention · Official archive ↗</span>
-                </a>
-                <a class="mcf-programme-image" href="https://www.creativitywakeup.com/blog/how-to-get-creatively-unstuck" target="_blank" rel="noopener noreferrer">
-                  <img src="https://kajabi-storefronts-production.kajabi-cdn.com/kajabi-storefronts-production/file-uploads/blogs/22163/images/b7de58-cde6-d2d0-837b-2e6b5eea2ad7_2024.03_blog_india_3.jpg" width="1000" height="1000" alt="Photographic montage from a My Choices Foundation partner retreat, including programme leaders and police-partnership context" loading="lazy">
-                  <span>Foundation &amp; partner retreat · 2024 ↗</span>
+              <p class="mcf-experience-summary">Completed a Social Concern Project on gender-based violence prevention under Pearl Choragudi, Head of Interventions. The Foundation described the questions raised during the project as “thought provoking”; the work also involved communication design and Excel-based coordination.</p>
+              <div class="mcf-programme-gallery mcf-police-gallery" aria-label="Official archive photo from the My Choices Foundation and Telangana Police partnership">
+                <a class="mcf-programme-image" href="https://womensafetywing.telangana.gov.in/events-webinars/tspwsw-partnership-with-my-choice-foundation/" target="_blank" rel="noopener noreferrer">
+                  <img src="https://womensafetywing.telangana.gov.in/wp-content/uploads/2022/03/FKMGHR8VcAU1zwb-1024x1024.jpeg" width="1024" height="1024" alt="Official archive photograph associated with the Telangana Police Women Safety Wing and My Choices Foundation partnership" loading="lazy">
+                  <span>Telangana Police × My Choices Foundation · Official archive ↗</span>
                 </a>
               </div>
-              <p class="mcf-programme-note">Archive images show the Foundation’s wider programme work; they are not photographs of my January 2022 project.</p>
-              <a class="mcf-impact-reference" href="https://www.mychoicesfoundation.org/the-emotional-wellbeing-of-police-personnel-during-the-pandemic/" target="_blank" rel="noopener noreferrer">
-                <span class="mcf-impact-label">WIDER ORGANISATIONAL IMPACT · NOT MY PERSONAL RESULT</span>
-                <strong>3,013 counselling sessions</strong>
-                <span>Published by the Foundation for Rachakonda Police personnel, 26 May–20 July 2021. Read the source ↗</span>
-              </a>
+              <p class="mcf-programme-note">This is a public photograph documenting the Foundation’s wider police partnership, not a personal photograph of my January 2022 project.</p>
               <div class="mcf-experience-links">
                 <a href="/assets/certificates/My-Choices-Foundation-Social-Concern-Project.jpg" target="_blank" rel="noopener noreferrer" data-viewer="image" data-title="Social Concern Project — My Choices Foundation">View project certificate ↗</a>
                 <a href="https://www.mychoicesfoundation.org/" target="_blank" rel="noopener noreferrer">Official website ↗</a>
