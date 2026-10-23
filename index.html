@@ -416,15 +416,15 @@ ul, ol { padding: 0; list-style: none; }
 .role-minor-tata h3 { font-size:clamp(18px,2vw,21px); line-height:1.18; margin-bottom:4px; }
 .tata-osta-subtitle { margin:0!important; color:var(--muted)!important; font-size:10px!important; line-height:1.5!important; }
 .tata-osta-summary { margin:13px 0 0!important; font-size:13px!important; line-height:1.65!important; color:var(--charcoal)!important; }
-/* Three-image MCF gallery: police/UNICEF meeting centred, official archive fallback prevents broken media */
-.mcf-police-gallery { grid-template-columns:minmax(0,.82fr) minmax(0,1.3fr) minmax(0,.82fr); gap:7px; align-items:center; }
-.mcf-police-gallery .mcf-programme-image { display:flex; flex-direction:column; height:100%; }
-.mcf-police-gallery .mcf-programme-image img { display:block; width:100%; height:112px; object-fit:cover; object-position:center; background:#f6f7f8; }
+/* Three-column image gallery: preserve centre photo prominence across viewport sizes */
+.mcf-police-gallery { display:grid!important; grid-template-columns:minmax(0,.82fr) minmax(0,1.3fr) minmax(0,.82fr)!important; gap:7px; align-items:center; width:100%; min-width:0; }
+.mcf-police-gallery .mcf-programme-image { display:flex; flex-direction:column; width:100%; min-width:0; height:100%; overflow:hidden; }
+.mcf-police-gallery .mcf-programme-image img { display:block; width:100%; max-width:100%; height:112px; object-fit:cover; object-position:center; background:#f6f7f8; }
 .mcf-police-gallery .mcf-photo-primary img { height:154px; object-fit:contain; }
-.mcf-police-gallery .mcf-programme-image span { font-size:8px; line-height:1.35; padding:6px 5px; }
+.mcf-police-gallery .mcf-programme-image span { font-size:8px; line-height:1.35; padding:6px 5px; overflow-wrap:anywhere; }
 .mcf-police-gallery .mcf-photo-primary span { font-size:9px; padding:7px 6px; }
 @media (max-width:600px) {
-  .mcf-police-gallery { grid-template-columns:minmax(0,.82fr) minmax(0,1.3fr) minmax(0,.82fr); gap:5px; }
+  .mcf-police-gallery { grid-template-columns:minmax(0,.82fr) minmax(0,1.3fr) minmax(0,.82fr)!important; gap:5px; }
   .mcf-police-gallery .mcf-programme-image img { height:85px; }
   .mcf-police-gallery .mcf-photo-primary img { height:126px; }
   .mcf-police-gallery .mcf-programme-image span { font-size:7px; padding:5px 4px; }
@@ -3817,21 +3817,21 @@ ul, ol { padding: 0; list-style: none; }
                 </div>
               </div>
               <p class="mcf-experience-summary">Completed a Social Concern Project on gender-based violence prevention under Pearl Choragudi, Head of Interventions. The Foundation described the questions raised during the project as “thought provoking”; the work also involved communication design and Excel-based coordination.</p>
-              <div class="mcf-programme-gallery mcf-police-gallery" aria-label="My Choices Foundation programme photo gallery">
-                <a class="mcf-programme-image mcf-photo-side" href="https://www.mychoicesfoundation.org/gender-sensitisation-workshop-in-partnership-with-telangana-state-police/" target="_blank" rel="noopener noreferrer" aria-label="Visit My Choices Foundation's official police partnership article">
-                  <img src="https://www.mychoicesfoundation.org/wp-content/uploads/2021/12/001.png" width="353" height="264" alt="Community members viewing a My Choices Foundation awareness booklet during a community programme" loading="lazy">
-                  <span>Community awareness ↗</span>
+              <div class="mcf-programme-gallery mcf-police-gallery" aria-label="My Choices Foundation programme archive photo gallery">
+                <a class="mcf-programme-image mcf-photo-side" href="https://www.mychoicesfoundation.org/gender-sensitisation-workshop-in-partnership-with-telangana-state-police/" target="_blank" rel="noopener noreferrer" aria-label="Open My Choices Foundation's official police-partnership article">
+                  <img src="https://www.mychoicesfoundation.org/wp-content/uploads/2021/12/011.png" width="353" height="264" alt="Group of participants at a My Choices Foundation community programme" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://www.mychoicesfoundation.org/wp-content/uploads/2021/12/010.png';">
+                  <span>Community programme ↗</span>
                 </a>
-                <a class="mcf-programme-image mcf-photo-primary" href="https://www.mychoicesfoundation.org/gender-sensitisation-workshop-in-partnership-with-telangana-state-police/" target="_blank" rel="noopener noreferrer" aria-label="Visit My Choices Foundation's official police partnership article">
-                  <img src="https://ccyj.nalsar.ac.in/storage/2024/09/CRY-8.png" width="512" height="512" alt="Police officials and child-protection stakeholders meeting around a table beneath a UNICEF-branded presentation screen" loading="lazy" onerror="this.onerror=null;this.src='https://www.mychoicesfoundation.org/wp-content/uploads/2021/12/002.png';this.alt='Official My Choices Foundation archive photograph of police officials and programme partners';this.closest('.mcf-programme-image').querySelector('span').textContent='Police partnership · Official Foundation archive ↗';">
+                <a class="mcf-programme-image mcf-photo-primary" href="https://www.mychoicesfoundation.org/gender-sensitisation-workshop-in-partnership-with-telangana-state-police/" target="_blank" rel="noopener noreferrer" aria-label="Open My Choices Foundation's official police-partnership article">
+                  <img src="https://ccyj.nalsar.ac.in/storage/2024/09/CRY-8.png" width="512" height="512" alt="Police officials and child-protection stakeholders seated around a conference table beneath a UNICEF-branded presentation screen" loading="eager" fetchpriority="high" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://www.mychoicesfoundation.org/wp-content/uploads/2021/12/011.png';this.alt='My Choices Foundation archive group photograph';this.closest('.mcf-programme-image').querySelector('span').textContent='My Choices Foundation archive photo ↗';">
                   <span>Police &amp; UNICEF-branded meeting ↗</span>
                 </a>
-                <a class="mcf-programme-image mcf-photo-side" href="https://www.mychoicesfoundation.org/gender-sensitisation-workshop-in-partnership-with-telangana-state-police/" target="_blank" rel="noopener noreferrer" aria-label="Visit My Choices Foundation's official police partnership article">
-                  <img src="https://www.mychoicesfoundation.org/wp-content/uploads/2021/12/002.png" width="353" height="264" alt="Group photograph of police officials and programme partners published in My Choices Foundation's archive" loading="lazy">
-                  <span>Police partnership ↗</span>
+                <a class="mcf-programme-image mcf-photo-side" href="https://www.mychoicesfoundation.org/gender-sensitisation-workshop-in-partnership-with-telangana-state-police/" target="_blank" rel="noopener noreferrer" aria-label="Open My Choices Foundation's official police-partnership article">
+                  <img src="https://www.mychoicesfoundation.org/wp-content/uploads/2021/12/010.png" width="353" height="264" alt="Online training session archived by My Choices Foundation" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://www.mychoicesfoundation.org/wp-content/uploads/2021/12/011.png';">
+                  <span>Training &amp; outreach ↗</span>
                 </a>
               </div>
-              <p class="mcf-programme-note">The side photographs are from My Choices Foundation’s public archive. The centre photograph is from NALSAR’s Centre for Child &amp; Youth Justice, documenting a separate police/child-protection orientation with UNICEF branding. It is sector context, not a photograph of my January 2022 project. <a href="https://ccyj.nalsar.ac.in/orientation-program-on-role-of-police-as-per-juvenile-justice-act-2015-and-functioning-of-child-friendly-corners-in-police-station-sangareddy/" target="_blank" rel="noopener noreferrer">Centre-photo source ↗</a></p>
+              <p class="mcf-programme-note">Centre photograph: NALSAR’s Centre for Child &amp; Youth Justice documented this separate police/child-protection orientation with UNICEF branding. It is wider sector context, not a My Choices Foundation event photo or a photograph of my January 2022 project. <a href="https://ccyj.nalsar.ac.in/orientation-program-on-role-of-police-as-per-juvenile-justice-act-2015-and-functioning-of-child-friendly-corners-in-police-station-sangareddy/" target="_blank" rel="noopener noreferrer">Centre-photo source ↗</a></p>
               <div class="mcf-experience-links">
                 <a href="/assets/certificates/My-Choices-Foundation-Social-Concern-Project.jpg" target="_blank" rel="noopener noreferrer" data-viewer="image" data-title="Social Concern Project — My Choices Foundation">View project certificate ↗</a>
                 <a href="https://www.mychoicesfoundation.org/" target="_blank" rel="noopener noreferrer">Official website ↗</a>
