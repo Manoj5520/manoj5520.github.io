@@ -1971,6 +1971,53 @@ body.dossier-2026{margin:0;background:var(--d-bg);color:var(--d-ink);font:15px/1
 @media(max-width:620px){html{scroll-padding-top:20px}.dossier-shell{width:calc(100% - 32px)}.dossier-topbar{align-items:flex-start;flex-direction:column;gap:14px;padding:16px 0 13px}.dossier-monogram{width:38px;height:38px}.dossier-nav{width:100%;justify-content:space-between;gap:9px}.dossier-nav a{font-size:8px;letter-spacing:.035em}.dossier-nav .dossier-nav-cta{padding:8px}.dossier-hero{grid-template-columns:1fr;gap:30px;padding:50px 0 62px}.dossier-hero h1{font-size:clamp(55px,14.5vw,84px)}.dossier-eyebrow{margin-bottom:22px;font-size:9px}.dossier-hero-role{margin-top:20px;font-size:9px}.dossier-hero-intro{margin-top:15px;font-size:16px}.dossier-hero-note{font-size:11px}.dossier-hero-meta{gap:8px 12px;font-size:8px}.dossier-hero-meta span+span:before{margin-right:12px}.dossier-portrait-wrap{width:84%;max-width:350px;justify-self:center;margin:7px 0 8px 12px}.dossier-proof-card{left:-25px;bottom:20px;width:75%}.dossier-section{padding:55px 0}.dossier-section-head{grid-template-columns:1fr;gap:11px;margin-bottom:28px}.dossier-section-title{font-size:clamp(38px,10vw,52px)}.dossier-section-intro{font-size:12px}.dossier-capabilities{grid-template-columns:1fr}.dossier-capability,.dossier-capability+.dossier-capability{padding:22px 0;border-left:0;border-bottom:1px solid var(--d-line)}.dossier-capability:last-child{border-bottom:0}.dossier-capability-num{margin-bottom:15px}.dossier-capability-art{height:78px;margin-bottom:17px}.dossier-capability h3{font-size:29px}.dossier-affiliations{gap:8px}.dossier-affiliation{min-height:135px;padding:12px}.dossier-affiliation-logo{min-height:45px}.dossier-affiliation-logo img{max-height:45px}.dossier-work-grid{grid-template-columns:1fr;gap:12px}.dossier-work-card:last-child{grid-column:auto;display:flex}.dossier-work-card:last-child .dossier-work-art{border-right:0;border-bottom:1px solid var(--d-line)}.dossier-work-art{min-height:178px}.dossier-work-copy{padding:20px}.dossier-work-copy h3{font-size:30px}.dossier-contact-layout{grid-template-columns:1fr;gap:27px}.dossier-contact-layout h2{font-size:clamp(42px,11vw,60px)}.dossier-contact-qr{justify-self:start;width:100%;max-width:350px}.dossier-footer{flex-direction:column;gap:7px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.dossier-2026 *,.dossier-2026 *:before,.dossier-2026 *:after{transition:none!important;animation:none!important}}
 </style>
+<style id="dossier-main-portfolio-feature">
+.dossier-explore .dossier-section-head{margin-bottom:38px}
+.dossier-main-portfolio-feature{
+ position:relative;isolation:isolate;display:grid;grid-template-columns:minmax(0,1.03fr) minmax(320px,.97fr);align-items:center;gap:clamp(24px,4vw,58px);
+ min-height:340px;margin:0 0 18px;padding:clamp(26px,4.2vw,52px);overflow:hidden;border:1px solid #d4d0cd;
+ background:radial-gradient(ellipse at 83% 48%,rgba(112,40,61,.075),transparent 41%),linear-gradient(118deg,#fff 0%,#fbfaf8 48%,#f0eeeb 100%);
+ box-shadow:0 18px 50px -42px rgba(23,25,29,.44);transition:transform .45s cubic-bezier(.2,.7,.2,1),border-color .35s,box-shadow .45s;
+}
+.dossier-main-portfolio-feature:before{content:"";position:absolute;z-index:-1;inset:0;background:linear-gradient(105deg,transparent 0 60%,rgba(255,255,255,.5) 60.1% 60.4%,transparent 60.5%);pointer-events:none}
+.dossier-main-portfolio-feature:hover{transform:translateY(-4px);border-color:#b8a7ab;box-shadow:0 28px 60px -39px rgba(23,25,29,.42)}
+.dossier-main-feature-copy{position:relative;z-index:2;max-width:570px}
+.dossier-main-feature-kicker{display:flex;align-items:center;gap:9px;color:var(--d-burgundy);font-size:9px;font-weight:750;letter-spacing:.16em;line-height:1.6}
+.dossier-feature-live-dot{width:7px;height:7px;flex:0 0 7px;border-radius:50%;background:var(--d-burgundy);box-shadow:0 0 0 4px rgba(112,40,61,.09)}
+.dossier-main-feature-copy h3{margin:24px 0 0;color:var(--d-ink);font:400 clamp(38px,4.4vw,58px)/.98 var(--d-serif);letter-spacing:-.04em}
+.dossier-main-feature-copy h3 em{display:block;margin-top:4px;color:var(--d-burgundy);font-weight:400}
+.dossier-main-feature-copy p{max-width:500px;margin:19px 0 0;color:#595d63;font-size:13px;line-height:1.85}
+.dossier-main-feature-cta{display:inline-flex;align-items:center;gap:24px;margin-top:27px;padding:0 0 9px;border-bottom:1px solid var(--d-burgundy);color:var(--d-burgundy);font-size:10px;font-weight:750;letter-spacing:.11em}
+.dossier-main-feature-cta>span{font-size:18px;transition:transform .25s}
+.dossier-main-portfolio-feature:hover .dossier-main-feature-cta>span{transform:translate(3px,-3px)}
+.dossier-main-feature-art{position:relative;min-height:270px;perspective:1100px;isolation:isolate}
+.dossier-feature-backplate{position:absolute;inset:12% 7% 8% 8%;background:linear-gradient(145deg,#e6e5e1,#f9f8f5 58%,#e5dfe0);border:1px solid rgba(23,25,29,.09);transform:rotate(-5deg) skewY(1deg);box-shadow:0 24px 46px -35px rgba(23,25,29,.35);transition:transform .65s cubic-bezier(.2,.7,.2,1)}
+.dossier-feature-grid{position:absolute;inset:5% 2% 0 5%;opacity:.32;background-image:linear-gradient(rgba(23,25,29,.13) 1px,transparent 1px),linear-gradient(90deg,rgba(23,25,29,.13) 1px,transparent 1px);background-size:22px 22px;mask-image:linear-gradient(140deg,#000,transparent 78%)}
+.dossier-feature-orbit{position:absolute;z-index:1;width:170px;height:170px;border:1px solid rgba(112,40,61,.32);border-radius:50%;left:47%;top:13%;transform:translateX(-50%) rotate(-23deg);transition:transform .65s cubic-bezier(.2,.7,.2,1)}
+.dossier-feature-orbit:before{content:"";position:absolute;width:10px;height:10px;right:17px;top:30px;border-radius:50%;background:var(--d-burgundy);box-shadow:0 0 0 6px rgba(112,40,61,.09)}
+.dossier-feature-orbit-two{width:220px;height:118px;left:50%;top:25%;transform:translateX(-50%) rotate(28deg);border-color:rgba(23,25,29,.22)}
+.dossier-feature-panel{position:absolute;z-index:2;display:flex;flex-direction:column}
+.dossier-feature-panel-back{right:3%;top:13%;width:45%;height:66%;padding:17px 15px;background:rgba(255,255,255,.68);border:1px solid rgba(255,255,255,.9);box-shadow:0 20px 40px -30px rgba(23,25,29,.4);transform:rotate(7deg) translateZ(-30px);backdrop-filter:blur(6px)}
+.dossier-feature-panel-back>span{color:#65686d;font-size:8px;font-weight:700;letter-spacing:.14em}
+.dossier-feature-panel-back>b{margin-top:19px;color:var(--d-ink);font:400 23px/1.1 var(--d-serif)}
+.dossier-feature-panel-back>i{display:block;width:75%;height:1px;margin-top:13px;background:#c7c4c1}.dossier-feature-panel-back>i:nth-last-child(1){width:52%}
+.dossier-feature-panel-front{left:9%;top:12%;width:52%;height:78%;padding:18px 19px 15px;background:linear-gradient(145deg,#24252a 0%,#191a1f 68%,#321e27 100%);color:white;border:1px solid rgba(255,255,255,.26);box-shadow:0 28px 45px -24px rgba(23,25,29,.5);transform:rotateY(-11deg) rotateX(3deg) rotateZ(-4deg);transform-style:preserve-3d;transition:transform .65s cubic-bezier(.2,.7,.2,1)}
+.dossier-feature-monogram{display:grid;place-items:center;width:36px;height:36px;border:1px solid rgba(255,255,255,.45);border-bottom:2px solid #a95c70;font:400 11px/1 var(--d-serif);letter-spacing:.07em}
+.dossier-feature-panel-kicker{margin-top:22px;color:#d6bdc3;font-size:7px;font-weight:650;letter-spacing:.15em}
+.dossier-feature-panel-front strong{margin-top:11px;font:400 clamp(25px,3vw,37px)/.95 var(--d-serif);letter-spacing:-.025em}
+.dossier-feature-panel-footer{display:flex;justify-content:space-between;gap:8px;margin-top:auto;padding-top:13px;border-top:1px solid rgba(255,255,255,.28);color:#e8e2e3;font-size:7px;font-weight:700;letter-spacing:.15em}
+.dossier-feature-panel-footer span{color:#c29aa5}
+.dossier-feature-art-note{position:absolute;right:0;bottom:0;color:#686970;font-size:7px;font-weight:700;letter-spacing:.16em}
+.dossier-main-portfolio-feature:hover .dossier-feature-backplate{transform:rotate(-2deg) skewY(0) translateY(-3px)}
+.dossier-main-portfolio-feature:hover .dossier-feature-panel-front{transform:rotateY(-5deg) rotateX(1deg) rotateZ(-1deg) translateY(-5px)}
+.dossier-main-portfolio-feature:hover .dossier-feature-panel-back{transform:rotate(4deg) translateY(4px)}
+.dossier-main-portfolio-feature:hover .dossier-feature-orbit-one{transform:translateX(-50%) rotate(-9deg) scale(1.04)}
+.dossier-main-portfolio-feature:hover .dossier-feature-orbit-two{transform:translateX(-50%) rotate(17deg) scale(1.04)}
+.dossier-explore .dossier-assets-grid{margin-top:18px}
+@media(max-width:900px){.dossier-main-portfolio-feature{grid-template-columns:minmax(0,1fr) minmax(250px,.8fr);gap:20px;padding:28px}.dossier-main-feature-copy h3{font-size:clamp(36px,5vw,48px)}.dossier-main-feature-art{min-height:235px}.dossier-feature-panel-front{padding:14px}.dossier-feature-panel-kicker{margin-top:15px}}
+@media(max-width:620px){.dossier-main-portfolio-feature{grid-template-columns:1fr;gap:20px;padding:24px 20px 20px;min-height:0}.dossier-main-feature-copy h3{font-size:clamp(39px,10vw,48px)}.dossier-main-feature-copy p{font-size:12px}.dossier-main-feature-art{min-height:230px;width:min(100%,390px);justify-self:center;margin-top:0}.dossier-feature-panel-front{left:13%;width:51%;height:79%}.dossier-feature-panel-back{right:7%;width:43%}.dossier-feature-orbit{left:51%}.dossier-feature-orbit-two{left:53%}.dossier-feature-art-note{right:1%}.dossier-main-feature-cta{margin-top:23px}}
+@media(prefers-reduced-motion:reduce){.dossier-main-portfolio-feature,.dossier-main-portfolio-feature *{transition:none!important;animation:none!important}.dossier-main-portfolio-feature:hover{transform:none}.dossier-main-portfolio-feature:hover .dossier-feature-backplate,.dossier-main-portfolio-feature:hover .dossier-feature-panel-front,.dossier-main-portfolio-feature:hover .dossier-feature-panel-back{transform:none}}
+</style>
 </head>
 <body class="dossier-2026">
   <div class="dossier-shell">
@@ -2020,8 +2067,32 @@ body.dossier-2026{margin:0;background:var(--d-bg);color:var(--d-ink);font:15px/1
         </div>
       </section>
 
-      <section class="dossier-section" aria-labelledby="dossier-resources-title">
+      <section class="dossier-section dossier-explore" aria-labelledby="dossier-resources-title">
         <div class="dossier-section-head"><span class="dossier-section-index">04 / EXPLORE</span><div><h2 class="dossier-section-title" id="dossier-resources-title">More detail, when useful.</h2><p class="dossier-section-intro">Go deeper into the professional profile, review the résumé or browse supporting examples.</p></div></div>
+
+        <a class="dossier-main-portfolio-feature" href="https://manoj5520.github.io/" aria-label="Open V. Sai Manoj's main professional portfolio">
+          <div class="dossier-main-feature-copy">
+            <span class="dossier-main-feature-kicker"><span class="dossier-feature-live-dot" aria-hidden="true"></span> PRIMARY PORTFOLIO · V. SAI MANOJ</span>
+            <h3>Explore my <em>main portfolio.</em></h3>
+            <p>Strategy, operations, selected work, credentials and the thinking behind the work — brought together in one place.</p>
+            <span class="dossier-main-feature-cta">OPEN PROFESSIONAL PORTFOLIO <span aria-hidden="true">↗</span></span>
+          </div>
+          <div class="dossier-main-feature-art" aria-hidden="true">
+            <div class="dossier-feature-backplate"></div>
+            <div class="dossier-feature-grid"></div>
+            <div class="dossier-feature-orbit dossier-feature-orbit-one"></div>
+            <div class="dossier-feature-orbit dossier-feature-orbit-two"></div>
+            <div class="dossier-feature-panel dossier-feature-panel-back"><span>BUSINESS</span><b>Context</b><i></i><i></i><i></i></div>
+            <div class="dossier-feature-panel dossier-feature-panel-front">
+              <span class="dossier-feature-monogram">VSM</span>
+              <span class="dossier-feature-panel-kicker">STRATEGY / OPERATIONS</span>
+              <strong>Insight<br>into action.</strong>
+              <span class="dossier-feature-panel-footer">PORTFOLIO <span>01 — 04</span></span>
+            </div>
+            <span class="dossier-feature-art-note">A CLOSER LOOK AT THE WORK</span>
+          </div>
+        </a>
+
         <div class="dossier-assets-grid">
           <a class="dossier-asset" href="/value-creation/"><span><strong>Value Creation Snapshot</strong><small>Core capabilities, evidence and role alignment</small></span><span class="dossier-asset-arrow" aria-hidden="true">↗</span></a>
           <a class="dossier-asset" href="https://manoj5520.github.io/projects/"><span><strong>Projects &amp; work samples</strong><small>Illustrative briefs and supporting PDFs</small></span><span class="dossier-asset-arrow" aria-hidden="true">↗</span></a>
