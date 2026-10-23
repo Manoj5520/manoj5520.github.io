@@ -1972,30 +1972,33 @@ body.dossier-2026{margin:0;background:var(--d-bg);color:var(--d-ink);font:15px/1
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.dossier-2026 *,.dossier-2026 *:before,.dossier-2026 *:after{transition:none!important;animation:none!important}}
 </style>
 <style id="dossier-minimal-portfolio-link">
-/* Main portfolio gets the animated globe at the top of the page; the lower CTA stays typographic and quiet. */
+/* Strong, premium main-portfolio action with a fully defined CSS 3D globe. */
 .dossier-hero-actions{align-items:center;gap:12px}
-.dossier-hero-portfolio-link{display:grid!important;grid-template-columns:54px minmax(0,1fr) auto;align-items:center;gap:12px;min-height:72px!important;max-width:365px;padding:8px 15px 8px 10px!important;background:linear-gradient(110deg,#fff 0%,#faf7f7 100%)!important;color:var(--d-ink)!important;border:1px solid #d7c5ca!important;border-left:3px solid var(--d-burgundy)!important;box-shadow:0 8px 22px -20px rgba(23,25,29,.65);letter-spacing:normal!important;text-transform:none!important;transition:transform .25s ease,border-color .25s ease,box-shadow .25s ease}
-.dossier-hero-portfolio-link:hover{transform:translateY(-2px);border-color:#b895a0!important;background:#fff!important;box-shadow:0 15px 30px -24px rgba(72,25,42,.38)}
-.dossier-hero-portfolio-copy{display:flex;min-width:0;flex-direction:column;gap:4px;text-align:left}
-.dossier-hero-portfolio-copy strong{color:var(--d-ink);font:600 12px/1.3 var(--d-sans);letter-spacing:.015em}
-.dossier-hero-portfolio-copy small{color:var(--d-muted);font:400 9px/1.5 var(--d-sans);letter-spacing:.005em}
-.dossier-hero-portfolio-arrow{align-self:center;color:var(--d-burgundy);font:400 22px/1 var(--d-sans);transition:transform .25s}
-.dossier-hero-portfolio-link:hover .dossier-hero-portfolio-arrow{transform:translate(2px,-2px)}
-/* Compact 3D globe: shaded sphere, meridians/parallels and two independently revolving orbital paths. */
-.dossier-hero-globe{position:relative;display:block;width:52px;height:52px;flex:0 0 52px;isolation:isolate;overflow:visible}
-.dossier-hero-globe .dossier-globe-sphere{top:47%;width:34px;height:34px;animation:dossier-globe-drift 4.2s ease-in-out infinite}
-.dossier-hero-globe .dossier-globe-lat{left:1px;right:1px;top:10px;height:12px;border-width:1px}
-.dossier-hero-globe .dossier-globe-lat-two{top:10px;height:13px;transform:scaleY(.32)}
-.dossier-hero-globe .dossier-globe-long{width:15px}
+.dossier-hero-portfolio-link{position:relative;isolation:isolate;display:grid!important;grid-template-columns:58px minmax(0,1fr) auto;align-items:center;gap:12px;min-height:82px!important;width:min(390px,100%);max-width:390px;padding:10px 16px 10px 12px!important;overflow:hidden;background:linear-gradient(125deg,#511528 0%,#70283d 56%,#842f49 100%)!important;color:#fff!important;border:1px solid #7d3549!important;border-left:3px solid #3d0e20!important;box-shadow:inset 0 1px 0 rgba(255,255,255,.18),0 5px 0 rgba(63,15,32,.13),0 15px 28px -20px rgba(67,16,34,.55);letter-spacing:normal!important;text-transform:none!important;transition:transform .28s ease,box-shadow .28s ease,filter .28s ease}
+.dossier-hero-portfolio-link:before{content:"";position:absolute;z-index:-1;inset:0;background:linear-gradient(100deg,transparent 0%,rgba(255,255,255,.035) 44%,rgba(255,255,255,.12) 100%);pointer-events:none}
+.dossier-hero-portfolio-link:after{content:"";position:absolute;z-index:-1;right:-28px;top:-65px;width:155px;height:155px;border:1px solid rgba(255,255,255,.10);border-radius:50%;box-shadow:0 0 0 13px rgba(255,255,255,.025),0 0 0 28px rgba(255,255,255,.018);pointer-events:none}
+.dossier-hero-portfolio-link:hover{transform:translateY(-3px);background:linear-gradient(125deg,#451022 0%,#651e35 55%,#782940 100%)!important;border-color:#9a5265!important;box-shadow:inset 0 1px 0 rgba(255,255,255,.21),0 7px 0 rgba(63,15,32,.11),0 22px 32px -20px rgba(67,16,34,.48);filter:saturate(1.06)}
+.dossier-hero-portfolio-copy{display:flex;min-width:0;flex-direction:column;gap:5px;text-align:left}
+.dossier-hero-portfolio-copy strong{color:#fff;font:650 13px/1.3 var(--d-sans);letter-spacing:.005em}
+.dossier-hero-portfolio-copy small{color:#f0dfe4;font:400 9px/1.45 var(--d-sans);letter-spacing:.01em}
+.dossier-hero-portfolio-arrow{align-self:center;color:#fff;font:400 23px/1 var(--d-sans);transition:transform .25s}
+.dossier-hero-portfolio-link:hover .dossier-hero-portfolio-arrow{transform:translate(3px,-3px)}
+/* Globe medallion */
+.dossier-hero-globe{position:relative;display:block;width:56px;height:56px;flex:0 0 56px;isolation:isolate;overflow:visible;border-radius:50%;background:radial-gradient(circle at 28% 20%,#fff 0%,#f2eceb 38%,#d8c1c7 76%,#ad8b96 100%);border:1px solid rgba(255,255,255,.72);box-shadow:inset 0 1px 3px rgba(255,255,255,.9),inset 0 -4px 8px rgba(69,21,37,.13),0 3px 8px rgba(27,7,15,.22)}
+.dossier-hero-globe .dossier-globe-sphere{position:absolute;display:block;left:50%;top:50%;width:35px;height:35px;overflow:hidden;border:1px solid rgba(89,26,46,.5);border-radius:50%;background:radial-gradient(circle at 28% 21%,#fff 0%,#e5d1d7 19%,#b77e8e 43%,#7c2b43 72%,#421323 100%);box-shadow:inset -5px -5px 8px rgba(30,8,17,.33),inset 3px 3px 6px rgba(255,255,255,.64),0 4px 8px rgba(59,14,30,.24);transform:translate(-50%,-50%);transform-style:preserve-3d;animation:dossier-globe-drift 4.2s ease-in-out infinite;will-change:transform}
+.dossier-hero-globe .dossier-globe-sphere:before{content:"";position:absolute;inset:0;border-radius:50%;background:linear-gradient(110deg,transparent 34%,rgba(255,255,255,.17) 48%,transparent 62%);pointer-events:none}
+.dossier-hero-globe .dossier-globe-lat,.dossier-hero-globe .dossier-globe-long{position:absolute;display:block;pointer-events:none}
+.dossier-hero-globe .dossier-globe-lat{left:0;right:0;top:10px;height:13px;border:1px solid rgba(255,255,255,.88);border-radius:50%}
+.dossier-hero-globe .dossier-globe-lat-two{top:10px;height:14px;transform:scaleY(.35);border-color:rgba(66,19,35,.62)}
+.dossier-hero-globe .dossier-globe-long{top:0;bottom:0;left:50%;width:17px;border:1px solid rgba(255,255,255,.8);border-radius:50%;transform:translateX(-50%)}
 .dossier-hero-globe .dossier-globe-long-one{width:12px}
-.dossier-hero-globe .dossier-globe-long-two{width:24px}
-.dossier-hero-globe .dossier-globe-shine{width:4px;height:4px;inset:4px 5px auto auto}
-.dossier-hero-globe .dossier-globe-orbit{top:47%;width:51px;height:19px;border-color:rgba(112,40,61,.42)}
+.dossier-hero-globe .dossier-globe-long-two{width:25px;border-color:rgba(255,255,255,.55)}
+.dossier-hero-globe .dossier-globe-shine{position:absolute;display:block;right:5px;top:4px;width:5px;height:5px;border-radius:50%;background:rgba(255,255,255,.93);filter:blur(.35px)}
+.dossier-hero-globe .dossier-globe-orbit{position:absolute;z-index:3;display:block;left:50%;top:50%;width:57px;height:22px;border:1px solid rgba(255,255,255,.9);border-radius:50%;transform:translate(-50%,-50%) rotate(-27deg);pointer-events:none}
 .dossier-hero-globe .dossier-globe-orbit-a{animation:dossier-orbit-revolve 6s linear infinite}
-.dossier-hero-globe .dossier-globe-orbit-b{width:43px;height:24px;border-color:rgba(83,91,101,.32);animation:dossier-orbit-counter 8s linear infinite}
-.dossier-hero-globe .dossier-globe-orbit i{right:3px;top:0;width:6px;height:6px}
-.dossier-hero-globe .dossier-globe-orbit-b i{left:3px;right:auto;top:auto;bottom:0;width:4px;height:4px}
-.dossier-hero-globe .dossier-globe-sphere,.dossier-hero-globe .dossier-globe-orbit{will-change:transform}
+.dossier-hero-globe .dossier-globe-orbit-b{width:47px;height:29px;border-color:rgba(86,27,45,.72);transform:translate(-50%,-50%) rotate(48deg);animation:dossier-orbit-counter 8s linear infinite}
+.dossier-hero-globe .dossier-globe-orbit i{position:absolute;right:3px;top:0;display:block;width:7px;height:7px;border-radius:50%;background:radial-gradient(circle at 28% 22%,#fff 0%,#eadfe2 23%,#b98291 52%,#70283d 100%);border:1px solid rgba(255,255,255,.95);box-shadow:0 2px 4px rgba(32,7,16,.3)}
+.dossier-hero-globe .dossier-globe-orbit-b i{left:2px;right:auto;top:auto;bottom:0;width:5px;height:5px;background:radial-gradient(circle at 30% 20%,#fff,#b9bbc0 42%,#676b73 100%)}
 .dossier-main-link{position:relative;isolation:isolate;display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:24px;min-height:108px;margin-top:20px;padding:22px 25px;overflow:hidden;background:linear-gradient(105deg,#fff 0%,#fbfaf9 66%,#f0ebea 100%);border:1px solid #d8d4d1;border-left:3px solid var(--d-burgundy);box-shadow:0 10px 28px -27px rgba(23,25,29,.55);transition:transform .28s ease,border-color .28s ease,box-shadow .28s ease}
 .dossier-main-link:before{content:"";position:absolute;z-index:-1;right:-34px;top:-72px;width:210px;height:210px;border:1px solid rgba(112,40,61,.075);border-radius:50%;box-shadow:0 0 0 16px rgba(112,40,61,.022),0 0 0 34px rgba(112,40,61,.015);pointer-events:none;transition:transform .45s ease}
 .dossier-main-link:after{content:"";position:absolute;z-index:-1;right:0;top:0;bottom:0;width:28%;background:linear-gradient(135deg,transparent,rgba(112,40,61,.035));pointer-events:none}
@@ -2004,11 +2007,11 @@ body.dossier-2026{margin:0;background:var(--d-bg);color:var(--d-ink);font:15px/1
 .dossier-main-link-label{display:flex;align-items:center;gap:8px;color:var(--d-burgundy);font-size:9px;font-weight:750;letter-spacing:.16em;line-height:1.5}.dossier-main-link-label i{display:block;width:6px;height:6px;flex:0 0 6px;border-radius:50%;background:var(--d-burgundy);box-shadow:0 0 0 4px rgba(112,40,61,.08)}
 .dossier-main-link-copy strong{display:block;margin-top:7px;color:var(--d-ink);font:400 clamp(26px,3.1vw,39px)/1.08 var(--d-serif);letter-spacing:-.025em}.dossier-main-link-copy strong em{color:var(--d-burgundy);font-weight:400}.dossier-main-link-description{margin-top:7px;color:var(--d-muted);font-size:11px;letter-spacing:.015em}
 .dossier-main-link-action{position:relative;z-index:1;display:inline-flex;align-items:center;justify-content:center;gap:14px;min-height:50px;padding:0 15px;background:var(--d-burgundy);color:#fff;font-size:9px;font-weight:750;letter-spacing:.10em;white-space:nowrap;transition:background .25s,transform .25s;box-shadow:3px 3px 0 rgba(112,40,61,.16)}.dossier-main-link-action b{font-size:18px;font-weight:400;transition:transform .25s}.dossier-main-link:hover .dossier-main-link-action{background:var(--d-ink);transform:translate(-2px,-2px)}.dossier-main-link:hover .dossier-main-link-action b{transform:translateY(2px)}
-@keyframes dossier-globe-drift{0%,100%{transform:translate(-50%,-50%) translateY(0) rotateY(-8deg)}50%{transform:translate(-50%,-50%) translateY(-2px) rotateY(8deg)}}
-@keyframes dossier-orbit-revolve{from{transform:translate(-50%,-50%) rotate(-26deg)}to{transform:translate(-50%,-50%) rotate(334deg)}}
-@keyframes dossier-orbit-counter{from{transform:translate(-50%,-50%) rotate(48deg)}to{transform:translate(-50%,-50%) rotate(-312deg)}}
-@media(max-width:950px){.dossier-hero-portfolio-link{grid-template-columns:48px minmax(0,1fr) auto;gap:9px;padding:8px 11px 8px 8px!important}.dossier-hero-globe{width:48px;height:48px;flex-basis:48px}.dossier-hero-portfolio-copy small{font-size:8px}.dossier-main-link{gap:16px;padding:20px}}
-@media(max-width:680px){.dossier-hero-actions{align-items:stretch;flex-direction:column}.dossier-hero-portfolio-link{width:100%;max-width:100%;grid-template-columns:54px minmax(0,1fr) auto;min-height:70px!important}.dossier-hero-globe{width:52px;height:52px;flex-basis:52px}.dossier-hero-portfolio-copy strong{font-size:12px}.dossier-hero-portfolio-copy small{font-size:9px}.dossier-hero-portfolio-arrow{font-size:21px}.dossier-main-link{grid-template-columns:minmax(0,1fr) auto;gap:12px;padding:19px 16px;min-height:0}.dossier-main-link-copy strong{font-size:clamp(25px,6.8vw,33px)}.dossier-main-link-description{font-size:10px;line-height:1.7}.dossier-main-link-action{grid-column:auto;min-height:43px;padding:0 12px;font-size:8px;gap:9px}}
+@keyframes dossier-globe-drift{0%,100%{transform:translate(-50%,-50%) translateY(0) rotateY(-10deg)}50%{transform:translate(-50%,-50%) translateY(-2px) rotateY(10deg)}}
+@keyframes dossier-orbit-revolve{from{transform:translate(-50%,-50%) rotate(-27deg)}to{transform:translate(-50%,-50%) rotate(333deg)}}
+@keyframes dossier-orbit-counter{from{transform:translate(-50%,-50%) rotate(48deg)}to{transform:translate(-50%,-50%) rotate(408deg)}}
+@media(max-width:950px){.dossier-hero-portfolio-link{grid-template-columns:52px minmax(0,1fr) auto;gap:10px;padding:9px 12px 9px 10px!important}.dossier-hero-globe{width:50px;height:50px;flex-basis:50px}.dossier-hero-portfolio-copy small{font-size:8px}.dossier-main-link{gap:16px;padding:20px}}
+@media(max-width:680px){.dossier-hero-actions{align-items:stretch;flex-direction:column}.dossier-hero-portfolio-link{width:100%;max-width:100%;grid-template-columns:56px minmax(0,1fr) auto;min-height:76px!important}.dossier-hero-globe{width:54px;height:54px;flex-basis:54px}.dossier-hero-portfolio-copy strong{font-size:12px}.dossier-hero-portfolio-copy small{font-size:9px}.dossier-hero-portfolio-arrow{font-size:21px}.dossier-main-link{grid-template-columns:minmax(0,1fr) auto;gap:12px;padding:19px 16px;min-height:0}.dossier-main-link-copy strong{font-size:clamp(25px,6.8vw,33px)}.dossier-main-link-description{font-size:10px;line-height:1.7}.dossier-main-link-action{grid-column:auto;min-height:43px;padding:0 12px;font-size:8px;gap:9px}}
 @media(prefers-reduced-motion:reduce){.dossier-hero-portfolio-link,.dossier-main-link,.dossier-main-link:before,.dossier-main-link-action,.dossier-main-link-action b,.dossier-hero-globe .dossier-globe-orbit,.dossier-hero-globe .dossier-globe-sphere{animation:none!important;transition:none!important}.dossier-main-link:hover,.dossier-hero-portfolio-link:hover{transform:none}}
 </style>
 </head>
