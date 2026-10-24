@@ -1,0 +1,43 @@
+name: Persist VM-PRIME logo assets
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "dossier/vm-prime/index.html"
+permissions:
+  contents: write
+jobs:
+  save-logo-assets:
+    runs-on: ubuntu-latest
+    env:
+      ETHIC_TOP_LOGO_URL: "https://d2jqrm6oza8nb6.cloudfront.net/datasets/2ddd0b30-5cf4-452b-b4ff-a5da9b082994.webp?_jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXlIYXNoIjoiOGYxNjU5MjE4N2M5NjQwNyIsImJ1Y2tldCI6InJ1bndheS1kYXRhc2V0cyIsInN0YWdlIjoicHJvZCIsImV4cCI6MTc5Mjk1NTI5N30.-jWgdhnYxXfbbc_iIxfJFi6lYAqex8OOCWyzHaXAPp8"
+      ETHIC_END_LOGO_URL: "https://d2jqrm6oza8nb6.cloudfront.net/datasets/249277ff-ef04-415f-b4de-b09c71f80a44.webp?_jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXlIYXNoIjoiMmFiZmRhMzg0MTk4ZTA0MiIsImJ1Y2tldCI6InJ1bndheS1kYXRhc2V0cyIsInN0YWdlIjoicHJvZCIsImV4cCI6MTc5Mjk4MjcxMn0.MBbFuuwN0AwL5K24tRbLr3f8pdED6P3MIx22KDTpSnc"
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - name: Download the supplied high-resolution ETHIC lock-ups
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p assets/vm-prime
+          curl --fail --location --silent --show-error "$ETHIC_TOP_LOGO_URL" -o assets/vm-prime/ethic-logo-top.webp
+          curl --fail --location --silent --show-error "$ETHIC_END_LOGO_URL" -o assets/vm-prime/ethic-logo-end.webp
+          file assets/vm-prime/ethic-logo-top.webp assets/vm-prime/ethic-logo-end.webp
+          test "$(du -k assets/vm-prime/ethic-logo-top.webp | cut -f1)" -gt 30
+          test "$(du -k assets/vm-prime/ethic-logo-end.webp | cut -f1)" -gt 30
+      - name: Commit logo assets into the repository
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/vm-prime/ethic-logo-top.webp assets/vm-prime/ethic-logo-end.webp
+          if git diff --cached --quiet; then
+            echo "Logo assets are already current."
+            exit 0
+          fi
+          git commit -m "Add sharp VM-PRIME ETHIC logo lock-ups"
+          git push
