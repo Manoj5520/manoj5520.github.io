@@ -47,6 +47,26 @@ a:focus-visible,button:focus-visible,input:focus-visible{outline:3px solid #cdb7
 @media(max-width:650px){.nav-inner,.wrap{width:calc(100% - 28px)}.nav-inner{min-height:65px}.brand img{width:35px;height:35px}.brand strong{font-size:11px}.brand small{font-size:8px;letter-spacing:.06em}.nav-links{gap:6px}.nav-links .access{font-size:8px;padding:8px}.hero-grid{padding:40px 0 47px}.hero h1{font-size:clamp(42px,11vw,57px)}.hero-role{font-size:10px;letter-spacing:.12em}.hero-copy>p:not(.eyebrow):not(.hero-role){font-size:13px}.hero-brand-board{min-height:300px}.logo-board{width:min(77%,285px);padding:16px}.logo-board img{max-height:235px}.hero-meta{grid-template-columns:repeat(2,1fr)}.hero-meta>div{padding:14px;border-bottom:1px solid var(--line)}.hero-meta>div:nth-child(2){border-right:0}.hero-meta>div:nth-child(n+3){border-bottom:0}.section{padding:62px 0}.section-head h2{font-size:34px}.four-grid,.purpose-grid,.f5-grid,.dyson,.friction-map,.sources{grid-template-columns:1fr}.case h3{font-size:24px}.case-img img{height:190px}.history-line{gap:5px;margin-left:15px;margin-right:15px}.history-step{padding:9px}.history-step b{font-size:13px}.history-step span{font-size:8px}.case-top{padding:17px 16px 0}.case h3{margin-left:16px;margin-right:16px}.case-lede{padding-left:16px;padding-right:16px}.case-body{padding:17px 16px}.case-foot{margin-left:16px;margin-right:16px}.fusion-visual{min-height:320px}.fusion-copy,.dyson-copy,.manra-card,.gate-status{padding:21px}.fusion-flow{grid-template-columns:1fr}.dyson-photo{min-height:260px}.gate-steps{grid-template-columns:1fr}.budget-row{grid-template-columns:minmax(0,1fr) auto}.kpi-grid{grid-template-columns:repeat(2,1fr)}.kpi-extra{grid-template-columns:1fr}.scale-grid{grid-template-columns:1fr 1fr}.legal-grid{grid-template-columns:repeat(2,1fr)}.end-brand{padding:60px 0 52px}.end-brand .tagline{font-size:27px}.footer-inner{align-items:flex-start;flex-direction:column}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.reveal{opacity:1;transform:none;transition:none}.case,.purpose,.tech-card,.btn,.orbit,.logo-board{transition:none}}
 </style>
+
+<style id="friction-lane-arrow-and-color-hierarchy">
+/* A clear directional cue: earlier format → revised dispensing workflow. */
+.case.blue .case-img:not(.single){position:relative}
+.case.blue .case-img:not(.single):after{content:"→";position:absolute;z-index:4;left:50%;top:50%;transform:translate(-50%,-50%);display:grid;place-items:center;width:42px;height:42px;border-radius:50%;border:1px solid rgba(255,255,255,.65);background:#123657;color:#fff;font-size:29px;line-height:1;box-shadow:0 5px 15px rgba(0,0,0,.25)}
+/* Distinct F7–F11 colour fields; contrast remains high for text. */
+.friction-map .tech-card:nth-child(1){background:linear-gradient(145deg,#1c3553,#20232d);border-color:#405675}
+.friction-map .tech-card:nth-child(1) img{background:#172a42}
+.friction-map .tech-card:nth-child(2){background:linear-gradient(145deg,#44351f,#29262a);border-color:#766241}
+.friction-map .tech-card:nth-child(2) img{background:#28252a}
+.friction-map .tech-card:nth-child(3){background:linear-gradient(145deg,#3f2938,#24232b);border-color:#755366}
+.friction-map .tech-card:nth-child(3) img{background:#271f29}
+.friction-map .tech-card:nth-child(4){background:linear-gradient(145deg,#24463d,#20252a);border-color:#4f7669}
+.friction-map .tech-card:nth-child(4) img{background:#1b342d}
+.friction-map .tech-card:nth-child(5){background:linear-gradient(145deg,#303943,#22242b);border-color:#586875}
+.friction-map .tech-card:nth-child(5) img{background:#22252b}
+.friction-map .tech-card:nth-child(6){background:linear-gradient(145deg,#2f2b4d,#24242d);border-color:#5f5988}
+.friction-map .tech-card:nth-child(6) img{background:#252238}
+</style>
+
 </head>
 <body>
 <a class="skip" href="#main">Skip to portfolio content</a>
