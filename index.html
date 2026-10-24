@@ -3605,6 +3605,43 @@ ul, ol { padding: 0; list-style: none; }
             <div class="snapshot-orbit snapshot-orbit-two"></div>
             <div class="snapshot-plinth snapshot-plinth-back"></div>
             <div class="snapshot-globe" aria-label="Rotating Earth"><div class="snapshot-earth-track" aria-hidden="true"><img src="https://eoimages.gsfc.nasa.gov/images/imagerecords/57000/57752/land_shallow_topo_2048.jpg" alt="" draggable="false"><img src="https://eoimages.gsfc.nasa.gov/images/imagerecords/57000/57752/land_shallow_topo_2048.jpg" alt="" draggable="false"></div><span class="snapshot-globe-meridian"></span><span class="snapshot-globe-latitude"></span><span class="snapshot-globe-core"></span></div>
+            <div class="signature-sculpture" aria-hidden="true">
+              <div class="signature-sculpture-float">
+                <svg viewBox="0 0 260 300" role="presentation" focusable="false">
+                  <defs>
+                    <linearGradient id="sigSilver" x1="0" y1="0" x2="1" y2="1">
+                      <stop offset="0" stop-color="#FFFFFF"/>
+                      <stop offset=".22" stop-color="#AEB5BC"/>
+                      <stop offset=".43" stop-color="#F7F8F9"/>
+                      <stop offset=".68" stop-color="#737B84"/>
+                      <stop offset="1" stop-color="#DDE1E5"/>
+                    </linearGradient>
+                    <linearGradient id="sigBurgundy" x1="0" y1="0" x2="1" y2="1">
+                      <stop offset="0" stop-color="#8A4055"/>
+                      <stop offset=".45" stop-color="#4B1727"/>
+                      <stop offset=".72" stop-color="#78283E"/>
+                      <stop offset="1" stop-color="#26151B"/>
+                    </linearGradient>
+                    <filter id="sigShadow" x="-40%" y="-40%" width="180%" height="180%">
+                      <feGaussianBlur stdDeviation="5"/>
+                    </filter>
+                  </defs>
+                  <ellipse cx="132" cy="253" rx="64" ry="13" fill="#20242A" opacity=".18" filter="url(#sigShadow)"/>
+                  <g class="signature-sculpture-turn">
+                    <path d="M64 174 C34 136 49 83 89 66 C125 51 172 67 189 101 C204 130 183 151 155 157 C123 163 96 143 101 119 C105 101 126 95 144 104"
+                      fill="none" stroke="#4C1727" stroke-width="24" stroke-linecap="round" stroke-linejoin="round" opacity=".95"/>
+                    <path d="M64 174 C34 136 49 83 89 66 C125 51 172 67 189 101 C204 130 183 151 155 157 C123 163 96 143 101 119 C105 101 126 95 144 104"
+                      fill="none" stroke="url(#sigBurgundy)" stroke-width="19" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M144 104 C177 122 192 153 171 181 C149 211 105 221 80 197 C55 174 69 145 94 130 C118 115 151 120 165 143 C180 168 162 194 140 195"
+                      fill="none" stroke="#646C75" stroke-width="26" stroke-linecap="round" stroke-linejoin="round" opacity=".35" transform="translate(0 5)"/>
+                    <path d="M144 104 C177 122 192 153 171 181 C149 211 105 221 80 197 C55 174 69 145 94 130 C118 115 151 120 165 143 C180 168 162 194 140 195"
+                      fill="none" stroke="url(#sigSilver)" stroke-width="21" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M61 166 C38 130 54 86 91 70" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" opacity=".82"/>
+                    <path d="M150 199 C169 188 178 171 172 155" fill="none" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round" opacity=".72"/>
+                  </g>
+                </svg>
+              </div>
+            </div>
             <div class="snapshot-plinth snapshot-plinth-front"><span>INSIGHT</span><i></i><span>OPPORTUNITY</span><i></i><span>EXECUTION</span></div>
             <div class="snapshot-float-card snapshot-card-market"><span>i / COMPETITORS</span><strong>Competitive<br>landscape</strong><small>Positioning · benchmarking</small></div>
             <div class="snapshot-float-card snapshot-card-gap"><span>ii / MARKET GAPS</span><strong>Underserved<br>needs</strong><small>Customer demand · service gaps</small></div>
@@ -4565,5 +4602,39 @@ body .mcf-unicef-role-source { display:inline-block; margin-top:6px; color:#0072
   body .role-minor-mcf .mcf-programme-gallery.mcf-police-gallery img { transition:none!important; }
 }
 </style>
+
+<style id="signature-sculpture-motion">
+/* Minimal bespoke 3D signature form: a controlled bend in satin silver and deep burgundy. */
+.signature-sculpture {
+  position:absolute; z-index:5; left:36%; top:12%; width:36%; max-width:220px;
+  aspect-ratio:260/300; pointer-events:none; perspective:900px;
+  filter:drop-shadow(0 16px 22px rgba(25,20,24,.14));
+}
+.signature-sculpture-float {
+  width:100%; height:100%; transform-style:preserve-3d;
+  animation:signatureFloat 7.5s ease-in-out infinite;
+}
+.signature-sculpture svg { display:block; width:100%; height:100%; overflow:visible; }
+.signature-sculpture-turn {
+  transform-origin:130px 150px;
+  animation:signatureTurn 12s ease-in-out infinite;
+  transform-box:fill-box;
+}
+@keyframes signatureFloat {
+  0%,100% { transform:translate3d(0,0,35px) rotateX(-5deg) rotateY(-10deg) rotateZ(-3deg); }
+  50% { transform:translate3d(0,-11px,55px) rotateX(7deg) rotateY(12deg) rotateZ(2deg); }
+}
+@keyframes signatureTurn {
+  0%,100% { transform:rotateY(-13deg) rotateX(4deg) rotateZ(-2deg); }
+  50% { transform:rotateY(15deg) rotateX(-5deg) rotateZ(3deg); }
+}
+@media(max-width:560px) {
+  .signature-sculpture { left:36%; top:13%; width:34%; }
+}
+@media(prefers-reduced-motion:reduce) {
+  .signature-sculpture-float,.signature-sculpture-turn { animation:none!important; }
+}
+</style>
+
 </body>
 </html>
