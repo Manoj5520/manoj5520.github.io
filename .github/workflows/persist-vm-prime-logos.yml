@@ -13,6 +13,8 @@ jobs:
     env:
       ETHIC_TOP_LOGO_URL: "https://d2jqrm6oza8nb6.cloudfront.net/datasets/2ddd0b30-5cf4-452b-b4ff-a5da9b082994.webp?_jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXlIYXNoIjoiOGYxNjU5MjE4N2M5NjQwNyIsImJ1Y2tldCI6InJ1bndheS1kYXRhc2V0cyIsInN0YWdlIjoicHJvZCIsImV4cCI6MTc5Mjk1NTI5N30.-jWgdhnYxXfbbc_iIxfJFi6lYAqex8OOCWyzHaXAPp8"
       ETHIC_END_LOGO_URL: "https://d2jqrm6oza8nb6.cloudfront.net/datasets/249277ff-ef04-415f-b4de-b09c71f80a44.webp?_jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXlIYXNoIjoiMmFiZmRhMzg0MTk4ZTA0MiIsImJ1Y2tldCI6InJ1bndheS1kYXRhc2V0cyIsInN0YWdlIjoicHJvZCIsImV4cCI6MTc5Mjk4MjcxMn0.MBbFuuwN0AwL5K24tRbLr3f8pdED6P3MIx22KDTpSnc"
+      ETHIC_SPOON_VIDEO_URL: "https://d2jqrm6oza8nb6.cloudfront.net/datasets/d9dc5618-7973-44bb-adc8-6f099ed4ca28.mp4?_jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXlIYXNoIjoiZGNmNWM5M2MwNDVmY2EyMCIsImJ1Y2tldCI6InJ1bndheS1kYXRhc2V0cyIsInN0YWdlIjoicHJvZCIsImV4cCI6MTc5Mjk4OTc1Nn0.OZmEaVaU8bzhVHdGm0SztkEo3O2__SlY0exlopysjRs"
+      ETHIC_SPOON_POSTER_URL: "https://d2jqrm6oza8nb6.cloudfront.net/datasets/3c474e25-b8fc-4743-a681-dc3f96865185.jpg?_jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXlIYXNoIjoiZTkzMWUxYTIxYTA0MjgyMCIsImJ1Y2tldCI6InJ1bndheS1kYXRhc2V0cyIsInN0YWdlIjoicHJvZCIsImV4cCI6MTc5Mjk2ODM1NH0.weM4JCSfZQdlGWWn1TLYi1wlWJV0SwImdPi9MvstKMI"
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -22,19 +24,27 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          mkdir -p assets/vm-prime
-          curl --fail --location --silent --show-error "$ETHIC_TOP_LOGO_URL" -o assets/vm-prime/ethic-logo-top.webp
-          curl --fail --location --silent --show-error "$ETHIC_END_LOGO_URL" -o assets/vm-prime/ethic-logo-end.webp
-          file assets/vm-prime/ethic-logo-top.webp assets/vm-prime/ethic-logo-end.webp
+          mkdir -p assets/vm-prime/videos
+          if [ ! -s assets/vm-prime/ethic-logo-top.webp ]; then
+            curl --fail --location --silent --show-error "$ETHIC_TOP_LOGO_URL" -o assets/vm-prime/ethic-logo-top.webp
+          fi
+          if [ ! -s assets/vm-prime/ethic-logo-end.webp ]; then
+            curl --fail --location --silent --show-error "$ETHIC_END_LOGO_URL" -o assets/vm-prime/ethic-logo-end.webp
+          fi
+          curl --fail --location --silent --show-error "$ETHIC_SPOON_VIDEO_URL" -o assets/vm-prime/videos/spoon-reference.mp4
+          curl --fail --location --silent --show-error "$ETHIC_SPOON_POSTER_URL" -o assets/vm-prime/videos/spoon-reference-poster.jpg
+          file assets/vm-prime/ethic-logo-top.webp assets/vm-prime/ethic-logo-end.webp assets/vm-prime/videos/spoon-reference.mp4 assets/vm-prime/videos/spoon-reference-poster.jpg
           test "$(du -k assets/vm-prime/ethic-logo-top.webp | cut -f1)" -gt 30
           test "$(du -k assets/vm-prime/ethic-logo-end.webp | cut -f1)" -gt 30
+          test "$(du -k assets/vm-prime/videos/spoon-reference.mp4 | cut -f1)" -gt 1000
+          test "$(du -k assets/vm-prime/videos/spoon-reference-poster.jpg | cut -f1)" -gt 20
       - name: Commit logo assets into the repository
         shell: bash
         run: |
           set -euo pipefail
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add assets/vm-prime/ethic-logo-top.webp assets/vm-prime/ethic-logo-end.webp
+          git add assets/vm-prime/ethic-logo-top.webp assets/vm-prime/ethic-logo-end.webp assets/vm-prime/videos/spoon-reference.mp4 assets/vm-prime/videos/spoon-reference-poster.jpg
           if git diff --cached --quiet; then
             echo "Logo assets are already current."
             exit 0
