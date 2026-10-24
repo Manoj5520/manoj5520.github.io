@@ -2034,6 +2034,58 @@ body.dossier-2026{margin:0;background:var(--d-bg);color:var(--d-ink);font:15px/1
     .dossier-vm-prime-card .dossier-work-link:focus-visible { outline:3px solid #76263d; outline-offset:4px; }
   </style>
 
+
+  <style id="vm-prime-dossier-entry-20261024">
+    .vm-prime-entry {
+      display:grid !important;
+      grid-template-columns:60px minmax(0,1fr) 28px;
+      align-items:center;
+      gap:16px;
+      width:min(100%,610px);
+      margin:23px 0 2px;
+      padding:13px 16px 13px 13px;
+      color:#f4f1f2 !important;
+      text-decoration:none !important;
+      background:linear-gradient(112deg,#242329 0%,#303039 54%,#382630 100%);
+      border:1px solid #66515b;
+      border-left:3px solid #9a7180;
+      box-shadow:0 16px 35px -29px rgba(0,0,0,.55),inset 0 1px 0 rgba(255,255,255,.07);
+      transition:transform .28s ease,border-color .28s ease,box-shadow .28s ease;
+      position:relative;
+      overflow:hidden;
+    }
+    .vm-prime-entry:before {
+      content:"";position:absolute;inset:0;pointer-events:none;
+      background:linear-gradient(105deg,transparent 20%,rgba(255,255,255,.04) 48%,transparent 75%);
+      transform:translateX(-110%);transition:transform .65s ease;
+    }
+    .vm-prime-entry:hover { transform:translateY(-3px);border-color:#b49aa5;box-shadow:0 22px 42px -29px rgba(30,15,25,.65),inset 0 1px 0 rgba(255,255,255,.1); }
+    .vm-prime-entry:hover:before { transform:translateX(110%); }
+    .vm-prime-entry-mark {
+      position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;
+      width:58px;height:58px;border:1px solid #777982;background:linear-gradient(145deg,#dfe1e4,#a8abb2);
+      color:#29262c;box-shadow:inset 0 1px 0 rgba(255,255,255,.8);
+    }
+    .vm-prime-entry-mark span { font:700 25px/.9 Georgia,'Times New Roman',serif;letter-spacing:-.09em; }
+    .vm-prime-entry-mark i { margin-top:4px;font:700 7px/1 Arial,sans-serif;font-style:normal;letter-spacing:.22em;padding-left:.22em;color:#6b3448; }
+    .vm-prime-entry-mark b { width:23px;height:1px;margin-top:5px;background:#8b5b6c; }
+    .vm-prime-entry-copy { display:flex;flex-direction:column;min-width:0;gap:3px;position:relative;z-index:1; }
+    .vm-prime-entry-eyebrow { color:#c3aeb7;font-size:8px;font-weight:700;letter-spacing:.15em;text-transform:uppercase; }
+    .vm-prime-entry-copy strong { font:400 clamp(20px,2.4vw,26px)/1.1 Georgia,'Times New Roman',serif;letter-spacing:.03em;color:#f5f1ef; }
+    .vm-prime-entry-copy small { color:#c2c0c7;font-size:10px;letter-spacing:.035em;line-height:1.5; }
+    .vm-prime-entry-arrow { justify-self:end;color:#d7bcc5;font-size:22px;position:relative;z-index:1;transition:transform .28s; }
+    .vm-prime-entry:hover .vm-prime-entry-arrow { transform:translate(2px,-2px); }
+    @media(max-width:600px) {
+      .vm-prime-entry { grid-template-columns:48px minmax(0,1fr) 22px;gap:12px;padding:11px;margin-top:18px; }
+      .vm-prime-entry-mark { width:46px;height:46px; }
+      .vm-prime-entry-mark span { font-size:21px; }
+      .vm-prime-entry-copy strong { font-size:21px; }
+      .vm-prime-entry-copy small { font-size:9px; }
+      .vm-prime-entry-eyebrow { font-size:7px;letter-spacing:.1em; }
+    }
+    @media(prefers-reduced-motion:reduce) { .vm-prime-entry,.vm-prime-entry:before,.vm-prime-entry-arrow { transition:none !important; } }
+  </style>
+
 </head>
 <body class="dossier-2026">
   <div class="dossier-shell">
@@ -2061,6 +2113,11 @@ body.dossier-2026{margin:0;background:var(--d-bg);color:var(--d-ink);font:15px/1
             </a>
             <a class="dossier-button dossier-button-secondary" href="./Vannam_Sai_Manoj_Resume.pdf" target="_blank" rel="noopener noreferrer">View résumé <span aria-hidden="true">↗</span></a>
           </div>
+          <a class="vm-prime-entry" href="/dossier/vm-prime-access/" aria-label="Open VM-PRIME project access portal">
+            <span class="vm-prime-entry-mark" aria-hidden="true"><span>VM</span><i>PRIME</i><b></b></span>
+            <span class="vm-prime-entry-copy"><span class="vm-prime-entry-eyebrow">04 / Independent project portfolio</span><strong>VM-PRIME</strong><small>ETHIC × MANRA · Behavior Engineering</small></span>
+            <span class="vm-prime-entry-arrow" aria-hidden="true">↗</span>
+          </a>
           <div class="dossier-hero-meta"><span>Evidence-led thinking</span><span>Process discipline</span><span>Practical execution</span></div>
         </div>
         <figure class="dossier-portrait-wrap"><div class="dossier-portrait-frame"><img src="/assets/img/portrait.jpg" width="440" height="790" alt="Professional portrait of V. Sai Manoj" fetchpriority="high"></div><span class="dossier-portrait-corner" aria-hidden="true"></span><figcaption class="dossier-proof-card"><span class="dossier-proof-number">100+</span><span class="dossier-proof-label">Residential client portfolio</span><span class="dossier-proof-sub">NexaHomes · Growth &amp; Operations</span></figcaption></figure>
@@ -2092,7 +2149,7 @@ body.dossier-2026{margin:0;background:var(--d-bg);color:var(--d-ink);font:15px/1
           <article class="dossier-work-card"><div class="dossier-work-art"><div class="dossier-work-art-top"><span>Mercedes-Benz</span><span>02 / Customer</span></div><div class="dossier-retail-visual" aria-hidden="true"><i></i><i></i><i></i></div><span class="dossier-work-art-bottom">Customer context → Retail model</span></div><div class="dossier-work-copy"><span class="dossier-work-kicker">Management Internship</span><h3>Retail-model study &amp; customer engagement</h3><p>An internship context exploring customer engagement and the retail operating model; no unverified performance claims.</p><a class="dossier-work-link" href="https://manoj5520.github.io/projects/">View work samples <span aria-hidden="true">↗</span></a></div></article>
           <article class="dossier-work-card"><div class="dossier-work-art"><div class="dossier-work-art-top"><span>MBA research</span><span>03 / Research</span></div><div class="dossier-research-visual" aria-hidden="true"></div><span class="dossier-work-art-bottom">Engagement · Growth · Culture</span></div><div class="dossier-work-copy"><span class="dossier-work-kicker">Thesis · Bangalore IT industry</span><h3>Forecasting employee turnover</h3><p>Research examining employee engagement, growth and organisational culture in relation to employee-turnover forecasting.</p><a class="dossier-work-link" href="https://manoj5520.github.io/">Visit main portfolio <span aria-hidden="true">↗</span></a></div></article>
           <article class="dossier-work-card dossier-vm-prime-card">
-            <a class="dossier-work-art vm-prime-art" href="/dossier/vm-prime/" aria-label="Open the separate VM-PRIME project portfolio">
+            <a class="dossier-work-art vm-prime-art" href="/dossier/vm-prime-access/" aria-label="Open VM-PRIME project access portal">
               <div class="dossier-work-art-top"><span>VM-PRIME</span><span>04 / Project portfolio</span></div>
               <div class="vm-prime-monogram" aria-hidden="true"><span>VM</span><i>PRIME</i><b></b></div>
               <span class="dossier-work-art-bottom">ETHIC × MANRA · Behaviour engineering</span>
@@ -2101,7 +2158,7 @@ body.dossier-2026{margin:0;background:var(--d-bg);color:var(--d-ink);font:15px/1
               <span class="dossier-work-kicker">Independent project portfolio</span>
               <h3>VM-PRIME</h3>
               <p>A dedicated silver-and-burgundy portfolio for ETHIC × MANRA, with the fingerprint identity used inside the project site—not on this outer card.</p>
-              <a class="dossier-work-link" href="/dossier/vm-prime/">Open project portfolio <span aria-hidden="true">↗</span></a>
+              <a class="dossier-work-link" href="/dossier/vm-prime-access/">Request project access <span aria-hidden="true">↗</span></a>
             </div>
           </article>
         </div>
