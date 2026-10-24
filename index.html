@@ -3269,6 +3269,57 @@ ul, ol { padding: 0; list-style: none; }
 .evidence-ledger-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}@media(max-width:760px){.evidence-ledger-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:500px){.evidence-ledger-grid{grid-template-columns:1fr}.evidence-ledger-card{padding:16px}}
 </style>
 
+
+  <style id="vm-prime-main-portfolio-entry">
+    .vm-prime-main-entry {
+      display:grid;grid-template-columns:76px minmax(0,1fr) auto;align-items:center;gap:22px;
+      margin-top:26px;padding:22px 24px;
+      background:linear-gradient(112deg,#f7f8fa 0%,#eef0f3 54%,#f6f1f3 100%);
+      border:1px solid #d1d4d9;border-left:4px solid #76263d;
+      box-shadow:0 18px 42px rgba(26,31,39,.07);
+      position:relative;overflow:hidden;
+      transition:transform .28s ease,border-color .28s ease,box-shadow .28s ease;
+    }
+    .vm-prime-main-entry:before {
+      content:"";position:absolute;inset:0;pointer-events:none;
+      background:linear-gradient(105deg,transparent 20%,rgba(255,255,255,.84) 48%,transparent 72%);
+      transform:translateX(-110%);transition:transform .68s ease;
+    }
+    .vm-prime-main-entry:hover {transform:translateY(-3px);border-color:#a9adb5;box-shadow:0 24px 48px rgba(26,31,39,.11)}
+    .vm-prime-main-entry:hover:before {transform:translateX(110%)}
+    .vm-prime-main-mark {
+      position:relative;z-index:1;width:72px;height:72px;display:flex;flex-direction:column;
+      justify-content:center;align-items:center;gap:3px;
+      background:linear-gradient(145deg,#fefefe,#d8dce1);border:1px solid #aeb3bb;
+      box-shadow:inset 0 1px 0 #fff,0 5px 12px rgba(28,29,35,.06);color:#24262c;
+    }
+    .vm-prime-main-mark span {font:700 31px/.88 Georgia,'Times New Roman',serif;letter-spacing:-.1em}
+    .vm-prime-main-mark small {font:700 7px/1 Arial,sans-serif;letter-spacing:.3em;padding-left:.3em;color:#76263d}
+    .vm-prime-main-mark i {display:block;width:25px;height:2px;background:linear-gradient(90deg,#abb1b9,#76263d)}
+    .vm-prime-main-copy {position:relative;z-index:1;min-width:0}
+    .vm-prime-main-kicker {margin:0 0 6px!important;color:#76263d!important;font-size:8px!important;font-weight:800;letter-spacing:.16em;text-transform:uppercase}
+    .vm-prime-main-copy h3 {margin:0 0 6px!important;color:#24262c!important;font:400 clamp(23px,2.8vw,32px)/1.1 Georgia,'Times New Roman',serif!important;letter-spacing:.025em}
+    .vm-prime-main-copy>p:not(.vm-prime-main-kicker) {max-width:680px;margin:0!important;color:#515661!important;font-size:12px!important;line-height:1.7}
+    .vm-prime-main-copy>p strong {color:#292a31}
+    .vm-prime-main-note {display:inline-flex;align-items:center;gap:7px;margin-top:11px;color:#76263d;font-size:9px;font-weight:800;letter-spacing:.08em;text-transform:uppercase}
+    .vm-prime-main-note span {font-size:8px;color:#a4a9b1}
+    .vm-prime-main-button {position:relative;z-index:1;display:inline-flex;align-items:center;justify-content:center;gap:12px;padding:13px 15px;
+      border:1px solid #76263d;background:linear-gradient(120deg,#76263d,#552332);color:#fff!important;
+      font-size:10px;font-weight:800;letter-spacing:.09em;text-transform:uppercase;text-decoration:none!important;white-space:nowrap;
+      transition:background .25s,transform .25s,border-color .25s}
+    .vm-prime-main-button:hover {background:linear-gradient(120deg,#8a354e,#622b3b);border-color:#9d6476;transform:translateY(-1px)}
+    .vm-prime-main-button:focus-visible {outline:3px solid #76263d;outline-offset:3px}
+    @media(max-width:760px) {
+      .vm-prime-main-entry {grid-template-columns:58px minmax(0,1fr);gap:14px;padding:17px;margin-top:20px}
+      .vm-prime-main-mark {width:56px;height:56px}
+      .vm-prime-main-mark span {font-size:25px}
+      .vm-prime-main-button {grid-column:1/-1;justify-self:stretch;width:100%;margin-top:2px}
+    }
+    @media(prefers-reduced-motion:reduce) {
+      .vm-prime-main-entry,.vm-prime-main-entry:before,.vm-prime-main-button {transition:none!important}
+    }
+  </style>
+
 </head>
 <body>
   <a class="skip" href="index.html#main">Skip to content</a>
@@ -4158,6 +4209,22 @@ ul, ol { padding: 0; list-style: none; }
           </dl>
         </article>
       </div>
+
+      <!-- VM-PRIME / ETHIC × MANRA independent portfolio entry -->
+      <aside class="vm-prime-main-entry reveal" aria-labelledby="vm-prime-main-title">
+        <div class="vm-prime-main-mark" aria-hidden="true">
+          <span>VM</span><small>PRIME</small><i></i>
+        </div>
+        <div class="vm-prime-main-copy">
+          <p class="vm-prime-main-kicker">PROJECT 04 · INDEPENDENT VENTURE PORTFOLIO</p>
+          <h3 id="vm-prime-main-title">VM-PRIME</h3>
+          <p><strong>ETHIC × MANRA</strong> — Behavior Engineering, friction-first product discovery, candidate qualification and the path from prototype evidence to global scale.</p>
+          <span class="vm-prime-main-note"><span aria-hidden="true">◆</span> Access passcode required</span>
+        </div>
+        <a class="vm-prime-main-button" href="/dossier/vm-prime-access/?v=20261025-main-entry" aria-label="Open VM-PRIME access portal and enter passcode">
+          Open access portal <span aria-hidden="true">↗</span>
+        </a>
+      </aside>
     </section>
 
 
