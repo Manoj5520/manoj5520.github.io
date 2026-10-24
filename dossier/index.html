@@ -2086,6 +2086,88 @@ body.dossier-2026{margin:0;background:var(--d-bg);color:var(--d-ink);font:15px/1
     @media(prefers-reduced-motion:reduce) { .vm-prime-entry,.vm-prime-entry:before,.vm-prime-entry-arrow { transition:none !important; } }
   </style>
 
+
+  <style id="dossier-water-flow-styles">
+    /* Decorative 3D water ribbon: placed only in the gap below the capability grid. */
+    #capabilities.dossier-section { padding-bottom: 18px !important; }
+    .dossier-water-gap {
+      position: relative;
+      height: 74px;
+      margin-top: 12px;
+      width: 100%;
+      isolation: isolate;
+      perspective: 720px;
+      overflow: hidden;
+      background: radial-gradient(ellipse at 50% 50%, rgba(218,226,232,.24), rgba(247,245,241,0) 68%);
+    }
+    .dossier-water-gap::before {
+      content: "";
+      position: absolute;
+      inset: 17px 3% 12px;
+      border-radius: 50%;
+      background: rgba(86,101,113,.12);
+      filter: blur(12px);
+      transform: rotateX(68deg);
+    }
+    .dossier-water-svg {
+      position: absolute;
+      inset: 0;
+      display: block;
+      width: 100%;
+      height: 100%;
+      overflow: visible;
+      transform: perspective(720px) rotateX(13deg) scaleY(1.06);
+      transform-origin: center;
+      filter: drop-shadow(0 5px 4px rgba(51,63,73,.10));
+    }
+    .dossier-water-wine-current {
+      animation: dossierWaterCurrent 7s linear infinite;
+    }
+    .dossier-water-light-current {
+      animation: dossierWaterCurrent 3.8s linear infinite;
+    }
+    .dossier-water-glints {
+      animation: dossierWaterCurrent 2.8s linear infinite;
+    }
+    .dossier-water-label {
+      position: absolute;
+      right: 5px;
+      bottom: 2px;
+      z-index: 2;
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      color: #7A858E;
+      font-size: 7px;
+      font-weight: 750;
+      line-height: 1;
+      letter-spacing: .17em;
+      text-transform: uppercase;
+      opacity: .8;
+    }
+    .dossier-water-label i {
+      display: inline-block;
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      background: #76263D;
+      box-shadow: 0 0 0 3px rgba(118,38,61,.08);
+    }
+    @keyframes dossierWaterCurrent {
+      from { stroke-dashoffset: 0; }
+      to { stroke-dashoffset: -210; }
+    }
+    @media(max-width:620px) {
+      #capabilities.dossier-section { padding-bottom: 14px !important; }
+      .dossier-water-gap { height: 55px; margin-top: 9px; }
+      .dossier-water-gap::before { inset: 14px 2% 9px; filter: blur(9px); }
+      .dossier-water-label { font-size: 6px; right: 1px; }
+    }
+    @media(prefers-reduced-motion:reduce) {
+      .dossier-water-wine-current,.dossier-water-light-current,.dossier-water-glints { animation:none !important; }
+    }
+  </style>
+
 </head>
 <body class="dossier-2026">
   <div class="dossier-shell">
@@ -2129,6 +2211,51 @@ body.dossier-2026{margin:0;background:var(--d-bg);color:var(--d-ink);font:15px/1
           <article class="dossier-capability"><span class="dossier-capability-num">01</span><div class="dossier-capability-art dossier-market-art" aria-hidden="true"></div><h3>Commercial intelligence</h3><p>Compare competitor propositions, interpret customer needs and examine market gaps to assess where an offer or service can compete.</p><span class="dossier-capability-foot">Market insight · Customer needs · Benchmarking</span></article>
           <article class="dossier-capability"><span class="dossier-capability-num">02</span><div class="dossier-capability-art dossier-operations-art" aria-hidden="true"><i class="dossier-node"></i><i class="dossier-node"></i><i class="dossier-node"></i></div><h3>Business operations &amp; process improvement</h3><p>Structure workflow information, identify coordination gaps and support consistent reporting and cross-functional follow-through.</p><span class="dossier-capability-foot">Workflow analysis · Coordination · Reporting</span></article>
           <article class="dossier-capability"><span class="dossier-capability-num">03</span><div class="dossier-capability-art dossier-growth-art" aria-hidden="true"></div><h3>Growth &amp; opportunity assessment</h3><p>Evaluate service and growth ideas against customer relevance, commercial logic and operational feasibility before recommending next steps.</p><span class="dossier-capability-foot">Market fit · Feasibility · Decision support</span></article>
+        </div>
+        <div class="dossier-water-gap" aria-hidden="true">
+          <svg class="dossier-water-svg" viewBox="0 0 1280 88" preserveAspectRatio="none" focusable="false">
+            <defs>
+              <linearGradient id="dossierWaterDepth" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#FAFCFD" stop-opacity=".75"/>
+                <stop offset=".22" stop-color="#8E9BA6" stop-opacity=".92"/>
+                <stop offset=".50" stop-color="#DCE4EA" stop-opacity=".96"/>
+                <stop offset=".73" stop-color="#7B8792" stop-opacity=".94"/>
+                <stop offset="1" stop-color="#E9EDF1" stop-opacity=".78"/>
+              </linearGradient>
+              <linearGradient id="dossierWaterLight" x1="0" y1="0" x2="1" y2=".2">
+                <stop offset="0" stop-color="#FFFFFF" stop-opacity=".05"/>
+                <stop offset=".16" stop-color="#FFFFFF" stop-opacity=".9"/>
+                <stop offset=".34" stop-color="#F8FBFC" stop-opacity=".2"/>
+                <stop offset=".56" stop-color="#FFFFFF" stop-opacity=".83"/>
+                <stop offset=".76" stop-color="#FFFFFF" stop-opacity=".14"/>
+                <stop offset=".94" stop-color="#FFFFFF" stop-opacity=".8"/>
+                <stop offset="1" stop-color="#FFFFFF" stop-opacity=".08"/>
+              </linearGradient>
+              <linearGradient id="dossierWaterWine" x1="0" y1="0" x2="1" y2="0">
+                <stop offset="0" stop-color="#76263D" stop-opacity="0"/>
+                <stop offset=".23" stop-color="#76263D" stop-opacity=".52"/>
+                <stop offset=".5" stop-color="#A56D7B" stop-opacity=".7"/>
+                <stop offset=".78" stop-color="#76263D" stop-opacity=".42"/>
+                <stop offset="1" stop-color="#76263D" stop-opacity="0"/>
+              </linearGradient>
+              <filter id="dossierWaterShadow" x="-10%" y="-45%" width="120%" height="200%">
+                <feGaussianBlur stdDeviation="4"/>
+              </filter>
+              <path id="dossierWaterPath" d="M -40 57 C 65 12 157 12 252 42 S 422 81 520 43 S 701 9 801 39 S 981 79 1086 43 S 1215 15 1325 48"/>
+              <path id="dossierWaterPathHigh" d="M -40 49 C 65 4 157 4 252 34 S 422 73 520 35 S 701 1 801 31 S 981 71 1086 35 S 1215 7 1325 40"/>
+              <path id="dossierWaterPathLow" d="M -40 65 C 65 20 157 20 252 50 S 422 89 520 51 S 701 17 801 47 S 981 87 1086 51 S 1215 23 1325 56"/>
+            </defs>
+            <ellipse cx="640" cy="58" rx="590" ry="18" fill="#66747F" opacity=".09" filter="url(#dossierWaterShadow)"/>
+            <use href="#dossierWaterPathLow" fill="none" stroke="#778590" stroke-opacity=".26" stroke-width="26" stroke-linecap="round" filter="url(#dossierWaterShadow)"/>
+            <use href="#dossierWaterPath" fill="none" stroke="#7D8A95" stroke-opacity=".34" stroke-width="29" stroke-linecap="round" transform="translate(0 5)"/>
+            <use href="#dossierWaterPath" fill="none" stroke="url(#dossierWaterDepth)" stroke-width="24" stroke-linecap="round"/>
+            <use href="#dossierWaterPathHigh" fill="none" stroke="#FFFFFF" stroke-opacity=".42" stroke-width="9" stroke-linecap="round"/>
+            <use href="#dossierWaterPath" fill="none" stroke="url(#dossierWaterWine)" stroke-width="3" stroke-linecap="round" stroke-dasharray="105 42" class="dossier-water-wine-current"/>
+            <use href="#dossierWaterPathHigh" fill="none" stroke="url(#dossierWaterLight)" stroke-width="2" stroke-linecap="round" stroke-dasharray="34 22 6 35" class="dossier-water-light-current"/>
+            <use href="#dossierWaterPathLow" fill="none" stroke="#FDFEFF" stroke-opacity=".86" stroke-width="1.4" stroke-linecap="round" stroke-dasharray="2 25" class="dossier-water-glints"/>
+            <path d="M 0 76 C 160 38 255 40 362 61 S 563 88 677 61 S 869 36 981 58 S 1152 78 1280 50" fill="none" stroke="#A9B3BC" stroke-opacity=".32" stroke-width="1"/>
+          </svg>
+          <span class="dossier-water-label">CONTINUOUS FLOW <i></i> INSIGHT INTO ACTION</span>
         </div>
       </section>
 
