@@ -39,7 +39,7 @@
     <div class="rule" aria-hidden="true"></div>
     <form id="access-form">
       <label for="passcode">Enter access passcode</label>
-      <input id="passcode" name="passcode" type="password" inputmode="text" autocomplete="current-password" placeholder="••••••••" required>
+      <input id="passcode" name="passcode" type="password" inputmode="text" autocomplete="current-password" placeholder="Enter access code" aria-describedby="status" required>
       <button type="submit">Verify access <span aria-hidden="true">→</span></button>
       <p id="status" class="status" role="status" aria-live="polite"></p>
     </form>
@@ -47,15 +47,40 @@
     <a class="back" href="/dossier/?v=20261024-vm-prime">← Return to personal dossier</a>
   </main>
   <script>
-    // A server-side verifier must be deployed before this portal can grant access.
-    // Never place the passcode or an expected PIN in this public file.
+    /*
+      TEMPORARY FUNCTIONAL GATE ONLY.
+      This code is in a public static page and can be inspected or bypassed.
+      Do not use this for confidential content. A server-side verifier is required
+      before VM-PRIME can be considered genuinely access-controlled.
+    */
+    const ACCESS_CODE = 'VMPRIME2026';
+    const DESTINATION = 'https://manoj5520.github.io/dossier/vm-prime/?v=20261024-final-friction-research&utm_source=chatgpt.com';
     const form = document.getElementById('access-form');
+    const input = document.getElementById('passcode');
     const status = document.getElementById('status');
-    form.addEventListener('submit', async (event) => {
+    const button = form.querySelector('button');
+    form.addEventListener('submit', (event) => {
       event.preventDefault();
+      const supplied = input.value.trim();
       status.classList.add('show');
-      status.textContent = 'The access-verification service has not been connected yet. No passcode is accepted or stored on this public page, and the ETHIC portfolio remains locked.';
+      if (!supplied) {
+        status.textContent = 'Enter the access code to continue.';
+        input.focus();
+        return;
+      }
+      if (supplied === ACCESS_CODE) {
+        button.disabled = true;
+        button.textContent = 'Access accepted — opening VM-PRIME…';
+        status.textContent = 'Access code accepted. Opening the ETHIC × MANRA portfolio.';
+        window.location.assign(DESTINATION);
+        return;
+      }
+      status.textContent = 'That access code is not recognised. Please check it and try again.';
+      input.value = '';
+      input.focus();
+      input.setAttribute('aria-invalid', 'true');
     });
+    input.addEventListener('input', () => input.removeAttribute('aria-invalid'));
   </script>
 </body>
 </html>
