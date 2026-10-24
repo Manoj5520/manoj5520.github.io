@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#17171b">
+  <meta name="robots" content="noindex,nofollow">
+  <title>MV-PRIME | Project Access</title>
+  <style>
+    :root{color-scheme:dark;--bg:#17171b;--panel:#202025;--gold:#d8bb78;--gold2:#f0dba4;--burgundy:#73505d;--line:#484147;--muted:#b8b1b7;--white:#f8f5f0}
+    *{box-sizing:border-box}html,body{min-height:100%;margin:0}
+    body{min-height:100vh;display:grid;place-items:center;padding:24px;background:radial-gradient(ellipse at 50% 26%,#303036 0%,#202025 36%,#141417 78%);color:var(--white);font-family:Inter,Arial,Helvetica,sans-serif}
+    .shell{width:min(100%,500px);padding:clamp(28px,6vw,48px);border:1px solid #4b4146;border-radius:10px;background:linear-gradient(155deg,rgba(42,39,44,.96),rgba(25,25,29,.98));box-shadow:0 32px 100px rgba(0,0,0,.38);text-align:center;position:relative;overflow:hidden}
+    .shell:before{content:"";position:absolute;left:10%;right:10%;top:0;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);opacity:.8}
+    .mark{display:block;width:142px;height:142px;margin:0 auto 22px;object-fit:contain;filter:drop-shadow(0 0 20px rgba(216,187,120,.12))}
+    .eyebrow{margin:0 0 13px;color:var(--gold);font-size:10px;font-weight:700;letter-spacing:.24em;text-transform:uppercase}
+    h1{margin:0;font-family:Georgia,'Times New Roman',serif;font-size:clamp(33px,8vw,44px);line-height:1.1;font-weight:400;letter-spacing:.03em}
+    .subtitle{margin:12px auto 0;max-width:32ch;color:#d6cfd2;font-size:13px;line-height:1.7}
+    .rule{height:1px;background:linear-gradient(90deg,transparent,#5c4b52,transparent);margin:28px 0}
+    form{text-align:left}
+    label{display:block;margin-bottom:8px;color:#e9e0e4;font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase}
+    input{width:100%;height:52px;border:1px solid #62545b;border-radius:5px;padding:0 15px;background:#151519;color:#fff;font:inherit;font-size:16px;letter-spacing:.22em;outline:none}
+    input:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(216,187,120,.12)}
+    button{width:100%;height:50px;margin-top:12px;border:1px solid #ddc58c;border-radius:5px;background:linear-gradient(110deg,#c5a55e,#e6ce91);color:#211c1d;font-size:11px;font-weight:800;letter-spacing:.15em;text-transform:uppercase;cursor:pointer}
+    button:hover{filter:brightness(1.05)}button:focus-visible{outline:3px solid #fff;outline-offset:3px}
+    .status{display:none;margin:15px 0 0;border:1px solid #72545e;border-left:3px solid var(--gold);padding:12px;text-align:left;background:#2b2329;color:#eadfe2;font-size:12px;line-height:1.65}
+    .status.show{display:block}
+    .fine{margin:22px 0 0;color:#9b9299;font-size:10px;line-height:1.65}
+    .back{display:inline-block;margin-top:20px;color:#ded1b2;font-size:11px;text-decoration:none;border-bottom:1px solid #73645f;padding-bottom:3px}
+    @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto}}
+  </style>
+</head>
+<body>
+  <main class="shell">
+    <img class="mark" src="https://raw.githubusercontent.com/Manoj5520/ETHIC-manra/main/assets/ethic-fingerprint-mark.webp" alt="MV-PRIME fingerprint emblem">
+    <p class="eyebrow">Private project gateway</p>
+    <h1>MV-PRIME</h1>
+    <p class="subtitle">ETHIC × MANRA<br>Behavior Engineering · Strategic Product Discovery</p>
+    <div class="rule" aria-hidden="true"></div>
+    <form id="access-form">
+      <label for="passcode">Enter access passcode</label>
+      <input id="passcode" name="passcode" type="password" inputmode="text" autocomplete="current-password" placeholder="••••••••" required>
+      <button type="submit">Verify access <span aria-hidden="true">→</span></button>
+      <p id="status" class="status" role="status" aria-live="polite"></p>
+    </form>
+    <p class="fine">Authorised access only · MV-PRIME</p>
+    <a class="back" href="/dossier/?v=20261014-1615">← Return to personal dossier</a>
+  </main>
+  <script>
+    // A server-side verifier must be deployed before this portal can grant access.
+    // Never place the passcode or an expected PIN in this public file.
+    const form = document.getElementById('access-form');
+    const status = document.getElementById('status');
+    form.addEventListener('submit', async (event) => {
+      event.preventDefault();
+      status.classList.add('show');
+      status.textContent = 'The access-verification service has not been connected yet. No passcode is accepted or stored on this public page, and the ETHIC portfolio remains locked.';
+    });
+  </script>
+</body>
+</html>
