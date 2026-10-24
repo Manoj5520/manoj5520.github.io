@@ -96,6 +96,22 @@ a:focus-visible,button:focus-visible,input:focus-visible{outline:3px solid #cdb7
 @media(max-width:650px){.spoon-video-frame{padding:7px}.spoon-video-frame video{width:min(100%,330px);max-height:560px}}
 @media(prefers-reduced-motion:reduce){.spoon-video-frame video{scroll-behavior:auto}}
 </style>
+
+<style id="vm-prime-wide-video-and-orbit-motion">
+.spoon-video-section{display:grid;grid-template-columns:minmax(270px,.72fr) minmax(0,1.28fr);gap:24px;align-items:stretch;margin-top:20px;padding:24px;border:1px solid #4b414a;background:linear-gradient(122deg,#25242b,#1e1e24 58%,#2d242c);box-shadow:0 24px 56px rgba(0,0,0,.18)}
+.spoon-video-media{min-width:0}.spoon-video-heading{display:flex;flex-direction:column;align-items:flex-start;gap:4px;margin-bottom:12px}.spoon-video-heading span{font-size:9px;letter-spacing:.15em;text-transform:uppercase;color:#d1afbd}.spoon-video-heading strong{font-size:13px;color:#fff}
+.spoon-video-frame{display:flex;justify-content:center;align-items:center;width:100%;padding:10px;background:radial-gradient(ellipse at center,#28262d,#101114);border:1px solid rgba(225,227,232,.23);border-radius:4px}
+.spoon-video-frame video{display:block;width:min(100%,340px);height:auto;max-height:560px;aspect-ratio:9/16;object-fit:contain;background:#09090b}
+.spoon-video-note{font-size:10px!important;line-height:1.65!important;color:#aaaab2!important;margin:9px 0 0!important}
+.spoon-video-copy{align-self:center;padding:12px 0}.spoon-video-copy h3{font-size:clamp(23px,3vw,34px);line-height:1.14;letter-spacing:-.025em;margin:13px 0}.spoon-video-copy>p{font-size:12px;color:#bcbec5;line-height:1.8}
+.video-fact{margin-top:10px;padding:13px 15px;border-left:2px solid #896475;background:rgba(255,255,255,.03)}.video-fact b{display:block;color:#e9d9df;font-size:11px;margin-bottom:3px}.video-fact span{display:block;color:#b9bac1;font-size:11px;line-height:1.65}
+@keyframes vm-orbit-rotate-a{from{transform:rotate(55deg) scaleX(1.25)}to{transform:rotate(415deg) scaleX(1.25)}}
+@keyframes vm-orbit-rotate-b{from{transform:rotate(-51deg) scaleX(1.35)}to{transform:rotate(-411deg) scaleX(1.35)}}
+.orbit:before{animation:vm-orbit-rotate-a 36s linear infinite}.orbit:after{animation:vm-orbit-rotate-b 48s linear infinite}
+@media(max-width:950px){.spoon-video-section{grid-template-columns:minmax(220px,.7fr) minmax(0,1.3fr);gap:18px;padding:18px}}
+@media(max-width:650px){.spoon-video-section{grid-template-columns:1fr;padding:15px;gap:20px}.spoon-video-copy{padding:0}.spoon-video-frame{padding:7px}.spoon-video-frame video{width:min(100%,320px);max-height:530px}}
+@media(prefers-reduced-motion:reduce){.orbit:before,.orbit:after{animation:none!important}.spoon-video-section,.spoon-video-frame video{transition:none!important}}
+</style>
 </head>
 <body>
 <a class="skip" href="#main">Skip to portfolio content</a>
@@ -173,14 +189,26 @@ a:focus-visible,button:focus-visible,input:focus-visible{outline:3px solid #cdb7
 <h3>Fold-flat measuring spoons</h3>
 <p class="case-lede">A set of separate spoons measures well, but several rigid pieces take drawer space and can scatter. A fold-flat form changes the stored geometry without changing the familiar measuring task.</p>
 <div class="case-img single"><figure><img src="https://cdn.shopify.com/s/files/1/0600/9988/7255/t/6/assets/1-1647557431684_1200x.png?v=1647557435" alt="Fold-flat measuring spoon design reference from Polygons" loading="lazy"><figcaption>Same job · fewer separated pieces</figcaption></figure></div>
-<div class="spoon-video-block">
-  <div class="spoon-video-heading"><span>Original supplied video</span><strong>Watch the folding mechanism</strong></div>
-  <div class="spoon-video-frame"><video id="supplied-spoon-video" src="/assets/vm-prime/videos/spoon-reference.mp4" poster="/assets/vm-prime/videos/spoon-reference-poster.jpg" controls playsinline preload="metadata" aria-label="Supplied fold-flat measuring spoon reference video"></video></div>
-  <p class="spoon-video-note">External product demonstration · not an ETHIC prototype or proof of a validated market opportunity. The clip is supplied by you and is shown without a substitute video.</p>
-</div>
+
 <div class="case-body"><strong>Observed friction:</strong> small tools compete for drawer space, shift around, become separated or require handling one by one. A compact folding geometry aims to keep several measures in a single, flat object.<ul><li><strong>What changes:</strong> the storage footprint and the number of loose parts the user handles.</li><li><strong>What it can solve:</strong> organisation and storage friction—not every measuring or cleaning problem.</li><li><strong>ETHIC rule:</strong> an elegant example of physical redesign is still only a precedent. A new candidate needs an unmet residual need, usability evidence and prior-art review.</li></ul></div>
-<div class="case-foot">External design reference: <a href="https://www.getpolygons.com/products/spoon" target="_blank" rel="noopener noreferrer">Polygons product page ↗</a>. The supplied video above demonstrates the fold-flat mechanism; it does not establish ETHIC product validation.</div>
+<div class="case-foot">External design reference: <a href="https://www.getpolygons.com/products/spoon" target="_blank" rel="noopener noreferrer">Polygons product page ↗</a>. The separate video panel below demonstrates the fold-flat mechanism; it does not establish ETHIC product validation.</div>
 </article>
+</div>
+<div class="spoon-video-section reveal">
+  <div class="spoon-video-media">
+    <div class="spoon-video-heading"><span>F1–F4 · Mechanism in motion</span><strong>Original supplied video</strong></div>
+    <div class="spoon-video-frame"><video id="supplied-spoon-video" src="/assets/vm-prime/videos/spoon-reference.mp4" poster="/assets/vm-prime/videos/spoon-reference-poster.jpg" controls playsinline preload="metadata" aria-label="Supplied fold-flat measuring spoon reference video"></video></div>
+    <p class="spoon-video-note">The exact clip you supplied. No substitute video is used.</p>
+  </div>
+  <div class="spoon-video-copy">
+    <span class="label">External precedent · Not an ETHIC product</span>
+    <h3>Watch how the physical format changes the task.</h3>
+    <p>The demonstration shows a fold-flat measuring tool being used—not just a static product shot. The point of the case is the interaction between familiar measuring behaviour and a redesigned storage format.</p>
+    <div class="video-fact"><b>Observed workflow friction</b><span>Several rigid pieces can occupy drawer space, become separated, rattle around and require the user to find and handle each measure.</span></div>
+    <div class="video-fact"><b>What the design changes</b><span>Multiple measures fold into a flatter, more consolidated object, aiming to reduce the storage footprint and handling of separate pieces.</span></div>
+    <div class="video-fact"><b>What the evidence does not prove</b><span>This product is an existing precedent. Its video does not prove ETHIC novelty, global demand or a validated product opportunity. MANRA must still test the residual gap.</span></div>
+    <a class="source" href="https://www.getpolygons.com/products/spoon" target="_blank" rel="noopener noreferrer">Polygons product reference ↗</a>
+  </div>
 </div>
 <div class="lane-note reveal"><strong>F1–F4 takeaway:</strong> the product is not the starting point. Find the repeated task, name the hidden friction, map the workaround, then check whether existing products already solved it. The C1 cable-mount hypothesis stays in the candidate pipeline because its possible residual failure is narrower than generic cable organisation.</div>
 </div></section>
