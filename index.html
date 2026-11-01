@@ -3352,6 +3352,37 @@ ul, ol { padding: 0; list-style: none; }
     <div class="progress" aria-hidden="true"><span></span></div>
   </header>
 
+
+  <!-- MANRA personal capability assistant -->
+  <section class="manra-widget" id="manra-assistant" aria-label="MANRA personal capability assistant" aria-hidden="true">
+    <div class="manra-panel">
+      <div class="manra-head">
+        <div><span class="manra-kicker">PERSONAL CAPABILITY INTELLIGENCE</span><h2>MANRA <span>·</span> Your guide to Manoj</h2></div>
+        <button class="manra-close" id="manra-close" type="button" aria-label="Close MANRA">×</button>
+      </div>
+      <p class="manra-intro">Ask about Manoj’s strengths, working style, evidence, role fit, or where he can create value. Answers are grounded in the portfolio—not inflated claims.</p>
+      <div class="manra-prompts" aria-label="Suggested questions">
+        <button type="button" data-manra-prompt="What are Manoj's strongest capabilities and what evidence supports them?">Strengths &amp; evidence</button>
+        <button type="button" data-manra-prompt="Where could Manoj contribute most in a business? Be specific about role fit and value.">Where he adds value</button>
+        <button type="button" data-manra-prompt="What differentiates Manoj from a typical candidate?">What differentiates him</button>
+      </div>
+      <div class="manra-thread" id="manra-thread" role="log" aria-live="polite">
+        <div class="manra-message manra-assistant-message"><strong>MANRA</strong><p>I’m ready. Ask a question or use the microphone. I’ll explain the capability, the evidence behind it, and how it could translate into business contribution.</p></div>
+      </div>
+      <form class="manra-form" id="manra-form">
+        <label class="sr-only" for="manra-input">Ask MANRA a question</label>
+        <textarea id="manra-input" rows="2" maxlength="1200" placeholder="Ask about strengths, talent, role fit or contribution…" required></textarea>
+        <div class="manra-controls">
+          <button class="manra-mic" id="manra-mic" type="button" aria-label="Speak to MANRA" title="Speak to MANRA"><span aria-hidden="true">🎙</span><span>Speak</span></button>
+          <span class="manra-status" id="manra-status">Voice availability depends on your browser.</span>
+          <button class="manra-send" type="submit">Ask MANRA <span aria-hidden="true">↗</span></button>
+        </div>
+      </form>
+      <p class="manra-footnote">Portfolio-grounded preview · No private health or financial details are used.</p>
+    </div>
+  </section>
+  <button class="manra-launch" id="manra-launch" type="button" aria-controls="manra-assistant" aria-expanded="false"><span class="manra-launch-mic" aria-hidden="true">🎙</span><span class="manra-launch-copy"><strong>Hey MANRA</strong><small>Ask about my capabilities</small></span><span class="manra-launch-arrow" aria-hidden="true">↗</span></button>
+
   <main id="main">
 
     <!-- ============ HERO ============ -->
@@ -4368,6 +4399,7 @@ ul, ol { padding: 0; list-style: none; }
 
   <script src="/main.js?v=20261021-core-01" defer></script>
   <script src="/portfolio-audio.js?v=20261021-mnc-audio-01" defer></script>
+  <script src="/manra.js?v=20261102-01" defer></script>
 <style id="mcf-gallery-correction-20261023">
 /* Exact three-column gallery: neutral helping imagery, unique tiles, police partnership centred */
 .role-minor-mcf .mcf-police-gallery,
