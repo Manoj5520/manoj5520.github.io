@@ -92,7 +92,10 @@
     launch.focus();
   }
 
-  launch.addEventListener("click", openPanel);
+  launch.addEventListener("click", function () {
+    openPanel();
+    startVoiceSession();
+  });
   if (close) close.addEventListener("click", closePanel);
   panel.addEventListener("click", function (event) {
     if (event.target === panel) closePanel();
