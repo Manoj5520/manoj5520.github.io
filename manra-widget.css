@@ -97,3 +97,11 @@
 @media(prefers-reduced-motion:reduce){
  .manra-visual::before,.manra-visual::after,.manra-visual-signal{animation:none!important}
 }
+
+.manra-voice-console[data-state="permission"] .manra-visual-orb{
+ transform:scale(1.04);
+ box-shadow:inset 0 2px 7px rgba(255,255,255,.4),inset -9px -11px 18px rgba(0,0,0,.42),0 0 0 8px rgba(109,38,59,.12),0 0 30px rgba(109,38,59,.34)
+}
+.manra-voice-console[data-state="permission"] .manra-visual::before{opacity:.9;animation-duration:5s}
+.manra-voice-console[data-state="permission"] .manra-visual::after{opacity:1;border-color:rgba(109,38,59,.32);animation-duration:2.4s}
+.manra-voice-console[data-state="permission"] .manra-visual-signal{animation-duration:1.6s}
