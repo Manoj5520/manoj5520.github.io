@@ -1,62 +1,99 @@
-/* MANRA — portfolio-grounded capability assistant.
-   Static preview is intentionally transparent: connect a secure server endpoint
-   through window.MANRA_API_ENDPOINT for open-ended generative answers.
-   Never put provider API keys in this public file. */
+/* MANRA 231999 — voice-first, portfolio-grounded capability intelligence.
+   The public site never contains provider secrets. For fully open-ended AI,
+   configure a secure HTTPS endpoint in window.MANRA_API_ENDPOINT. */
 (function () {
   "use strict";
+
   var launch = document.getElementById("manra-launch");
   var panel = document.getElementById("manra-assistant");
   if (!launch || !panel) return;
+
   var close = document.getElementById("manra-close");
   var form = document.getElementById("manra-form");
   var input = document.getElementById("manra-input");
   var thread = document.getElementById("manra-thread");
   var mic = document.getElementById("manra-mic");
   var status = document.getElementById("manra-status");
-  var recognition = null;
+  var visual = document.getElementById("manra-voice-console");
+  var visualTitle = document.getElementById("manra-voice-title");
+  var visualCaption = document.getElementById("manra-voice-caption");
+  var micLabel = document.getElementById("manra-mic-label");
+
+  var SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+  var recognition = SpeechRecognition ? new SpeechRecognition() : null;
   var listening = false;
+  var voiceSession = false;
+  var pendingVoiceQuestion = "";
+  var speechSynthesis = window.speechSynthesis || null;
+
+  var GREETING = "Hello, dignitaries. This is MANRA, the intelligence assistant to V. Sai Manoj. How may I assist you today?";
 
   var profile = {
-    positioning: "Manoj is best positioned at the intersection of business operations, structured research, process coordination and growth execution—not as a specialist data engineer or a conventional HR candidate.",
-    capabilities: [
-      ["Turning scattered information into decisions", "He can structure business questions, compare options and translate findings into practical next steps. His portfolio presents competitor benchmarking, business-model analysis and service-line choices as evidence of this approach."],
-      ["Customer and service operations", "At NexaHomes, the documented experience includes work across a portfolio of 100+ residential clients and exposure to client requirements, property-related service coordination and operating workflows."],
-      ["Commercial and market understanding", "His Mercedes-Benz internship included a retail-model study. Combined with competitor and service-line research, this supports a credible story around understanding how a business positions, delivers and differentiates its offer."],
-      ["Reporting and operational visibility", "He has practical Excel experience and intermediate Power BI exposure for MIS/reporting. This supports operational tracking and decision support; it does not justify presenting him as an advanced BI developer."],
-      ["Structured communication and execution", "His strongest narrative is connecting evidence, stakeholders and workflows: clarify the issue, organise inputs, identify options, communicate implications and follow through on execution."]
+    positioning: "V. Sai Manoj is best positioned at the intersection of business operations, customer and service coordination, structured research, commercial intelligence and practical process improvement. His strongest story is not that he is a specialist data engineer; it is that he can organise business information, understand customer and market context, make operating issues clearer and help teams move from insight to execution.",
+    strengths: [
+      ["Business and customer operations", "At NexaHomes, his documented role was Growth Manager & Operations Associate from May 2025 to August 2026. The portfolio records work across a 100+ residential-client portfolio, including requirement capture, tailored offers, upgrade and post-sale follow-ups, vendor coordination, sales-to-delivery handoffs and reporting."],
+      ["Commercial and competitor intelligence", "He conducted competitor benchmarking in the Hyderabad residential market and used the findings to inform service-line choices and business positioning. The credible strength is structured comparison and commercial interpretation—not claiming that research alone produced a measured revenue increase."],
+      ["Process coordination and improvement thinking", "He has worked with handoffs, request tracking and coordination gaps, and has prepared proposed process-control examples. The portfolio carefully distinguishes proposed improvements from a fully implemented, measured transformation."],
+      ["Operational reporting and decision support", "He has practical Excel experience and intermediate Power BI exposure for MIS and decision-support views. This can support tracking, reporting and management visibility. It does not establish advanced Excel modelling or advanced Power BI development."],
+      ["Business research and structured problem framing", "His MBA thesis examined employee-turnover forecasting in the Bangalore IT industry through engagement, growth and culture. His work also includes a Mercedes-Benz retail-model study and business-model trade-off analysis."],
+      ["Cross-functional execution context", "His NexaHomes evidence includes connecting customer requirements, vendors, sales and delivery activity. This supports a credible coordination narrative; it is not proof of formal people-management responsibility."]
     ],
     evidence: [
-      "NexaHomes experience (May 2025–August 2026), including a documented 100+ residential-client portfolio.",
-      "Mercedes-Benz business/management internship (July–September 2022), including a retail-model study.",
-      "MBA in Human Resource Management from CHRIST (Deemed to be University), Pune Lavasa Campus; thesis on forecasting employee turnover in Bangalore IT industry.",
-      "Practical Excel, intermediate Power BI, beginner-to-intermediate Tableau and basic SQL—describe these accurately, without overstating technical depth."
+      "NexaHomes — Growth Manager & Operations Associate, May 2025–August 2026; documented scope across 100+ residential clients.",
+      "NexaHomes — requirement capture, tailored offers, upgrade/post-sale follow-ups, vendor coordination, sales-to-delivery handoffs, competitor research and Excel/Power BI MIS views.",
+      "Mercedes-Benz — Management Trainee Intern, July–September 2022; retail-model study and customer-engagement context.",
+      "Tata Motors — organisational-structure training programme, April–May 2021.",
+      "My Choices Foundation — Social Concern Project / Impact Internship.",
+      "MBA — Human Resource Management, CHRIST (Deemed to be University), Pune Lavasa Campus; thesis on forecasting employee turnover in Bangalore IT through engagement, growth and culture.",
+      "Tools — practical Excel, intermediate Power BI, beginner-to-intermediate Tableau and basic SQL.",
+      "Credentials include IBM Enterprise Design Thinking Practitioner and IBM Agile Explorer. The BCG Strategy Consulting experience is a Forage job simulation, not BCG employment."
     ],
     roles: [
       "Business Operations / Business Operations Associate",
-      "Operations Excellence or Process Coordination",
+      "Service Operations / Customer Operations",
+      "Process Coordination / Operations Excellence support",
       "Growth Operations / Commercial Operations",
-      "Program or Product Operations (execution-oriented roles)",
       "Market and Competitive Intelligence",
-      "Revenue Operations support focused on process, systems and coordination—not finance ownership"
+      "Program or Product Operations in execution-focused teams"
     ],
-    development: "The next step is to strengthen quantified case studies: show the original business problem, the information analysed, the recommendation, who used it, and a verified outcome. Where an outcome was not measured, state that plainly. Deepening SQL, Power BI modelling and process-mapping skills would widen role options."
+    tools: "Excel: practical working ability. Power BI: intermediate exposure. Tableau: beginner-to-intermediate. SQL: basic. Do not describe him as an advanced SQL user, advanced Power BI developer, data scientist or data engineer.",
+    development: "The main development priorities are stronger Excel modelling and data interpretation, more confident PowerPoint storytelling, deeper Power BI practice, basic-to-intermediate SQL progression, and quantified case studies that show the original problem, Manoj's exact responsibility, the action taken and a verified result. The portfolio does not claim unverified revenue growth, cost savings, cycle-time reduction or satisfaction improvement."
   };
+
+  function setVisualState(state, title, caption) {
+    if (visual) visual.setAttribute("data-state", state);
+    if (visualTitle) visualTitle.textContent = title;
+    if (visualCaption) visualCaption.textContent = caption;
+  }
+
+  function setStatus(message) {
+    if (status) status.textContent = message;
+  }
+
+  function setMicMode(active) {
+    if (!mic) return;
+    mic.setAttribute("aria-pressed", active ? "true" : "false");
+    if (micLabel) micLabel.textContent = active ? "Stop voice session" : "Start voice conversation";
+    mic.setAttribute("aria-label", active ? "Stop MANRA voice conversation" : "Start MANRA voice conversation");
+  }
 
   function openPanel() {
     panel.classList.add("is-open");
     panel.setAttribute("aria-hidden", "false");
     launch.setAttribute("aria-expanded", "true");
-    window.setTimeout(function () { input.focus(); }, 80);
+    window.setTimeout(function () { if (input) input.focus(); }, 80);
   }
+
   function closePanel() {
+    stopVoiceSession();
     panel.classList.remove("is-open");
     panel.setAttribute("aria-hidden", "true");
     launch.setAttribute("aria-expanded", "false");
-    stopListening();
     launch.focus();
   }
+
   launch.addEventListener("click", openPanel);
-  close.addEventListener("click", closePanel);
+  if (close) close.addEventListener("click", closePanel);
   panel.addEventListener("click", function (event) {
     if (event.target === panel) closePanel();
   });
@@ -68,7 +105,7 @@
     var item = document.createElement("div");
     item.className = "manra-message " + (who === "user" ? "manra-user-message" : "manra-assistant-message");
     var label = document.createElement("strong");
-    label.textContent = who === "user" ? "YOU" : "MANRA";
+    label.textContent = who === "user" ? "YOU" : "MANRA 231999";
     var body = document.createElement("p");
     body.textContent = text;
     item.appendChild(label);
@@ -77,120 +114,305 @@
     thread.scrollTop = thread.scrollHeight;
     return item;
   }
-  function makeLocalAnswer(question) {
-    var q = question.toLowerCase();
-    var lead = "MANRA'S ASSESSMENT\n";
-    if (/differentiat|unique|stand out|typical candidate|strength|talent|best at|best contribute|capabilit|ability/.test(q)) {
-      return lead + "Manoj’s most credible differentiator is the combination of commercial curiosity and operational follow-through: he is interested not only in what the market is doing, but what a business should do with that information.\n\n" +
-        "1. Evidence-to-action thinking — competitor benchmarking and business-model research are presented in his portfolio as inputs to service-line decisions.\n" +
-        "2. Customer-facing operating context — NexaHomes experience includes a 100+ residential-client portfolio, giving him practical exposure to client needs and service coordination.\n" +
-        "3. Commercial exposure — his Mercedes-Benz internship included a retail-model study, adding a structured business perspective beyond one industry.\n" +
-        "4. Reporting discipline — practical Excel and intermediate Power BI can support operational visibility and MIS; they should not be marketed as advanced engineering skills.\n\n" +
-        "Where this can matter: teams that need someone to organise information, spot process gaps, coordinate stakeholders and convert findings into clear next steps. These are evidence-backed strengths, not a claim that he has already delivered unverified revenue growth or cost savings.";
-    }
-    if (/where|contribut|role fit|role|position|team|hire|value|business/.test(q)) {
-      return lead + "The strongest near-term fit is in execution-oriented roles where analysis informs operations, rather than roles requiring deep technical specialisation.\n\n" +
-        "PRIORITY FIT\n• Business Operations: coordinate workflows, track issues, improve reporting and keep cross-functional work moving.\n" +
-        "• Growth / Commercial Operations: organise market and competitor inputs, support service-line decisions and improve the handoff from insight to execution.\n" +
-        "• Process Coordination / Operations Excellence: document workflows, identify recurring friction and help teams standardise follow-through.\n" +
-        "• Market & Competitive Intelligence: structure competitor comparisons and convert findings into implications for positioning or service choices.\n" +
-        "• Program / Product Operations: support execution plans, stakeholder updates, operating metrics and issue tracking.\n\n" +
-        "WHY THE FIT IS CREDIBLE: NexaHomes client/service operations, a Mercedes-Benz retail-model study, competitor benchmarking and practical Excel/intermediate Power BI reporting. The best role will value judgement, organisation and business communication—not require advanced SQL, data engineering or a specialist finance/HR track.";
-    }
-    if (/weakness|gap|improv|develop|risk|limitation|not good|missing/.test(q)) {
-      return lead + profile.development + "\n\nA fair hiring assessment should also test prioritisation, stakeholder communication, comfort with ambiguity and the ability to show one complete example from problem definition through recommendation and follow-up. His portfolio should not claim quantified impact unless there is evidence for it.";
-    }
-    if (/experience|proof|evidence|credential|background|track record|example/.test(q)) {
-      return lead + "The portfolio's clearest evidence points are:\n\n" + profile.evidence.map(function (x, i) { return (i + 1) + ". " + x; }).join("\n") + "\n\nThese are useful starting points for interview questions. For a stronger case, ask Manoj to explain the context, his exact responsibility, the decision or deliverable, and the verified result. Do not infer business outcomes from participation alone.";
-    }
-    if (/resume|cv|summary|introduc|pitch|elevator/.test(q)) {
-      return "A concise positioning statement:\n\n“V. Sai Manoj is a business-operations professional who connects customer and market signals with structured research, operational reporting and practical execution. His experience spans NexaHomes client/service operations, a Mercedes-Benz retail-model study and competitor benchmarking. He is best suited to roles where teams need clear analysis, coordinated delivery and better operating visibility.”\n\nThis is a positioning summary, not a claim of specialist-level technical expertise or unverified financial impact.";
-    }
-    if (/salary|package|ctc|lpa|pay/.test(q)) {
-      return "MANRA'S VIEW\nSalary depends on the role scope, employer, location and interview performance. Manoj has previously targeted roles around ₹7–13 LPA, but that is an ambition—not evidence of market value or a guaranteed outcome. Prioritise roles whose responsibilities match his demonstrated operations, research, reporting and coordination strengths; validate the range against current openings and the actual job description.";
-    }
-    return lead + profile.positioning + "\n\nThe strongest documented signals are:\n" + profile.evidence.map(function (x, i) { return (i + 1) + ". " + x; }).join("\n") +
-      "\n\nPOTENTIAL CONTRIBUTION\n" + profile.capabilities.map(function (x, i) { return (i + 1) + ". " + x[0] + " — " + x[1]; }).join("\n\n") +
-      "\n\nROLE FAMILIES TO EXPLORE\n" + profile.roles.map(function (x) { return "• " + x; }).join("\n") +
-      "\n\nDEVELOPMENT PRIORITY\n" + profile.development +
-      "\n\nThis preview is grounded in the public portfolio. For genuinely open-ended, adaptive AI conversations, a secure server-side AI connection still needs to be configured; no API key is stored in this public website.";
+
+  function formatEvidence() {
+    return profile.evidence.map(function (item, index) {
+      return (index + 1) + ". " + item;
+    }).join("\n");
   }
 
-  async function answer(question) {
-    var thinking = addMessage("Reviewing the question against the portfolio evidence…", "assistant");
+  function answerIbmRole() {
+    return "MANRA 231999 — IBM BUSINESS OPERATIONS MANAGEMENT TRAINEE ASSESSMENT\n\n" +
+      "VERDICT: YES — Manoj is worth serious consideration for an interview, particularly if this is a generalist Business Operations trainee role focused on process coordination, service operations, reporting, stakeholder follow-through and improvement. I would call him a credible, conditional fit—not a guaranteed high performer.\n\n" +
+      "WHY THE FIT IS REAL\n" +
+      "1. Relevant operating context: At NexaHomes he worked across a 100+ residential-client portfolio, connecting requirements, tailored offers, vendor coordination, post-sale requests and sales-to-delivery handoffs. That is practical exposure to service operations and multiple moving parts.\n" +
+      "2. Information-to-action thinking: Competitor benchmarking informed service-line choices. He has experience structuring information to help a business evaluate options, rather than treating research as an end in itself.\n" +
+      "3. Reporting foundation: Practical Excel and intermediate Power BI exposure can support MIS, tracking and operating visibility.\n" +
+      "4. Business education and learning context: His MBA, business research, Mercedes-Benz retail-model study and IBM learning credentials give him a relevant foundation for a trainee pathway.\n\n" +
+      "WHERE HE COULD ADD VALUE AT IBM\n" +
+      "He could support operating reviews, issue and action tracking, workflow documentation, stakeholder coordination, service-delivery handoffs, management reporting, competitor or business research, and small process-improvement initiatives. He should be positioned as an operations-minded business generalist who can use data—not as an advanced data specialist.\n\n" +
+      "WHAT IBM SHOULD TEST BEFORE HIRING\n" +
+      "• Excel accuracy and comfort with formulas, pivots, reconciliations and structured trackers.\n" +
+      "• Ability to interpret operational metrics, identify a variance and explain what action should follow.\n" +
+      "• Clear PowerPoint and verbal communication, especially when explaining an issue to a manager.\n" +
+      "• Prioritisation when several stakeholders need updates at the same time.\n" +
+      "• Attention to detail, follow-through and comfort with repeatable operating controls.\n\n" +
+      "THE GAPS — NO SUGAR-COATING\n" +
+      "His current evidence does not prove advanced Excel modelling, advanced Power BI development, strong SQL, formal finance operations, large-scale transformation ownership or quantified cost/revenue impact. If the IBM role is heavily finance-led, reconciliation-heavy or expects advanced modelling from day one, the fit is weaker and he would need training. His portfolio also needs one or two tightly quantified work examples wherever genuine measures are available.\n\n" +
+      "CAN HE EXCEL?\n" +
+      "Potentially, yes. His client-operations exposure and evidence-to-action approach give him a useful base for a trainee role. To excel, he must become dependable with data accuracy, status reporting, written updates, presentation and disciplined follow-through. Those capabilities should be tested in an interview or case exercise; they should not simply be assumed.\n\n" +
+      "MANRA'S RECOMMENDATION\n" +
+      "Shortlist him for a general Business Operations Management Trainee interview. Give him a practical case: review a small operations tracker, identify the three biggest issues, explain their likely causes, prioritise actions and present a one-page update. That will reveal more than a generic interview. The final fit depends on the actual IBM job description and the level of Excel, finance and analytics expected.";
+  }
+
+  function makeLocalAnswer(question) {
+    var q = question.toLowerCase();
+
+    if (/\bibm\b|management trainee|business operations trainee|ibm.*operations|operations.*ibm/.test(q)) {
+      return answerIbmRole();
+    }
+
+    if (/weakness|gap|improv|develop|risk|limitation|not good|missing|shortcoming/.test(q)) {
+      return "A balanced assessment of Manoj's development areas:\n\n" + profile.development +
+        "\n\nA hiring manager should also validate his ability to prioritise under pressure, communicate concise updates, handle ambiguous requests and present a clear recommendation. These are interview tests—not weaknesses that can be concluded without speaking to him. His public evidence does not establish formal team leadership or quantified process impact.";
+    }
+
+    if (/technical|excel|power.?bi|tableau|sql|software|tool/.test(q)) {
+      return "MANRA'S SKILL READOUT\n\n" + profile.tools +
+        "\n\nBest application: operational trackers, MIS, basic reporting, data checks, dashboard interpretation and structured business updates. Development focus: Excel modelling, Power BI data modelling and visual storytelling, and SQL fundamentals. Do not market him as a data scientist, data engineer or advanced BI developer.";
+    }
+
+    if (/leadership|leader|manage people|team management|teamwork|collaborat|stakeholder/.test(q)) {
+      return "Manoj's documented work supports a coordination and stakeholder-follow-through narrative. At NexaHomes, the described work connected customers, vendors, sales and delivery activity, including handoffs and post-sale requests. That is relevant to collaborative execution.\n\nWhat the evidence does not yet prove is formal people management, direct-report responsibility, team-size leadership or ownership of a large transformation. A fair assessment is that he has practical coordination exposure and should be tested for leadership potential through examples of influencing, resolving disagreement and taking accountability.";
+    }
+
+    if (/differentiat|unique|stand out|typical candidate|strength|talent|best at|best contribute|capabilit|ability|what is he good/.test(q)) {
+      return "MANRA'S ASSESSMENT\n\n" + profile.positioning + "\n\n" +
+        profile.strengths.map(function (item, index) {
+          return (index + 1) + ". " + item[0] + " — " + item[1];
+        }).join("\n\n") +
+        "\n\nThe differentiator is the combination of customer-facing operating context, commercial research and practical reporting. That combination is more credible than presenting him as a specialist in one advanced technical tool.";
+    }
+
+    if (/where|contribut|role fit|role|position|team|hire|value|business|career|suitable|fit/.test(q)) {
+      return "The strongest near-term role fit is in execution-oriented work where structured thinking supports day-to-day operations.\n\n" +
+        profile.roles.map(function (item) { return "• " + item; }).join("\n") +
+        "\n\nWHY THE FIT IS CREDIBLE\n" + profile.strengths.slice(0, 4).map(function (item) {
+          return "• " + item[0] + ": " + item[1];
+        }).join("\n\n") +
+        "\n\nThe actual job description matters. Roles requiring advanced coding, deep financial ownership or specialist data engineering would not match his current evidence as closely.";
+    }
+
+    if (/experience|proof|evidence|credential|background|track record|example|worked|internship|education|qualification/.test(q)) {
+      return "The portfolio's clearest evidence points are:\n\n" + formatEvidence() +
+        "\n\nEvidence discipline: scope is not the same as measured impact. The 100+ client portfolio establishes operating scope; it does not prove a revenue increase, cost saving or service improvement. Ask Manoj to explain the context, his exact responsibility, the output and any verified result.";
+    }
+
+    if (/resume|cv|summary|introduc|pitch|elevator|tell me about/.test(q)) {
+      return "A concise professional introduction:\n\n“V. Sai Manoj is a business-operations professional who connects customer and market signals with structured research, operational reporting and practical execution. His experience includes customer and service coordination across a 100+ residential-client portfolio at NexaHomes, competitor benchmarking, a Mercedes-Benz retail-model study and MBA research. He is best suited to roles where teams need organised execution, clearer operating visibility and evidence-led decisions.”\n\nThis is a positioning summary, not a claim of advanced technical expertise or unverified financial impact.";
+    }
+
+    if (/90 day|first 90|first month|first 30|onboard|joining|start at|new role/.test(q)) {
+      return "A practical first-90-day plan for Manoj in a Business Operations team:\n\nDAYS 1–30 — LEARN THE OPERATING SYSTEM\nUnderstand the service or business model, key stakeholders, recurring workflows, definitions of core metrics, reporting calendar, escalation paths and quality checks. Shadow the people doing the work before proposing changes.\n\nDAYS 31–60 — BUILD VISIBILITY\nTake ownership of a defined tracker or recurring report. Validate data, identify repeat exceptions, document a handoff or workflow and confirm observations with the process owner.\n\nDAYS 61–90 — IMPROVE ONE CONTROLLED STEP\nRecommend one small improvement, agree a baseline and success measure, run a limited pilot with the owner's approval, document the result and present what should happen next.\n\nThe discipline is to understand first, measure second and change only with evidence.";
+    }
+
+    if (/salary|package|ctc|lpa|pay/.test(q)) {
+      return "Salary depends on the exact job level, location, employer band and interview performance. Manoj's previously stated target range is an aspiration, not evidence of market value or a guaranteed outcome. The better approach is to evaluate the IBM role's actual scope, eligibility, compensation band and learning runway before negotiating.";
+    }
+
+    if (/communicat|present|english|speak|articulat/.test(q)) {
+      return "The portfolio gives evidence of business research, reporting and cross-functional coordination, but it does not objectively measure spoken English, executive presence or presentation quality. Those should be validated directly. A strong interview test would ask Manoj to explain one work example in two minutes: the business problem, his role, the action, the evidence and the outcome—without overstating the impact.";
+    }
+
+    if (/problem solv|ambigu|decision|judgement|analys|think/.test(q)) {
+      return "The strongest evidence of Manoj's problem-structuring approach is the connection between competitor benchmarking and service-line choices, plus his work with customer requirements, service handoffs and reporting. His MBA research adds experience framing a question and examining multiple factors.\n\nA fair test is to give him an unfamiliar operating problem and assess whether he clarifies the objective, separates facts from assumptions, identifies the root issue, prioritises options and recommends a measurable next step.";
+    }
+
+    if (/personality|character|work ethic|attitude|reliable|ownership|integrity|adapt/.test(q)) {
+      return "I can describe the professional behaviours suggested by the work evidence, but I cannot certify private character traits from a portfolio alone. The documented work suggests comfort with customer context, structured research, coordination and follow-through. Reliability, integrity, resilience and adaptability should be validated through specific examples, references and a practical work exercise—not claimed as facts without evidence.";
+    }
+
+    if (/achievement|impact|result|success|accomplish|outcome/.test(q)) {
+      return "The strongest documented achievement is the scope of work across a 100+ residential-client portfolio at NexaHomes, alongside competitor research, customer/service coordination and reporting deliverables. The portfolio deliberately does not claim unverified revenue, margin, savings, cycle-time or satisfaction improvements. To strengthen the achievement story, Manoj should add dated, verifiable before-and-after measures where company records permit.";
+    }
+
+    if (/why.*ibm|why this company|why should we choose|why hire|why select/.test(q)) {
+      return "A credible reason for IBM is the opportunity to learn how a large, complex organisation manages processes, service delivery, reporting and cross-functional execution. Manoj can bring customer-operations context, structured research, coordination and a practical reporting foundation. He should be candid about the areas he is developing—especially advanced Excel and deeper analytics—and show how he learns through a concrete example.";
+    }
+
+    if (/hello|hi\b|who are you|what can you do|help me/.test(q)) {
+      return "Hello. I am MANRA 231999, Manoj's portfolio-grounded capability intelligence assistant. I can assess his strengths, evidence, experience, tools, development areas, role alignment, interview positioning and likely contribution. I distinguish documented facts from reasonable inferences and never invent performance results.";
+    }
+
+    return "I can assess questions about V. Sai Manoj's professional capabilities, strengths, experience, work evidence, education, tools, development areas, working style, role fit, interview positioning and potential contribution. I also have a detailed assessment for an IBM Management Trainee role in Business Operations.\n\nFor an accurate answer, ask the question in the context of Manoj's profile—for example: “Could he excel in business operations?”, “What evidence supports his process-improvement ability?” or “What would he need to prove in an IBM interview?”\n\n" +
+      profile.positioning + "\n\nThis website is currently in portfolio-grounded mode. Open-ended responses to any subject require the secure AI service to be configured; the public page does not expose an API key.";
+  }
+
+  function speak(text, after) {
+    if (!speechSynthesis || !window.SpeechSynthesisUtterance) {
+      if (after) after();
+      return;
+    }
+    speechSynthesis.cancel();
+    var utterance = new SpeechSynthesisUtterance(text);
+    utterance.lang = "en-IN";
+    utterance.rate = 0.96;
+    utterance.pitch = 1.0;
+    var voices = speechSynthesis.getVoices ? speechSynthesis.getVoices() : [];
+    var voice = voices.find(function (item) { return /^en-IN$/i.test(item.lang); }) ||
+      voices.find(function (item) { return /^en-GB$/i.test(item.lang); }) ||
+      voices.find(function (item) { return /^en/i.test(item.lang); });
+    if (voice) utterance.voice = voice;
+    utterance.onstart = function () {
+      setVisualState("speaking", "MANRA is responding", "Speaking your answer. You can stop the voice session at any time.");
+    };
+    utterance.onend = function () {
+      if (after) after();
+    };
+    utterance.onerror = function () {
+      if (after) after();
+    };
+    speechSynthesis.speak(utterance);
+  }
+
+  function startListening() {
+    if (!voiceSession || !recognition) return;
+    pendingVoiceQuestion = "";
+    try {
+      recognition.start();
+    } catch (error) {
+      setStatus("The microphone is not ready. Select Start voice conversation to try again.");
+      setVisualState("idle", "Voice session paused", "The microphone could not be restarted.");
+    }
+  }
+
+  function stopVoiceSession() {
+    voiceSession = false;
+    pendingVoiceQuestion = "";
+    listening = false;
+    if (recognition) {
+      try { recognition.stop(); } catch (error) {}
+    }
+    if (speechSynthesis) speechSynthesis.cancel();
+    setMicMode(false);
+    setVisualState("idle", "MANRA is ready", "Ask a question by voice or type it below.");
+    setStatus(recognition ? "Voice session stopped. You can restart it whenever you are ready." : "Voice input is not supported in this browser.");
+  }
+
+  function startVoiceSession() {
+    if (!recognition) {
+      setStatus("This browser does not support speech recognition. Use Chrome or type your question.");
+      setVisualState("idle", "Voice input unavailable", "You can still ask MANRA by typing.");
+      return;
+    }
+    if (voiceSession) {
+      stopVoiceSession();
+      return;
+    }
+    voiceSession = true;
+    setMicMode(true);
+    setVisualState("speaking", "MANRA is greeting you", "Opening the voice session.");
+    setStatus("Starting voice session…");
+    speak(GREETING, function () {
+      if (!voiceSession) return;
+      setVisualState("listening", "MANRA is listening", "Ask your question naturally. MANRA will respond and then listen for the next question.");
+      setStatus("Listening for your question…");
+      startListening();
+    });
+  }
+
+  async function answer(question, options) {
+    options = options || {};
+    setVisualState("thinking", "MANRA is considering the evidence", "Separating documented facts, reasonable inferences and development areas.");
+    var thinking = addMessage("Reviewing the question against Manoj's portfolio evidence…", "assistant");
+    var reply = "";
     try {
       if (window.MANRA_API_ENDPOINT && /^https:\/\//i.test(window.MANRA_API_ENDPOINT)) {
         var response = await fetch(window.MANRA_API_ENDPOINT, {
           method: "POST",
           headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ question: question })
+          body: JSON.stringify({ question: question, profile_context: profile })
         });
-        if (!response.ok) throw new Error("Assistant service unavailable");
+        if (!response.ok) throw new Error("The secure assistant service is unavailable.");
         var data = await response.json();
-        thinking.querySelector("p").textContent = data.answer || "I couldn't prepare an answer for that question.";
-        return;
+        reply = data.answer || "I couldn't prepare an answer for that question.";
+      } else {
+        reply = makeLocalAnswer(question);
       }
-      thinking.querySelector("p").textContent = makeLocalAnswer(question);
     } catch (error) {
-      thinking.querySelector("p").textContent = makeLocalAnswer(question) + "\n\nNote: the live AI service is not connected yet, so this is the portfolio-grounded preview.";
+      reply = makeLocalAnswer(question) + "\n\nThe live AI connection is currently unavailable, so this response uses the portfolio-grounded assessment.";
+    }
+    thinking.querySelector("p").textContent = reply;
+    thread.scrollTop = thread.scrollHeight;
+
+    if (options.speak && voiceSession) {
+      speak(reply, function () {
+        if (!voiceSession) return;
+        setVisualState("listening", "MANRA is listening", "Go ahead with your next question.");
+        setStatus("Listening for your next question…");
+        startListening();
+      });
+    } else {
+      setVisualState("idle", "MANRA is ready", "Ask another question or start a voice conversation.");
+      setStatus(window.MANRA_API_ENDPOINT ? "AI service configured · portfolio context enabled" : "Portfolio-grounded mode · secure AI service not connected");
     }
   }
 
-  form.addEventListener("submit", function (event) {
-    event.preventDefault();
-    var question = input.value.trim();
+  function submitQuestion(question, options) {
+    question = (question || "").trim();
     if (!question) return;
     addMessage(question, "user");
     input.value = "";
-    answer(question);
-  });
+    answer(question, options || {});
+  }
+
+  if (form) {
+    form.addEventListener("submit", function (event) {
+      event.preventDefault();
+      submitQuestion(input.value, { speak: voiceSession });
+    });
+  }
+
   document.querySelectorAll("[data-manra-prompt]").forEach(function (button) {
     button.addEventListener("click", function () {
-      input.value = button.getAttribute("data-manra-prompt");
-      form.requestSubmit();
+      var question = button.getAttribute("data-manra-prompt");
+      input.value = question;
+      submitQuestion(question, { speak: voiceSession });
     });
   });
 
-  function stopListening() {
-    if (recognition && listening) {
-      try { recognition.stop(); } catch (e) {}
-    }
-    listening = false;
-    mic.setAttribute("aria-pressed", "false");
-  }
-  var SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
-  if (!SpeechRecognition) {
-    mic.disabled = true;
-    status.textContent = "Voice input is not supported in this browser. You can type instead.";
-    mic.title = "Voice input not supported";
-  } else {
-    recognition = new SpeechRecognition();
+  if (recognition) {
     recognition.lang = "en-IN";
     recognition.interimResults = true;
     recognition.continuous = false;
     recognition.onstart = function () {
       listening = true;
-      mic.setAttribute("aria-pressed", "true");
-      status.textContent = "Listening… ask your question.";
+      setVisualState("listening", "MANRA is listening", "Speak naturally. Your question will be processed when you finish.");
+      setStatus("Listening…");
     };
     recognition.onresult = function (event) {
-      var transcript = "";
-      for (var i = event.resultIndex; i < event.results.length; i++) transcript += event.results[i][0].transcript;
-      input.value = transcript;
+      var finalText = "";
+      for (var i = event.resultIndex; i < event.results.length; i++) {
+        if (event.results[i].isFinal) finalText += event.results[i][0].transcript;
+      }
+      if (finalText.trim()) pendingVoiceQuestion = (pendingVoiceQuestion + " " + finalText).trim();
     };
     recognition.onerror = function (event) {
-      status.textContent = event.error === "not-allowed" ? "Allow microphone access in your browser settings." : "Voice input stopped. You can type instead.";
-      stopListening();
+      listening = false;
+      if (event.error === "not-allowed" || event.error === "service-not-allowed") {
+        voiceSession = false;
+        setMicMode(false);
+        setStatus("Allow microphone access in your browser settings, then start voice again.");
+        setVisualState("idle", "Microphone permission needed", "Your browser must allow microphone access.");
+      } else if (event.error === "no-speech") {
+        setStatus("I didn't hear a question. Please try again.");
+        if (voiceSession) {
+          setVisualState("listening", "MANRA is listening", "Please ask your question again.");
+          window.setTimeout(startListening, 350);
+        }
+      } else {
+        setStatus("Voice input stopped. You can restart the session or type instead.");
+        setVisualState("idle", "Voice session paused", "Check your microphone and browser permissions.");
+      }
     };
     recognition.onend = function () {
       listening = false;
-      mic.setAttribute("aria-pressed", "false");
-      if (status.textContent === "Listening… ask your question.") status.textContent = "Voice captured. Press Ask MANRA to submit.";
+      if (!voiceSession) return;
+      if (pendingVoiceQuestion.trim()) {
+        var captured = pendingVoiceQuestion.trim();
+        pendingVoiceQuestion = "";
+        submitQuestion(captured, { speak: true });
+      } else if (visual && visual.getAttribute("data-state") === "listening") {
+        setStatus("Listening ended. Start voice again or type your question.");
+      }
     };
-    mic.addEventListener("click", function () {
-      if (listening) { stopListening(); return; }
-      try { recognition.start(); } catch (e) { status.textContent = "Please try the microphone again."; }
-    });
   }
-  status.textContent = window.MANRA_API_ENDPOINT ? "Voice-ready · AI service configured" : (SpeechRecognition ? "Voice-ready · AI connection pending" : "AI connection pending · type your question");
+
+  if (mic) mic.addEventListener("click", startVoiceSession);
+
+  setVisualState("idle", "MANRA is ready", "Ask about Manoj's strengths, evidence, capabilities or role fit.");
+  setStatus(recognition ? "Voice-enabled browser · portfolio-grounded answers" : "Voice input requires a supported browser. You can type your question.");
+  if (!speechSynthesis) {
+    setStatus("Speech output is unavailable in this browser. Typed answers remain available.");
+  }
 })();
