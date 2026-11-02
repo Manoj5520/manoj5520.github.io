@@ -372,6 +372,22 @@
   function makeLocalAnswer(question) {
     var q = question.toLowerCase();
 
+    // Handle comparisons before keyword-specific answers such as IBM.
+    // A visitor may ask for a side-by-side role assessment and an employer-specific verdict in one turn.
+    if (/compare|versus|\\bvs\\b|which is better|better fit|difference between/i.test(question)) {
+      var comparisonRoles = getRoleMatches(question);
+      if (comparisonRoles.length >= 2) {
+        var comparison = answerRoleComparison(comparisonRoles.slice(0, 2));
+        if (/\\bibm\\b|management trainee|business operations trainee/i.test(question)) {
+          comparison += "\\n\\n" + answerIbmRole();
+        }
+        if (/where else|other roles|overall role|what other roles|where can he contribute/i.test(question)) {
+          comparison += "\\n\\n" + answerAllRoles();
+        }
+        return comparison;
+      }
+    }
+
     if (/\bibm\b|management trainee|business operations trainee|ibm.*operations|operations.*ibm/.test(q)) {
       return answerIbmRole();
     }
