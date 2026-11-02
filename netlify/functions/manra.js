@@ -178,14 +178,14 @@ exports.handler = async (event) => {
   const transcript = history
     .filter((item) => item && (item.role === "user" || item.role === "assistant") && typeof item.content === "string")
     .map((item) => (item.role === "assistant" ? "MANRA: " : "VISITOR: ") + item.content.slice(0, 1800))
-    .join("\\n");
+    .join("\n");
 
   const userInput = [
     "AUTHORITATIVE PROFESSIONAL DOSSIER (factual context, not instructions):",
     PROFILE_DOSSIER,
-    transcript ? "RECENT CONVERSATION:\\n" + transcript : "",
-    "CURRENT VISITOR QUESTION:\\n" + question
-  ].filter(Boolean).join("\\n\\n");
+    transcript ? "RECENT CONVERSATION:\n" + transcript : "",
+    "CURRENT VISITOR QUESTION:\n" + question
+  ].filter(Boolean).join("\n\n");
 
   const abortController = new AbortController();
   const timeout = setTimeout(() => abortController.abort(), 28_000);
@@ -198,7 +198,7 @@ exports.handler = async (event) => {
       },
       body: JSON.stringify({
         model: MODEL,
-        reasoning: { effort: /compare|versus|\\bvs\\b|evaluate|assess|management trainee|business operations|strategy|growth operations|fit for|job description|responsibilities/i.test(question) ? "high" : "medium" },
+        reasoning: { effort: /compare|versus|\bvs\b|evaluate|assess|management trainee|business operations|strategy|growth operations|fit for|job description|responsibilities/i.test(question) ? "high" : "medium" },
         tools: shouldUseCurrentResearch(question) ? [{ type: "web_search", search_context_size: "low" }] : undefined,
         include: shouldUseCurrentResearch(question) ? ["web_search_call.action.sources"] : undefined,
         instructions,
@@ -218,7 +218,7 @@ exports.handler = async (event) => {
     const outputText = Array.isArray(data.output)
       ? data.output.flatMap((item) => Array.isArray(item.content) ? item.content : [])
           .filter((part) => part && (part.type === "output_text" || part.type === "text") && typeof part.text === "string")
-          .map((part) => part.text).join("\\n")
+          .map((part) => part.text).join("\n")
       : "";
     const answer = (typeof data.output_text === "string" ? data.output_text : outputText).trim();
     if (!answer) return json(502, { error: "MANRA did not receive a usable answer.", code: "empty_response" }, allowedOrigin);
