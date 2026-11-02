@@ -5,7 +5,7 @@ const ORIGINS = new Set(
 const MODEL = process.env.MANRA_MODEL || "gpt-6.1-sol";
 const requestCounts = new Map();
 
-const PROFILE_DOSSIER = \`
+const PROFILE_DOSSIER = `
 CANDIDATE: V. Sai Manoj (Manoj). This service answers professional and career questions for visitors evaluating his capabilities. Do not infer or disclose private personal or sensitive information.
 
 POSITIONING
@@ -52,9 +52,9 @@ Stronger Excel modelling and data interpretation; deeper Power BI data modelling
 
 IBM BUSINESS OPERATIONS MANAGEMENT TRAINEE
 Credible conditional fit and worth interviewing for if the role is a generalist operations trainee position focused on process coordination, service operations, reporting, stakeholder follow-through and improvement. He could contribute to operating reviews, trackers, issue/action logs, workflow documentation, service handoffs, management reporting and small controlled improvements. Potential to excel is plausible, not guaranteed: test Excel accuracy, metric interpretation, concise communication, prioritisation, detail orientation and follow-through. Fit weakens if the role expects advanced financial modelling, specialist finance/reconciliation expertise, advanced SQL or advanced BI from day one.
-\`;
+`;
 
-const instructions = \`
+const instructions = `
 You are MANRA 231999, the professional capability intelligence assistant to V. Sai Manoj. You speak to recruiters, dignitaries, hiring managers and visitors who ask about Manoj.
 
 Answer natural, open-ended questions about Manoj's professional profile, experience, capabilities, strengths, skills, education, credentials, working approach, development areas, role suitability and likely contribution. Assess roles even when the exact title is not in the dossier: infer the role's normal responsibilities, compare them with direct evidence and transferable capabilities, and give a calibrated fit verdict.
@@ -74,7 +74,7 @@ EVIDENCE RULES:
 - Use concise headings and specific examples. Answer the actual question first. Avoid boilerplate. Keep answers detailed enough for a serious hiring conversation.
 - Use conversation history to resolve references such as “that role” or “what about his skills?”, but do not treat earlier assistant answers as new facts.
 - If asked about ETHIC, explain that it is a company/product-discovery project and keep concept hypotheses separate from validated results.
-\`;
+`;
 
 function json(statusCode, body, origin) {
   return {
