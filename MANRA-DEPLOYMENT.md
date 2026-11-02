@@ -1,34 +1,32 @@
 # MANRA 231999 — secure AI service deployment
 
-## What is already in this repository
+## What is already in the repository
 
-- `manra.js` — the voice/chat interface, browser speech input/output, profile-grounded fallback and conversation handling.
-- `manra-widget.css` — the animated MANRA listening / thinking / speaking visual.
-- `netlify/functions/manra.js` — the private server endpoint. The detailed professional dossier and agent instructions stay on the server; provider credentials are never placed in public JavaScript.
+- `manra.js` — the assistant interface, browser speech input/output, conversation history, profile-grounded fallback and source display.
+- `manra-widget.css` — the animated listening / thinking / speaking visual.
+- `netlify/functions/manra.js` — the private intelligence endpoint. It holds the professional dossier and agent instructions server-side and calls the model through Netlify AI Gateway when available.
 - `netlify.toml` — Netlify build and function configuration.
 
-The public portfolio and the ETHIC subsite remain hosted on GitHub Pages. The server function needs a separate serverless host because GitHub Pages only serves static files.
+The public portfolio and ETHIC subsite remain on GitHub Pages. GitHub Pages only serves static files, so the intelligent service needs a serverless host.
 
-## Deploy the function on Netlify
+## Recommended activation — Netlify AI Gateway
 
-1. Sign in to Netlify and choose **Add new project → Import an existing project**.
-2. Select GitHub and choose `Manoj5520/manoj5520.github.io`.
-3. Set the production branch to `main`.
-4. Keep the publish directory as `.` and use the function directory `netlify/functions` from the checked-in `netlify.toml`. No build command is required.
-5. Deploy the project. Netlify will provide a site hostname such as `https://YOUR-SITE.netlify.app`.
-6. In the Netlify site dashboard, open **Project configuration → Environment variables** and add:
-   - `OPENAI_API_KEY` — create an API key in the OpenAI API platform and paste it only into this private Netlify environment variable.
-   - `MANRA_ALLOWED_ORIGINS` — `https://manoj5520.github.io`
-   - `MANRA_MODEL` — optional; defaults to `gpt-6.1-sol`.
-7. Ensure the `OPENAI_API_KEY` variable is available to Functions, then trigger a fresh production deploy.
+This route avoids placing an OpenAI key in GitHub and does not require a separate OpenAI API account/key. Netlify AI Gateway injects the OpenAI-compatible key and base URL into a deployed Netlify Function.
 
-The endpoint URL will be:
+1. Sign in to Netlify.
+2. Choose **Add new project → Import an existing project**.
+3. Select GitHub and connect `Manoj5520/manoj5520.github.io`.
+4. Set the production branch to `main`.
+5. Keep publish directory `.`; the checked-in `netlify.toml` points to `netlify/functions`. No build command is required.
+6. Deploy the site to production at least once. Netlify AI Gateway requires a production deploy before it activates.
+7. In the Netlify team settings, ensure **AI Features / AI Gateway** are enabled. On a current credit-based plan, Netlify automatically injects `OPENAI_API_KEY` and `OPENAI_BASE_URL` (and the dedicated `NETLIFY_AI_GATEWAY_KEY` / `NETLIFY_AI_GATEWAY_BASE_URL`) for Functions. No secret needs to be added to GitHub or public files.
+8. Trigger a fresh production deploy after enabling AI Gateway.
 
-`https://YOUR-SITE.netlify.app/.netlify/functions/manra`
+The backend is coded to use the Netlify-injected gateway URL and key. It can also use a separately configured direct OpenAI API key as a fallback, but that is not the recommended setup.
 
 ## Connect the public sites
 
-After Netlify has deployed successfully, add this configuration to the public portfolio `index.html` before the `manra.js` script tag, replacing the example host with the actual Netlify site hostname:
+After Netlify has deployed successfully, set this configuration in the public portfolio `index.html` before the `manra.js` script tag, replacing the example hostname with your actual Netlify site hostname:
 
 ```html
 <script>
@@ -36,16 +34,15 @@ After Netlify has deployed successfully, add this configuration to the public po
 </script>
 ```
 
-The ETHIC subsite loads the same shared assistant script from the portfolio domain, so it will use the same configured endpoint.
+The ETHIC subsite loads the same shared assistant script from the portfolio domain, so it will use the same endpoint.
 
-## Cost and key safety
+## Cost and safeguards
 
-- A ChatGPT subscription does not include OpenAI API usage. API usage is billed separately.
-- The current default, `gpt-6.1-sol`, is a reasoning model. The API model listing currently shows $2 per 1M input tokens and $10 per 1M output tokens; web-search tool calls may add their own usage charge.
-- Set an API budget/usage alert in the OpenAI platform and review usage after initial testing.
-- Never put the API key in `index.html`, `manra.js`, GitHub Pages, a public repository variable, or a message to the assistant.
-- The backend has request-size limits and a best-effort per-instance rate limit. A production deployment should also enable a durable rate-limit / bot-protection layer before promoting the assistant widely.
+- Netlify AI Gateway converts model-token use into Netlify credits. It is not unlimited; monitor credit use in the Netlify dashboard and check the current plan/credit quota before sharing the assistant widely.
+- GPT-6.1 Sol is the configured reasoning model for complex role assessments. MANRA requests higher reasoning effort for role-fit and comparison questions and uses web search for current company/vacancy/eligibility questions.
+- The server function has request-size limits, a best-effort per-instance rate limit, and server-side origin checks. Add durable bot protection / rate-limiting before a high-traffic public launch.
+- The browser never receives the provider API key. Never add a key to `index.html`, `manra.js`, GitHub Pages or any public repository file.
 
 ## Honest readiness status
 
-The UI and backend source code are committed to GitHub. The intelligent service is **not live** until the Netlify function is deployed, the private key is configured, and the endpoint is added to the public page. Before that point, MANRA uses its local profile-grounded fallback and must not claim to be fully generative.
+The portfolio UI, ETHIC subsite, reasoning prompt, profile dossier and Netlify Function source are committed to GitHub. The intelligent service is **not live** until a Netlify production project exists, AI Gateway is enabled, and the function URL is configured in the public page. Until then, MANRA uses its profile-grounded preview and must not claim to be a fully generative agent.
