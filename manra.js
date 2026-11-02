@@ -573,7 +573,9 @@
     voiceSession = true;
     voiceGreetingSpoken = false;
     setMicMode(true);
-    addMessage(GREETING, "assistant");
+    var lastMessage = thread && thread.lastElementChild;
+    var lastMessageText = lastMessage && lastMessage.querySelector("p") ? lastMessage.querySelector("p").textContent : "";
+    if (lastMessageText !== GREETING) addMessage(GREETING, "assistant");
     setVisualState("speaking", "MANRA is greeting you", "Playing the welcome message before opening the microphone.");
     setStatus("MANRA is speaking the welcome message…");
     speak(GREETING, function (spoken) {
