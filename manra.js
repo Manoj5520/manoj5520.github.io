@@ -44,6 +44,7 @@
   var listening = false;
   var voiceSession = false;
   var pendingVoiceQuestion = "";
+  var conversationHistory = [];
   var speechSynthesis = window.speechSynthesis || null;
 
   var GREETING = "Hello, dignitaries. This is MANRA, the intelligence assistant to V. Sai Manoj. How may I assist you today?";
@@ -76,7 +77,7 @@
       "Market and Competitive Intelligence",
       "Program or Product Operations in execution-focused teams"
     ],
-    tools: "Excel: practical working ability. Power BI: intermediate exposure. Tableau: beginner-to-intermediate. SQL: basic. Do not describe him as an advanced SQL user, advanced Power BI developer, data scientist or data engineer.",
+    tools: "Excel: practical working ability including PivotTables, VLOOKUP and conditional formatting. Power BI: intermediate exposure for MIS and operational dashboards. Tableau: beginner-to-intermediate. SQL: basic. SPSS: survey-data analysis exposure. Microsoft Office, Canva, ChatGPT and Copilot: practical digital support. Do not describe him as an advanced SQL user, advanced Power BI developer, data scientist or data engineer.",
     development: "The main development priorities are stronger Excel modelling and data interpretation, more confident PowerPoint storytelling, deeper Power BI practice, basic-to-intermediate SQL progression, and quantified case studies that show the original problem, Manoj's exact responsibility, the action taken and a verified result. The portfolio does not claim unverified revenue growth, cost savings, cycle-time reduction or satisfaction improvement."
   };
 
@@ -168,6 +169,197 @@
       "Shortlist him for a general Business Operations Management Trainee interview. Give him a practical case: review a small operations tracker, identify the three biggest issues, explain their likely causes, prioritise actions and present a one-page update. That will reveal more than a generic interview. The final fit depends on the actual IBM job description and the level of Excel, finance and analytics expected.";
   }
 
+
+  var ROLE_CATALOG = [
+    {
+      key: "business-operations",
+      title: "Business Operations / Management Trainee",
+      fit: "Strongest near-term fit",
+      aliases: [/business\s*operations?/i, /\bbiz\s*ops\b/i, /operations management trainee/i],
+      evidence: "NexaHomes client operations across a 100+ residential-client portfolio; customer requirements, tailored offers, vendor coordination, sales-to-delivery handoffs, post-sale follow-through and MIS reporting.",
+      contribution: "Operating trackers, issue and action logs, workflow documentation, stakeholder follow-through, service-delivery coordination, management reporting and small process-control improvements.",
+      gaps: "Test Excel accuracy, metric interpretation, concise reporting, prioritisation under pressure and comfort with the role's finance or reconciliation content."
+    },
+    {
+      key: "service-operations",
+      title: "Service Operations / Customer Operations",
+      fit: "Strong near-term fit",
+      aliases: [/service operations?/i, /customer operations?/i, /client operations?/i, /customer experience operations?/i],
+      evidence: "Customer requirement capture, customization-led offers, upgrade and post-sale requests, vendor handoffs and continuity across the client journey.",
+      contribution: "Case tracking, service coordination, issue ageing, customer handoffs, escalation follow-through and reporting on service delivery.",
+      gaps: "Add quantified service measures and demonstrate experience with ticketing, CRM or service-management systems where required."
+    },
+    {
+      key: "growth-commercial-operations",
+      title: "Growth Operations / Commercial Operations",
+      fit: "Strong-to-good fit",
+      aliases: [/growth operations?/i, /commercial operations?/i, /strategy\s*(?:and|&)\s*growth operations?/i, /growth\s*(?:and|&)\s*strategy operations?/i],
+      evidence: "The NexaHomes Growth Manager & Operations Associate role, competitor benchmarking, service-line choice inputs, lead-generation coordination and customer-to-delivery execution.",
+      contribution: "Pipeline and activity visibility, commercial coordination, service-line tracking, lead-to-delivery handoffs and structured market feedback.",
+      gaps: "Do not claim revenue ownership or proven growth impact. Build stronger CRM, funnel metrics, conversion analysis and quantified commercial case studies."
+    },
+    {
+      key: "market-intelligence",
+      title: "Market / Competitive Intelligence Associate",
+      fit: "Good fit for an entry-level, research-led role",
+      aliases: [/market intelligence/i, /competitive intelligence/i, /competitor analysis/i, /market research/i, /competitor benchmarking/i],
+      evidence: "Hyderabad residential-market benchmarking, comparison of players including My Home Group and ASBL, and research that informed service-line choices and positioning.",
+      contribution: "Competitor profiles, offer comparisons, market maps, customer-need synthesis, opportunity briefs and decision-ready research summaries.",
+      gaps: "Strengthen market sizing, primary-research methodology, source triangulation, advanced Excel and presentation of quantified findings."
+    },
+    {
+      key: "process-excellence",
+      title: "Process Improvement / Operational Excellence Coordinator",
+      fit: "Good adjacent fit",
+      aliases: [/process improvement/i, /operational excellence/i, /business excellence/i, /continuous improvement/i, /process excellence/i],
+      evidence: "Exposure to sales-to-delivery handoffs, vendor coordination, request follow-through, manual coordination gaps and proposed process controls.",
+      contribution: "Workflow mapping, handoff checklists, issue logs, root-cause questions, baseline reporting and controlled improvement pilots.",
+      gaps: "The portfolio does not establish a measured transformation. Learn formal process-mapping and root-cause methods, then document one before-and-after result."
+    },
+    {
+      key: "program-pmo",
+      title: "Program Operations / Project Coordinator / PMO Coordinator",
+      fit: "Good adjacent fit",
+      aliases: [/program operations/i, /project coordinator/i, /\bpmo\b/i, /project management office/i, /program coordinator/i, /project operations/i],
+      evidence: "Cross-functional customer, vendor, sales and delivery coordination, follow-up discipline and reporting context.",
+      contribution: "Milestone trackers, meeting actions, dependency follow-up, status reporting, risk logs and coordination across owners.",
+      gaps: "Formal PMO governance, project scheduling tools, budget tracking and enterprise-scale programme ownership need to be demonstrated or learned."
+    },
+    {
+      key: "sales-operations",
+      title: "Sales Operations / Sales Enablement Operations",
+      fit: "Good adjacent fit",
+      aliases: [/sales operations?/i, /sales enablement/i, /sales support operations/i],
+      evidence: "Lead-generation coordination, customer requirement capture, offer alignment, booking-related customer context and sales-to-delivery handoffs.",
+      contribution: "Lead and activity trackers, handoff completeness, sales documentation, pipeline hygiene and coordination between sales and delivery.",
+      gaps: "CRM proficiency, funnel definitions, forecast accuracy and sales productivity analysis are not yet established."
+    },
+    {
+      key: "customer-success",
+      title: "Customer Success Operations / Implementation Coordination",
+      fit: "Good adjacent fit",
+      aliases: [/customer success/i, /implementation coordinator/i, /onboarding coordinator/i, /client success/i],
+      evidence: "Customer-facing requirements, tailored offers, upgrade requests, post-sale coordination and vendor follow-through.",
+      contribution: "Onboarding checklists, implementation status, customer issue coordination, renewal or service follow-up support and feedback synthesis.",
+      gaps: "SaaS onboarding, retention metrics, product adoption analytics and customer-success platforms may require training."
+    },
+    {
+      key: "product-operations",
+      title: "Product Operations Associate",
+      fit: "Selective adjacent / stretch fit",
+      aliases: [/product operations?/i, /\bproduct ops\b/i],
+      evidence: "Structured friction discovery, problem framing and ETHIC product research, together with customer and operational context.",
+      contribution: "User-feedback synthesis, research coordination, issue triage, product documentation and cross-functional release or support coordination.",
+      gaps: "No established product launch ownership, roadmap management, product analytics or software delivery record. Treat this as a transition role, not a proven specialism."
+    },
+    {
+      key: "strategy-operations",
+      title: "Strategy & Operations Associate",
+      fit: "Selective stretch fit",
+      aliases: [/strategy\s*(?:and|&)\s*operations?/i, /strategic operations?/i, /strategy associate/i],
+      evidence: "Competitor benchmarking linked to service-line choices, business-model study at Mercedes-Benz, MBA research and practical operating context.",
+      contribution: "Market and competitor synthesis, operating reviews, opportunity assessment, decision briefs and execution tracking.",
+      gaps: "Formal strategy project ownership, financial modelling, quantified impact and executive-level presentation need more proof. Stronger when paired with real operations execution."
+    },
+    {
+      key: "revenue-operations",
+      title: "Revenue Operations (process and coordination focus)",
+      fit: "Selective adjacent fit",
+      aliases: [/revenue operations?/i, /\brevops\b/i],
+      evidence: "Lead-generation coordination, client operations, market benchmarking and business reporting provide some transferable commercial context.",
+      contribution: "CRM data hygiene, pipeline coordination, handoff reporting and cross-functional visibility after role-specific training.",
+      gaps: "Revenue forecasting, CRM administration, attribution, funnel analytics and sales-finance alignment are not proven. This is not a finance role recommendation."
+    }
+  ];
+
+  function getRoleMatches(question) {
+    return ROLE_CATALOG.filter(function (role) {
+      return role.aliases.some(function (pattern) { return pattern.test(question); });
+    });
+  }
+
+  function roleQuestionAsked(question) {
+    return /fit|suit|role|job|position|career|contribut|excel|hire|shortlist|match|compare|versus|\bvs\b|recommend|where.*work|what.*apply/i.test(question);
+  }
+
+  function formatRole(role) {
+    return role.title + "\nFIT: " + role.fit + "\n\nEvidence: " + role.evidence +
+      "\n\nWhere he could contribute: " + role.contribution +
+      "\n\nWhat must be tested or developed: " + role.gaps;
+  }
+
+  function answerAllRoles() {
+    var strongest = ROLE_CATALOG.filter(function (r) {
+      return ["business-operations", "service-operations", "growth-commercial-operations"].indexOf(r.key) >= 0;
+    });
+    var adjacent = ROLE_CATALOG.filter(function (r) {
+      return ["market-intelligence", "process-excellence", "program-pmo", "sales-operations", "customer-success"].indexOf(r.key) >= 0;
+    });
+    var stretch = ROLE_CATALOG.filter(function (r) {
+      return ["product-operations", "strategy-operations", "revenue-operations"].indexOf(r.key) >= 0;
+    });
+    function group(title, items) {
+      return title + "\n" + items.map(function (r) {
+        return "• " + r.title + " — " + r.fit + ". " + r.evidence;
+      }).join("\n\n");
+    }
+    return "MANRA 231999 — OVERALL ROLE-FIT MAP\n\n" +
+      "The most credible positioning is an operations-minded business generalist: customer and service operations, commercial coordination, market intelligence and practical reporting. This is a better-supported story than presenting Manoj as an advanced data specialist.\n\n" +
+      group("PRIORITY 1 — STRONGEST CURRENT ALIGNMENT", strongest) + "\n\n" +
+      group("PRIORITY 2 — GOOD ADJACENT OPTIONS", adjacent) + "\n\n" +
+      group("PRIORITY 3 — SELECTIVE TRANSITION / STRETCH OPTIONS", stretch) + "\n\n" +
+      "ROLES NOT TO LEAD WITH\n" +
+      "Advanced Data Analyst / Data Scientist / Data Engineer, specialist SQL or BI developer, Financial Analyst / Accounting, and pure Digital Marketing or Recruitment are not supported by the current evidence or the stated role direction. An HR MBA specialisation should not force the search into HR roles.\n\n" +
+      "RECOMMENDATION\n" +
+      "Prioritise Business Operations, Service/Customer Operations, Growth/Commercial Operations and Operations Coordination. Keep Market Intelligence and Strategy & Operations as targeted adjacent paths. The final decision must be checked against each employer's job description, technical thresholds and experience requirements.";
+  }
+
+  function answerRoleComparison(roles) {
+    var first = roles[0];
+    var second = roles[1];
+    return "MANRA 231999 — ROLE COMPARISON\n\n" +
+      formatRole(first) + "\n\n" +
+      "────────────────────────\n\n" +
+      formatRole(second) + "\n\n" +
+      "MANRA'S COMPARATIVE JUDGEMENT\n" +
+      "The stronger current fit is " + first.title + " because its evidence is more directly represented in Manoj's documented work. " +
+      second.title + " is " + (second.fit.toLowerCase().indexOf("stretch") >= 0 ? "a more selective transition" : "also credible, but more dependent on the exact job scope") +
+      ". For the second path, he should prepare one concrete case that proves the missing capability rather than relying on the title or MBA alone.";
+  }
+
+  function answerEducationAndCredentials(question) {
+    var q = question.toLowerCase();
+    if (/certificate|certification|credential|ibm agile|design thinking|forage|forge|claude/.test(q)) {
+      return "EDUCATION, CREDENTIALS & LEARNING EVIDENCE\n\n" +
+        "• IBM SkillsBuild — Enterprise Design Thinking Practitioner.\n" +
+        "• IBM SkillsBuild — Agile Explorer.\n" +
+        "• BCG Strategy Consulting Job Simulation through Forage — a virtual job simulation, not employment with BCG.\n" +
+        "• Mercedes-Benz Silver Star — Management Trainee Internship, July–September 2022.\n" +
+        "• Tata Motors — Organisational Structure Training Programme, April–May 2021.\n" +
+        "• My Choices Foundation — Social Concern Project / Impact Internship.\n" +
+        "• CHRIST (Deemed to be University) — Academic Excellence Award for Outstanding Research associated with the MBA thesis.\n\n" +
+        "Credentials indicate learning and exposure; they should not be represented as professional employment or advanced technical certification unless the certificate explicitly says so.";
+    }
+    return "EDUCATION\n\n" +
+      "• MBA, Human Resource Management — CHRIST (Deemed to be University), Pune Lavasa Campus; aggregate 60.2% (CGPA 6.23). Thesis: Forecasting Employee Turnover in the Bangalore IT Industry: An Analysis of Engagement, Growth, and Culture.\n" +
+      "• B.Com — Computers, St. Joseph’s College, Kurnool; 58%.\n" +
+      "• Intermediate — MEC; approximately 68%.\n" +
+      "• SSC — 88%.\n\n" +
+      "The MBA specialisation is a qualification, not a reason to position him only for HR. His preferred professional direction is business operations, commercial operations, market intelligence and execution-focused strategy roles.";
+  }
+
+  function answerCapabilityOverview() {
+    return "MANRA 231999 — PROFESSIONAL CAPABILITY ASSESSMENT\n\n" +
+      profile.positioning + "\n\n" +
+      "1. CUSTOMER & SERVICE OPERATIONS\n" + profile.strengths[0][1] + "\n\n" +
+      "2. COMMERCIAL & MARKET INTELLIGENCE\n" + profile.strengths[1][1] + "\n\n" +
+      "3. PROCESS COORDINATION\n" + profile.strengths[2][1] + "\n\n" +
+      "4. REPORTING & DECISION SUPPORT\n" + profile.strengths[3][1] + "\n\n" +
+      "5. RESEARCH & PROBLEM STRUCTURING\n" + profile.strengths[4][1] + "\n\n" +
+      "6. CROSS-FUNCTIONAL EXECUTION\n" + profile.strengths[5][1] + "\n\n" +
+      "The strongest differentiator is the combination of customer-facing operations, market comparison and reporting discipline. The evidence supports potential and transferable capability; it does not prove unmeasured revenue, savings, efficiency or formal team-leadership outcomes.";
+  }
+
   function makeLocalAnswer(question) {
     var q = question.toLowerCase();
 
@@ -182,6 +374,35 @@
         "TAXONOMY\\nF1–F4: micro-friction families. F5: a human-friction / technology bridge. F6–F11: technology-led and wider workflow frictions. These are categories for investigation, not proof that a product opportunity is validated.\\n\\n" +
         "EVIDENCE DISCIPLINE\\nObserved, Hypothesis and Verified claims remain separate. P1 is not cleared / unclaimed. P2 is unclaimed. The ₹11,500–₹12,500 prototype envelope is a planning target, not secured spend. Commercial validation, patentability, market demand and scale are not established.\\n\\n" +
         "VM-PRIME is a separate manual-access workspace. MANRA can explain public ETHIC information but will not open or grant VM-PRIME access automatically.";
+    }
+
+    if (/compare|versus|\bvs\b|which is better|better fit|difference between/i.test(q)) {
+      var comparedRoles = getRoleMatches(question);
+      if (comparedRoles.length >= 2) return answerRoleComparison(comparedRoles.slice(0, 2));
+    }
+
+    if (/which roles|what roles|roles.*fit|fit.*overall|career options|overall.*career|where can he fit|role map|roles can he apply/i.test(q)) {
+      return answerAllRoles();
+    }
+
+    var detectedRoles = getRoleMatches(question);
+    if (detectedRoles.length && roleQuestionAsked(question)) {
+      return detectedRoles.length > 1
+        ? answerRoleComparison(detectedRoles.slice(0, 2))
+        : formatRole(detectedRoles[0]) + "\n\n" +
+          "Can he excel? There is a credible basis to pursue this role, but performance depends on learning speed, execution quality, manager expectations and the specific job description. The evidence is a reason to interview and test—not a guarantee of success.";
+    }
+
+    if (/data analyst|business analyst|data scientist|data engineer|financial analyst|accountant|accounting|recruiter|recruitment|digital marketing/i.test(q)) {
+      return "This is not where MANRA would position Manoj first. The current evidence is stronger in business and service operations, commercial coordination, market intelligence and execution support. The profile does not establish specialist data engineering, advanced analytics, core accounting/finance or recruitment expertise. The MBA HR specialisation is a qualification; it does not require him to pursue HR roles.";
+    }
+
+    if (/certificate|certification|credential|education|qualification|academic|degree|college|university|thesis|marks|percentage|cgpa/i.test(q)) {
+      return answerEducationAndCredentials(question);
+    }
+
+    if (/overall.*capabilit|full.*profile|complete.*profile|professional.*strength|what can he do|what is he capable|capability overview|strongest capabilities/i.test(q)) {
+      return answerCapabilityOverview();
     }
 
     if (/weakness|gap|improv|develop|risk|limitation|not good|missing|shortcoming/.test(q)) {
@@ -312,11 +533,6 @@
   }
 
   function startVoiceSession() {
-    if (!recognition) {
-      setStatus("This browser does not support speech recognition. Use Chrome or type your question.");
-      setVisualState("idle", "Voice input unavailable", "You can still ask MANRA by typing.");
-      return;
-    }
     if (voiceSession) {
       stopVoiceSession();
       return;
@@ -327,6 +543,13 @@
     setStatus("Starting voice session…");
     speak(GREETING, function () {
       if (!voiceSession) return;
+      if (!recognition) {
+        voiceSession = false;
+        setMicMode(false);
+        setStatus("This browser cannot listen for speech. Use a supported browser or type your question.");
+        setVisualState("idle", "Voice input unavailable", "The greeting was played, but speech recognition is not supported here.");
+        return;
+      }
       setVisualState("listening", "MANRA is listening", "Ask your question naturally. MANRA will respond and then listen for the next question.");
       setStatus("Listening for your question…");
       startListening();
@@ -382,7 +605,7 @@
         var response = await fetch(window.MANRA_API_ENDPOINT, {
           method: "POST",
           headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ question: question, profile_context: profile })
+          body: JSON.stringify({ question: question, profile_context: profile, history: conversationHistory.slice(-12), page_context: window.location.hostname })
         });
         if (!response.ok) throw new Error("The secure assistant service is unavailable.");
         var data = await response.json();
@@ -393,6 +616,8 @@
     } catch (error) {
       reply = makeLocalAnswer(question) + "\n\nThe live AI connection is currently unavailable, so this response uses the portfolio-grounded assessment.";
     }
+    conversationHistory.push({ role: "assistant", content: reply });
+    conversationHistory = conversationHistory.slice(-16);
     thinking.querySelector("p").textContent = reply;
     thread.scrollTop = thread.scrollHeight;
 
@@ -413,6 +638,8 @@
     question = (question || "").trim();
     if (!question) return;
     addMessage(question, "user");
+    conversationHistory.push({ role: "user", content: question });
+    conversationHistory = conversationHistory.slice(-16);
     input.value = "";
     answer(question, options || {});
   }
@@ -482,7 +709,7 @@
   if (mic) mic.addEventListener("click", startVoiceSession);
 
   setVisualState("idle", "MANRA is ready", "Ask about Manoj's strengths, evidence, capabilities or role fit.");
-  setStatus(recognition ? "Voice-enabled browser · portfolio-grounded answers" : "Voice input requires a supported browser. You can type your question.");
+  setStatus(recognition ? "Voice input available · profile-grounded mode · live AI service not connected" : "Voice input requires a supported browser. You can type your question.");
   if (!speechSynthesis) {
     setStatus("Speech output is unavailable in this browser. Typed answers remain available.");
   }
