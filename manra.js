@@ -375,15 +375,15 @@
 
     // Handle comparisons before keyword-specific answers such as IBM.
     // A visitor may ask for a side-by-side role assessment and an employer-specific verdict in one turn.
-    if (/compare|versus|\\bvs\\b|which is better|better fit|difference between/i.test(question)) {
+    if (/compare|versus|\bvs\b|which is better|better fit|difference between/i.test(question)) {
       var comparisonRoles = getRoleMatches(question);
       if (comparisonRoles.length >= 2) {
         var comparison = answerRoleComparison(comparisonRoles.slice(0, 2));
-        if (/\\bibm\\b|management trainee|business operations trainee/i.test(question)) {
-          comparison += "\\n\\n" + answerIbmRole();
+        if (/\bibm\b|management trainee|business operations trainee/i.test(question)) {
+          comparison += "\n\n" + answerIbmRole();
         }
         if (/where else|other roles|overall role|what other roles|where can he contribute/i.test(question)) {
-          comparison += "\\n\\n" + answerAllRoles();
+          comparison += "\n\n" + answerAllRoles();
         }
         return comparison;
       }
@@ -394,11 +394,11 @@
     }
 
     if (q.indexOf("ethic") >= 0 || q.indexOf("behavior engineering") >= 0 || q.indexOf("behaviour engineering") >= 0 || q.indexOf("friction discovery") >= 0 || q.indexOf("f1-f11") >= 0 || q.indexOf("p1") >= 0 && q.indexOf("p2") >= 0) {
-      return "ETHIC × MANRA — PROJECT INTELLIGENCE\\n\\n" +
-        "ETHIC is the company concept. MANRA is its strategic-intelligence and discovery system. ETHIC is being developed around Behavior Engineering: begin with the task a person is trying to complete, identify recurring resistance and workarounds, examine existing solutions, then decide whether a better intervention is justified.\\n\\n" +
-        "DISCOVERY LOGIC\\n1. Observe recurring friction in a real context.\\n2. Record the workaround people already use.\\n3. Separate direct observation from hypothesis.\\n4. Compare existing products, prior art and alternative explanations.\\n5. Test physical or technological feasibility, user value and commercial credibility.\\n\\n" +
-        "TAXONOMY\\nF1–F4: micro-friction families. F5: a human-friction / technology bridge. F6–F11: technology-led and wider workflow frictions. These are categories for investigation, not proof that a product opportunity is validated.\\n\\n" +
-        "EVIDENCE DISCIPLINE\\nObserved, Hypothesis and Verified claims remain separate. P1 is not cleared / unclaimed. P2 is unclaimed. The ₹11,500–₹12,500 prototype envelope is a planning target, not secured spend. Commercial validation, patentability, market demand and scale are not established.\\n\\n" +
+      return "ETHIC × MANRA — PROJECT INTELLIGENCE\n\n" +
+        "ETHIC is the company concept. MANRA is its strategic-intelligence and discovery system. ETHIC is being developed around Behavior Engineering: begin with the task a person is trying to complete, identify recurring resistance and workarounds, examine existing solutions, then decide whether a better intervention is justified.\n\n" +
+        "DISCOVERY LOGIC\n1. Observe recurring friction in a real context.\n2. Record the workaround people already use.\n3. Separate direct observation from hypothesis.\n4. Compare existing products, prior art and alternative explanations.\n5. Test physical or technological feasibility, user value and commercial credibility.\n\n" +
+        "TAXONOMY\nF1–F4: micro-friction families. F5: a human-friction / technology bridge. F6–F11: technology-led and wider workflow frictions. These are categories for investigation, not proof that a product opportunity is validated.\n\n" +
+        "EVIDENCE DISCIPLINE\nObserved, Hypothesis and Verified claims remain separate. P1 is not cleared / unclaimed. P2 is unclaimed. The ₹11,500–₹12,500 prototype envelope is a planning target, not secured spend. Commercial validation, patentability, market demand and scale are not established.\n\n" +
         "VM-PRIME is a separate manual-access workspace. MANRA can explain public ETHIC information but will not open or grant VM-PRIME access automatically.";
     }
 
