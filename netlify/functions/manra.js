@@ -173,7 +173,7 @@ exports.handler = async (event) => {
 
   const question = typeof body.question === "string" ? body.question.trim() : "";
   if (!question) return json(400, { error: "Please enter a question." }, allowedOrigin);
-  if (question.length > 3000) return json(413, { error: "Question is too long." }, allowedOrigin);
+  if (question.length > 12000) return json(413, { error: "Question is too long." }, allowedOrigin);
 
   const history = Array.isArray(body.history) ? body.history.slice(-12) : [];
   if (history.length && history[history.length - 1]?.role === "user" && history[history.length - 1]?.content === question) history.pop();
