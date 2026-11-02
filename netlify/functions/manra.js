@@ -139,6 +139,7 @@ exports.handler = async (event) => {
   if (question.length > 3000) return json(413, { error: "Question is too long." }, allowedOrigin);
 
   const history = Array.isArray(body.history) ? body.history.slice(-12) : [];
+  if (history.length && history[history.length - 1]?.role === "user" && history[history.length - 1]?.content === question) history.pop();
   const transcript = history
     .filter((item) => item && (item.role === "user" || item.role === "assistant") && typeof item.content === "string")
     .map((item) => (item.role === "assistant" ? "MANRA: " : "VISITOR: ") + item.content.slice(0, 1800))
