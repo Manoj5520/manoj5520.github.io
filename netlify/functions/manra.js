@@ -205,7 +205,7 @@ exports.handler = async (event) => {
         include: shouldUseCurrentResearch(question) ? ["web_search_call.action.sources"] : undefined,
         instructions,
         input: userInput,
-        max_output_tokens: 1800,
+        max_output_tokens: 2600,
         store: false
       }),
       signal: abortController.signal
