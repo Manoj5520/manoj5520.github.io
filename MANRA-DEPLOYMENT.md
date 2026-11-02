@@ -38,7 +38,7 @@ The ETHIC subsite loads the same shared assistant script from the portfolio doma
 
 ## Cost and safeguards
 
-- Netlify AI Gateway converts model-token use into Netlify credits. It is not unlimited; monitor credit use in the Netlify dashboard and check the current plan/credit quota before sharing the assistant widely.
+- Netlify AI Gateway converts model-token use into Netlify credits. The current Free credit-based plan is $0/month with 300 credits/month and a hard limit; there is no automatic overage charge, but AI service stops when the shared monthly credit pool is exhausted. The credit pool is shared with other Netlify usage, so monitor it before sharing widely. A paid plan includes a larger quota and different overage options.
 - GPT-6.1 Sol is the configured reasoning model for complex role assessments. MANRA requests higher reasoning effort for role-fit and comparison questions and uses web search for current company/vacancy/eligibility questions.
 - The server function has request-size limits, a best-effort per-instance rate limit, and server-side origin checks. Add durable bot protection / rate-limiting before a high-traffic public launch.
 - The browser never receives the provider API key. Never add a key to `index.html`, `manra.js`, GitHub Pages or any public repository file.
