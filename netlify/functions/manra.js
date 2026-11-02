@@ -177,7 +177,12 @@ exports.handler = async (event) => {
         : "The MANRA AI service could not complete the request.";
       return json(502, { error: safeMessage, code: "upstream_error" }, allowedOrigin);
     }
-    const answer = typeof data.output_text === "string" ? data.output_text.trim() : "";
+    const outputText = Array.isArray(data.output)
+      ? data.output.flatMap((item) => Array.isArray(item.content) ? item.content : [])
+          .filter((part) => part && (part.type === "output_text" || part.type === "text") && typeof part.text === "string")
+          .map((part) => part.text).join("\\n")
+      : "";
+    const answer = (typeof data.output_text === "string" ? data.output_text : outputText).trim();
     if (!answer) return json(502, { error: "MANRA did not receive a usable answer.", code: "empty_response" }, allowedOrigin);
     return json(200, { answer, model: MODEL }, allowedOrigin);
   } catch (error) {
