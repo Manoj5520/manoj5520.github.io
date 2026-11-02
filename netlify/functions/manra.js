@@ -3,6 +3,8 @@ const ORIGINS = new Set(
     .split(",").map((value) => value.trim()).filter(Boolean)
 );
 const MODEL = process.env.MANRA_MODEL || "gpt-6.1-sol";
+const AI_API_KEY = process.env.OPENAI_API_KEY || process.env.NETLIFY_AI_GATEWAY_KEY;
+const AI_BASE_URL = (process.env.OPENAI_BASE_URL || process.env.NETLIFY_AI_GATEWAY_BASE_URL || "https://api.openai.com").replace(/\/+$/, "");
 const requestCounts = new Map();
 
 const PROFILE_DOSSIER = `
@@ -161,8 +163,8 @@ exports.handler = async (event) => {
   if (event.httpMethod !== "POST") return json(405, { error: "Method not allowed" }, allowedOrigin || "null");
   if (!allowedOrigin) return { statusCode: 403, body: "Origin not allowed" };
   if (isRateLimited(event)) return json(429, { error: "Rate limit reached. Please try again shortly." }, allowedOrigin);
-  if (!process.env.OPENAI_API_KEY) {
-    return json(503, { error: "MANRA AI service is not configured yet.", code: "ai_not_configured" }, allowedOrigin);
+  if (!AI_API_KEY) {
+    return json(503, { error: "MANRA AI is not available on this Netlify project yet. Enable Netlify AI Features on a credit-based plan and publish a production deploy.", code: "ai_gateway_unavailable" }, allowedOrigin);
   }
 
   let body;
@@ -190,10 +192,10 @@ exports.handler = async (event) => {
   const abortController = new AbortController();
   const timeout = setTimeout(() => abortController.abort(), 28_000);
   try {
-    const response = await fetch("https://api.openai.com/v1/responses", {
+    const response = await fetch(AI_BASE_URL + "/v1/responses", {
       method: "POST",
       headers: {
-        "Authorization": "Bearer " + process.env.OPENAI_API_KEY,
+        "Authorization": "Bearer " + AI_API_KEY,
         "Content-Type": "application/json"
       },
       body: JSON.stringify({
