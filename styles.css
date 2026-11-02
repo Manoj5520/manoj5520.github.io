@@ -2038,3 +2038,81 @@ ul, ol { padding: 0; list-style: none; }
 .site-header .manra-launch-copy small{font-size:8px}
 @media(max-width:1100px){.site-header .manra-launch-copy small{display:none}.site-header .manra-launch{padding:6px 8px}}
 @media(max-width:960px){.site-header .manra-launch{order:2;margin-left:auto}.site-header .nav-toggle{order:3}}
+
+
+/* ==========================================================
+   MANRA 231999 — professional voice console
+   Distinctive orbital signal visual; states: idle/listening/thinking/speaking.
+   ========================================================== */
+.manra-voice-console{
+  display:grid;grid-template-columns:138px minmax(0,1fr);align-items:center;gap:18px;
+  min-height:164px;margin:18px 0 20px;padding:15px 18px;
+  border:1px solid #c8c0c2;border-radius:4px;
+  background:radial-gradient(ellipse at 20% 48%,rgba(255,255,255,.98),rgba(246,242,240,.93) 44%,rgba(231,226,226,.88) 100%);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.95),0 10px 25px rgba(24,20,22,.045);
+  overflow:hidden;
+}
+.manra-visual{position:relative;width:126px;height:126px;display:grid;place-items:center;isolation:isolate}
+.manra-visual-ring{position:absolute;display:block;border:1px solid rgba(109,38,59,.24);border-radius:50%;transform:rotate(-28deg)}
+.manra-ring-one{width:106px;height:106px;border-top-color:#6d263b;border-bottom-color:rgba(109,38,59,.08);animation:manra-orbit 16s linear infinite}
+.manra-ring-two{width:86px;height:112px;border-color:rgba(91,101,112,.34);border-left-color:#6d263b;transform:rotate(58deg);animation:manra-orbit-reverse 12s linear infinite}
+.manra-ring-three{width:118px;height:54px;border-color:rgba(109,38,59,.20);transform:rotate(-48deg);animation:manra-orbit 20s linear infinite}
+.manra-visual-orb{
+  position:relative;z-index:2;display:grid;align-content:center;justify-items:center;gap:4px;
+  width:72px;height:72px;border-radius:50%;
+  color:#f8f4f1;background:radial-gradient(circle at 32% 24%,#a78b8d 0%,#59313e 24%,#24171e 59%,#12151a 100%);
+  border:1px solid rgba(255,255,255,.92);
+  box-shadow:inset 0 2px 7px rgba(255,255,255,.35),inset -9px -11px 18px rgba(0,0,0,.46),0 7px 20px rgba(42,19,28,.24),0 0 0 5px rgba(109,38,59,.06);
+  text-align:center;transition:transform .35s ease,box-shadow .35s ease;
+}
+.manra-visual-orb i{font:600 8px/1 var(--sans);letter-spacing:.19em;font-style:normal}
+.manra-visual-orb b{font:500 13px/1 var(--serif);letter-spacing:.13em;color:#e9d8dc}
+.manra-visual-signal{position:absolute;z-index:3;width:5px;height:5px;border-radius:50%;background:#8b4358;box-shadow:0 0 10px rgba(109,38,59,.65)}
+.manra-signal-one{top:16px;right:27px}.manra-signal-two{bottom:22px;left:15px;width:4px;height:4px;background:#a18c7b}.manra-signal-three{bottom:17px;right:26px;width:3px;height:3px;background:#48515e}
+.manra-voice-copy{min-width:0}
+.manra-voice-overline{display:block;margin-bottom:8px;color:#7a3549;font:700 9px/1.4 var(--sans);letter-spacing:.2em}
+.manra-voice-copy strong{display:block;color:#211b1e;font:500 clamp(18px,2.3vw,24px)/1.15 var(--serif);letter-spacing:-.015em}
+.manra-voice-copy p{margin:7px 0 0;color:#646a72;font:12px/1.55 var(--sans);max-width:34rem}
+.manra-voice-console[data-state="listening"] .manra-visual-orb{
+  transform:scale(1.06);box-shadow:inset 0 2px 7px rgba(255,255,255,.4),inset -9px -11px 18px rgba(0,0,0,.42),0 0 0 8px rgba(109,38,59,.09),0 0 30px rgba(109,38,59,.35)
+}
+.manra-voice-console[data-state="listening"] .manra-ring-one{animation-duration:4.5s;border-width:1.5px}
+.manra-voice-console[data-state="listening"] .manra-ring-two{animation-duration:3.7s}
+.manra-voice-console[data-state="listening"] .manra-ring-three{animation-duration:5.5s}
+.manra-voice-console[data-state="listening"] .manra-visual-signal{animation:manra-signal-pulse 1.05s ease-in-out infinite alternate}
+.manra-voice-console[data-state="thinking"] .manra-visual-orb{transform:scale(.96);box-shadow:inset 0 2px 7px rgba(255,255,255,.4),inset -9px -11px 18px rgba(0,0,0,.45),0 0 0 8px rgba(109,38,59,.08),0 0 24px rgba(125,119,112,.25)}
+.manra-voice-console[data-state="thinking"] .manra-ring-one{animation-duration:2.7s}
+.manra-voice-console[data-state="thinking"] .manra-ring-two{animation-duration:3.2s}
+.manra-voice-console[data-state="speaking"] .manra-visual-orb{transform:scale(1.08);box-shadow:inset 0 2px 7px rgba(255,255,255,.5),inset -9px -11px 18px rgba(0,0,0,.4),0 0 0 9px rgba(109,38,59,.1),0 0 35px rgba(109,38,59,.42)}
+.manra-voice-console[data-state="speaking"] .manra-ring-one{animation-duration:3.2s}
+.manra-voice-console[data-state="speaking"] .manra-ring-two{animation-duration:2.8s}
+.manra-voice-console[data-state="speaking"] .manra-ring-three{animation-duration:4s}
+.manra-voice-console[data-state="speaking"] .manra-visual-signal{animation:manra-signal-pulse .62s ease-in-out infinite alternate}
+@keyframes manra-orbit{from{rotate:0deg}to{rotate:360deg}}
+@keyframes manra-orbit-reverse{from{rotate:360deg}to{rotate:0deg}}
+@keyframes manra-signal-pulse{from{opacity:.35;transform:scale(.75)}to{opacity:1;transform:scale(1.7)}}
+#manra-mic{
+  min-height:42px;padding:0 15px;border-radius:2px;
+  background:#fff;color:#6d263b;border:1px solid #8e5263;
+  font-size:11px;letter-spacing:.03em;display:inline-flex;align-items:center;gap:9px;
+}
+#manra-mic .manra-mic-icon{display:grid;place-items:center;width:21px;height:21px;border:1px solid #c7aab2;border-radius:50%;font-size:13px;line-height:1}
+#manra-mic:hover{background:#f5ecef;border-color:#6d263b}
+#manra-mic[aria-pressed="true"]{background:#6d263b;color:#fff;border-color:#6d263b}
+#manra-mic[aria-pressed="true"] .manra-mic-icon{border-color:rgba(255,255,255,.62)}
+#manra-mic:disabled{opacity:.5;cursor:not-allowed}
+.manra-status{max-width:230px}
+@media(max-width:520px){
+  .manra-voice-console{grid-template-columns:94px minmax(0,1fr);gap:12px;min-height:130px;padding:12px}
+  .manra-visual{width:92px;height:102px;transform:scale(.82);transform-origin:center}
+  .manra-voice-copy strong{font-size:19px}
+  .manra-voice-copy p{font-size:11px}
+  .manra-controls{align-items:stretch}
+  #manra-mic{flex:1 1 100%;justify-content:center}
+  .manra-status{flex:1 1 100%;max-width:none}
+  .manra-send{flex:1 1 100%;margin-left:0}
+}
+@media(prefers-reduced-motion:reduce){
+  .manra-visual-ring,.manra-visual-signal{animation:none!important}
+  .manra-visual-orb{transition:none}
+}
