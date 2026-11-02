@@ -503,8 +503,9 @@
       return "Hello. I am MANRA 231999, Manoj's portfolio-grounded capability intelligence assistant. I can assess his strengths, evidence, experience, tools, development areas, role alignment, interview positioning and likely contribution. I distinguish documented facts from reasonable inferences and never invent performance results.";
     }
 
-    return "I can assess questions about V. Sai Manoj's professional capabilities, strengths, experience, work evidence, education, tools, development areas, working style, role fit, interview positioning and potential contribution. I also have a detailed assessment for an IBM Management Trainee role in Business Operations.\n\nFor an accurate answer, ask the question in the context of Manoj's profile—for example: “Could he excel in business operations?”, “What evidence supports his process-improvement ability?” or “What would he need to prove in an IBM interview?”\n\n" +
-      profile.positioning + "\n\nThis website is currently in portfolio-grounded mode. Open-ended responses to any subject require the secure AI service to be configured; the public page does not expose an API key.";
+    return "I have understood your question. The secure generative intelligence service is not connected yet, so I will not invent an answer or pretend a fixed response is a full assessment.\n\n" +
+      "The evidence I can currently verify is: " + profile.positioning + "\n\n" +
+      "A rigorous answer requires comparing the exact question or role requirements with documented experience, transferable skills and gaps. The live AI service is being prepared for that open-ended assessment.";
   }
 
   function speak(text, after) {
@@ -636,6 +637,12 @@
         if (!response.ok) throw new Error("The secure assistant service is unavailable.");
         var data = await response.json();
         reply = data.answer || "I couldn't prepare an answer for that question.";
+        if (Array.isArray(data.sources) && data.sources.length) {
+          reply += "\n\nSOURCES";
+          data.sources.slice(0, 5).forEach(function (source) {
+            if (source && source.url) reply += "\n• " + (source.title || "Reference") + " — " + source.url;
+          });
+        }
       } else {
         reply = makeLocalAnswer(question);
       }
@@ -656,7 +663,7 @@
       });
     } else {
       setVisualState("idle", "MANRA is ready", "Ask another question or start a voice conversation.");
-      setStatus(window.MANRA_API_ENDPOINT ? "AI service configured · portfolio context enabled" : "Portfolio-grounded mode · secure AI service not connected");
+      setStatus(window.MANRA_API_ENDPOINT ? "MANRA intelligence connected · profile evidence active" : "Profile-grounded preview · secure AI intelligence not yet connected");
     }
   }
 
