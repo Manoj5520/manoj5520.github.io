@@ -47,7 +47,7 @@
   var conversationHistory = [];
   var speechSynthesis = window.speechSynthesis || null;
 
-  var GREETING = "Hello, dignitaries. This is MANRA, the intelligence assistant to V. Sai Manoj. How may I assist you today?";
+  var GREETING = "Hello, dignitaries. This is MANRA, the intelligence assistant to Manoj. How may I help you?";
 
   var profile = {
     positioning: "V. Sai Manoj is best positioned at the intersection of business operations, customer and service coordination, structured research, commercial intelligence and practical process improvement. His strongest story is not that he is a specialist data engineer; it is that he can organise business information, understand customer and market context, make operating issues clearer and help teams move from insight to execution.",
@@ -190,6 +190,15 @@
       gaps: "Add quantified service measures and demonstrate experience with ticketing, CRM or service-management systems where required."
     },
     {
+      key: "strategy-growth-operations",
+      title: "Strategy & Growth Operations",
+      fit: "Good adjacent fit when the role combines commercial research with hands-on execution",
+      aliases: [/strategy\\s*(?:and|&)\\s*growth operations?/i],
+      evidence: "The NexaHomes Growth Manager & Operations Associate role, Hyderabad residential competitor benchmarking used to inform service-line choices, customer-to-delivery operating context and growth-support coordination.",
+      contribution: "Translate market and customer signals into opportunity briefs, coordinate growth initiatives, maintain execution trackers, connect commercial priorities with operating teams and report progress.",
+      gaps: "The evidence does not establish ownership of corporate strategy, market sizing, financial modelling, full P&L, paid acquisition performance or quantified revenue growth. The best fit is execution-led strategy and growth operations rather than a pure strategy-consulting role."
+    },
+    {
       key: "growth-commercial-operations",
       title: "Growth Operations / Commercial Operations",
       fit: "Strong-to-good fit",
@@ -293,7 +302,7 @@
       return ["business-operations", "service-operations", "growth-commercial-operations"].indexOf(r.key) >= 0;
     });
     var adjacent = ROLE_CATALOG.filter(function (r) {
-      return ["market-intelligence", "process-excellence", "program-pmo", "sales-operations", "customer-success"].indexOf(r.key) >= 0;
+      return ["strategy-growth-operations", "market-intelligence", "process-excellence", "program-pmo", "sales-operations", "customer-success"].indexOf(r.key) >= 0;
     });
     var stretch = ROLE_CATALOG.filter(function (r) {
       return ["product-operations", "strategy-operations", "revenue-operations"].indexOf(r.key) >= 0;
