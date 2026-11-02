@@ -115,6 +115,7 @@
 
   launch.addEventListener("click", function () {
     openPanel();
+    addMessage(GREETING, "assistant");
     startVoiceSession();
   });
   if (close) close.addEventListener("click", closePanel);
@@ -706,7 +707,7 @@
         voiceSession = false;
         setMicMode(false);
         setStatus("Allow microphone access in your browser settings, then start voice again.");
-        setVisualState("idle", "Microphone permission needed", "Your browser must allow microphone access.");
+        setVisualState("permission", "Microphone permission needed", "The greeting is available; allow microphone access to continue the live voice conversation.");
       } else if (event.error === "no-speech") {
         setStatus("I didn't hear a question. Please try again.");
         if (voiceSession) {
