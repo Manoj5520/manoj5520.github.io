@@ -12,7 +12,7 @@
     var shell = document.createElement("div");
     shell.innerHTML =
       '<button class="manra-launch manra-standalone-launch" id="manra-launch" type="button" aria-controls="manra-assistant" aria-expanded="false">' +
-        '<span class="manra-launch-mic" aria-hidden="true">◉</span><span class="manra-launch-copy"><strong>Ask MANRA</strong><small>MANRA 231999 · Voice intelligence</small></span><span class="manra-launch-arrow" aria-hidden="true">↗</span>' +
+        '<span class="manra-launch-mic" aria-hidden="true">◉</span><span class="manra-launch-copy"><strong>Hey MANRA</strong><small>Ask about Manoj · voice assistant</small></span><span class="manra-launch-arrow" aria-hidden="true">↗</span>' +
       '</button>' +
       '<section class="manra-widget" id="manra-assistant" aria-label="MANRA 231999 assistant" aria-hidden="true"><div class="manra-panel">' +
         '<div class="manra-head"><div><span class="manra-kicker">MANRA 231999 · PERSONAL &amp; PROJECT INTELLIGENCE</span><h2>MANRA <span>·</span> Capability Intelligence</h2></div><button class="manra-close" id="manra-close" type="button" aria-label="Close MANRA">×</button></div>' +
