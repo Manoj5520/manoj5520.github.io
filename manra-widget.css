@@ -1,0 +1,59 @@
+/* MANRA 231999 shared standalone widget skin.
+   Loaded by the personal portfolio and the ETHIC × MANRA site. */
+.manra-launch{
+ position:fixed;right:24px;bottom:24px;z-index:990;display:flex;align-items:center;gap:11px;
+ padding:10px 15px 10px 10px;border:1px solid #8c4055;border-radius:5px;
+ background:linear-gradient(145deg,#fff,#f3eef0);color:#1c1719;
+ box-shadow:0 12px 34px rgba(14,10,12,.22);cursor:pointer;text-align:left;
+ font-family:Inter,system-ui,sans-serif;
+}
+.manra-launch:hover{transform:translateY(-2px);box-shadow:0 16px 40px rgba(14,10,12,.27)}
+.manra-launch-mic{display:grid;place-items:center;width:38px;height:38px;background:#6d263b;color:#fff;border-radius:50%;font-size:18px}
+.manra-launch-copy{display:grid;gap:2px}.manra-launch-copy strong{font:500 17px Georgia,serif}.manra-launch-copy small{font:10px Inter,system-ui,sans-serif;letter-spacing:.045em;color:#626b76}.manra-launch-arrow{font-size:18px;color:#6d263b}
+.manra-widget{position:fixed;inset:0;z-index:1000;display:none;align-items:flex-end;justify-content:flex-end;padding:clamp(12px,3vw,28px);background:rgba(14,12,14,.47);backdrop-filter:blur(5px);font-family:Inter,system-ui,sans-serif;color:#211b1e}
+.manra-widget.is-open{display:flex}
+.manra-panel{width:min(540px,100%);max-height:min(88vh,820px);overflow:auto;background:#f8f7f4;border:1px solid #c8b7bb;border-radius:8px;box-shadow:0 28px 90px rgba(0,0,0,.38);padding:clamp(18px,3vw,28px);color:#211b1e}
+.manra-head{display:flex;justify-content:space-between;align-items:flex-start;gap:16px;border-bottom:1px solid #d2d5d9;padding-bottom:17px}
+.manra-kicker{font-size:9px;font-weight:700;letter-spacing:.16em;color:#6d263b}
+.manra-head h2{font:400 clamp(24px,4vw,31px)/1.1 Georgia,serif;margin:8px 0 0;letter-spacing:-.02em}
+.manra-head h2 span{color:#6d263b}
+.manra-close{width:36px;height:36px;border:1px solid #cbd0d6;background:transparent;font-size:25px;cursor:pointer;color:#211b1e}
+.manra-intro{font-size:12px;line-height:1.7;color:#515963;margin:15px 0}
+.manra-voice-console{display:grid;grid-template-columns:122px minmax(0,1fr);align-items:center;gap:15px;min-height:145px;margin:16px 0;padding:12px 14px;border:1px solid #d5cbd0;border-radius:5px;background:radial-gradient(ellipse at 20% 45%,#fff,#f1ecee 60%,#e6e0e3)}
+.manra-visual{position:relative;width:118px;height:118px;display:grid;place-items:center;isolation:isolate}
+.manra-visual-ring{position:absolute;display:block;border:1px solid rgba(109,38,59,.3);border-radius:50%;transform:rotate(-28deg)}
+.manra-ring-one{width:100px;height:100px;border-top-color:#6d263b;animation:manra-orbit 16s linear infinite}
+.manra-ring-two{width:80px;height:108px;border-color:rgba(91,101,112,.4);border-left-color:#6d263b;transform:rotate(58deg);animation:manra-orbit-reverse 12s linear infinite}
+.manra-ring-three{width:112px;height:50px;border-color:rgba(109,38,59,.24);transform:rotate(-48deg);animation:manra-orbit 20s linear infinite}
+.manra-visual-orb{position:relative;z-index:2;display:grid;align-content:center;justify-items:center;gap:4px;width:68px;height:68px;border-radius:50%;color:#f8f4f1;background:radial-gradient(circle at 32% 24%,#a78b8d,#59313e 24%,#24171e 59%,#12151a 100%);border:1px solid rgba(255,255,255,.92);box-shadow:inset 0 2px 7px rgba(255,255,255,.35),inset -9px -11px 18px rgba(0,0,0,.46),0 7px 20px rgba(42,19,28,.24),0 0 0 5px rgba(109,38,59,.06);text-align:center;transition:transform .35s ease,box-shadow .35s ease}
+.manra-visual-orb i{font:600 8px/1 Inter,system-ui,sans-serif;letter-spacing:.19em;font-style:normal}
+.manra-visual-orb b{font:500 13px/1 Georgia,serif;letter-spacing:.13em;color:#e9d8dc}
+.manra-visual-signal{position:absolute;z-index:3;width:5px;height:5px;border-radius:50%;background:#8b4358;box-shadow:0 0 10px rgba(109,38,59,.65)}
+.manra-signal-one{top:15px;right:24px}.manra-signal-two{bottom:20px;left:14px;width:4px;height:4px;background:#a18c7b}.manra-signal-three{bottom:15px;right:23px;width:3px;height:3px;background:#48515e}
+.manra-voice-overline{display:block;margin-bottom:7px;color:#7a3549;font:700 8px/1.4 Inter,system-ui,sans-serif;letter-spacing:.17em}
+.manra-voice-copy strong{display:block;color:#211b1e;font:500 clamp(18px,2.3vw,23px)/1.15 Georgia,serif}
+.manra-voice-copy p{margin:7px 0 0;color:#646a72;font:11px/1.55 Inter,system-ui,sans-serif}
+.manra-voice-console[data-state="listening"] .manra-visual-orb{transform:scale(1.06);box-shadow:inset 0 2px 7px rgba(255,255,255,.4),inset -9px -11px 18px rgba(0,0,0,.42),0 0 0 8px rgba(109,38,59,.09),0 0 30px rgba(109,38,59,.35)}
+.manra-voice-console[data-state="listening"] .manra-ring-one{animation-duration:4.5s;border-width:1.5px}.manra-voice-console[data-state="listening"] .manra-ring-two{animation-duration:3.7s}.manra-voice-console[data-state="listening"] .manra-ring-three{animation-duration:5.5s}
+.manra-voice-console[data-state="thinking"] .manra-visual-orb{transform:scale(.96);box-shadow:inset 0 2px 7px rgba(255,255,255,.4),inset -9px -11px 18px rgba(0,0,0,.45),0 0 0 8px rgba(109,38,59,.08),0 0 24px rgba(125,119,112,.25)}
+.manra-voice-console[data-state="thinking"] .manra-ring-one{animation-duration:2.7s}.manra-voice-console[data-state="thinking"] .manra-ring-two{animation-duration:3.2s}
+.manra-voice-console[data-state="speaking"] .manra-visual-orb{transform:scale(1.08);box-shadow:inset 0 2px 7px rgba(255,255,255,.5),inset -9px -11px 18px rgba(0,0,0,.4),0 0 0 9px rgba(109,38,59,.1),0 0 35px rgba(109,38,59,.42)}
+.manra-voice-console[data-state="speaking"] .manra-ring-one{animation-duration:3.2s}.manra-voice-console[data-state="speaking"] .manra-ring-two{animation-duration:2.8s}.manra-voice-console[data-state="speaking"] .manra-ring-three{animation-duration:4s}
+@keyframes manra-orbit{from{rotate:0deg}to{rotate:360deg}}@keyframes manra-orbit-reverse{from{rotate:360deg}to{rotate:0deg}}
+.manra-prompts{display:flex;flex-wrap:wrap;gap:7px;margin:12px 0}
+.manra-prompts button{background:#fff;border:1px solid #cdbdc1;color:#612136;padding:8px 10px;border-radius:20px;font:500 10px Inter,system-ui,sans-serif;cursor:pointer}
+.manra-prompts button:hover{background:#f0e6e9}
+.manra-thread{display:grid;gap:10px;margin:16px 0;max-height:28vh;overflow:auto;padding-right:3px}
+.manra-message{padding:12px 13px;border-left:2px solid #6d263b;background:#fff;font:12px/1.65 Inter,system-ui,sans-serif;white-space:pre-line}
+.manra-message strong{display:block;font-size:8px;letter-spacing:.16em;color:#6d263b;margin-bottom:5px}
+.manra-user-message{border-left-color:#8c9299;background:#edf0f2}
+.manra-form{border-top:1px solid #d2d5d9;padding-top:14px}
+.manra-form textarea{display:block;width:100%;resize:vertical;min-height:64px;padding:11px;border:1px solid #c8cdd2;background:#fff;color:#211b1e;font:12px/1.5 Inter,system-ui,sans-serif;border-radius:3px}
+.manra-controls{display:flex;align-items:center;gap:9px;margin-top:9px;flex-wrap:wrap}
+.manra-mic,.manra-send{min-height:40px;border:1px solid #6d263b;padding:0 12px;cursor:pointer;font:600 10px Inter,system-ui,sans-serif;letter-spacing:.03em;border-radius:3px}
+.manra-mic{display:flex;align-items:center;gap:7px;background:#fff;color:#6d263b}.manra-mic[aria-pressed="true"]{background:#6d263b;color:#fff}
+.manra-send{margin-left:auto;background:#6d263b;color:#fff}
+.manra-status{font:9px/1.4 Inter,system-ui,sans-serif;color:#626b76;max-width:205px}
+.manra-footnote{font:9px/1.5 Inter,system-ui,sans-serif;color:#737983;margin-top:11px}
+@media(max-width:640px){.manra-launch{right:12px;bottom:12px;padding:9px 11px;gap:8px}.manra-launch-mic{width:34px;height:34px}.manra-launch-copy strong{font-size:15px}.manra-launch-copy small{font-size:8px}.manra-widget{padding:8px}.manra-panel{max-height:92vh;padding:15px}.manra-voice-console{grid-template-columns:94px minmax(0,1fr);gap:9px;padding:9px}.manra-visual{width:92px;height:102px;transform:scale(.8);transform-origin:center}.manra-voice-copy strong{font-size:18px}.manra-controls .manra-mic,.manra-controls .manra-send{flex:1 1 auto}.manra-status{max-width:none;flex:1 1 100%}}
+@media(prefers-reduced-motion:reduce){.manra-visual-ring,.manra-visual-signal{animation:none!important}.manra-visual-orb,.manra-launch{transition:none}}
