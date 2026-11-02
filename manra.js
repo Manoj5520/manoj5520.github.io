@@ -193,7 +193,7 @@
       key: "strategy-growth-operations",
       title: "Strategy & Growth Operations",
       fit: "Good adjacent fit when the role combines commercial research with hands-on execution",
-      aliases: [/strategy\\s*(?:and|&)\\s*growth operations?/i],
+      aliases: [/strategy\s*(?:and|&)\s*growth operations?/i],
       evidence: "The NexaHomes Growth Manager & Operations Associate role, Hyderabad residential competitor benchmarking used to inform service-line choices, customer-to-delivery operating context and growth-support coordination.",
       contribution: "Translate market and customer signals into opportunity briefs, coordinate growth initiatives, maintain execution trackers, connect commercial priorities with operating teams and report progress.",
       gaps: "The evidence does not establish ownership of corporate strategy, market sizing, financial modelling, full P&L, paid acquisition performance or quantified revenue growth. The best fit is execution-led strategy and growth operations rather than a pure strategy-consulting role."
