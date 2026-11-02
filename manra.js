@@ -6,6 +6,26 @@
 
   var launch = document.getElementById("manra-launch");
   var panel = document.getElementById("manra-assistant");
+
+  // Universal embed: create the same MANRA panel automatically on the ETHIC site.
+  if (!launch || !panel) {
+    var shell = document.createElement("div");
+    shell.innerHTML =
+      '<button class="manra-launch manra-standalone-launch" id="manra-launch" type="button" aria-controls="manra-assistant" aria-expanded="false">' +
+        '<span class="manra-launch-mic" aria-hidden="true">◉</span><span class="manra-launch-copy"><strong>Ask MANRA</strong><small>MANRA 231999 · Voice intelligence</small></span><span class="manra-launch-arrow" aria-hidden="true">↗</span>' +
+      '</button>' +
+      '<section class="manra-widget" id="manra-assistant" aria-label="MANRA 231999 assistant" aria-hidden="true"><div class="manra-panel">' +
+        '<div class="manra-head"><div><span class="manra-kicker">MANRA 231999 · PERSONAL &amp; PROJECT INTELLIGENCE</span><h2>MANRA <span>·</span> Capability Intelligence</h2></div><button class="manra-close" id="manra-close" type="button" aria-label="Close MANRA">×</button></div>' +
+        '<p class="manra-intro">Ask about Manoj’s professional capabilities, evidence, portfolio or ETHIC’s Behavior Engineering work. MANRA distinguishes facts from hypotheses and keeps VM-PRIME access manual.</p>' +
+        '<div class="manra-voice-console" id="manra-voice-console" data-state="idle" role="status" aria-live="polite"><div class="manra-visual" aria-hidden="true"><span class="manra-visual-ring manra-ring-one"></span><span class="manra-visual-ring manra-ring-two"></span><span class="manra-visual-ring manra-ring-three"></span><span class="manra-visual-orb"><i>MANRA</i><b>231999</b></span><span class="manra-visual-signal manra-signal-one"></span><span class="manra-visual-signal manra-signal-two"></span><span class="manra-visual-signal manra-signal-three"></span></div><div class="manra-voice-copy"><span class="manra-voice-overline">VOICE INTERFACE · 231999</span><strong id="manra-voice-title">MANRA is ready</strong><p id="manra-voice-caption">Ask by voice or type a question.</p></div></div>' +
+        '<div class="manra-prompts" aria-label="Suggested questions"><button type="button" data-manra-prompt="What are Manoj’s strongest professional capabilities and what evidence supports them?">Manoj · strengths</button><button type="button" data-manra-prompt="Explain ETHIC’s Behavior Engineering thesis, friction discovery process and current evidence status.">ETHIC · intelligence</button><button type="button" data-manra-prompt="Open my personal portfolio.">Open personal portfolio</button><button type="button" data-manra-prompt="Open ETHIC VM-PRIME.">VM-PRIME · manual access</button></div>' +
+        '<div class="manra-thread" id="manra-thread" role="log" aria-live="polite"><div class="manra-message manra-assistant-message"><strong>MANRA 231999</strong><p>Ready. Ask about Manoj or ETHIC, or ask me to open the personal portfolio.</p></div></div>' +
+        '<form class="manra-form" id="manra-form"><label class="sr-only" for="manra-input">Ask MANRA a question</label><textarea id="manra-input" rows="2" maxlength="1600" placeholder="Ask about Manoj, ETHIC, capabilities or evidence…" required></textarea><div class="manra-controls"><button class="manra-mic" id="manra-mic" type="button" aria-label="Start MANRA voice conversation" title="Start voice conversation"><span class="manra-mic-icon" aria-hidden="true">◉</span><span id="manra-mic-label">Start voice conversation</span></button><span class="manra-status" id="manra-status">Voice availability depends on your browser.</span><button class="manra-send" type="submit">Ask MANRA <span aria-hidden="true">↗</span></button></div></form>' +
+        '<p class="manra-footnote">Public portfolio and ETHIC information · VM-PRIME access is handled manually.</p></div></section>';
+    document.body.appendChild(shell);
+    launch = document.getElementById("manra-launch");
+    panel = document.getElementById("manra-assistant");
+  }
   if (!launch || !panel) return;
 
   var close = document.getElementById("manra-close");
@@ -153,6 +173,15 @@
 
     if (/\bibm\b|management trainee|business operations trainee|ibm.*operations|operations.*ibm/.test(q)) {
       return answerIbmRole();
+    }
+
+    if (q.indexOf("ethic") >= 0 || q.indexOf("behavior engineering") >= 0 || q.indexOf("behaviour engineering") >= 0 || q.indexOf("friction discovery") >= 0 || q.indexOf("f1-f11") >= 0 || q.indexOf("p1") >= 0 && q.indexOf("p2") >= 0) {
+      return "ETHIC × MANRA — PROJECT INTELLIGENCE\\n\\n" +
+        "ETHIC is the company concept. MANRA is its strategic-intelligence and discovery system. ETHIC is being developed around Behavior Engineering: begin with the task a person is trying to complete, identify recurring resistance and workarounds, examine existing solutions, then decide whether a better intervention is justified.\\n\\n" +
+        "DISCOVERY LOGIC\\n1. Observe recurring friction in a real context.\\n2. Record the workaround people already use.\\n3. Separate direct observation from hypothesis.\\n4. Compare existing products, prior art and alternative explanations.\\n5. Test physical or technological feasibility, user value and commercial credibility.\\n\\n" +
+        "TAXONOMY\\nF1–F4: micro-friction families. F5: a human-friction / technology bridge. F6–F11: technology-led and wider workflow frictions. These are categories for investigation, not proof that a product opportunity is validated.\\n\\n" +
+        "EVIDENCE DISCIPLINE\\nObserved, Hypothesis and Verified claims remain separate. P1 is not cleared / unclaimed. P2 is unclaimed. The ₹11,500–₹12,500 prototype envelope is a planning target, not secured spend. Commercial validation, patentability, market demand and scale are not established.\\n\\n" +
+        "VM-PRIME is a separate manual-access workspace. MANRA can explain public ETHIC information but will not open or grant VM-PRIME access automatically.";
     }
 
     if (/weakness|gap|improv|develop|risk|limitation|not good|missing|shortcoming/.test(q)) {
@@ -304,8 +333,47 @@
     });
   }
 
+  function finishLocalAnswer(options, reply) {
+    addMessage(reply, "assistant");
+    if (options.speak && voiceSession) {
+      speak(reply, function () {
+        if (!voiceSession) return;
+        setVisualState("listening", "MANRA is listening", "Go ahead with your next question.");
+        setStatus("Listening for your next question…");
+        startListening();
+      });
+    } else {
+      setVisualState("idle", "MANRA is ready", "Ask another question or start a voice conversation.");
+    }
+  }
+
+  function handleNavigationIntent(question, options) {
+    var q = question.toLowerCase();
+    var openWords = ["open", "show", "take me to", "go to", "navigate to", "launch", "visit"];
+    var wantsPortfolio = q.indexOf("portfolio") >= 0 || q.indexOf("personal site") >= 0;
+    var requestsOpen = openWords.some(function (word) { return q.indexOf(word) >= 0; });
+    if (requestsOpen && wantsPortfolio) {
+      var onMainPortfolio = window.location.hostname === "manoj5520.github.io" &&
+        window.location.pathname.toLowerCase().indexOf("/ethic-manra/") !== 0;
+      if (onMainPortfolio) {
+        finishLocalAnswer(options, "You are already viewing Manoj’s personal portfolio. I can take you to its home section.");
+        if (q.indexOf("home") >= 0 || q.indexOf("top") >= 0) window.location.href = "https://manoj5520.github.io/#top";
+      } else {
+        addMessage("Opening V. Sai Manoj’s personal portfolio now.", "assistant");
+        window.location.assign("https://manoj5520.github.io/");
+      }
+      return true;
+    }
+    if (q.indexOf("vm-prime") >= 0 || q.indexOf("vm prime") >= 0 || q.indexOf("vmprime") >= 0) {
+      finishLocalAnswer(options, "VM-PRIME is deliberately handled as a manual project-access hand-off. MANRA will not automatically open, reveal or grant access to that workspace. Please request access directly from Manoj through the personal portfolio contact section: https://manoj5520.github.io/#contact. Public portfolio and ETHIC information can be handled here.");
+      return true;
+    }
+    return false;
+  }
+
   async function answer(question, options) {
     options = options || {};
+    if (handleNavigationIntent(question, options)) return;
     setVisualState("thinking", "MANRA is considering the evidence", "Separating documented facts, reasonable inferences and development areas.");
     var thinking = addMessage("Reviewing the question against Manoj's portfolio evidence…", "assistant");
     var reply = "";
