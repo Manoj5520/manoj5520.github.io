@@ -46,6 +46,7 @@
   var pendingVoiceQuestion = "";
   var conversationHistory = [];
   var speechSynthesis = window.speechSynthesis || null;
+  var voiceGreetingSpoken = false;
 
   var GREETING = "Hello, dignitaries. This is MANRA, the intelligence assistant to Manoj. How may I help you?";
 
@@ -115,7 +116,6 @@
 
   launch.addEventListener("click", function () {
     openPanel();
-    addMessage(GREETING, "assistant");
     startVoiceSession();
   });
   if (close) close.addEventListener("click", closePanel);
@@ -510,29 +510,35 @@
 
   function speak(text, after) {
     if (!speechSynthesis || !window.SpeechSynthesisUtterance) {
-      if (after) after();
+      if (after) after(false);
       return;
     }
-    speechSynthesis.cancel();
-    var utterance = new SpeechSynthesisUtterance(text);
-    utterance.lang = "en-IN";
-    utterance.rate = 0.96;
-    utterance.pitch = 1.0;
-    var voices = speechSynthesis.getVoices ? speechSynthesis.getVoices() : [];
-    var voice = voices.find(function (item) { return /^en-IN$/i.test(item.lang); }) ||
-      voices.find(function (item) { return /^en-GB$/i.test(item.lang); }) ||
-      voices.find(function (item) { return /^en/i.test(item.lang); });
-    if (voice) utterance.voice = voice;
-    utterance.onstart = function () {
-      setVisualState("speaking", "MANRA is responding", "Speaking your answer. You can stop the voice session at any time.");
-    };
-    utterance.onend = function () {
-      if (after) after();
-    };
-    utterance.onerror = function () {
-      if (after) after();
-    };
-    speechSynthesis.speak(utterance);
+    try {
+      speechSynthesis.cancel();
+      if (typeof speechSynthesis.resume === "function") speechSynthesis.resume();
+      var utterance = new SpeechSynthesisUtterance(text);
+      utterance.lang = "en-IN";
+      utterance.rate = 0.96;
+      utterance.pitch = 1.0;
+      var voices = speechSynthesis.getVoices ? speechSynthesis.getVoices() : [];
+      var voice = voices.find(function (item) { return /^en-IN$/i.test(item.lang); }) ||
+        voices.find(function (item) { return /^en-GB$/i.test(item.lang); }) ||
+        voices.find(function (item) { return /^en/i.test(item.lang); });
+      if (voice) utterance.voice = voice;
+      utterance.onstart = function () {
+        setVisualState("speaking", text === GREETING ? "MANRA is greeting you" : "MANRA is speaking", text === GREETING ? "Welcoming the visitor. Your voice session is opening." : "Speaking your answer. You can stop the voice session at any time.");
+      };
+      utterance.onend = function () {
+        if (after) after(true);
+      };
+      utterance.onerror = function () {
+        if (after) after(false);
+      };
+      // Called synchronously from the visitor's click so browser audio activation is preserved.
+      speechSynthesis.speak(utterance);
+    } catch (error) {
+      if (after) after(false);
+    }
   }
 
   function startListening() {
@@ -565,20 +571,28 @@
       return;
     }
     voiceSession = true;
+    voiceGreetingSpoken = false;
     setMicMode(true);
-    setVisualState("speaking", "MANRA is greeting you", "Opening the voice session.");
-    setStatus("Starting voice session…");
-    speak(GREETING, function () {
+    addMessage(GREETING, "assistant");
+    setVisualState("speaking", "MANRA is greeting you", "Playing the welcome message before opening the microphone.");
+    setStatus("MANRA is speaking the welcome message…");
+    speak(GREETING, function (spoken) {
+      voiceGreetingSpoken = Boolean(spoken);
       if (!voiceSession) return;
       if (!recognition) {
         voiceSession = false;
         setMicMode(false);
-        setStatus("This browser cannot listen for speech. Use a supported browser or type your question.");
-        setVisualState("idle", "Voice input unavailable", "The greeting was played, but speech recognition is not supported here.");
+        setStatus(spoken ? "Welcome message played. This browser does not support speech recognition." : "Speech playback and speech recognition are unavailable in this browser.");
+        setVisualState("idle", "Voice input unavailable", spoken ? "The welcome message played. Type your question to continue." : "The welcome text is visible. Type your question to continue.");
         return;
       }
-      setVisualState("listening", "MANRA is listening", "Ask your question naturally. MANRA will respond and then listen for the next question.");
-      setStatus("Listening for your question…");
+      if (spoken) {
+        setVisualState("listening", "MANRA is listening", "Welcome complete. Ask your question naturally.");
+        setStatus("Welcome message played. Requesting microphone access…");
+      } else {
+        setVisualState("listening", "MANRA is ready for voice input", "The welcome remains visible in text. Allow microphone access to continue.");
+        setStatus("Browser did not confirm speech playback. Requesting microphone access…");
+      }
       startListening();
     });
   }
@@ -713,8 +727,8 @@
       if (event.error === "not-allowed" || event.error === "service-not-allowed") {
         voiceSession = false;
         setMicMode(false);
-        setStatus("Allow microphone access in your browser settings, then start voice again.");
-        setVisualState("permission", "Microphone permission needed", "The greeting is available; allow microphone access to continue the live voice conversation.");
+        setStatus(voiceGreetingSpoken ? "Welcome message played. Allow microphone access in your browser settings, then tap Start voice conversation." : "The welcome is visible in text. Browser audio did not confirm playback; allow microphone access and retry voice.");
+        setVisualState("permission", "Microphone permission needed", voiceGreetingSpoken ? "MANRA has delivered the welcome. The microphone is blocked; allow access to continue the conversation." : "The welcome remains visible, but speech playback was not confirmed. The microphone is also blocked.");
       } else if (event.error === "no-speech") {
         setStatus("I didn't hear a question. Please try again.");
         if (voiceSession) {
