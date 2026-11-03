@@ -3322,19 +3322,21 @@ ul, ol { padding: 0; list-style: none; }
   </style>
 
   <style id="manra-header-launch-placement">
-    /* Keep MANRA in the sticky header, beside the navigation controls. */
+    /* A visible but compact MANRA control, placed between the brand and primary navigation. */
     .manra-launch.manra-portfolio-header-launch {
       position:relative;
       inset:auto;
       z-index:60;
       flex:0 0 auto;
+      min-width:118px;
+      min-height:42px;
       gap:8px;
-      padding:7px 10px;
+      padding:6px 11px;
       border:1px solid #6d263b;
       border-radius:3px;
       background:#6d263b;
       color:#fff;
-      box-shadow:0 5px 16px rgba(35,18,25,.16);
+      box-shadow:0 5px 16px rgba(35,18,25,.14);
     }
     .manra-launch.manra-portfolio-header-launch:hover {
       background:#552332;
@@ -3342,38 +3344,52 @@ ul, ol { padding: 0; list-style: none; }
       transform:translateY(-1px);
     }
     .manra-portfolio-header-launch .manra-launch-mic {
-      width:30px;
-      height:30px;
+      width:29px;
+      height:29px;
+      flex:0 0 29px;
       background:rgba(255,255,255,.15);
       color:#fff;
       border:1px solid rgba(255,255,255,.22);
+      font-size:15px;
     }
     .manra-portfolio-header-launch .manra-launch-copy strong {
       color:#fff;
-      font:700 12px Inter,system-ui,sans-serif;
+      font:700 11px Inter,system-ui,sans-serif;
+      letter-spacing:.08em;
+      white-space:nowrap;
     }
-    .manra-portfolio-header-launch .manra-launch-copy small {
-      color:rgba(255,255,255,.82);
-      font:9px Inter,system-ui,sans-serif;
+    .manra-portfolio-header-launch .manra-launch-arrow {
+      color:#fff;
+      font-size:13px;
     }
-    .manra-portfolio-header-launch .manra-launch-arrow { color:#fff; }
+    .site-header .header-inner { gap:clamp(10px,1.3vw,18px); }
+    .site-header .nav { gap:14px; }
+    .site-header .nav ul { gap:14px; }
+    .site-header .nav ul a { font-size:10.5px; letter-spacing:.10em; }
     @media(max-width:1180px) {
-      .manra-portfolio-header-launch { gap:6px; padding:7px; }
-      .manra-portfolio-header-launch .manra-launch-copy small { display:none; }
+      .site-header .nav { gap:10px; }
+      .site-header .nav ul { gap:10px; }
+      .site-header .nav ul a { letter-spacing:.08em; }
+    }
+    @media(max-width:1060px) {
+      .manra-launch.manra-portfolio-header-launch {
+        min-width:112px;
+      }
     }
     @media(max-width:640px) {
+      .site-header .brand-name { display:none; }
       .manra-launch.manra-portfolio-header-launch {
-        width:42px;
-        height:42px;
-        padding:0;
-        justify-content:center;
+        min-width:96px;
+        min-height:40px;
+        padding:5px 8px;
+        gap:6px;
       }
       .manra-portfolio-header-launch .manra-launch-mic {
-        width:32px;
-        height:32px;
-        margin:0;
+        width:27px;
+        height:27px;
+        flex-basis:27px;
       }
-      .manra-portfolio-header-launch .manra-launch-copy,
+      .manra-portfolio-header-launch .manra-launch-copy strong { font-size:10px; }
       .manra-portfolio-header-launch .manra-launch-arrow { display:none; }
     }
   </style>
@@ -3389,6 +3405,7 @@ ul, ol { padding: 0; list-style: none; }
         <span class="brand-mark">VSM</span>
         <span class="brand-name">V. Sai Manoj</span>
       </a>
+      <button class="manra-launch manra-portfolio-header-launch" id="manra-launch" type="button" aria-label="Open MANRA 231999 voice assistant" title="Ask MANRA about Manoj" aria-controls="manra-assistant" aria-expanded="false"><span class="manra-launch-mic" aria-hidden="true">🎙</span><span class="manra-launch-copy"><strong>Hey MANRA</strong></span><span class="manra-launch-arrow" aria-hidden="true">↗</span></button>
       <nav class="nav" id="nav" aria-label="Primary">
         <ul>
           <li><a href="index.html#value">Value</a></li>
@@ -3406,7 +3423,7 @@ ul, ol { padding: 0; list-style: none; }
       <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav">
         <span class="sr-only">Menu</span><span class="bar"></span><span class="bar"></span>
       </button>
-  <button class="manra-launch manra-portfolio-header-launch" id="manra-launch" type="button" aria-label="Open MANRA 231999 voice assistant" title="Ask MANRA about Manoj" aria-controls="manra-assistant" aria-expanded="false"><span class="manra-launch-mic" aria-hidden="true">🎙</span><span class="manra-launch-copy"><strong>Hey MANRA</strong><small>Ask about Manoj · voice assistant</small></span><span class="manra-launch-arrow" aria-hidden="true">↗</span></button>
+
     </div>
     <div class="progress" aria-hidden="true"><span></span></div>
   </header>
