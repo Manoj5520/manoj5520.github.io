@@ -105,3 +105,48 @@
 .manra-voice-console[data-state="permission"] .manra-visual::before{opacity:.9;animation-duration:5s}
 .manra-voice-console[data-state="permission"] .manra-visual::after{opacity:1;border-color:rgba(109,38,59,.32);animation-duration:2.4s}
 .manra-voice-console[data-state="permission"] .manra-visual-signal{animation-duration:1.6s}
+
+
+/* Live MANRA embed — the public portfolio hosts the secure assistant experience. */
+.manra-widget.manra-live-mode {
+  align-items: stretch;
+  justify-content: stretch;
+  padding: 0;
+  background: transparent;
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
+}
+.manra-widget.manra-live-mode.is-open { display: block; }
+.manra-live-frame-shell {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: #e9edf0;
+}
+.manra-live-frame-shell iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  background: transparent;
+}
+.manra-live-frame-close {
+  position: absolute;
+  z-index: 20;
+  top: 14px;
+  left: 14px;
+  min-height: 38px;
+  padding: 0 14px;
+  border: 1px solid rgba(255,255,255,.62);
+  border-radius: 3px;
+  background: rgba(28,23,25,.9);
+  color: #fff;
+  font: 600 10px Inter,system-ui,sans-serif;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+.manra-live-frame-close:hover { background: #6d263b; border-color: #6d263b; }
+@media(prefers-reduced-motion:reduce){.manra-live-frame-close{transition:none}}
