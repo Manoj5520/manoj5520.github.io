@@ -1,2 +1,2 @@
-/* Configure this with the verified Vercel app URL after deployment access is confirmed. */
-window.MANRA_LIVE_ASSISTANT_URL = "";
+/* Live MANRA 231999 assistant hosted securely on Vercel. */
+window.MANRA_LIVE_ASSISTANT_URL = "https://beacon-cap-cosmic-earth.vercel.app";
