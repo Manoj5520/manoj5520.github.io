@@ -28,6 +28,71 @@
   }
   if (!launch || !panel) return;
 
+  // Use the secure server-backed assistant when a verified HTTPS app URL is configured.
+  // GitHub Pages never receives the xAI key and never calls the provider directly.
+  var liveAssistantUrl = typeof window.MANRA_LIVE_ASSISTANT_URL === "string"
+    ? window.MANRA_LIVE_ASSISTANT_URL.trim()
+    : "";
+  if (/^https:\/\//i.test(liveAssistantUrl)) {
+    var liveUrlObject;
+    try {
+      liveUrlObject = new URL(liveAssistantUrl);
+      if (liveUrlObject.protocol !== "https:") throw new Error("HTTPS required");
+      if (!liveUrlObject.searchParams.has("manra")) liveUrlObject.searchParams.set("manra", "1");
+    } catch (error) {
+      liveAssistantUrl = "";
+    }
+
+    if (liveAssistantUrl) {
+      var liveFrame = document.createElement("iframe");
+      liveFrame.title = "MANRA 231999 live AI voice assistant";
+      liveFrame.setAttribute("allow", "microphone; autoplay");
+      liveFrame.setAttribute("referrerpolicy", "strict-origin-when-cross-origin");
+      liveFrame.setAttribute("loading", "lazy");
+      liveFrame.dataset.src = liveUrlObject.toString();
+
+      var liveShell = document.createElement("div");
+      liveShell.className = "manra-live-frame-shell";
+      var liveClose = document.createElement("button");
+      liveClose.type = "button";
+      liveClose.className = "manra-live-frame-close";
+      liveClose.setAttribute("aria-label", "Close MANRA assistant");
+      liveClose.textContent = "Close";
+      liveShell.appendChild(liveFrame);
+      liveShell.appendChild(liveClose);
+
+      panel.innerHTML = "";
+      panel.classList.add("manra-live-mode");
+      panel.appendChild(liveShell);
+
+      function openLiveAssistant() {
+        panel.classList.add("is-open");
+        panel.setAttribute("aria-hidden", "false");
+        launch.setAttribute("aria-expanded", "true");
+        if (!liveFrame.getAttribute("src")) liveFrame.setAttribute("src", liveFrame.dataset.src);
+      }
+
+      function closeLiveAssistant() {
+        panel.classList.remove("is-open");
+        panel.setAttribute("aria-hidden", "true");
+        launch.setAttribute("aria-expanded", "false");
+        liveFrame.removeAttribute("src");
+      }
+
+      launch.addEventListener("click", openLiveAssistant);
+      liveClose.addEventListener("click", closeLiveAssistant);
+      document.addEventListener("keydown", function (event) {
+        if (event.key === "Escape" && panel.classList.contains("is-open")) closeLiveAssistant();
+      });
+      window.addEventListener("message", function (event) {
+        if (event.source === liveFrame.contentWindow && event.data && event.data.type === "MANRA_CLOSE") {
+          closeLiveAssistant();
+        }
+      });
+      return;
+    }
+  }
+
   var close = document.getElementById("manra-close");
   var form = document.getElementById("manra-form");
   var input = document.getElementById("manra-input");
