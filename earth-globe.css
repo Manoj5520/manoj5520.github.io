@@ -253,3 +253,22 @@
     animation-play-state:running !important;
   }
 }
+
+/* Ultimate visible fallback: texture the globe itself, not a hidden child layer. */
+.snapshot-stage .snapshot-globe:not(.snapshot-earth-webgl-ready) {
+  background-color:#06182d !important;
+  background-image:url("https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Land_shallow_topo_2048.jpg/3840px-Land_shallow_topo_2048.jpg") !important;
+  background-repeat:repeat-x !important;
+  background-size:200% 100% !important;
+  background-position:0% 50% !important;
+  animation:snapshotEarthSurfaceTurn 54s linear infinite !important;
+  background-clip:padding-box !important;
+}
+@keyframes snapshotEarthSurfaceTurn {
+  from {background-position:0% 50%;}
+  to {background-position:200% 50%;}
+}
+/* Do not let older decorative CSS tracks cover or replace the real map. */
+.snapshot-stage .snapshot-globe:not(.snapshot-earth-webgl-ready) .snapshot-earth-track {
+  display:none !important;
+}
