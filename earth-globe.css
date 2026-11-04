@@ -68,7 +68,7 @@
   background-image:
     radial-gradient(ellipse at 28% 22%,rgba(255,255,255,.18),transparent 42%),
     linear-gradient(110deg,rgba(255,255,255,.08),transparent 35%,rgba(0,8,24,.3)),
-    url("https://eoimages.gsfc.nasa.gov/images/imagerecords/57000/57752/land_shallow_topo_2048.jpg") !important;
+    url("https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Land_shallow_topo_2048.jpg/3840px-Land_shallow_topo_2048.jpg") !important;
   background-repeat:no-repeat,no-repeat,repeat-x !important;
   background-size:100% 100%,100% 100%,200% 100% !important;
   background-position:center,center,0% 50% !important;
@@ -169,7 +169,7 @@
   background-image:
     radial-gradient(ellipse at 29% 22%,rgba(255,255,255,.18) 0%,transparent 39%),
     radial-gradient(ellipse at 52% 52%,transparent 58%,rgba(0,8,24,.28) 100%),
-    url("https://eoimages.gsfc.nasa.gov/images/imagerecords/57000/57752/land_shallow_topo_2048.jpg") !important;
+    url("https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Land_shallow_topo_2048.jpg/3840px-Land_shallow_topo_2048.jpg") !important;
   background-repeat:no-repeat,no-repeat,repeat-x !important;
   background-size:100% 100%,100% 100%,200% 100% !important;
   background-position:center,center,0% 50% !important;
