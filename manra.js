@@ -65,6 +65,14 @@
       panel.classList.add("manra-live-mode");
       panel.appendChild(liveShell);
 
+      function getManraVoicePreference() {
+        try {
+          return window.localStorage.getItem("manra-voice-persona") === "hannah" ? "hannah" : "troy";
+        } catch (error) {
+          return "troy";
+        }
+      }
+
       function speakPortfolioWelcome(onComplete) {
         var finished = false;
         var fallbackTimer = null;
@@ -91,18 +99,25 @@
           utterance.pitch = 0.96;
           utterance.volume = 1;
 
-          var voices = synth.getVoices();
-          var preferredVoice =
-            voices.find(function (voice) {
-              return /^en-IN(?:-|$)/i.test(voice.lang) && /male|rishi|prabhat|arjun/i.test(voice.name);
-            }) ||
-            voices.find(function (voice) {
-              return /Google UK English Male|Microsoft.*English.*Male|Daniel/i.test(voice.name);
-            }) ||
-            voices.find(function (voice) { return /^en-IN(?:-|$)/i.test(voice.lang); }) ||
-            voices.find(function (voice) { return /^en-GB(?:-|$)/i.test(voice.lang); }) ||
-            voices.find(function (voice) { return /^en/i.test(voice.lang); });
-          if (preferredVoice) utterance.voice = preferredVoice;
+          var preference = getManraVoicePreference();
+          var voices = synth.getVoices().filter(function (voice) {
+            return /^en(?:-|$)/i.test(voice.lang);
+          });
+          var femalePattern = /\\b(female|woman|zira|aria|jenny|samantha|victoria|karen|moira|ava|susan|natasha|sonia|heera|neerja|swara|raveena)\\b|google us english|google uk english female|microsoft.*(zira|aria|jenny|ava|sonia|heera|neerja|swara)/i;
+          var malePattern = /\\b(male|man|david|mark|guy|daniel|george|james|rishi|prabhat|arjun|matthew|aaron|ravi)\\b|google uk english male|microsoft.*(david|mark|ravi)/i;
+          var preferredVoice = voices.find(function (voice) {
+            return preference === "hannah" ? femalePattern.test(voice.name) : malePattern.test(voice.name);
+          });
+          if (!preferredVoice) {
+            // Never silently play a male voice when the visitor selected female,
+            // or a female voice when the visitor selected male.
+            finish();
+            return;
+          }
+          utterance.voice = preferredVoice;
+          utterance.lang = preferredVoice.lang || "en-IN";
+          utterance.rate = 0.96;
+          utterance.pitch = 1;
 
           utterance.onend = finish;
           utterance.onerror = finish;
@@ -126,6 +141,10 @@
         function startListeningAfterWelcome() {
           if (!welcomeFinished || !frameReady || startSent || !liveFrame.contentWindow) return;
           startSent = true;
+          liveFrame.contentWindow.postMessage(
+            { type: "MANRA_VOICE_PREFERENCE", voice: getManraVoicePreference() },
+            "https://beacon-cap-cosmic-earth.vercel.app"
+          );
           liveFrame.contentWindow.postMessage(
             { type: "MANRA_START_VOICE" },
             "https://beacon-cap-cosmic-earth.vercel.app"
@@ -164,9 +183,12 @@
         if (event.key === "Escape" && panel.classList.contains("is-open")) closeLiveAssistant();
       });
       window.addEventListener("message", function (event) {
-        if (event.source === liveFrame.contentWindow && event.data && event.data.type === "MANRA_CLOSE") {
-          closeLiveAssistant();
+        if (event.source !== liveFrame.contentWindow || event.origin !== "https://beacon-cap-cosmic-earth.vercel.app" || !event.data) return;
+        if (event.data.type === "MANRA_VOICE_PREFERENCE" && (event.data.voice === "troy" || event.data.voice === "hannah")) {
+          try { window.localStorage.setItem("manra-voice-persona", event.data.voice); } catch (error) {}
+          return;
         }
+        if (event.data.type === "MANRA_CLOSE") closeLiveAssistant();
       });
       return;
     }
