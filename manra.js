@@ -7,6 +7,9 @@
   var launch = document.getElementById("manra-launch");
   var panel = document.getElementById("manra-assistant");
 
+  // Prime the browser's voice catalogue before the visitor opens MANRA.
+  if (window.speechSynthesis) window.speechSynthesis.getVoices();
+
   // Universal embed: create the same MANRA panel automatically on the ETHIC site.
   if (!launch || !panel) {
     var shell = document.createElement("div");
