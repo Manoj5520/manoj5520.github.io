@@ -103,8 +103,8 @@
           var voices = synth.getVoices().filter(function (voice) {
             return /^en(?:-|$)/i.test(voice.lang);
           });
-          var femalePattern = /\\b(female|woman|zira|aria|jenny|samantha|victoria|karen|moira|ava|susan|natasha|sonia|heera|neerja|swara|raveena)\\b|google us english|google uk english female|microsoft.*(zira|aria|jenny|ava|sonia|heera|neerja|swara)/i;
-          var malePattern = /\\b(male|man|david|mark|guy|daniel|george|james|rishi|prabhat|arjun|matthew|aaron|ravi)\\b|google uk english male|microsoft.*(david|mark|ravi)/i;
+          var femalePattern = /\b(female|woman|zira|aria|jenny|samantha|victoria|karen|moira|ava|susan|natasha|sonia|heera|neerja|swara|raveena)\b|google us english|google uk english female|microsoft.*(zira|aria|jenny|ava|sonia|heera|neerja|swara)/i;
+          var malePattern = /\b(male|man|david|mark|guy|daniel|george|james|rishi|prabhat|arjun|matthew|aaron|ravi)\b|google uk english male|microsoft.*(david|mark|ravi)/i;
           var preferredVoice = voices.find(function (voice) {
             return preference === "hannah" ? femalePattern.test(voice.name) : malePattern.test(voice.name);
           });
