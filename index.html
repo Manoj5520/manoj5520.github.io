@@ -3477,6 +3477,111 @@ ul, ol { padding: 0; list-style: none; }
   </style>
 
   <link rel="stylesheet" href="/earth-globe.css?v=20261104-three-earth-05">
+
+<style id="personal-assistant-header-refinement-20261104">
+  /* Executive-grade assistant entry: clear purpose, restrained metallic accent. */
+  .site-header .manra-launch.manra-portfolio-header-launch {
+    position:relative !important;
+    display:inline-flex !important;
+    align-items:center !important;
+    justify-content:center !important;
+    gap:8px !important;
+    min-width:0 !important;
+    min-height:44px !important;
+    padding:6px 12px !important;
+    overflow:hidden !important;
+    border:1px solid rgba(202,169,116,.86) !important;
+    border-top:2px solid #d5b77f !important;
+    border-radius:6px !important;
+    background:linear-gradient(125deg,#4d172b 0%,#702b43 58%,#521b30 100%) !important;
+    color:#fffaf2 !important;
+    box-shadow:
+      inset 0 1px 0 rgba(255,255,255,.12),
+      inset 0 -1px 0 rgba(20,5,13,.16),
+      0 5px 17px rgba(48,17,31,.17) !important;
+    transition:transform .2s ease,box-shadow .2s ease,filter .2s ease !important;
+  }
+  .site-header .manra-launch.manra-portfolio-header-launch::before {
+    content:"";
+    position:absolute;
+    left:0;top:0;bottom:0;
+    width:3px;
+    background:linear-gradient(180deg,#f1dfb9,#bd965c 55%,#f1dfb9);
+    opacity:.96;
+    pointer-events:none;
+  }
+  .site-header .manra-launch.manra-portfolio-header-launch:hover {
+    background:linear-gradient(125deg,#5b1c33 0%,#7b304a 58%,#5d2037 100%) !important;
+    border-color:#e0c18d !important;
+    box-shadow:inset 0 1px 0 rgba(255,255,255,.16),0 7px 22px rgba(48,17,31,.23),0 0 0 3px rgba(202,169,116,.11) !important;
+    transform:translateY(-1px) !important;
+    filter:saturate(1.04);
+  }
+  .site-header .manra-launch.manra-portfolio-header-launch:focus-visible {
+    outline:2px solid #c6a36e !important;
+    outline-offset:3px !important;
+  }
+  .site-header .manra-portfolio-header-launch .manra-launch-mic {
+    display:grid !important;
+    place-items:center !important;
+    width:29px !important;height:29px !important;
+    flex:0 0 29px !important;
+    border:1px solid rgba(224,194,143,.58) !important;
+    border-radius:50% !important;
+    background:radial-gradient(circle at 35% 28%,rgba(255,255,255,.18),rgba(196,157,99,.12) 70%) !important;
+    color:#f0d8ad !important;
+    box-shadow:inset 0 1px 0 rgba(255,255,255,.12),0 0 10px rgba(214,180,124,.09) !important;
+  }
+  .site-header .manra-portfolio-header-launch .manra-launch-mic svg {
+    display:block !important;width:15px !important;height:15px !important;
+  }
+  .site-header .manra-portfolio-header-launch .manra-launch-copy {
+    display:flex !important;align-items:center !important;min-width:0 !important;
+  }
+  .site-header .manra-portfolio-header-launch .manra-launch-copy strong {
+    color:#fffaf3 !important;
+    font:650 10.5px/1 Inter,system-ui,sans-serif !important;
+    letter-spacing:.025em !important;
+    white-space:nowrap !important;
+  }
+  .site-header .manra-portfolio-header-launch .assistant-ai-mark {
+    display:inline-flex !important;
+    align-items:center !important;justify-content:center !important;
+    min-width:19px !important;height:16px !important;
+    padding:0 4px !important;
+    border:1px solid rgba(225,197,151,.42) !important;
+    border-radius:3px !important;
+    background:rgba(225,197,151,.13) !important;
+    color:#ead2a8 !important;
+    font:750 7px/1 Inter,system-ui,sans-serif !important;
+    letter-spacing:.09em !important;
+  }
+  .site-header .manra-portfolio-header-launch .manra-launch-arrow {
+    color:#e8c995 !important;
+    font-size:12px !important;
+    margin-left:1px !important;
+  }
+  @media(max-width:640px) {
+    .site-header .manra-launch.manra-portfolio-header-launch {
+      min-width:0 !important;
+      min-height:40px !important;
+      gap:6px !important;
+      padding:5px 9px !important;
+    }
+    .site-header .manra-portfolio-header-launch .manra-launch-mic {
+      width:26px !important;height:26px !important;flex-basis:26px !important;
+    }
+    .site-header .manra-portfolio-header-launch .manra-launch-copy strong {
+      font-size:9.5px !important;letter-spacing:.01em !important;
+    }
+    .site-header .manra-portfolio-header-launch .assistant-ai-mark {min-width:17px !important;height:14px !important;font-size:6.5px !important;}
+    .site-header .manra-portfolio-header-launch .manra-launch-arrow {display:none !important;}
+  }
+  @media(prefers-reduced-motion:reduce) {
+    .site-header .manra-launch.manra-portfolio-header-launch {transition:none !important;}
+  }
+</style>
+
 </head>
 <body>
   <a class="skip" href="index.html#main">Skip to content</a>
@@ -3488,7 +3593,7 @@ ul, ol { padding: 0; list-style: none; }
         <span class="brand-mark">VSM</span>
         <span class="brand-name">V. Sai Manoj</span>
       </a>
-      <button class="manra-launch manra-portfolio-header-launch" id="manra-launch" type="button" aria-label="Open MANRA 231999 voice assistant" title="Ask MANRA about Manoj" aria-controls="manra-assistant" aria-expanded="false"><span class="manra-launch-mic" aria-hidden="true">🎙</span><span class="manra-launch-copy"><strong>Hey MANRA</strong></span><span class="manra-launch-arrow" aria-hidden="true">↗</span></button>
+      <button class="manra-launch manra-portfolio-header-launch" id="manra-launch" type="button" aria-label="Open Personal Assistant" title="Personal Assistant — voice and profile intelligence" aria-controls="manra-assistant" aria-expanded="false"><span class="manra-launch-mic" aria-hidden="true"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="2.75" width="6" height="11.5" rx="3"></rect><path d="M5.5 11.5v.75a6.5 6.5 0 0 0 13 0v-.75M12 18.75v2.5M9 21.25h6"></path></svg></span><span class="manra-launch-copy"><strong>Personal Assistant</strong></span><span class="assistant-ai-mark" aria-label="AI">AI</span><span class="manra-launch-arrow" aria-hidden="true">↗</span></button>
       <nav class="nav" id="nav" aria-label="Primary">
         <ul>
           <li><a href="index.html#value">Value</a></li>
