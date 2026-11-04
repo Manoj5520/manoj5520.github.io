@@ -223,23 +223,29 @@
   var profile = {
     positioning: "V. Sai Manoj is best positioned at the intersection of business operations, customer and service coordination, structured research, commercial intelligence and practical process improvement. His strongest story is not that he is a specialist data engineer; it is that he can organise business information, understand customer and market context, make operating issues clearer and help teams move from insight to execution.",
     strengths: [
-      ["Business and customer operations", "At NexaHomes, his documented role was Growth Manager & Operations Associate from May 2025 to August 2026. The portfolio records work across a 100+ residential-client portfolio, including requirement capture, tailored offers, upgrade and post-sale follow-ups, vendor coordination, sales-to-delivery handoffs and reporting."],
+      ["Business and customer operations", "At NexaHomes, his documented role was Growth Manager & Operations Associate from May 2025 to August 2026. The portfolio records work across a 120+ residential-client portfolio, including requirement capture, tailored offers, upgrade and post-sale follow-ups, vendor coordination, sales-to-delivery handoffs and reporting."],
       ["Commercial and competitor intelligence", "He conducted competitor benchmarking in the Hyderabad residential market and used the findings to inform service-line choices and business positioning. The credible strength is structured comparison and commercial interpretation—not claiming that research alone produced a measured revenue increase."],
       ["Process coordination and improvement thinking", "He has worked with handoffs, request tracking and coordination gaps, and has prepared proposed process-control examples. The portfolio carefully distinguishes proposed improvements from a fully implemented, measured transformation."],
       ["Operational reporting and decision support", "He has practical Excel experience and intermediate Power BI exposure for MIS and decision-support views. This can support tracking, reporting and management visibility. It does not establish advanced Excel modelling or advanced Power BI development."],
       ["Business research and structured problem framing", "His MBA thesis examined employee-turnover forecasting in the Bangalore IT industry through engagement, growth and culture. His work also includes a Mercedes-Benz retail-model study and business-model trade-off analysis."],
-      ["Cross-functional execution context", "His NexaHomes evidence includes connecting customer requirements, vendors, sales and delivery activity. This supports a credible coordination narrative; it is not proof of formal people-management responsibility."]
+      ["Cross-functional execution context", "His NexaHomes evidence includes connecting customer requirements, vendors, sales and delivery activity. This supports a credible coordination narrative; it is not proof of formal people-management responsibility."],
+      ["Business-model analysis and automotive retail", "As a Management Trainee Intern at Mercedes-Benz Silver Star (Raam Group), Hyderabad, he contributed to a study of the Retail of the Future (ROTF) Introduction Method. The study examined direct-to-consumer retail implications including inventory access, pricing transparency, dealer economics, dealer flexibility, margins, customer experience and after-sales considerations. This was a study, not implementation."],
+      ["Community-impact contribution and recognition", "Through My Choices Foundation, he supported communication design and Excel-based coordination in a Social Concern Project / Impact Internship. Ms. Cynthia McCaffrey, UNICEF Representative to India, appreciated his contributions, practical ideas and workflow suggestions in community-impact work. This is appreciation, not an official UNICEF award or institutional endorsement."]
     ],
     evidence: [
-      "NexaHomes — Growth Manager & Operations Associate, May 2025–August 2026; documented scope across 100+ residential clients.",
+      "NexaHomes — Growth Manager & Operations Associate, May 2025–August 2026; documented scope across 120+ residential clients.",
       "NexaHomes — requirement capture, tailored offers, upgrade/post-sale follow-ups, vendor coordination, sales-to-delivery handoffs, competitor research and Excel/Power BI MIS views.",
       "Mercedes-Benz — Management Trainee Intern, July–September 2022; retail-model study and customer-engagement context.",
       "Tata Motors — organisational-structure training programme, April–May 2021.",
       "My Choices Foundation — Social Concern Project / Impact Internship.",
       "MBA — Human Resource Management, CHRIST (Deemed to be University), Pune Lavasa Campus; thesis on forecasting employee turnover in Bangalore IT through engagement, growth and culture.",
       "Tools — practical Excel, intermediate Power BI, beginner-to-intermediate Tableau and basic SQL.",
-      "Credentials include IBM Enterprise Design Thinking Practitioner and IBM Agile Explorer. The BCG Strategy Consulting experience is a Forage job simulation, not BCG employment."
+      "Credentials include IBM Enterprise Design Thinking Practitioner and IBM Agile Explorer. The BCG Strategy Consulting experience is a Forage job simulation, not BCG employment.",
+      "Mercedes-Benz Silver Star (Raam Group) — Management Trainee Intern, Hyderabad, July–September 2022; cross-functional exposure and a Retail of the Future (ROTF) Introduction Method study, not implementation.",
+      "My Choices Foundation — Social Concern Project / Impact Internship; communication design and Excel coordination; appreciation from Ms. Cynthia McCaffrey, UNICEF Representative to India, for contributions, practical ideas and workflow suggestions in community-impact work.",
+      "CHRIST (Deemed to be University) — MBA, Human Resource Management; the university ranked 57th nationally in the Management category of the NIRF India Rankings 2025. This is the institution’s category ranking, not Manoj’s individual rank."
     ],
+    languages: "Manoj speaks five languages at different proficiency levels: Telugu and English fluently, Hindi conversationally, and Tamil and Malayalam at a basic level.",
     roles: [
       "Business Operations / Business Operations Associate",
       "Service Operations / Customer Operations",
@@ -320,7 +326,7 @@
     return "MANRA 231999 — IBM BUSINESS OPERATIONS MANAGEMENT TRAINEE ASSESSMENT\n\n" +
       "VERDICT: YES — Manoj is worth serious consideration for an interview, particularly if this is a generalist Business Operations trainee role focused on process coordination, service operations, reporting, stakeholder follow-through and improvement. I would call him a credible, conditional fit—not a guaranteed high performer.\n\n" +
       "WHY THE FIT IS REAL\n" +
-      "1. Relevant operating context: At NexaHomes he worked across a 100+ residential-client portfolio, connecting requirements, tailored offers, vendor coordination, post-sale requests and sales-to-delivery handoffs. That is practical exposure to service operations and multiple moving parts.\n" +
+      "1. Relevant operating context: At NexaHomes he worked across a 120+ residential-client portfolio, connecting requirements, tailored offers, vendor coordination, post-sale requests and sales-to-delivery handoffs. That is practical exposure to service operations and multiple moving parts.\n" +
       "2. Information-to-action thinking: Competitor benchmarking informed service-line choices. He has experience structuring information to help a business evaluate options, rather than treating research as an end in itself.\n" +
       "3. Reporting foundation: Practical Excel and intermediate Power BI exposure can support MIS, tracking and operating visibility.\n" +
       "4. Business education and learning context: His MBA, business research, Mercedes-Benz retail-model study and IBM learning credentials give him a relevant foundation for a trainee pathway.\n\n" +
@@ -347,7 +353,7 @@
       title: "Business Operations / Management Trainee",
       fit: "Strongest near-term fit",
       aliases: [/business\s*operations?/i, /\bbiz\s*ops\b/i, /operations management trainee/i],
-      evidence: "NexaHomes client operations across a 100+ residential-client portfolio; customer requirements, tailored offers, vendor coordination, sales-to-delivery handoffs, post-sale follow-through and MIS reporting.",
+      evidence: "NexaHomes client operations across a 120+ residential-client portfolio; customer requirements, tailored offers, vendor coordination, sales-to-delivery handoffs, post-sale follow-through and MIS reporting.",
       contribution: "Operating trackers, issue and action logs, workflow documentation, stakeholder follow-through, service-delivery coordination, management reporting and small process-control improvements.",
       gaps: "Test Excel accuracy, metric interpretation, concise reporting, prioritisation under pressure and comfort with the role's finance or reconciliation content."
     },
@@ -521,7 +527,7 @@
         "Credentials indicate learning and exposure; they should not be represented as professional employment or advanced technical certification unless the certificate explicitly says so.";
     }
     return "EDUCATION\n\n" +
-      "• MBA, Human Resource Management — CHRIST (Deemed to be University), Pune Lavasa Campus; aggregate 60.2% (CGPA 6.23). Thesis: Forecasting Employee Turnover in the Bangalore IT Industry: An Analysis of Engagement, Growth, and Culture.\n" +
+      "• MBA, Human Resource Management — CHRIST (Deemed to be University), Pune Lavasa Campus; aggregate 60.2% (CGPA 6.23). CHRIST ranked 57th nationally in the Management category of the NIRF India Rankings 2025. Thesis: Forecasting Employee Turnover in the Bangalore IT Industry: An Analysis of Engagement, Growth, and Culture.\n" +
       "• B.Com — Computers, St. Joseph’s College, Kurnool; 58%.\n" +
       "• Intermediate — MEC; approximately 68%.\n" +
       "• SSC — 88%.\n\n" +
@@ -542,6 +548,22 @@
 
   function makeLocalAnswer(question) {
     var q = question.toLowerCase();
+
+    if (/how many languages|what languages|languages.*manoj|manoj.*languages|language skills|mother tongue|speak.*languages|languages.*speak/.test(q)) {
+      return "LANGUAGES\\n\\n" + profile.languages + " The stated levels are conversational/basic where applicable; do not describe all five as fluent.";
+    }
+
+    if (/cynthia|unicef|my choices.*appreciat|appreciat.*my choices/.test(q)) {
+      return "MY CHOICES FOUNDATION — LEADERSHIP APPRECIATION\\n\\nMs. Cynthia McCaffrey was UNICEF Representative to India. Manoj’s contributions, practical ideas and workflow suggestions in community-impact work through My Choices Foundation received appreciation from her. Present this accurately as appreciation for his contribution—not as an official UNICEF award, employment, endorsement or appointment.";
+    }
+
+    if (/rotf|retail of the future|direct.to.consumer.*mercedes|mercedes.*retail model/.test(q)) {
+      return "MERCEDES-BENZ SILVER STAR — ROTF BUSINESS-MODEL STUDY\\n\\nManoj was a Management Trainee Intern at Mercedes-Benz Silver Star (Raam Group), Hyderabad, from July to September 2022. Alongside cross-functional exposure across Business Operations, HR, Sales and Marketing, he contributed to a study of the Retail of the Future (ROTF) Introduction Method. The study considered direct-to-consumer retail implications such as inventory access, pricing transparency, dealer economics and flexibility, customer experience, margins and after-sales considerations. This was analysis of the model—not its implementation.";
+    }
+
+    if (/nirf|57th nationally|management category ranking/.test(q)) {
+      return "CHRIST (DEEMED TO BE UNIVERSITY) — NIRF RANKING CONTEXT\\n\\nManoj completed his MBA at CHRIST (Deemed to be University), Pune Lavasa Campus. The university was ranked 57th nationally in the Management category of the NIRF India Rankings 2025. The 57th position refers to the institution’s category ranking, not Manoj’s individual rank.";
+    }
 
     // Handle comparisons before keyword-specific answers such as IBM.
     // A visitor may ask for a side-by-side role assessment and an employer-specific verdict in one turn.
@@ -634,11 +656,11 @@
 
     if (/experience|proof|evidence|credential|background|track record|example|worked|internship|education|qualification/.test(q)) {
       return "The portfolio's clearest evidence points are:\n\n" + formatEvidence() +
-        "\n\nEvidence discipline: scope is not the same as measured impact. The 100+ client portfolio establishes operating scope; it does not prove a revenue increase, cost saving or service improvement. Ask Manoj to explain the context, his exact responsibility, the output and any verified result.";
+        "\n\nEvidence discipline: scope is not the same as measured impact. The 120+ client portfolio establishes operating scope; it does not prove a revenue increase, cost saving or service improvement. Ask Manoj to explain the context, his exact responsibility, the output and any verified result.";
     }
 
     if (/resume|cv|summary|introduc|pitch|elevator|tell me about/.test(q)) {
-      return "A concise professional introduction:\n\n“V. Sai Manoj is a business-operations professional who connects customer and market signals with structured research, operational reporting and practical execution. His experience includes customer and service coordination across a 100+ residential-client portfolio at NexaHomes, competitor benchmarking, a Mercedes-Benz retail-model study and MBA research. He is best suited to roles where teams need organised execution, clearer operating visibility and evidence-led decisions.”\n\nThis is a positioning summary, not a claim of advanced technical expertise or unverified financial impact.";
+      return "A concise professional introduction:\n\n“V. Sai Manoj connects customer insight, competitor intelligence and operational evidence to identify commercial opportunities, shape service priorities and support execution. At NexaHomes, he managed relationships across a 120+ residential-client portfolio, benchmarked Hyderabad competitors and supported customer-to-delivery operations and Excel/Power BI MIS reporting. As a Management Trainee Intern at Mercedes-Benz Silver Star (Raam Group), he contributed to a Retail of the Future (ROTF) Introduction Method study. His My Choices Foundation community-impact work received appreciation from Ms. Cynthia McCaffrey, UNICEF Representative to India, for practical ideas and workflow suggestions. He holds an MBA from CHRIST (Deemed to be University), ranked 57th nationally in the Management category of the NIRF India Rankings 2025.”\n\nThis is a positioning summary, not a claim of advanced technical expertise or unverified financial impact.";
     }
 
     if (/90 day|first 90|first month|first 30|onboard|joining|start at|new role/.test(q)) {
@@ -662,7 +684,7 @@
     }
 
     if (/achievement|impact|result|success|accomplish|outcome/.test(q)) {
-      return "The strongest documented achievement is the scope of work across a 100+ residential-client portfolio at NexaHomes, alongside competitor research, customer/service coordination and reporting deliverables. The portfolio deliberately does not claim unverified revenue, margin, savings, cycle-time or satisfaction improvements. To strengthen the achievement story, Manoj should add dated, verifiable before-and-after measures where company records permit.";
+      return "The strongest documented achievement is the scope of work across a 120+ residential-client portfolio at NexaHomes, alongside competitor research, customer/service coordination and reporting deliverables. The portfolio deliberately does not claim unverified revenue, margin, savings, cycle-time or satisfaction improvements. To strengthen the achievement story, Manoj should add dated, verifiable before-and-after measures where company records permit.";
     }
 
     if (/why.*ibm|why this company|why should we choose|why hire|why select/.test(q)) {
