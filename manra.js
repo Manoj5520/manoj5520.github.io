@@ -70,9 +70,9 @@
 
       function getManraVoicePreference() {
         try {
-          return window.localStorage.getItem("manra-voice-persona") === "hannah" ? "hannah" : "troy";
+          return window.localStorage.getItem("manra-voice-persona") === "hannah" ? "hannah" : "daniel";
         } catch (error) {
-          return "troy";
+          return "daniel";
         }
       }
 
@@ -98,7 +98,7 @@
             "Hello, I’m MANRA, the personal assistant to V. Sai Manoj. How may I help you today?"
           );
           utterance.lang = "en-IN";
-          utterance.rate = 0.94;
+          utterance.rate = 1.07;
           utterance.pitch = 0.96;
           utterance.volume = 1;
 
@@ -119,7 +119,7 @@
           }
           utterance.voice = preferredVoice;
           utterance.lang = preferredVoice.lang || "en-IN";
-          utterance.rate = 0.96;
+          utterance.rate = 1.07;
           utterance.pitch = 1;
 
           utterance.onend = finish;
@@ -187,8 +187,9 @@
       });
       window.addEventListener("message", function (event) {
         if (event.source !== liveFrame.contentWindow || event.origin !== "https://beacon-cap-cosmic-earth.vercel.app" || !event.data) return;
-        if (event.data.type === "MANRA_VOICE_PREFERENCE" && (event.data.voice === "troy" || event.data.voice === "hannah")) {
-          try { window.localStorage.setItem("manra-voice-persona", event.data.voice); } catch (error) {}
+        if (event.data.type === "MANRA_VOICE_PREFERENCE" && (event.data.voice === "daniel" || event.data.voice === "troy" || event.data.voice === "hannah")) {
+          var savedVoice = event.data.voice === "hannah" ? "hannah" : "daniel";
+          try { window.localStorage.setItem("manra-voice-persona", savedVoice); } catch (error) {}
           return;
         }
         if (event.data.type === "MANRA_CLOSE") closeLiveAssistant();
@@ -687,7 +688,7 @@
       if (typeof speechSynthesis.resume === "function") speechSynthesis.resume();
       var utterance = new SpeechSynthesisUtterance(text);
       utterance.lang = "en-IN";
-      utterance.rate = 0.96;
+      utterance.rate = 1.07;
       utterance.pitch = 1.0;
       var voices = speechSynthesis.getVoices ? speechSynthesis.getVoices() : [];
       var voice = voices.find(function (item) { return /^en-IN$/i.test(item.lang); }) ||
