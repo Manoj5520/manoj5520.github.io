@@ -157,3 +157,35 @@
   .snapshot-stage .snapshot-orbit-one {left:0% !important;top:17% !important;width:100% !important;height:64% !important;}
   .snapshot-earth-credit {font-size:7px !important;}
 }
+
+/* Immediate visual fallback: NASA land/ocean map is visible even before WebGL loads. */
+.snapshot-stage .snapshot-globe:not(.snapshot-earth-webgl-ready)::before {
+  content:"" !important;
+  position:absolute !important;
+  z-index:4 !important;
+  inset:0 !important;
+  display:block !important;
+  border-radius:50% !important;
+  background-image:
+    radial-gradient(ellipse at 29% 22%,rgba(255,255,255,.18) 0%,transparent 39%),
+    radial-gradient(ellipse at 52% 52%,transparent 58%,rgba(0,8,24,.28) 100%),
+    url("https://eoimages.gsfc.nasa.gov/images/imagerecords/57000/57752/land_shallow_topo_2048.jpg") !important;
+  background-repeat:no-repeat,no-repeat,repeat-x !important;
+  background-size:100% 100%,100% 100%,200% 100% !important;
+  background-position:center,center,0% 50% !important;
+  animation:snapshotNasaImmediateSpin 54s linear infinite !important;
+  pointer-events:none !important;
+}
+.snapshot-stage .snapshot-globe.snapshot-earth-webgl-ready::before {
+  background-image:
+    radial-gradient(ellipse at 27% 22%,rgba(255,255,255,.20) 0%,rgba(255,255,255,.07) 18%,transparent 40%),
+    radial-gradient(ellipse at 50% 50%,transparent 62%,rgba(3,13,31,.18) 83%,rgba(1,8,22,.45) 100%) !important;
+  background-repeat:no-repeat,no-repeat !important;
+  background-size:100% 100%,100% 100% !important;
+  background-position:center,center !important;
+  animation:none !important;
+}
+@keyframes snapshotNasaImmediateSpin {
+  from {background-position:center,center,0% 50%;}
+  to {background-position:center,center,200% 50%;}
+}
