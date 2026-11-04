@@ -65,17 +65,96 @@
       panel.classList.add("manra-live-mode");
       panel.appendChild(liveShell);
 
+      function speakPortfolioWelcome(onComplete) {
+        var finished = false;
+        var fallbackTimer = null;
+        function finish() {
+          if (finished) return;
+          finished = true;
+          if (fallbackTimer) window.clearTimeout(fallbackTimer);
+          if (typeof onComplete === "function") onComplete();
+        }
+
+        if (!("speechSynthesis" in window) || typeof SpeechSynthesisUtterance === "undefined") {
+          finish();
+          return;
+        }
+
+        try {
+          var synth = window.speechSynthesis;
+          synth.cancel();
+          var utterance = new SpeechSynthesisUtterance(
+            "Hello, I’m MANRA, the personal assistant to V. Sai Manoj. How may I help you today?"
+          );
+          utterance.lang = "en-IN";
+          utterance.rate = 0.94;
+          utterance.pitch = 0.96;
+          utterance.volume = 1;
+
+          var voices = synth.getVoices();
+          var preferredVoice =
+            voices.find(function (voice) {
+              return /^en-IN(?:-|$)/i.test(voice.lang) && /male|rishi|prabhat|arjun/i.test(voice.name);
+            }) ||
+            voices.find(function (voice) {
+              return /Google UK English Male|Microsoft.*English.*Male|Daniel/i.test(voice.name);
+            }) ||
+            voices.find(function (voice) { return /^en-IN(?:-|$)/i.test(voice.lang); }) ||
+            voices.find(function (voice) { return /^en-GB(?:-|$)/i.test(voice.lang); }) ||
+            voices.find(function (voice) { return /^en/i.test(voice.lang); });
+          if (preferredVoice) utterance.voice = preferredVoice;
+
+          utterance.onend = finish;
+          utterance.onerror = finish;
+          fallbackTimer = window.setTimeout(finish, 12_000);
+          // This is invoked synchronously from the visitor's Hey MANRA click,
+          // so the browser recognises it as an intentional audible interaction.
+          synth.speak(utterance);
+        } catch (error) {
+          finish();
+        }
+      }
+
       function openLiveAssistant() {
         panel.classList.add("is-open");
         panel.setAttribute("aria-hidden", "false");
         launch.setAttribute("aria-expanded", "true");
+
+        var welcomeFinished = false;
+        var frameReady = Boolean(liveFrame.getAttribute("src"));
+        var startSent = false;
+        function startListeningAfterWelcome() {
+          if (!welcomeFinished || !frameReady || startSent || !liveFrame.contentWindow) return;
+          startSent = true;
+          liveFrame.contentWindow.postMessage(
+            { type: "MANRA_START_VOICE" },
+            "https://beacon-cap-cosmic-earth.vercel.app"
+          );
+        }
+
+        if (!liveFrame.getAttribute("src")) {
+          liveFrame.addEventListener("load", function () {
+            frameReady = true;
+            startListeningAfterWelcome();
+          }, { once: true });
+        }
+
+        // Speak first, then tell the embedded assistant to open the microphone.
+        // This prevents the microphone from transcribing MANRA's own welcome.
+        speakPortfolioWelcome(function () {
+          welcomeFinished = true;
+          startListeningAfterWelcome();
+        });
+
         if (!liveFrame.getAttribute("src")) liveFrame.setAttribute("src", liveFrame.dataset.src);
+        else startListeningAfterWelcome();
       }
 
       function closeLiveAssistant() {
         panel.classList.remove("is-open");
         panel.setAttribute("aria-hidden", "true");
         launch.setAttribute("aria-expanded", "false");
+        if ("speechSynthesis" in window) window.speechSynthesis.cancel();
         liveFrame.removeAttribute("src");
       }
 
