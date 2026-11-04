@@ -7,7 +7,7 @@
   const canvas = document.querySelector(".snapshot-earth-webgl");
   if (!stage || !host || !canvas) return;
 
-  const textureUrl = "https://eoimages.gsfc.nasa.gov/images/imagerecords/57000/57752/land_shallow_topo_2048.jpg";
+  const textureUrl = "https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Land_shallow_topo_2048.jpg/3840px-Land_shallow_topo_2048.jpg";
   const status = document.querySelector(".snapshot-earth-status");
   const setStatus = (message) => { if (status) status.textContent = message; };
 
@@ -154,7 +154,7 @@
           observer.observe(stage);
 
           host.classList.add("snapshot-earth-webgl-ready");
-          setStatus("NASA Blue Marble · MODIS / Terra · 360° continuous rotation");
+          setStatus("NASA Blue Marble 2002 · Reto Stöckli / MODIS Terra · 360° continuous rotation");
           window.addEventListener("pagehide", () => {
             if (frame) cancelAnimationFrame(frame);
             observer.disconnect();
