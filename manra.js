@@ -83,9 +83,8 @@
 
         var frameReady = Boolean(liveFrame.getAttribute("src"));
         var startSent = false;
-        function startListening() {
-          if (!frameReady || startSent || !liveFrame.contentWindow) return;
-          startSent = true;
+        function sendVoiceStartSignal() {
+          if (!liveFrame.contentWindow) return;
           liveFrame.contentWindow.postMessage(
             { type: "MANRA_VOICE_PREFERENCE", voice: getManraVoicePreference() },
             "https://beacon-cap-cosmic-earth.vercel.app"
@@ -94,6 +93,16 @@
             { type: "MANRA_START_VOICE" },
             "https://beacon-cap-cosmic-earth.vercel.app"
           );
+        }
+
+        function startListening() {
+          if (!frameReady || startSent || !liveFrame.contentWindow) return;
+          startSent = true;
+          // The iframe load event can precede React's effect registration.
+          // Retry the idempotent start signal briefly; the child accepts it once.
+          [0, 180, 520, 1100].forEach(function (delay) {
+            window.setTimeout(sendVoiceStartSignal, delay);
+          });
         }
 
         if (!liveFrame.getAttribute("src")) {
