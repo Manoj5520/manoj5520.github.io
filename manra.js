@@ -76,73 +76,15 @@
         }
       }
 
-      function speakPortfolioWelcome(onComplete) {
-        var finished = false;
-        var fallbackTimer = null;
-        function finish() {
-          if (finished) return;
-          finished = true;
-          if (fallbackTimer) window.clearTimeout(fallbackTimer);
-          if (typeof onComplete === "function") onComplete();
-        }
-
-        if (!("speechSynthesis" in window) || typeof SpeechSynthesisUtterance === "undefined") {
-          finish();
-          return;
-        }
-
-        try {
-          var synth = window.speechSynthesis;
-          synth.cancel();
-          var utterance = new SpeechSynthesisUtterance(
-            "Hello, I’m MANRA, the personal assistant to V. Sai Manoj. How may I help you today?"
-          );
-          utterance.lang = "en-IN";
-          utterance.rate = 1.07;
-          utterance.pitch = 0.96;
-          utterance.volume = 1;
-
-          var preference = getManraVoicePreference();
-          var voices = synth.getVoices().filter(function (voice) {
-            return /^en(?:-|$)/i.test(voice.lang);
-          });
-          var femalePattern = /\b(female|woman|zira|aria|jenny|samantha|victoria|karen|moira|ava|susan|natasha|sonia|heera|neerja|swara|raveena)\b|google us english|google uk english female|microsoft.*(zira|aria|jenny|ava|sonia|heera|neerja|swara)/i;
-          var malePattern = /\b(male|man|david|mark|guy|daniel|george|james|rishi|prabhat|arjun|matthew|aaron|ravi)\b|google uk english male|microsoft.*(david|mark|ravi)/i;
-          var preferredVoice = voices.find(function (voice) {
-            return preference === "hannah" ? femalePattern.test(voice.name) : malePattern.test(voice.name);
-          });
-          if (!preferredVoice) {
-            // Never silently play a male voice when the visitor selected female,
-            // or a female voice when the visitor selected male.
-            finish();
-            return;
-          }
-          utterance.voice = preferredVoice;
-          utterance.lang = preferredVoice.lang || "en-IN";
-          utterance.rate = 1.07;
-          utterance.pitch = 1;
-
-          utterance.onend = finish;
-          utterance.onerror = finish;
-          fallbackTimer = window.setTimeout(finish, 12_000);
-          // This is invoked synchronously from the visitor's Hey MANRA click,
-          // so the browser recognises it as an intentional audible interaction.
-          synth.speak(utterance);
-        } catch (error) {
-          finish();
-        }
-      }
-
       function openLiveAssistant() {
         panel.classList.add("is-open");
         panel.setAttribute("aria-hidden", "false");
         launch.setAttribute("aria-expanded", "true");
 
-        var welcomeFinished = false;
         var frameReady = Boolean(liveFrame.getAttribute("src"));
         var startSent = false;
-        function startListeningAfterWelcome() {
-          if (!welcomeFinished || !frameReady || startSent || !liveFrame.contentWindow) return;
+        function startListening() {
+          if (!frameReady || startSent || !liveFrame.contentWindow) return;
           startSent = true;
           liveFrame.contentWindow.postMessage(
             { type: "MANRA_VOICE_PREFERENCE", voice: getManraVoicePreference() },
@@ -157,19 +99,12 @@
         if (!liveFrame.getAttribute("src")) {
           liveFrame.addEventListener("load", function () {
             frameReady = true;
-            startListeningAfterWelcome();
+            startListening();
           }, { once: true });
+          liveFrame.setAttribute("src", liveFrame.dataset.src);
+        } else {
+          startListening();
         }
-
-        // Speak first, then tell the embedded assistant to open the microphone.
-        // This prevents the microphone from transcribing MANRA's own welcome.
-        speakPortfolioWelcome(function () {
-          welcomeFinished = true;
-          startListeningAfterWelcome();
-        });
-
-        if (!liveFrame.getAttribute("src")) liveFrame.setAttribute("src", liveFrame.dataset.src);
-        else startListeningAfterWelcome();
       }
 
       function closeLiveAssistant() {
