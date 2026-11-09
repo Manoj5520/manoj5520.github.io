@@ -4263,29 +4263,67 @@ ul, ol { padding: 0; list-style: none; }
 
     <!-- ============ 03 EXPERIENCE ============ -->
     <style id="aibf-portfolio-styles">
-.aibf-portfolio{padding:34px 0;background:#f1eeeb;border-top:1px solid #d8d1cc;border-bottom:1px solid #d8d1cc}
-.aibf-portfolio .aibf-inner{max-width:1180px;margin:0 auto;padding:0 28px}
-.aibf-portfolio .aibf-feature{display:grid;grid-template-columns:100px minmax(0,1fr) auto;gap:24px;align-items:center}
-.aibf-portfolio .aibf-mark{width:76px;height:76px;display:grid;place-items:center;border:1px solid #c9c1bd;background:#fffdfa;color:#762d40;font:500 25px Georgia,serif;letter-spacing:-.04em}
-.aibf-portfolio .aibf-kicker{font-size:9px;letter-spacing:.19em;text-transform:uppercase;color:#762d40;font-weight:700;margin:0 0 7px}
-.aibf-portfolio .aibf-heading{font:500 clamp(23px,3vw,34px)/1.12 Georgia,serif;color:#252226;margin:0 0 8px;letter-spacing:-.02em}
-.aibf-portfolio .aibf-copy{max-width:740px;color:#625c5d;font-size:13px;line-height:1.6;margin:0}
-.aibf-portfolio .aibf-credit{display:block;margin-top:8px;color:#82797a;font-size:9px;letter-spacing:.13em;text-transform:uppercase}
-.aibf-portfolio .aibf-cta{display:inline-flex;align-items:center;gap:18px;padding:13px 16px;background:#762d40;color:#fff;text-decoration:none;font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;white-space:nowrap}
-.aibf-portfolio .aibf-cta:hover{background:#562031}
-@media(max-width:720px){.aibf-portfolio .aibf-feature{grid-template-columns:58px minmax(0,1fr);gap:14px}.aibf-portfolio .aibf-mark{width:54px;height:54px;font-size:20px}.aibf-portfolio .aibf-cta{grid-column:2;justify-self:start}}
+.aibf-portfolio{padding:clamp(42px,6vw,78px) 0;background:linear-gradient(140deg,#e8edf1 0%,#f3f4f4 52%,#e9e6e5 100%);border-top:1px solid #cbd2d9;border-bottom:1px solid #cbd2d9}
+.aibf-portfolio .aibf-inner{max-width:1280px;margin:0 auto;padding:0 clamp(18px,4vw,48px)}
+.aibf-portfolio .aibf-panel{position:relative;overflow:hidden;background:#fff;border:1px solid #cbd2d9;border-top:4px solid #762d40;box-shadow:0 24px 60px rgba(27,34,42,.08)}
+.aibf-portfolio .aibf-feature{display:grid;grid-template-columns:minmax(0,.88fr) minmax(0,1.12fr);gap:clamp(28px,5vw,68px);align-items:center;padding:clamp(28px,5vw,62px)}
+.aibf-portfolio .aibf-intro{min-width:0}
+.aibf-portfolio .aibf-kicker{display:flex;align-items:center;gap:10px;font-size:10px;letter-spacing:.19em;text-transform:uppercase;color:#762d40;font-weight:700;margin:0 0 20px}
+.aibf-portfolio .aibf-kicker:before{content:"";width:26px;height:1px;background:#762d40}
+.aibf-portfolio .aibf-heading{font:400 clamp(44px,6.2vw,76px)/.98 Georgia,serif;color:#1c2025;margin:0;letter-spacing:-.045em}
+.aibf-portfolio .aibf-subtitle{margin:12px 0 0;color:#762d40;font:500 clamp(16px,1.8vw,21px)/1.35 Arial,sans-serif;letter-spacing:.015em}
+.aibf-portfolio .aibf-subtitle span{display:inline-block;margin-left:7px;padding:3px 7px;border:1px solid #d9c9ce;color:#762d40;font-size:10px;font-weight:700;letter-spacing:.14em;vertical-align:middle}
+.aibf-portfolio .aibf-copy{max-width:510px;margin:24px 0 0;color:#515963;font-size:clamp(14px,1.25vw,16px);line-height:1.75}
+.aibf-portfolio .aibf-byline{display:flex;flex-direction:column;gap:4px;margin-top:27px;padding:15px 18px;border-left:3px solid #762d40;background:#f5f2f2}
+.aibf-portfolio .aibf-byline-label{color:#786b6f;font-size:9px;font-weight:700;letter-spacing:.17em;text-transform:uppercase}
+.aibf-portfolio .aibf-author{color:#24262b;font:500 clamp(20px,2.2vw,26px)/1.2 Georgia,serif}
+.aibf-portfolio .aibf-credit{color:#81777a;font-size:10px;letter-spacing:.06em}
+.aibf-portfolio .aibf-cta{display:inline-flex;align-items:center;gap:22px;margin-top:26px;padding:15px 19px;background:#762d40;color:#fff;text-decoration:none;font-size:10px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;transition:background .2s,transform .2s}
+.aibf-portfolio .aibf-cta:hover{background:#562031;transform:translateY(-2px)}
+.aibf-portfolio .aibf-stages{min-width:0;padding:clamp(18px,2.4vw,30px);background:#f5f6f7;border:1px solid #dce1e5}
+.aibf-portfolio .aibf-stage-label{margin:0 0 16px;color:#6b737d;font-size:9px;font-weight:700;letter-spacing:.18em;text-transform:uppercase}
+.aibf-portfolio .aibf-stage-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px;list-style:none;margin:0;padding:0}
+.aibf-portfolio .aibf-stage-grid li{display:flex;align-items:flex-start;gap:12px;min-height:76px;padding:13px 12px;background:#fff;border:1px solid #e0e4e7}
+.aibf-portfolio .aibf-stage-no{flex:0 0 25px;color:#8a5362;font:400 16px/1.2 Georgia,serif}
+.aibf-portfolio .aibf-stage-name{color:#252a30;font-size:12px;font-weight:650;line-height:1.45}
+.aibf-portfolio .aibf-agentic-layer{margin-top:12px;padding:15px 16px;background:#24262b;color:#fff}
+.aibf-portfolio .aibf-agentic-title{display:block;color:#e7cbd2;font-size:9px;font-weight:700;letter-spacing:.16em;text-transform:uppercase}
+.aibf-portfolio .aibf-agentic-copy{display:block;margin-top:6px;color:#f1f2f3;font-size:11px;line-height:1.65}
+@media(max-width:820px){.aibf-portfolio .aibf-feature{grid-template-columns:1fr;gap:30px}.aibf-portfolio .aibf-copy{max-width:680px}}
+@media(max-width:520px){.aibf-portfolio .aibf-inner{padding:0 14px}.aibf-portfolio .aibf-feature{padding:24px 18px}.aibf-portfolio .aibf-stage-grid{grid-template-columns:1fr}.aibf-portfolio .aibf-stage-grid li{min-height:0;padding:12px}.aibf-portfolio .aibf-stages{padding:14px}.aibf-portfolio .aibf-heading{font-size:clamp(42px,13vw,58px)}}
 </style>
 <section id="aibf-framework" class="aibf-portfolio" aria-labelledby="aibf-title">
   <div class="aibf-inner">
-    <div class="aibf-feature">
-      <div class="aibf-mark" aria-hidden="true">AI.</div>
-      <div>
-        <p class="aibf-kicker">Independent framework · Strategic intelligence</p>
-        <h2 id="aibf-title" class="aibf-heading">Agentic Incline Business Framework</h2>
-        <p class="aibf-copy">A six-stage methodology connecting intelligence discovery, strategic diagnosis, opportunity engineering, business architecture, intelligent execution and continuous evolution.</p>
-        <span class="aibf-credit">AIBF · Independently developed by V. Sai Manoj</span>
+    <div class="aibf-panel">
+      <div class="aibf-feature">
+        <div class="aibf-intro">
+          <p class="aibf-kicker">A business methodology · Strategy to execution</p>
+          <h2 id="aibf-title" class="aibf-heading">Agentic Incline</h2>
+          <p class="aibf-subtitle">Business Framework <span>AIBF</span></p>
+          <p class="aibf-copy">A six-stage framework for turning intelligence into strategic choices, engineered opportunities, practical business design and measured execution—with an agentic operating layer supporting the journey.</p>
+          <div class="aibf-byline">
+            <span class="aibf-byline-label">Developed by</span>
+            <strong class="aibf-author">V. Sai Manoj</strong>
+            <span class="aibf-credit">Independently developed business framework</span>
+          </div>
+          <a class="aibf-cta" href="/aibf/">Explore the framework <span aria-hidden="true">↗</span></a>
+        </div>
+        <div class="aibf-stages" aria-label="The six stages of Agentic Incline">
+          <p class="aibf-stage-label">The six-stage framework</p>
+          <ol class="aibf-stage-grid">
+            <li><span class="aibf-stage-no">01</span><span class="aibf-stage-name">Intelligence Discovery</span></li>
+            <li><span class="aibf-stage-no">02</span><span class="aibf-stage-name">Strategic Interpretation</span></li>
+            <li><span class="aibf-stage-no">03</span><span class="aibf-stage-name">Opportunity Engineering</span></li>
+            <li><span class="aibf-stage-no">04</span><span class="aibf-stage-name">Business Architecture</span></li>
+            <li><span class="aibf-stage-no">05</span><span class="aibf-stage-name">Intelligent Execution</span></li>
+            <li><span class="aibf-stage-no">06</span><span class="aibf-stage-name">Evolution &amp; Scaling</span></li>
+          </ol>
+          <div class="aibf-agentic-layer">
+            <span class="aibf-agentic-title">Cross-cutting agentic operating layer</span>
+            <span class="aibf-agentic-copy">Intent &amp; task planning · Context · Tool orchestration · Evidence traceability · Human approval · Monitoring &amp; feedback</span>
+          </div>
+        </div>
       </div>
-      <a class="aibf-cta" href="/aibf/">Explore framework <span aria-hidden="true">↗</span></a>
     </div>
   </div>
 </section>
