@@ -2116,3 +2116,67 @@ ul, ol { padding: 0; list-style: none; }
   .manra-visual-ring,.manra-visual-signal{animation:none!important}
   .manra-visual-orb{transition:none}
 }
+
+/* ==========================================================
+   06 — AIBF / executive strategy-to-impact framework
+   ========================================================== */
+.bc-slide-aibf .bc-panel{background:linear-gradient(112deg,#24262d 0%,#1e2027 58%,#29232a 100%)}
+.bc-slide-aibf .bc-copy{--bc-copy-bg:#22242b;background:linear-gradient(90deg,#22242b 0%,rgba(34,36,43,.99) 68%,rgba(34,36,43,.86) 87%,rgba(34,36,43,0) 100%)}
+.bc-slide-aibf .bc-copy h3{color:#f4f1eb}
+.bc-slide-aibf .bc-copy h3 em{color:#d4b77f}
+.bc-slide-aibf .bc-kicker,.bc-slide-aibf .bc-micro-label{color:#b8bbc2}
+.bc-slide-aibf .bc-kicker span{color:#d4b77f}
+.bc-slide-aibf .bc-copy>p:not(.bc-kicker):not(.bc-micro-label){color:#d8d9dc}
+.bc-slide-aibf .bc-link{color:#e4c994;border-color:rgba(228,201,148,.5)}
+.bc-slide-aibf .bc-link:hover{color:#f5dfb5;border-color:#e4c994}
+.bc-aibf-art{
+ background:radial-gradient(ellipse at 74% 43%,rgba(177,140,83,.17),transparent 43%),
+ linear-gradient(rgba(224,210,184,.055) 1px,transparent 1px),
+ linear-gradient(90deg,rgba(224,210,184,.055) 1px,transparent 1px),
+ linear-gradient(135deg,#252830 0%,#191c23 72%,#2a2028 100%);
+ background-size:auto,42px 42px,42px 42px,auto
+}
+.bc-aibf-art:before{content:"AIBF";position:absolute;z-index:0;right:4%;top:12%;color:rgba(230,218,196,.055);font:700 clamp(100px,17vw,240px)/.8 var(--sans);letter-spacing:-.08em;pointer-events:none}
+.bc-aibf-art:after{content:"";position:absolute;z-index:0;left:42%;right:3%;top:16%;height:1px;background:linear-gradient(90deg,transparent,rgba(205,174,119,.42),transparent)}
+.bc-aibf-art .bc-art-caption{left:40%;right:3%;top:20px;color:#aeb3bb}
+.bc-aibf-art .bc-art-caption span{color:#d5b980}
+.bc-aibf-art .bc-art-caption b{color:#c1c4c9}
+.bc-aibf-stages{position:absolute;z-index:2;top:20%;left:40%;right:3%;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.bc-aibf-stage{display:flex;flex-direction:column;justify-content:center;min-width:0;min-height:clamp(94px,10vw,124px);padding:clamp(10px,1vw,15px);background:rgba(244,242,237,.96);border-top:2px solid #c7a66d;box-shadow:0 14px 28px rgba(0,0,0,.2)}
+.bc-aibf-stage small{color:#8a2942;font:800 7px/1.3 var(--sans);letter-spacing:.14em}
+.bc-aibf-stage b{display:block;margin-top:7px;color:#20242b;font:650 clamp(9px,.9vw,12px)/1.3 var(--sans)}
+.bc-aibf-stage span{display:block;margin-top:6px;color:#656b73;font:500 clamp(7px,.68vw,9px)/1.45 var(--sans)}
+.bc-aibf-layer{position:absolute;z-index:3;left:40%;right:3%;bottom:12%;display:grid;grid-template-columns:minmax(135px,.34fr) minmax(0,1fr);align-items:center;gap:13px;padding:13px 16px;background:linear-gradient(105deg,#6f1d37,#50182d);border-top:2px solid #c7a66d;box-shadow:0 13px 28px rgba(0,0,0,.25)}
+.bc-aibf-layer b{color:#f0d9a9;font:800 8px/1.5 var(--sans);letter-spacing:.13em}
+.bc-aibf-layer span{color:#f1e9e2;font:500 clamp(8px,.75vw,10px)/1.5 var(--sans)}
+.bc-aibf-foot{position:absolute;z-index:3;left:40%;right:3%;bottom:3.5%;display:flex;justify-content:space-between;align-items:center;gap:12px;color:#9da3ad;font:750 7px/1.4 var(--sans);letter-spacing:.11em}
+.bc-aibf-foot b{flex:0 0 auto;color:#d6bd91;font-size:7px;letter-spacing:.16em}
+@media(max-width:900px) and (min-width:651px){
+ .bc-aibf-art .bc-art-caption{left:39%}
+ .bc-aibf-stages{left:39%;gap:7px;top:22%}
+ .bc-aibf-stage{min-height:103px;padding:9px}
+ .bc-aibf-stage b{font-size:9px}
+ .bc-aibf-stage span{font-size:7px}
+ .bc-aibf-layer{left:39%;grid-template-columns:112px minmax(0,1fr);gap:8px;padding:10px}
+ .bc-aibf-layer b{font-size:7px}
+ .bc-aibf-layer span{font-size:8px}
+ .bc-aibf-foot{left:39%;font-size:6px}
+ .bc-aibf-foot b{font-size:6px}
+}
+@media(max-width:650px){
+ .bc-slide-aibf .bc-copy{background:#22242b!important}
+ .bc-slide-aibf .bc-copy h3{max-width:14ch}
+ .bc-aibf-art{height:clamp(350px,92vw,400px)}
+ .bc-aibf-art .bc-art-caption{left:14px;right:14px;top:13px}
+ .bc-aibf-art:before{top:13%;right:4%;font-size:115px}
+ .bc-aibf-stages{left:3%;right:3%;top:19%;bottom:31%;grid-template-columns:repeat(2,minmax(0,1fr));gap:7px}
+ .bc-aibf-stage{min-height:0;padding:8px 9px}
+ .bc-aibf-stage small{font-size:6px}
+ .bc-aibf-stage b{margin-top:4px;font-size:8px}
+ .bc-aibf-stage span{margin-top:4px;font-size:6.5px}
+ .bc-aibf-layer{left:3%;right:3%;bottom:11%;grid-template-columns:105px minmax(0,1fr);gap:8px;padding:9px 10px}
+ .bc-aibf-layer b{font-size:6px}
+ .bc-aibf-layer span{font-size:7px}
+ .bc-aibf-foot{left:3%;right:3%;bottom:2.5%;gap:8px;font-size:5.5px}
+ .bc-aibf-foot b{font-size:6px}
+}
