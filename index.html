@@ -3877,6 +3877,67 @@ ul, ol { padding: 0; list-style: none; }
 #problems .bc-slide-aibf .bc-aibf-foot{left:3%!important;right:3%!important;bottom:3%!important;font-size:5.5px!important}
 }
 </style>
+
+  <style id="aibf-hero-entry-styles">
+    /* AIBF is a first-screen portfolio entry, positioned in the copy column.
+       It never overlays the portrait or its face. */
+    .aibf-hero-entry {
+      position:relative;isolation:isolate;display:grid;
+      grid-template-columns:58px minmax(0,1fr) auto;align-items:center;
+      gap:16px;width:100%;max-width:760px;min-height:94px;
+      margin:22px 0 0;padding:15px 18px;
+      overflow:hidden;text-decoration:none!important;color:#f7f4ef!important;
+      background:linear-gradient(112deg,#1e222a 0%,#28232b 58%,#432a37 100%);
+      border:1px solid #55444d;border-left:4px solid #b58b5b;
+      box-shadow:0 16px 36px rgba(20,22,26,.15);
+      transition:transform .28s ease,border-color .28s ease,box-shadow .28s ease;
+    }
+    .aibf-hero-entry::before {
+      content:"";position:absolute;z-index:-1;inset:0;pointer-events:none;
+      background:linear-gradient(105deg,transparent 20%,rgba(255,255,255,.13) 48%,transparent 72%);
+      transform:translateX(-115%);transition:transform .7s ease;
+    }
+    .aibf-hero-entry:hover {
+      transform:translateY(-3px);border-color:#a98b69;
+      box-shadow:0 22px 44px rgba(20,22,26,.22);
+    }
+    .aibf-hero-entry:hover::before {transform:translateX(115%)}
+    .aibf-hero-entry:focus-visible {outline:3px solid #9c6476;outline-offset:4px}
+    .aibf-hero-index {
+      position:relative;z-index:1;display:grid;place-items:center;
+      width:56px;height:56px;color:#e6d1aa;
+      border:1px solid rgba(211,184,139,.62);
+      background:linear-gradient(145deg,rgba(255,255,255,.12),rgba(255,255,255,.025));
+      font:500 22px/1 Georgia,"Times New Roman",serif;letter-spacing:-.04em;
+    }
+    .aibf-hero-copy {position:relative;z-index:1;display:grid;gap:3px;min-width:0}
+    .aibf-hero-kicker {
+      color:#d7bd94;font:800 8px/1.4 var(--sans);
+      letter-spacing:.15em;text-transform:uppercase;
+    }
+    .aibf-hero-title {
+      color:#fff;font:500 clamp(25px,3vw,34px)/1.02 var(--serif);
+      letter-spacing:.035em;
+    }
+    .aibf-hero-description {color:#c9c7cc;font:500 11px/1.5 var(--sans)}
+    .aibf-hero-action {
+      position:relative;z-index:1;display:inline-flex;align-items:center;gap:12px;
+      padding:11px 13px;border:1px solid rgba(223,203,174,.58);
+      color:#f2e7d6;font:800 9px/1.2 var(--sans);
+      letter-spacing:.09em;text-transform:uppercase;white-space:nowrap;
+    }
+    .aibf-hero-action span {font-size:16px;line-height:1}
+    @media(max-width:760px) {
+      .aibf-hero-entry {grid-template-columns:48px minmax(0,1fr);gap:12px;padding:13px;margin-top:18px}
+      .aibf-hero-index {width:46px;height:46px;font-size:19px}
+      .aibf-hero-action {grid-column:2;justify-self:start;padding:8px 10px}
+      .aibf-hero-title {font-size:28px}
+    }
+    @media(prefers-reduced-motion:reduce) {
+      .aibf-hero-entry,.aibf-hero-entry::before {transition:none!important}
+    }
+  </style>
+
 </head>
 <body>
   <a class="skip" href="index.html#main">Skip to content</a>
@@ -3996,6 +4057,17 @@ ul, ol { padding: 0; list-style: none; }
             <a class="btn btn-primary" href="assets/docs/Vannam-Sai-Manoj-Resume.pdf?v=20261109-gap-discovery" download="Vannam-Sai-Manoj-Resume.pdf">Download Resume <span aria-hidden="true">↓</span></a>
             <a class="btn btn-ghost" href="/projects/">Explore Work Samples <span aria-hidden="true">↗</span></a>
           </div>
+
+          <a class="aibf-hero-entry reveal" href="/aibf/" aria-label="Explore AIBF, the Agentic Incline Business Framework">
+            <span class="aibf-hero-index" aria-hidden="true">01</span>
+            <span class="aibf-hero-copy">
+              <span class="aibf-hero-kicker">INDEPENDENT STRATEGIC FRAMEWORK · BY V. SAI MANOJ</span>
+              <strong class="aibf-hero-title">AIBF</strong>
+              <span class="aibf-hero-description">Agentic Incline Business Framework</span>
+            </span>
+            <span class="aibf-hero-action">Explore framework <span aria-hidden="true">↗</span></span>
+          </a>
+
           <nav class="hero-social reveal" aria-label="Connect with V. Sai Manoj">
             <a class="social-link linkedin" href="https://www.linkedin.com/in/vsaimomentum2028/" target="_blank" rel="noopener noreferrer" aria-label="Open LinkedIn profile">
               <img src="/assets/img/linkedin-brand-mark.svg?v=20261106" width="20" height="20" alt="" aria-hidden="true"><span>LinkedIn</span>
