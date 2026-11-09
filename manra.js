@@ -199,6 +199,7 @@
       "Program or Product Operations in execution-focused teams"
     ],
     tools: "Excel: practical working ability including PivotTables, VLOOKUP and conditional formatting. Power BI: intermediate exposure for MIS and operational dashboards. Tableau: beginner-to-intermediate. SQL: basic. SPSS: survey-data analysis exposure. Microsoft Office, Canva, ChatGPT and Copilot: practical digital support. Do not describe him as an advanced SQL user, advanced Power BI developer, data scientist or data engineer.",
+    framework: "Agentic Incline Business Framework (AIBF) — an independently developed strategic intelligence and business transformation methodology by Vannam Sai Manoj for startups, entrepreneurship and innovation. Its six stages are Intelligence Discovery, Strategic Interpretation, Opportunity Engineering, Business Architecture, Intelligent Execution, and Evolution & Scaling. The distinctive agentic layer embeds goal framing, context orchestration, tool coordination, evidence traceability, human decision gates and feedback loops across all stages. MANRA is positioned as the AI-enabled voice-and-text digital intelligence and assistance interface through which AIBF can be applied; AIBF is the methodology, MANRA is the assistant layer. Current status: framework identity and conceptual architecture documented; full orchestration and workflow execution require implementation and validation.",
     development: "The main development priorities are stronger Excel modelling and data interpretation, more confident PowerPoint storytelling, deeper Power BI practice, basic-to-intermediate SQL progression, and quantified case studies that show the original problem, Manoj's exact responsibility, the action taken and a verified result. The portfolio does not claim unverified revenue growth, cost savings, cycle-time reduction or satisfaction improvement."
   };
 
@@ -527,6 +528,10 @@
 
     if (/\bibm\b|management trainee|business operations trainee|ibm.*operations|operations.*ibm/.test(q)) {
       return answerIbmRole();
+    }
+
+    if (/aibf|agentic incline|business framework|six stages|agentic framework/.test(q)) {
+      return "AGENTIC INCLINE BUSINESS FRAMEWORK (AIBF) — METHODOLOGY OVERVIEW\\n\\n" + profile.framework + "\\n\\nTHE SIX-STAGE METHOD\\n1. Intelligence Discovery — identify market signals, customer needs and business challenges.\\n2. Strategic Interpretation — assess evidence, root causes, alternatives and uncertainty.\\n3. Opportunity Engineering — turn validated needs into venture and innovation hypotheses.\\n4. Business Architecture — shape the value proposition, business model, operating logic and roadmap.\\n5. Intelligent Execution — coordinate people, AI capabilities, research and experiments with human approval.\\n6. Evolution & Scaling — measure adoption and performance, then refine, pivot, scale or stop.\\n\\nMANRA’S ROLE\\nMANRA is the AI-enabled digital intelligence and assistance interface; AIBF is the methodology it can help apply. The agentic layer supports goal framing, context orchestration, tool coordination, evidence traceability, human decision gates and feedback loops. Do not claim autonomous execution or proven enterprise results unless those capabilities have been implemented and validated.";
     }
 
     if (q.indexOf("ethic") >= 0 || q.indexOf("behavior engineering") >= 0 || q.indexOf("behaviour engineering") >= 0 || q.indexOf("friction discovery") >= 0 || q.indexOf("f1-f11") >= 0 || q.indexOf("p1") >= 0 && q.indexOf("p2") >= 0) {
