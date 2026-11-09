@@ -281,5 +281,10 @@
     if (event.key === "Home") { event.preventDefault(); goTo(0); }
     if (event.key === "End") { event.preventDefault(); goTo(slides.length - 1); }
   });
-  setActive(0);
+  var openAibfDirect = new URLSearchParams(window.location.search).get("aibf") === "1";
+  if (openAibfDirect) {
+    window.requestAnimationFrame(function () { goTo(slides.length - 1); });
+  } else {
+    setActive(0);
+  }
 })();
