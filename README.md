@@ -5,7 +5,7 @@ I connect customer requirements, commercial decisions and operational processes.
 
 **Focus:** Automotive retail operations · Customer experience · Business process analysis · Commercial intelligence · Operational improvement
 
-[View my portfolio](https://manoj5520.github.io/) · [Automotive retail analysis](case-studies/automotive-retail-operations-analysis.md)
+[View my portfolio](https://manoj5520.github.io/) · [Automotive retail analysis](case-studies/automotive-retail-operations-analysis.md) · [Automotive BA interview & working playbook](case-studies/automotive-ba-interview-playbook.md)
 
 ---
 
