@@ -155,19 +155,22 @@
     });
   }
 
-  /* ---------- Proof figure count ---------- */
-  var count = document.querySelector("[data-count]");
-  if (count && !reduceMotion) {
-    var end = parseInt(count.getAttribute("data-count"), 10);
-    var start = null;
-    count.textContent = "0";
-    var step = function (t) {
-      if (!start) start = t;
-      var k = Math.min((t - start) / 1100, 1);
-      count.textContent = String(Math.round(end * (1 - Math.pow(1 - k, 3))));
-      if (k < 1) requestAnimationFrame(step);
-    };
-    setTimeout(function () { requestAnimationFrame(step); }, 450);
+  /* ---------- Proof figure count: animate each responsive presentation ---------- */
+  var counts = document.querySelectorAll("[data-count]");
+  if (counts.length && !reduceMotion) {
+    Array.prototype.forEach.call(counts, function (count) {
+      var end = parseInt(count.getAttribute("data-count"), 10);
+      var start = null;
+      if (!isFinite(end)) return;
+      count.textContent = "0";
+      var step = function (t) {
+        if (!start) start = t;
+        var k = Math.min((t - start) / 1100, 1);
+        count.textContent = String(Math.round(end * (1 - Math.pow(1 - k, 3))));
+        if (k < 1) requestAnimationFrame(step);
+      };
+      setTimeout(function () { requestAnimationFrame(step); }, 450);
+    });
   }
 
   /* ---------- Certificate viewer ---------- */
