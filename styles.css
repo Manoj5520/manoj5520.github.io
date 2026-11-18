@@ -2270,3 +2270,37 @@ ul, ol { padding: 0; list-style: none; }
   .bc-aibf-kpi b{font-size:9px}
   .bc-aibf-art .bc-aibf-foot{left:3%;right:3%;bottom:3%;font-size:5.5px}
 }
+
+
+/* Responsive portrait proof card — keep the 120+ metric clear of the face. */
+@media (min-width: 961px) and (max-width: 1180px) {
+  .hero-portrait {
+    padding-bottom: 112px !important;
+  }
+  .hero-portrait .proof-card {
+    left: 0 !important;
+    right: auto !important;
+    bottom: 12px !important;
+    width: min(330px, calc(100% - 12px)) !important;
+    min-width: 0 !important;
+    padding: 16px 20px 15px !important;
+    gap: 3px !important;
+    transform: none !important;
+    border-left: 3px solid #641329 !important;
+    box-shadow: 0 12px 34px -22px rgba(20, 26, 32, .30) !important;
+  }
+  .hero-portrait .proof-figure {
+    font-size: clamp(38px, 4.2vw, 46px) !important;
+    line-height: 1 !important;
+  }
+  .hero-portrait .proof-label {
+    margin-top: 5px !important;
+    font-size: 10px !important;
+    letter-spacing: .13em !important;
+    line-height: 1.45 !important;
+  }
+  .hero-portrait .proof-source {
+    font-size: 12px !important;
+    line-height: 1.4 !important;
+  }
+}
