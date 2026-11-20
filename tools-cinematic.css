@@ -225,3 +225,39 @@
 #tools.tools-practice .tool-entry{grid-template-columns:minmax(0,1fr)!important;gap:5px!important}
 #tools.tools-practice .tools-proof-strip{grid-template-columns:minmax(0,1fr)!important}
 }
+
+
+/* 231999 MOBILE ROOT-CAUSE OVERRIDE — final responsive geometry */
+#tools.tools-practice,
+#tools.tools-practice * { box-sizing: border-box; }
+#tools.tools-practice { width: 100%; min-width: 0; overflow-x: clip; }
+#tools.tools-practice > .wrap { width: min(100% - 32px, 1180px) !important; max-width: 1180px !important; min-width: 0 !important; margin-inline: auto !important; }
+#tools.tools-practice .section-head { display: block !important; width: 100% !important; min-width: 0 !important; }
+#tools.tools-practice .tools-intro,
+#tools.tools-practice .tools-intro-copy,
+#tools.tools-practice .tools-stats,
+#tools.tools-practice .tools-toolbar,
+#tools.tools-practice .tool-cluster-grid,
+#tools.tools-practice .tool-cluster,
+#tools.tools-practice .tech-mindset-module { width: 100% !important; max-width: 100% !important; min-width: 0 !important; }
+#tools.tools-practice .tools-intro { display: grid !important; grid-template-columns: minmax(0, 1fr) !important; gap: 24px !important; }
+#tools.tools-practice .tools-intro-copy { display: block !important; }
+#tools.tools-practice .tools-intro-copy > *,
+#tools.tools-practice .section-lede,
+#tools.tools-practice .tool-cluster-summary,
+#tools.tools-practice .tool-entry-copy,
+#tools.tools-practice .tool-entry-copy p { min-width: 0 !important; max-width: 100% !important; width: 100% !important; white-space: normal !important; word-break: normal !important; overflow-wrap: break-word !important; }
+#tools.tools-practice .tools-stats { display: grid !important; grid-template-columns: repeat(2, minmax(0, 1fr)) !important; }
+#tools.tools-practice .tool-cluster-grid { display: grid !important; grid-template-columns: minmax(0, 1fr) !important; gap: 16px !important; }
+#tools.tools-practice .tool-entry { display: grid !important; grid-template-columns: minmax(0, 1fr) !important; gap: 6px !important; }
+#tools.tools-practice .tools-proof-strip { display: grid !important; grid-template-columns: repeat(2, minmax(0, 1fr)) !important; }
+#tools.tools-practice .tools-proof-item { min-width: 0 !important; }
+@media (max-width: 420px) {
+  #tools.tools-practice > .wrap { width: calc(100% - 24px) !important; }
+  #tools.tools-practice .tools-intro { gap: 18px !important; }
+  #tools.tools-practice .tools-stats .tools-stat { min-width: 0 !important; padding: 12px 10px !important; }
+  #tools.tools-practice .tools-stats .tools-stat span { overflow-wrap: anywhere !important; }
+  #tools.tools-practice .tools-toolbar { gap: 7px !important; }
+  #tools.tools-practice .tool-filter { max-width: 100% !important; }
+  #tools.tools-practice .tech-mindset-grid { grid-template-columns: minmax(0, 1fr) !important; }
+}
