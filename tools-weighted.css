@@ -1,0 +1,47 @@
+/* Tech Intelligence — weighted color system */
+#tools.tools-practice{background:#f7f4f2!important;color:#17171b!important;padding:58px 0!important}
+#tools.tools-practice>.wrap{width:min(calc(100% - 32px),1180px)!important;margin:auto!important}
+#tools.tools-practice .section-head{display:block!important;border-top:3px solid #751b36!important;padding-top:18px!important;margin-bottom:28px!important}
+#tools.tools-practice .section-num,#tools.tools-practice .section-kicker{color:#751b36!important;font-weight:800!important;letter-spacing:.15em!important}
+#tools.tools-practice .section-title{color:#17171b!important;font-size:clamp(34px,5vw,62px)!important;line-height:1.05!important}
+#tools.tools-practice .section-lede{color:#45444a!important;font-size:16px!important;line-height:1.65!important;max-width:800px!important}
+#tools.tools-practice .tools-intro{display:grid!important;grid-template-columns:1fr!important;gap:22px!important}
+#tools.tools-practice .tools-stats{display:grid!important;grid-template-columns:repeat(4,minmax(0,1fr))!important;background:#fff!important;border:1px solid #d5c9cd!important;border-top:4px solid #751b36!important;box-shadow:0 10px 28px #25151b0d!important}
+#tools.tools-practice .tools-stat{padding:16px!important;border-right:1px solid #e5dfe2!important}
+#tools.tools-practice .tools-stat strong{color:#751b36!important;font-size:clamp(27px,3vw,38px)!important}
+#tools.tools-practice .tools-stat span{color:#4c4a50!important;font-weight:700!important;font-size:10px!important}
+#tools.tools-practice .tools-toolbar{display:flex!important;flex-wrap:wrap!important;gap:8px!important;margin:26px 0 12px!important}
+#tools.tools-practice .tool-filter{background:#fff!important;color:#35343a!important;border:1px solid #c9b9bf!important;font-weight:700!important}
+#tools.tools-practice .tool-filter[aria-pressed=true]{background:#751b36!important;color:#fff!important;border-color:#751b36!important}
+#tools.tools-practice .tool-filter-status{color:#514d53!important}
+#tools.tools-practice .tool-cluster-grid{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:16px!important}
+#tools.tools-practice .tool-cluster{background:#fff!important;border:1px solid #d8d1d4!important;border-radius:12px!important;box-shadow:0 9px 28px #20161a0a!important;overflow:hidden!important;backdrop-filter:none!important}
+#tools.tools-practice .tool-cluster:before{height:5px!important;opacity:1!important;background:#751b36!important}
+#tools.tools-practice .tool-cluster-head{display:grid!important;grid-template-columns:38px minmax(0,1fr)!important;gap:10px!important;padding:20px 18px!important;border-bottom:1px solid #ded8db!important}
+#tools.tools-practice .tool-cluster-index{color:#751b36!important;font-size:23px!important}
+#tools.tools-practice .tool-cluster-kicker{color:#751b36!important;font-weight:800!important}
+#tools.tools-practice .tool-cluster-head h3{color:#19171b!important;font-size:clamp(21px,2vw,28px)!important;line-height:1.2!important}
+#tools.tools-practice .tool-cluster-summary{color:#4b4950!important}
+#tools.tools-practice .tool-entry{display:grid!important;grid-template-columns:minmax(125px,.32fr) minmax(0,1fr)!important;gap:12px!important;padding:15px 18px!important;border-bottom:1px solid #e8e2e5!important}
+#tools.tools-practice .tool-entry-name h4{color:#222!important;font-weight:800!important}
+#tools.tools-practice .tool-state{display:inline-block!important;margin-top:5px!important;padding:4px 7px!important;background:#f1e5e9!important;color:#751b36!important;border:1px solid #d6b8c3!important;border-radius:3px!important;font-weight:800!important}
+#tools.tools-practice .tool-entry-copy,#tools.tools-practice .tool-entry-copy p{color:#424148!important;font-size:12px!important;line-height:1.55!important}
+#tools.tools-practice .tool-entry-output{background:#f5edf0!important;border-left:3px solid #751b36!important;padding:9px 11px!important;margin-top:7px!important}
+/* Weight colors: core = burgundy, applied/support = amber, foundational = slate */
+#tools.tools-practice .tool-cluster:nth-child(2):before{background:#a47729!important}
+#tools.tools-practice .tool-cluster:nth-child(2) .tool-cluster-index,#tools.tools-practice .tool-cluster:nth-child(2) .tool-cluster-kicker{color:#80560f!important}
+#tools.tools-practice .tool-cluster:nth-child(2) .tool-state{background:#f8efdf!important;color:#80560f!important;border-color:#dfc58f!important}
+#tools.tools-practice .tool-cluster:nth-child(2) .tool-entry-output{background:#f8f1e5!important;border-left-color:#a47729!important}
+#tools.tools-practice .tool-cluster:nth-child(3):before{background:#356b88!important}
+#tools.tools-practice .tool-cluster:nth-child(3) .tool-cluster-index,#tools.tools-practice .tool-cluster:nth-child(3) .tool-cluster-kicker{color:#356b88!important}
+#tools.tools-practice .tool-cluster:nth-child(3) .tool-state{background:#e8f0f5!important;color:#315f79!important;border-color:#b7cedc!important}
+#tools.tools-practice .tool-cluster:nth-child(3) .tool-entry-output{background:#eef4f7!important;border-left-color:#356b88!important}
+#tools.tools-practice .tool-cluster:nth-child(4):before{background:#355f50!important}
+#tools.tools-practice .tool-cluster:nth-child(4) .tool-cluster-index,#tools.tools-practice .tool-cluster:nth-child(4) .tool-cluster-kicker{color:#355f50!important}
+#tools.tools-practice .tool-cluster:nth-child(4) .tool-state{background:#e9f1ed!important;color:#31594b!important;border-color:#bfd3c8!important}
+#tools.tools-practice .tool-cluster:nth-child(4) .tool-entry-output{background:#edf4f0!important;border-left-color:#355f50!important}
+#tools.tools-practice .tool-cluster:nth-child(5):before{background:#69717e!important}
+#tools.tools-practice .tool-cluster:nth-child(5) .tool-cluster-index,#tools.tools-practice .tool-cluster:nth-child(5) .tool-cluster-kicker{color:#596371!important}
+#tools.tools-practice .tool-cluster:nth-child(5) .tool-state{background:#eceef1!important;color:#525b68!important;border-color:#cbd1d8!important}
+#tools.tools-practice .tool-cluster:nth-child(5) .tool-entry-output{background:#f0f1f3!important;border-left-color:#69717e!important}
+@media(max-width:760px){#tools.tools-practice{padding:42px 0!important}#tools.tools-practice .tools-stats{grid-template-columns:repeat(2,minmax(0,1fr))!important}#tools.tools-practice .tool-cluster-grid{grid-template-columns:1fr!important}#tools.tools-practice .tool-entry{grid-template-columns:1fr!important;gap:6px!important}#tools.tools-practice .tool-cluster-head{padding:17px 14px!important}#tools.tools-practice .tool-entry{padding:13px 14px!important}}
