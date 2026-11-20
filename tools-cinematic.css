@@ -195,3 +195,33 @@
 .tools-practice .tool-entry-copy p,.tools-practice .tool-cluster-summary,.tools-practice .section-lede{width:100%!important;max-width:none!important;overflow-wrap:break-word!important;word-break:normal!important;white-space:normal!important}
 .tools-practice .tools-proof-strip{display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;width:100%!important}.tech-mindset-module{width:100%!important;max-width:none!important}
 @media(max-width:760px){.tools-practice .wrap{width:calc(100% - 28px)!important}.tools-practice .tools-intro{grid-template-columns:minmax(0,1fr)!important}.tools-practice .tools-stats{grid-template-columns:repeat(2,minmax(0,1fr))!important}.tools-practice .tool-cluster-grid{grid-template-columns:minmax(0,1fr)!important}.tools-practice .tools-proof-strip{grid-template-columns:minmax(0,1fr)!important}}
+
+/* Definitive Tech section geometry: override inherited narrow grid tracks */
+#tools.tools-practice{width:100%;overflow:hidden}
+#tools.tools-practice>.wrap{display:block!important;width:min(calc(100% - 32px),1180px)!important;max-width:1180px!important;margin:0 auto!important}
+#tools.tools-practice .section-head{display:block!important;width:100%!important}
+#tools.tools-practice .tools-intro{display:grid!important;grid-template-columns:minmax(0,1fr)!important;gap:28px!important;width:100%!important}
+#tools.tools-practice .tools-intro-copy{display:block!important;width:100%!important;max-width:none!important}
+#tools.tools-practice .tools-intro-copy>*{width:100%!important;max-width:900px!important;white-space:normal!important;word-break:normal!important;overflow-wrap:break-word!important}
+#tools.tools-practice .tools-stats{display:grid!important;grid-template-columns:repeat(4,minmax(0,1fr))!important;width:100%!important;max-width:none!important}
+#tools.tools-practice .tools-toolbar{display:flex!important;flex-wrap:wrap!important;align-items:center!important;width:100%!important}
+#tools.tools-practice .tool-cluster-grid{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:18px!important;width:100%!important}
+#tools.tools-practice .tool-cluster{display:block!important;width:100%!important;max-width:none!important;min-width:0!important}
+#tools.tools-practice .tool-cluster-head{display:grid!important;grid-template-columns:42px minmax(0,1fr)!important;gap:12px!important;width:100%!important}
+#tools.tools-practice .tool-cluster-head>div{width:100%!important;min-width:0!important}
+#tools.tools-practice .tool-entry{display:grid!important;grid-template-columns:minmax(115px,.32fr) minmax(0,1fr)!important;gap:14px!important;width:100%!important}
+#tools.tools-practice .tool-entry-name,#tools.tools-practice .tool-entry-copy{display:block!important;width:100%!important;max-width:none!important;min-width:0!important}
+#tools.tools-practice .tool-entry-copy p{display:block!important;width:100%!important;max-width:none!important;white-space:normal!important;word-break:normal!important;overflow-wrap:anywhere!important}
+#tools.tools-practice .tools-proof-strip{display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;width:100%!important}
+#tools.tools-practice .tools-proof-item{width:100%!important;min-width:0!important}
+#tools.tools-practice .tech-mindset-module{display:block!important;width:100%!important;max-width:none!important}
+#tools.tools-practice .tech-mindset-grid{display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;width:100%!important}
+#tools.tools-practice .tech-framework-grid{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;width:100%!important}
+#tools.tools-practice .tech-credential-list{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;width:100%!important}
+@media(max-width:760px){
+#tools.tools-practice>.wrap{width:calc(100% - 24px)!important}
+#tools.tools-practice .tools-stats{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+#tools.tools-practice .tool-cluster-grid,#tools.tools-practice .tech-mindset-grid,#tools.tools-practice .tech-framework-grid,#tools.tools-practice .tech-credential-list{grid-template-columns:minmax(0,1fr)!important}
+#tools.tools-practice .tool-entry{grid-template-columns:minmax(0,1fr)!important;gap:5px!important}
+#tools.tools-practice .tools-proof-strip{grid-template-columns:minmax(0,1fr)!important}
+}
